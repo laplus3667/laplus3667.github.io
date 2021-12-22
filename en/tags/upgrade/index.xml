@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Upgrade on Laplus Darkness</title>
+    <link>https://laplus3667.github.io/en/tags/upgrade/</link>
+    <description>Recent content in Upgrade on Laplus Darkness</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 04 Dec 2021 10:43:39 +0800</lastBuildDate><atom:link href="https://laplus3667.github.io/en/tags/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started</title>
+      <link>https://laplus3667.github.io/en/posts/getting-started/</link>
+      <pubDate>Sat, 04 Dec 2021 10:43:39 +0800</pubDate>
+      
+      <guid>https://laplus3667.github.io/en/posts/getting-started/</guid>
+      <description>&lt;p&gt;&lt;img class=&#34;img-fluid&#34; alt=&#34;&#34; src=&#34;https://hackmd.io/_uploads/SJfVFUtcF.png&#34; loading=&#34;lazy&#34;
+  
+   /&gt;
+
+&lt;/p&gt;
+&lt;p&gt;$\int_0^\infty f(x) dx$&lt;/p&gt;
+&lt;p&gt;$$
+\int_0^\infty f(x) dx
+$$&lt;/p&gt;
+&lt;p&gt;This article describes how to install, upgrade the theme, and write new articles.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

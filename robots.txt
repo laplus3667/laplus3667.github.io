@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://laplus3667.github.io/sitemap.xml
