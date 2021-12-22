@@ -27,7 +27,8 @@
 <meta name="twitter:title" content="鉤子"/>
 <meta name="twitter:description" content="作為一個靈活的主題，它應該能够自定義程式碼和集成協力廠商服務。因此，我們帶來了一個叫做鉤子的特性。
 在本文中，我們將介紹所有鉤子並提供一些用例。"/>
-<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
   <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
   <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -246,9 +247,7 @@
   </div>
 
 
-    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打賞">
-  <i class="fas fa-fw fa-coffee"></i>
-</a>
+    
     <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
   <i class="fas fa-fw fa-copyright"></i>
 </a>
@@ -268,8 +267,6 @@
   <div class="card-body"><div class="post-meta">
   <span class="post-date" title="創建於 2021-11-27 08:04:35 -0500 EST。">
     2021-11-27
-  </span><span class="post-reading-time">
-    1 分鐘閱讀
   </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E9%89%A4%E5%AD%90/" class="badge rounded-pill post-taxonomy">鉤子</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AA%94%E6%A1%88/" class="badge rounded-pill post-taxonomy">檔案</a></span>
 </div>
 <div class="post-toc mb-4" id="postTOC">
@@ -362,32 +359,7 @@
 <p>以 <code>sidebar-begin</code> 為例：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="nb">echo</span> <span class="s1">&#39;&lt;section class=&#34;row card component text-center&#34;&gt;&lt;div class=&#34;card-body&#34;&gt;SIDEBAR BEGIN&lt;/div&gt;&lt;/section&gt;&#39;</span> <span class="se">\
 </span><span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="se"></span>  &gt; layouts/partials/hooks/sidebar-begin.html
-</code></pre></div></div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content surface">
-      <div class="modal-header">
-        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打賞</h5>
-        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
-      </div>
-      <div class="modal-body">
-        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
-            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
-              <i class="fab fa-fw fa-alipay"></i>支付寶
-            </a>
-          </li><li class="nav-item text-nowrap" role="presentation">
-            <a class="nav-link" id="reward-wechat-tab" data-bs-toggle="tab" href="#reward-wechat" role="tab" aria-controls="reward-wechat" aria-selected="true">
-              <i class="fab fa-fw fa-weixin"></i>微信
-            </a>
-          </li></ul>
-        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
-            <img class="img-fluid post-reward-img" src="https://laplus3667.github.io/images/reward/alipay.png" loading="lazy" />
-          </div><div class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel" aria-labelledby="reward-wechat-tab">
-            <img class="img-fluid post-reward-img" src="https://laplus3667.github.io/images/reward/wechat.png" loading="lazy" />
-          </div></div>
-      </div>
-    </div>
-  </div>
-</div>
+</code></pre></div></div>
 <div class="post-copyright mb-3" id="post-copyright">
     <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
   <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
@@ -412,12 +384,12 @@
     </div>
     <div class="card-body">
       <ul class="post-list"><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/get-involved/">參與我們
+          <a href="https://laplus3667.github.io/zh-tw/posts/widgets/comments/">評論小部件
 </a>
           <span class="float-end post-date">2021-11-27
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/widgets/comments/">評論小部件
+          <a href="https://laplus3667.github.io/zh-tw/posts/get-involved/">參與我們
 </a>
           <span class="float-end post-date">2021-11-27
 </span>
@@ -494,6 +466,9 @@
   </div>
   <div class="card-body">
     <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/art001-guidance/">ART001 文章概覽
+</a>
+      </li><li>
         <a href="https://laplus3667.github.io/zh-tw/posts/menu/">菜單
 </a>
       </li><li>
@@ -504,9 +479,6 @@
 </a>
       </li><li>
         <a href="https://laplus3667.github.io/zh-tw/posts/image-viewer/">圖片查看器
-</a>
-      </li><li>
-        <a href="https://laplus3667.github.io/zh-tw/posts/look-and-feel/">觀感
 </a>
       </li></ul>
   </div>
@@ -673,9 +645,7 @@
 <div class="copyright mb-2">
   Copyright © 2021-2021 Chi-Hua Wang. All Rights Reserved.
 </div>
-<div class="powered-by mb-2">
-  Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme.
-</div>
+
 <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
     <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
 </a>
@@ -691,6 +661,8 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script>
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
 </body>
 </html>
