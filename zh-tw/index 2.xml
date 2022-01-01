@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>紫式晦澀</title>
+    <link>https://laplus3667.github.io/zh-tw/</link>
+    <description>Recent content on 紫式晦澀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR001 每日寫文章的五個心法</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur001%E6%AF%8F%E6%97%A5%E5%AF%AB%E6%96%87%E7%AB%A0%E7%9A%84%E4%BA%94%E5%80%8B%E5%BF%83%E6%B3%95/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur001%E6%AF%8F%E6%97%A5%E5%AF%AB%E6%96%87%E7%AB%A0%E7%9A%84%E4%BA%94%E5%80%8B%E5%BF%83%E6%B3%95/</guid>
+      <description>每日寫文章的五個心法 紫式晦澀每日一篇文章第1天 新年新希望! 每天寫文章來增強自己的表達能力. 現在使用Obsidian與ipad可以很輕鬆收集素</description>
+    </item>
+    
+    <item>
+      <title>RDD001 研究設計系列導文</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/rdd001-%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88%E7%B3%BB%E5%88%97%E5%B0%8E%E6%96%87/</link>
+      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/rdd001-%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88%E7%B3%BB%E5%88%97%E5%B0%8E%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ART478 思考豆腐塊文章的執行面</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/art478-%E8%B1%86%E8%85%90%E5%A1%8A%E6%96%87%E7%AB%A0%E6%80%9D%E8%80%83/</link>
+      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/art478-%E8%B1%86%E8%85%90%E5%A1%8A%E6%96%87%E7%AB%A0%E6%80%9D%E8%80%83/</guid>
+      <description>211223 思考豆腐塊文章的執行面 目的: 藉由寫豆腐塊文章來強化輸出. 讀者: 放在自己的blog上面. 原則: 一篇文章只講一個觀點. 這個觀點, 快的話應該是要</description>
+    </item>
+    
+    <item>
+      <title>ART001 文章概覽</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/art001-guidance/</link>
+      <pubDate>Tue, 21 Dec 2021 19:53:24 +0800</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/art001-guidance/</guid>
+      <description>這是第一篇文章 思考一: 實踐寫作套路, 學習寫作工作總結 想要研究寫作的套路，早上看了一些關於文案寫作的書。但他們的性質跟我們平常知識生產的模式不</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://laplus3667.github.io/zh-tw/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hugo makes use of a variety of open source projects including:
+ https://github.</description>
+    </item>
+    
+    <item>
+      <title>Contact Us</title>
+      <link>https://laplus3667.github.io/zh-tw/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FAQs</title>
+      <link>https://laplus3667.github.io/zh-tw/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/faq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Offline</title>
+      <link>https://laplus3667.github.io/zh-tw/offline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/offline/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
