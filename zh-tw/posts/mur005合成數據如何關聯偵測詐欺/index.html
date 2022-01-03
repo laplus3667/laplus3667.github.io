@@ -1,0 +1,848 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR005 合成數據如何幫助基於機器學習的偵測詐欺? - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR005 合成數據如何幫助基於機器學習的偵測詐欺?">
+<meta itemprop="description" content="合成數據如何幫助基於機器學習的偵測詐欺? 紫式晦澀每日一篇文章第5天 前言 今天是2022年第3天, 第一週的第一個週一!今天來思考「合成數據(Sy"><meta itemprop="datePublished" content="2022-01-03T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-03T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2682">
+<meta itemprop="keywords" content="金融科技,詐欺偵測," /><meta property="og:title" content="MUR005 合成數據如何幫助基於機器學習的偵測詐欺?" />
+<meta property="og:description" content="合成數據如何幫助基於機器學習的偵測詐欺? 紫式晦澀每日一篇文章第5天 前言 今天是2022年第3天, 第一週的第一個週一!今天來思考「合成數據(Sy" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur005%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E9%97%9C%E8%81%AF%E5%81%B5%E6%B8%AC%E8%A9%90%E6%AC%BA/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-03T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR005 合成數據如何幫助基於機器學習的偵測詐欺?"/>
+<meta name="twitter:description" content="合成數據如何幫助基於機器學習的偵測詐欺? 紫式晦澀每日一篇文章第5天 前言 今天是2022年第3天, 第一週的第一個週一!今天來思考「合成數據(Sy"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR005%20%e5%90%88%e6%88%90%e6%95%b8%e6%93%9a%e5%a6%82%e4%bd%95%e5%b9%ab%e5%8a%a9%e5%9f%ba%e6%96%bc%e6%a9%9f%e5%99%a8%e5%ad%b8%e7%bf%92%e7%9a%84%e5%81%b5%e6%b8%ac%e8%a9%90%e6%ac%ba%3f&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur005%25E5%2590%2588%25E6%2588%2590%25E6%2595%25B8%25E6%2593%259A%25E5%25A6%2582%25E4%25BD%2595%25E9%2597%259C%25E8%2581%25AF%25E5%2581%25B5%25E6%25B8%25AC%25E8%25A9%2590%25E6%25AC%25BA%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur005%25E5%2590%2588%25E6%2588%2590%25E6%2595%25B8%25E6%2593%259A%25E5%25A6%2582%25E4%25BD%2595%25E9%2597%259C%25E8%2581%25AF%25E5%2581%25B5%25E6%25B8%25AC%25E8%25A9%2590%25E6%25AC%25BA%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR005 合成數據如何幫助基於機器學習的偵測詐欺?</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR005 合成數據如何幫助基於機器學習的偵測詐欺?
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-02 19:00:00 -0500 EST。">
+    2022-01-03
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded-pill post-taxonomy">合成數據</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded-pill post-taxonomy">金融科技</a><a href="https://laplus3667.github.io/zh-tw/tags/%E8%A9%90%E6%AC%BA%E5%81%B5%E6%B8%AC/" class="badge rounded-pill post-taxonomy">詐欺偵測</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#合成數據用於詐欺偵測-檢測率-訓練數據集來源">合成數據用於詐欺偵測-檢測率, 訓練數據集來源</a></li>
+    <li><a href="#合成數據集範例">合成數據集範例</a>
+      <ul>
+        <li><a href="#paysim-基於私人數據-注入惡意行為-產生合成數據">PaySim: 基於私人數據, 注入惡意行為, 產生合成數據</a></li>
+        <li><a href="#banksim-用於詐欺檢測研究的合成數據">BankSim: 用於詐欺檢測研究的合成數據</a></li>
+        <li><a href="#bank-transaction-data-檢測欺詐交易和洗錢的合成數據">Bank Transaction Data: 檢測欺詐交易和洗錢的合成數據</a></li>
+      </ul>
+    </li>
+    <li><a href="#結果與洞察-合成數據集中-特徵的可變性不夠高">結果與洞察: 合成數據集中, 特徵的可變性不夠高</a></li>
+    <li><a href="#結論與洞察-利用集群方法-執行基於合成數據的訓練-會有更好的效果">結論與洞察: 利用集群方法, 執行基於合成數據的訓練, 會有更好的效果.</a></li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="合成數據如何幫助基於機器學習的偵測詐欺">合成數據如何幫助基於機器學習的偵測詐欺?<a class="anchor ms-1" href="#合成數據如何幫助基於機器學習的偵測詐欺"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://perfectial.com/wp-content/uploads/2020/04/fraud-01-scaled.jpg" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第5天</p>
+</blockquote>
+<p><a href="https://mermaid.live/edit/#eyJjb2RlIjoiZ3JhcGggTFJcblx0VCjlkIjmiJDmlbjmk5rlpoLkvZXluavliqnln7rmlrzmqZ_lmajlrbjnv5LnmoTlgbXmuKzoqZDmrLo_KTtcbiAgICBBMSjlkIjmiJDmlbjmk5rnlKjmlrzoqZDmrLrlgbXmuKwt5qqi5ris546HLCDoqJPnt7Tmlbjmk5rpm4bkvobmupApOyBcbiAgICBBMijlkIjmiJDmlbjmk5rpm4bnr4TkvospO1xuICAgIEEyMShQYXlTaW06IOWfuuaWvOengeS6uuaVuOaTmiwg5rOo5YWl5oOh5oSP6KGM54K6LCDnlKLnlJ_lkIjmiJDmlbjmk5opXG4gICAgQTIyKEJhbmtTaW06IOeUqOaWvOipkOasuuaqoua4rOeglOeptueahOWQiOaIkOaVuOaTmilcbiAgICBBMjMoQmFuayBUcmFuc2FjdGlvbiBEYXRhOiDmqqLmuKzmrLroqZDkuqTmmJPlkozmtJfpjKLnmoTlkIjmiJDmlbjmk5opXG4gICAgQTMo57WQ5p6c6IiH5rSe5a-fOiDlkIjmiJDmlbjmk5rpm4bkuK0sIOeJueW-teeahOWPr-iuiuaAp-S4jeWkoOmrmCk7IFxuICAgIEE0KOe1kOirluiIh-a0nuWvnzog5Yip55So6ZuG576k5pa55rOVLCDln7fooYzln7rmlrzlkIjmiJDmlbjmk5rnmoToqJPnt7QsIOacg-acieabtOWlveeahOaViOaenCk7XG4gICAgVC0tPkExICYgQTIgJiBBMyAmIEE0IFxuICAgIEEyLS0-QTIxICYgQTIyICYgQTIzXG4gICAgIiwibWVybWFpZCI6IntcbiAgXCJ0aGVtZVwiOiBcImZvcmVzdFwiXG59IiwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ" target="_blank" rel="noopener noreferrer"><img class="img-fluid" alt="" src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcblx0VCjlkIjmiJDmlbjmk5rlpoLkvZXluavliqnln7rmlrzmqZ_lmajlrbjnv5LnmoTlgbXmuKzoqZDmrLo_KTtcbiAgICBBMSjlkIjmiJDmlbjmk5rnlKjmlrzoqZDmrLrlgbXmuKwt5qqi5ris546HLCDoqJPnt7Tmlbjmk5rpm4bkvobmupApOyBcbiAgICBBMijlkIjmiJDmlbjmk5rpm4bnr4TkvospO1xuICAgIEEyMShQYXlTaW06IOWfuuaWvOengeS6uuaVuOaTmiwg5rOo5YWl5oOh5oSP6KGM54K6LCDnlKLnlJ_lkIjmiJDmlbjmk5opXG4gICAgQTIyKEJhbmtTaW06IOeUqOaWvOipkOasuuaqoua4rOeglOeptueahOWQiOaIkOaVuOaTmilcbiAgICBBMjMoQmFuayBUcmFuc2FjdGlvbiBEYXRhOiDmqqLmuKzmrLroqZDkuqTmmJPlkozmtJfpjKLnmoTlkIjmiJDmlbjmk5opXG4gICAgQTMo57WQ5p6c6IiH5rSe5a-fOiDlkIjmiJDmlbjmk5rpm4bkuK0sIOeJueW-teeahOWPr-iuiuaAp-S4jeWkoOmrmCk7IFxuICAgIEE0KOe1kOirluiIh-a0nuWvnzog5Yip55So6ZuG576k5pa55rOVLCDln7fooYzln7rmlrzlkIjmiJDmlbjmk5rnmoToqJPnt7QsIOacg-acieabtOWlveeahOaViOaenCk7XG4gICAgVC0tPkExICYgQTIgJiBBMyAmIEE0IFxuICAgIEEyLS0-QTIxICYgQTIyICYgQTIzXG4gICAgIiwibWVybWFpZCI6eyJ0aGVtZSI6ImZvcmVzdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9" loading="lazy"
+  
+   />
+
+</a>
+</p>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第3天, 第一週的第一個週一!今天來思考「合成數據(Synthetic Data)」是如何在金融科技領域中，幫助「詐欺偵測(Fraud Detection)」的任務.</p>
+</li>
+<li>
+<p>今天的素材主要是從文章<a href="https://www.mdpi.com/1424-8220/21/5/1594" target="_blank" rel="noopener noreferrer">Follow the Trail: Machine Learning for Fraud Detection in Fintech Applications</a>
+節選提到合成數據的相關段落 .</p>
+</li>
+</ol>
+<h2 id="合成數據用於詐欺偵測-檢測率-訓練數據集來源">合成數據用於詐欺偵測-檢測率, 訓練數據集來源<a class="anchor ms-1" href="#合成數據用於詐欺偵測-檢測率-訓練數據集來源"><i class="fas fa-link"></i></a></h2>
+<ol start="3">
+<li>
+<p><strong>合成數據對詐欺偵測的效果</strong>: 本文章實驗了ML方法對欺詐檢測的貢獻, 分別利用真實數據集與「合成數據集」來訓練. 此文章討論了各種方法在「檢測率」的有效性. 此外, 分析了所選特徵對其性能的影響.</p>
+</li>
+<li>
+<p><strong>詐欺偵測的訓練數據集-Kaggle, ML Repository, Simulator</strong>:</p>
+</li>
+</ol>
+<ul>
+<li>A. 金融科技的詐欺檢測, 缺乏公開可用的測試數據.</li>
+<li>B. 來源一: Kaggle數據集 (括信用卡數據集[9]、銀行交易數據[10]和區塊鏈歷史數據[11]).</li>
+<li>C. 來源二: 已知的、稍舊的合成數據集可以在UC Irvine ML Repository中找到（例如，UC Irvine[12]）</li>
+<li>D. 來源三:模擬器(Simulator) BankSim[13]和PaySim[14]等模擬器被應用於解決這個問題。前者代表了一個基於代理的銀行支付模擬器，而後者則通過生成客戶和執行交易來模擬移動交易。</li>
+</ul>
+<h2 id="合成數據集範例">合成數據集範例<a class="anchor ms-1" href="#合成數據集範例"><i class="fas fa-link"></i></a></h2>
+<h3 id="paysim-基於私人數據-注入惡意行為-產生合成數據">PaySim: 基於私人數據, 注入惡意行為, 產生合成數據<a class="anchor ms-1" href="#paysim-基於私人數據-注入惡意行為-產生合成數據"><i class="fas fa-link"></i></a></h3>
+<ol start="5">
+<li><strong>PaySim的模擬器</strong>:</li>
+</ol>
+<ul>
+<li>A. 在4.2.2節中，將介紹一個使用名為PaySim的模擬器生成的合成數據集（PaySim數據集在下文中）。</li>
+<li>B. PaySim使用私人數據集的匯總數據，生成一個類似於交易正常運行的合成數據集，並注入惡意行為，以便日後評估欺詐檢測方法的性能。</li>
+<li>C. 這是通過在一個非洲國家的真實交易樣本基礎上模擬移動支付交易來實現的。原始數據是由一家跨國移動金融服務提供商提供的[104]。</li>
+<li>D. 在這個特定的數據集中，代理商的欺詐行為旨在通過控制或客戶的賬戶來獲利，並試圖通過轉移到另一個賬戶來清空資金，然後從系統中套現。</li>
+<li>E. 數據集詳情見表5。 Table 5. Synthetic Financial Datasets for Fraud Detection dataset overview.
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Dataset name</th>
+<th style="text-align:left">Synthetic Financial Datasets for Fraud Detection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Domain</td>
+<td style="text-align:left">Financial Transactions</td>
+</tr>
+<tr>
+<td style="text-align:left">Url</td>
+<td style="text-align:left"><a href="https://www.kaggle.com/ntnu-testimon/paysim1" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/ntnu-testimon/paysim1</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">Year</td>
+<td style="text-align:left">(accessed on 30 November 2020)</td>
+</tr>
+<tr>
+<td style="text-align:left">Type</td>
+<td style="text-align:left">2015</td>
+</tr>
+<tr>
+<td style="text-align:left">Subset</td>
+<td style="text-align:left">Synthetic data</td>
+</tr>
+<tr>
+<td style="text-align:left">Annotated</td>
+<td style="text-align:left">PS_20174392719_1491204439457_log.csv</td>
+</tr>
+<tr>
+<td style="text-align:left">Unbalanced</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of entries</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Contamination rate</td>
+<td style="text-align:left">6,362,620</td>
+</tr>
+<tr>
+<td style="text-align:left">Time duration</td>
+<td style="text-align:left">0.129%</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of features</td>
+<td style="text-align:left">1 month</td>
+</tr>
+<tr>
+<td style="text-align:left">List of features</td>
+<td style="text-align:left">11</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">step, type, amount, name0rig, oldbalance0rg,</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ol start="6">
+<li><strong>定義PaySim</strong>: PaySim.</li>
+</ol>
+<ul>
+<li>A. 一個移動貨幣支付模擬器 移動貨幣支付模擬案例研究是基於一個真實的公司，該公司開發了一個移動貨幣實施方案，為手機用戶提供了使用手機作為一種電子錢包在他們之間轉移資金的能力。</li>
+<li>B.「任務」是開發一種能夠檢測出表明欺詐的可疑活動的方法。</li>
+<li>C. 不幸的是，在我們研究的最初階段，這項服務只在演示模式下運行。這使我們無法收集任何可用於分析可能的檢測方法的數據。</li>
+<li>D. PaySim的開發包括兩個階段。
+<ul>
+<li>D.a 在第一階段，我們模擬並實現了一個MABS，它使用了真實的移動支付服務的模式，並根據對真實系統開始運行時可能出現的情況的預測，<strong>生成了合成數據</strong>。</li>
+<li>D.b在第二階段，我們獲得了該系統的財務交易日誌，並開發了一個新版本的模擬器，該模擬器使用匯總的交易數據來生成更類似於原始來源的財務信息。</li>
+</ul>
+</li>
+<li>E. Keywords [en]: multi-agent based simulation, fraud detection, retail fraud, synthetic data <a href="http://bth.diva-portal.org/smash/get/diva2:1085629/FULLTEXT03.pdf" target="_blank" rel="noopener noreferrer">http://bth.diva-portal.org/smash/get/diva2:1085629/FULLTEXT03.pdf</a>
+.</li>
+</ul>
+<h3 id="banksim-用於詐欺檢測研究的合成數據">BankSim: 用於詐欺檢測研究的合成數據<a class="anchor ms-1" href="#banksim-用於詐欺檢測研究的合成數據"><i class="fas fa-link"></i></a></h3>
+<ol start="7">
+<li><strong>BankSim</strong>:</li>
+</ol>
+<ul>
+<li>A. 小節4.2.3 介紹的數據集是使用BankSim創建的，這是一個基於代理的銀行支付模擬器，基於西班牙一家銀行提供的匯總交易數據樣本。</li>
+<li>B. 目標: 生成可用於欺詐檢測研究的合成數據。</li>
+<li>C. 這個數據集結合了正常的支付和已知的欺詐特徵，不包含任何個人信息或任何其他交易的披露。</li>
+<li>D. 數據集的詳情見表6。
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Dataset name</th>
+<th style="text-align:left">Synthetic data from a financial payment system</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Domain</td>
+<td style="text-align:left">Financial Transactions</td>
+</tr>
+<tr>
+<td style="text-align:left">Url</td>
+<td style="text-align:left"><a href="https://www.kaggle.com/ntnu-testimon/banksim1" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/ntnu-testimon/banksim1</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">Year</td>
+<td style="text-align:left">(accessed on 30 November 2020)</td>
+</tr>
+<tr>
+<td style="text-align:left">Type</td>
+<td style="text-align:left">2014</td>
+</tr>
+<tr>
+<td style="text-align:left">Subset</td>
+<td style="text-align:left">Synthetic data</td>
+</tr>
+<tr>
+<td style="text-align:left">Annotated</td>
+<td style="text-align:left">bs140513_032310.csv</td>
+</tr>
+<tr>
+<td style="text-align:left">Unbalanced</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of entries</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Contamination rate</td>
+<td style="text-align:left">594,643</td>
+</tr>
+<tr>
+<td style="text-align:left">Time duration</td>
+<td style="text-align:left">1.21%</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of features</td>
+<td style="text-align:left">6 months</td>
+</tr>
+<tr>
+<td style="text-align:left">List of features</td>
+<td style="text-align:left">10</td>
+</tr>
+<tr>
+<td style="text-align:left">Subset</td>
+<td style="text-align:left">step, customer, age, gender, zipcode0ri,</td>
+</tr>
+<tr>
+<td style="text-align:left">Annotated</td>
+<td style="text-align:left">merchant, zipMerchant, category, amount, fraud</td>
+</tr>
+<tr>
+<td style="text-align:left">Unbalanced</td>
+<td style="text-align:left">bsNET140513_032310.csv</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of entries</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Contamination rate</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Time duration</td>
+<td style="text-align:left">594,643</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of features</td>
+<td style="text-align:left">1.21%</td>
+</tr>
+<tr>
+<td style="text-align:left">List of features</td>
+<td style="text-align:left">6 months</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="bank-transaction-data-檢測欺詐交易和洗錢的合成數據">Bank Transaction Data: 檢測欺詐交易和洗錢的合成數據<a class="anchor ms-1" href="#bank-transaction-data-檢測欺詐交易和洗錢的合成數據"><i class="fas fa-link"></i></a></h3>
+<ol start="8">
+<li><strong>Bank Transaction Data</strong>:</li>
+</ol>
+<ul>
+<li>A.Bank Transaction Data是一種分析工具，旨在檢測欺詐交易和洗錢。</li>
+<li>B. 開發人員希望建立一個工具，可以使用IFSC代碼提取銀行名稱；通過系統獲取兩個不同賬戶在同一日期的借方和貸方的相同數量的交易以及匹配的敘述；並在敘述的基礎上對類似交易進行分類。</li>
+<li>C. 數據集的細節見表7。
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Dataset name</th>
+<th style="text-align:left">Bank Transaction Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Domain</td>
+<td style="text-align:left">Financial Transactions</td>
+</tr>
+<tr>
+<td style="text-align:left">Url</td>
+<td style="text-align:left"><a href="https://www.kaggle.com/apoorvwatsky/bank-" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/apoorvwatsky/bank-</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">Year</td>
+<td style="text-align:left">transaction-data (accessed on 30 November 2020)</td>
+</tr>
+<tr>
+<td style="text-align:left">Type</td>
+<td style="text-align:left">2017</td>
+</tr>
+<tr>
+<td style="text-align:left">Subset</td>
+<td style="text-align:left">Synthetic data</td>
+</tr>
+<tr>
+<td style="text-align:left">Annotated</td>
+<td style="text-align:left">bank.xlsx</td>
+</tr>
+<tr>
+<td style="text-align:left">Unbalanced</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of entries</td>
+<td style="text-align:left">n//a</td>
+</tr>
+<tr>
+<td style="text-align:left">Contamination rate</td>
+<td style="text-align:left">116,201</td>
+</tr>
+<tr>
+<td style="text-align:left">Time duration</td>
+<td style="text-align:left">n//a</td>
+</tr>
+<tr>
+<td style="text-align:left">No. of features</td>
+<td style="text-align:left">7 months</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">8</td>
+</tr>
+<tr>
+<td style="text-align:left">List of features</td>
+<td style="text-align:left">Account No., Date, Transaction Details, Cheque</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">No. , Value Date, Withdrawal Amount, Deposit</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="結果與洞察-合成數據集中-特徵的可變性不夠高">結果與洞察: 合成數據集中, 特徵的可變性不夠高<a class="anchor ms-1" href="#結果與洞察-合成數據集中-特徵的可變性不夠高"><i class="fas fa-link"></i></a></h2>
+<blockquote>
+<p>Variability of features in a synthetically created dataset might not be on a high enough level.</p>
+</blockquote>
+<ol start="9">
+<li><strong>合成數據集中, 特徵的可變性不夠高</strong>:</li>
+</ol>
+<ul>
+<li>圖15中給出了被測試的集合方法的ROC曲線比較。</li>
+<li>基於tpr和tnr的比較分析表明，對於一個給定的數據集，AdaBoost在測試方法中表現最好。</li>
+<li>同時，可以注意到這三種測試方法的靈敏度和特異性都很高，幾乎為1，這表明<strong>合成的數據集中特徵的可變性</strong>可能還不夠高(variability of features in a synthetically created dataset might not be on a high enough level)。</li>
+<li>還應該注意的是，在這個特定的數據集上，集合方法的表現優於離群點檢測方法。
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/JdHnUHDEDAjwU4RV2bxMAm6BO8_zsDqIWs2Y8tN8XWM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<h2 id="結論與洞察-利用集群方法-執行基於合成數據的訓練-會有更好的效果">結論與洞察: 利用集群方法, 執行基於合成數據的訓練, 會有更好的效果.<a class="anchor ms-1" href="#結論與洞察-利用集群方法-執行基於合成數據的訓練-會有更好的效果"><i class="fas fa-link"></i></a></h2>
+<blockquote>
+<p>ensemble approaches significantly outperformed outlier detection methods on the two tested synthetic datasets</p>
+</blockquote>
+<ol start="10">
+<li><strong>集成方法在合成數據集上表現較好</strong></li>
+</ol>
+<ul>
+<li>所進行的實驗結果證實了ML的好處。</li>
+<li>首先，現有的ML算法成功地在複雜的數據集中檢測到了異常情況。</li>
+<li>此外，實驗結果證實，ML方法可以通過支持增強欺詐檢測能力的方式，成功地為金融技術系統的安全做出貢獻。</li>
+<li>此外，研究還發現，特徵工程和選擇會嚴重影響某些算法的性能，仔細選擇特徵可以提高整體性能並限制某些特徵的負面影響。</li>
+<li>還應注意的是，集合方法對可變的特徵選擇情況保持了更穩健的性能，總體表現非常好，在大多數情況下比離群值檢測方法更好</li>
+<li>集合方法在兩個測試的<strong>合成數據集</strong>（PaySim和BankSim）上的表現明顯優於離群值檢測方法 (ensemble approaches significantly outperformed outlier detection methods on the two tested synthetic datasets)</li>
+<li>而在包含真實數據的測試數據集（CreditCard）上，這兩種方法的結果是相當的。</li>
+</ul>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="11">
+<li>
+<p>到此我們看過了<a href="https://www.mdpi.com/1424-8220/21/5/1594" target="_blank" rel="noopener noreferrer">Follow the Trail: Machine Learning for Fraud Detection in Fintech Applications</a>
+ 文章中關於「合成數據」的段落與洞察。本文章指出(1) 公開用於訓練機器學習模型的合成數據集(PaySim 與 BankSim), 特徵的可變性可能不夠高, (2) 利用集群方法(Ensemble Method), 執行基於合成數據的訓練, 會有更好的效果.</p>
+</li>
+<li>
+<p>這邊所謂的「合成數據」的邏輯, 似乎是加入惡意行為, 然後看使用的算法是否能夠成功抓到惡意行為. 惡意行為的「產生機制」可否用deep learning來做呢? 這樣的generative model, 生成帶有隱藏惡意行為的驗證資料(Validation dataset), 以此來審計(audit)系統中使用的機器學習算法. 這類似學校對TA做種族平等的培訓, 以避免TA在課堂上做出違反符合美國大學系統價值下認為的平等.</p>
+</li>
+<li>
+<p>十分有趣, 之後需要多學習一些詐欺偵測的資料科學工程技術, 來進一步思考此文章給出對合成數據集的洞察. 持續精進, 共勉之！</p>
+</li>
+</ol>
+<p>2022.01.03.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur004%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E4%BA%94%E5%80%8B%E8%A7%92%E5%BA%A6/">MUR004 知識管理的五個角度
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur004%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E4%BA%94%E5%80%8B%E8%A7%92%E5%BA%A6/">MUR004 知識管理的五個角度
+</a>
+          <span class="float-end post-date">2022-01-02
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur003%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81%E6%A9%9F%E5%88%B6%E7%9A%84%E5%9B%9B%E5%80%8B%E9%9D%A2%E5%90%91/">MUR003 拉普拉斯差分隱私機制的四個面向
+</a>
+          <span class="float-end post-date">2022-01-01
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur002%E9%97%9C%E6%96%BC%E5%A4%A7%E6%99%A6%E6%97%A5%E7%9A%84%E4%BA%94%E5%80%8B%E7%9F%A5%E8%AD%98%E9%BB%9E/">MUR002 關於大晦日的五個知識點
+</a>
+          <span class="float-end post-date">2021-12-31
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur001%E6%AF%8F%E6%97%A5%E5%AF%AB%E6%96%87%E7%AB%A0%E7%9A%84%E4%BA%94%E5%80%8B%E5%BF%83%E6%B3%95/">MUR001 每日寫文章的五個心法
+</a>
+          <span class="float-end post-date">2021-12-30
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/rdd001-%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88%E7%B3%BB%E5%88%97%E5%B0%8E%E6%96%87/">RDD001 研究設計系列導文
+</a>
+          <span class="float-end post-date">2021-12-28
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur005%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E9%97%9C%E8%81%AF%E5%81%B5%E6%B8%AC%E8%A9%90%E6%AC%BA/">MUR005 合成數據如何幫助基於機器學習的偵測詐欺?
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur004%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E4%BA%94%E5%80%8B%E8%A7%92%E5%BA%A6/">MUR004 知識管理的五個角度
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur003%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81%E6%A9%9F%E5%88%B6%E7%9A%84%E5%9B%9B%E5%80%8B%E9%9D%A2%E5%90%91/">MUR003 拉普拉斯差分隱私機制的四個面向
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur002%E9%97%9C%E6%96%BC%E5%A4%A7%E6%99%A6%E6%97%A5%E7%9A%84%E4%BA%94%E5%80%8B%E7%9F%A5%E8%AD%98%E9%BB%9E/">MUR002 關於大晦日的五個知識點
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur001%E6%AF%8F%E6%97%A5%E5%AF%AB%E6%96%87%E7%AB%A0%E7%9A%84%E4%BA%94%E5%80%8B%E5%BF%83%E6%B3%95/">MUR001 每日寫文章的五個心法
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E8%A9%90%E6%AC%BA%E5%81%B5%E6%B8%AC/" class="badge rounded post-taxonomy" title="詐欺偵測">
+            詐欺偵測
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%82%8F%E8%BC%AF%E6%B5%81/" class="badge rounded post-taxonomy" title="邏輯流">
+            邏輯流
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
