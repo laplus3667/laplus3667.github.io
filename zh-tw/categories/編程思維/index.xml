@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>編程思維 on 紫式晦澀</title>
+    <link>https://laplus3667.github.io/zh-tw/categories/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/</link>
+    <description>Recent content in 編程思維 on 紫式晦澀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
+    <lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/categories/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR009 思辨註釋與文檔</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/</link>
+      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/</guid>
+      <description>思辨註釋與文檔 紫式晦澀每日一篇文章第9天 前言 今天是2022年第7天, 第1週的第1個週五. 今天來思考紀錄, 在寫程式時很重要的, 關於「註解與文檔</description>
+    </item>
+    
+  </channel>
+</rss>

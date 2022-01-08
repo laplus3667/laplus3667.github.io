@@ -1,0 +1,1022 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR009 思辨註釋與文檔 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR009 思辨註釋與文檔">
+<meta itemprop="description" content="思辨註釋與文檔 紫式晦澀每日一篇文章第9天 前言 今天是2022年第7天, 第1週的第1個週五. 今天來思考紀錄, 在寫程式時很重要的, 關於「註解與文檔"><meta itemprop="datePublished" content="2022-01-07T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-07T00:00:00+00:00" />
+<meta itemprop="wordCount" content="4494">
+<meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR009 思辨註釋與文檔" />
+<meta property="og:description" content="思辨註釋與文檔 紫式晦澀每日一篇文章第9天 前言 今天是2022年第7天, 第1週的第1個週五. 今天來思考紀錄, 在寫程式時很重要的, 關於「註解與文檔" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-07T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR009 思辨註釋與文檔"/>
+<meta name="twitter:description" content="思辨註釋與文檔 紫式晦澀每日一篇文章第9天 前言 今天是2022年第7天, 第1週的第1個週五. 今天來思考紀錄, 在寫程式時很重要的, 關於「註解與文檔"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR009%20%e6%80%9d%e8%be%a8%e8%a8%bb%e9%87%8b%e8%88%87%e6%96%87%e6%aa%94&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur009%25E8%25A9%2595%25E8%25AB%2596%25E8%2588%2587%25E6%2596%2587%25E6%25AA%2594%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur009%25E8%25A9%2595%25E8%25AB%2596%25E8%2588%2587%25E6%2596%2587%25E6%25AA%2594%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR009 思辨註釋與文檔</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR009 思辨註釋與文檔
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-06 19:00:00 -0500 EST。">
+    2022-01-07
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded-pill post-taxonomy">編程思維</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded-pill post-taxonomy">Python</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#註解與文檔-為讀者服務">註解與文檔: 為讀者服務</a></li>
+    <li><a href="#註解-面向開發者">註解: 面向開發者</a>
+      <ul>
+        <li><a href="#註解的兩種技法-井字號-類型提示">註解的兩種技法: 井字號, 類型提示</a></li>
+        <li><a href="#註解的四種用法-計畫與回顧-程式描述-演算法描述-標記待改良點">註解的四種用法: 計畫與回顧, 程式描述, 演算法描述, 標記待改良點</a></li>
+        <li><a href="#jeff-atwoodhttpsblogcodinghorrorcomwhen-good-comments-go-bad的四條註解規則-就近註釋-避免複雜格式-開門見山-設計好的程式結構"><a href="https://blog.codinghorror.com/when-good-comments-go-bad/">Jeff Atwood</a>的四條註解規則: 就近註釋, 避免複雜格式, 開門見山, 設計好的程式結構</a></li>
+      </ul>
+    </li>
+    <li><a href="#文檔-面向使用者">文檔: 面向使用者</a>
+      <ul>
+        <li><a href="#召喚字符串-物件目錄-文檔-help-dir-__doc__">召喚字符串, 物件目錄, 文檔: <code>help()</code>, <code>dir()</code>, <code>__doc__</code></a></li>
+        <li><a href="#文檔客製物件編輯__doc__-三引號triple-double-quote註解-多行字符串">文檔客製物件:編輯<code>__doc__</code>, 三引號(triple-double quote)註解, 多行字符串</a></li>
+      </ul>
+    </li>
+    <li><a href="#三大文檔類型-類字符串-包與模組字符串-腳本字符串">三大文檔類型: 類字符串, 包與模組字符串, 腳本字符串</a>
+      <ul>
+        <li><a href="#類字符串-__init__類方法上">類字符串: <code>__init__</code>類方法上</a></li>
+        <li><a href="#包與模組字符串-__init__py檔案中">包與模組字符串: <code>__init__.py</code>檔案中</a></li>
+        <li><a href="#腳本字符串-argparse活用">腳本字符串: <code>argparse</code>活用</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="思辨註釋與文檔">思辨註釋與文檔<a class="anchor ms-1" href="#思辨註釋與文檔"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://www.insperity.com/wp-content/uploads/document_HR__1200x600.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第9天</p>
+</blockquote>
+<p><a href="https://mermaid.live/edit/#eyJjb2RlIjoiZ3JhcGggTFJcblx0VCjmgJ3ovqjoqLvph4voiIfmlofmqpQpO1xuICAgIEExKOiou-ino-iIh-aWh-aqlDog54K66K6A6ICF5pyN5YuZKTsgXG4gICAgQTIo6Ki76KejOiDpnaLlkJHplovnmbzogIUpO1xuICAgIEEzKOaWh-aqlDog6Z2i5ZCR5L2_55So6ICFKTsgXG4gICAgQTQo5LiJ5aSn5paH5qqU6aGe5Z6LOiDpoZ7lrZfnrKbkuLIsIOWMheiIh-aooee1hOWtl-espuS4siwg6IWz5pys5a2X56ym5LiyKVxuICAgIFQtLT5BMSAmIEEyICYgQTMgJiBBNFxuICAgICIsIm1lcm1haWQiOiJ7XG4gIFwidGhlbWVcIjogXCJmb3Jlc3RcIlxufSIsInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0" target="_blank" rel="noopener noreferrer"><img class="img-fluid" alt="" src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcblx0VCjmgJ3ovqjoqLvph4voiIfmlofmqpQpO1xuICAgIEExKOiou-ino-iIh-aWh-aqlDog54K66K6A6ICF5pyN5YuZKTsgXG4gICAgQTIo6Ki76KejOiDpnaLlkJHplovnmbzogIUpO1xuICAgIEEzKOaWh-aqlDog6Z2i5ZCR5L2_55So6ICFKTsgXG4gICAgQTQo5LiJ5aSn5paH5qqU6aGe5Z6LOiDpoZ7lrZfnrKbkuLIsIOWMheiIh-aooee1hOWtl-espuS4siwg6IWz5pys5a2X56ym5LiyKVxuICAgIFQtLT5BMSAmIEEyICYgQTMgJiBBNFxuICAgICIsIm1lcm1haWQiOnsidGhlbWUiOiJmb3Jlc3QifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ" loading="lazy"
+  
+   />
+
+</a>
+</p>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第7天, 第1週的第1個週五. 今天來思考紀錄, 在寫程式時很重要的, 關於「註解與文檔」相關的知識. 長期而言, 這是「編程思維」系列下的第一篇.</p>
+</li>
+<li>
+<p>今天的素材主要來自<a href="https://realpython.com/documenting-python-code/" target="_blank" rel="noopener noreferrer">Documenting Python Code: A Complete Guide</a>
+中, 節選相關段落與紀錄個人理解與心得.</p>
+</li>
+</ol>
+<h2 id="註解與文檔-為讀者服務">註解與文檔: 為讀者服務<a class="anchor ms-1" href="#註解與文檔-為讀者服務"><i class="fas fa-link"></i></a></h2>
+<ol start="3">
+<li><strong>讀者思維於程式</strong>: 寫程式本身為兩種主要讀者服務. 第一種是開發者(包含未來的自己), 另一種是使用者. 作為開發者, 把註解(Comment)寫好, 也會讓未來的自己省時間. 作為使用者, 把文檔(Documentation)寫好, 會讓未來可能的使用者學習成本下降.</li>
+</ol>
+<blockquote>
+<p>“Code is more often read than written.”</p>
+<p>— Guido van Rossum</p>
+</blockquote>
+<ol start="4">
+<li><strong>定義註解</strong>: 「程式註解」是向開發者描述你的程式. 預期的主要受眾是 Python 程式的維護者和開發者。 編寫良好的程式+註釋有助於引導讀者更好地理解你的程式的「目的」和「設計」.</li>
+</ol>
+<blockquote>
+<p>“Code tells you how; Comments tell you why.”</p>
+<p>— Jeff Atwood (aka Coding Horror)</p>
+</blockquote>
+<ol start="5">
+<li><strong>定義文檔</strong>: 「程式文檔」是向使用者描述你的程式的用途與功能. 其主要的受眾為用戶, 也會在開發過程中有幫助.</li>
+</ol>
+<h2 id="註解-面向開發者">註解: 面向開發者<a class="anchor ms-1" href="#註解-面向開發者"><i class="fas fa-link"></i></a></h2>
+<h3 id="註解的兩種技法-井字號-類型提示">註解的兩種技法: 井字號, 類型提示<a class="anchor ms-1" href="#註解的兩種技法-井字號-類型提示"><i class="fas fa-link"></i></a></h3>
+<ol start="6">
+<li><strong>利用#給註解</strong>: 註解應該是「簡潔的幾個句子」. 例如:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>    <span class="c1"># A simple comment preceding a simple print statement</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello World&#34;</span><span class="p">)</span> 
+</code></pre></div><p>其中的「# A simple comment preceding a simple print statement」就是簡潔的註解. 根據<a href="https://pep8.org/#maximum-line-length" target="_blank" rel="noopener noreferrer">PEP 8</a>
+, 一個註解不超過72個字元.</p>
+<ol start="7">
+<li><strong>利用類型提示</strong>: 類型提示(Type Hint)於 Python 3.5 開始支援.類型提示是一種幫助讀者閱讀程式的附加形式。它允許開發人員設計和解釋他們的部分代碼而不用註釋。 例如</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="k">def</span> <span class="nf">hello_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>    <span class="k">return</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><p>就提示了函數<code>hellp_name</code>是一個輸入為字串<code>str</code>資料類型, 輸出也是字串<code>str</code>資料類型的函數.</p>
+<ol start="8">
+<li>通過檢查類型提示，可以立即看出該函數期望輸入名稱為 str 或字符串類型。 此外, 還可以判斷該函數的預期輸出也將是 str 或 string 類型。 雖然類型提示有助於減少註釋，但在創建或更新項目文檔時，這樣做也可能會增加額外的工作量。</li>
+</ol>
+<blockquote>
+<p>省現在的時間, 或省未來的時間.</p>
+</blockquote>
+<h3 id="註解的四種用法-計畫與回顧-程式描述-演算法描述-標記待改良點">註解的四種用法: 計畫與回顧, 程式描述, 演算法描述, 標記待改良點<a class="anchor ms-1" href="#註解的四種用法-計畫與回顧-程式描述-演算法描述-標記待改良點"><i class="fas fa-link"></i></a></h3>
+<ol start="9">
+<li><strong>註解用法一:計畫與回顧</strong>:  當開發程式的新部分，可以首先使用註釋作為「規劃(Planning)」或概述該部分程式。 一旦實際程式已經實踐和審查/測試，就可以刪除這些註解.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="c1"># First step</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="c1"># Second step</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span><span class="c1"># Third step</span>
+</code></pre></div><ol start="10">
+<li>
+<p>這個用法, 在寫文章也很常用. 尤其是寫科學研究論文的草稿時, 用註解的方式先安排文章的結構, 然後分個完成. 完成後的部分, 之後重新組合, 可能可以出現更好的組織, 昇華文章帶給讀者的意象.</p>
+</li>
+<li>
+<p><strong>註解用法二:程式描述</strong>: 註解可解釋「特定部分程式」的意圖.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="c1"># Attempt a connection based on previous settings. If unsuccessful,</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="c1"># prompt user for new settings.</span>
+</code></pre></div><ol start="12">
+<li>
+<p>這個用法, 在寫理論文章時, 因為要證明很多lemma, 也會利用註解來描述特定lemma的意圖. 因此, 我們可以很合理的類比「lemma」就是「script」 , 而很多的lemma與很多的script構造出智慧的結晶.</p>
+</li>
+<li>
+<p><strong>註解用法三:演算法描述</strong>: 複雜的演算法, 可以利用註解向開發者解釋如何實踐你的程式. 也可描述為何選擇特定的算法. 這個可以寫在function裡面詳細每步的動機.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="c1"># Using quick sort for performance gains</span>
+</code></pre></div><ol start="14">
+<li><strong>註解用法四: 標記</strong>: 對特定部分的程式, 標記已知問題, 來改良該部分的問題. 實際例子有: BUG, FIXME 與 TODO.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="c1"># TODO: Add condition for when val is None</span>
+</code></pre></div><h3 id="jeff-atwoodhttpsblogcodinghorrorcomwhen-good-comments-go-bad的四條註解規則-就近註釋-避免複雜格式-開門見山-設計好的程式結構">Jeff Atwood的四條註解規則: 就近註釋, 避免複雜格式, 開門見山, 設計好的程式結構<a class="anchor ms-1" href="#jeff-atwoodhttpsblogcodinghorrorcomwhen-good-comments-go-bad的四條註解規則-就近註釋-避免複雜格式-開門見山-設計好的程式結構"><i class="fas fa-link"></i></a></h3>
+<ol start="15">
+<li>
+<p><strong>就近註釋原則</strong>: 使註釋盡可能靠近所描述的代碼。 不在描述代碼附近的註釋會讓讀者感到沮喪，並且在進行更新時很容易錯過。</p>
+</li>
+<li>
+<p><strong>避免複雜格式</strong>: 不要使用複雜的格式（例如表格或 ASCII 數字）。 複雜的格式會導致內容分散注意力，並且隨著時間的推移可能難以維護。</p>
+</li>
+<li>
+<p><strong>開門見山原則</strong>: 不要包含多餘的信息。 假設代碼的讀者對編程原理和語言語法有基本的了解。</p>
+</li>
+<li>
+<p><strong>設計好的程式結構</strong>: 設計你的代碼來評論自己。 理解代碼最簡單的方法是閱讀它。 當您使用清晰、易於理解的概念設計代碼時，讀者將能夠快速概念化您的意圖。</p>
+</li>
+</ol>
+<h2 id="文檔-面向使用者">文檔: 面向使用者<a class="anchor ms-1" href="#文檔-面向使用者"><i class="fas fa-link"></i></a></h2>
+<ol start="19">
+<li><strong>用字符串做文檔</strong>: 前面了解了註釋(Comment), 現在開始討論文檔(Documentation). 我們要學習使用「字符串 (Docstrings)」來做文檔. 若內置的字符串配置正確, 可顯著幫助用戶與自己的項目發展.</li>
+</ol>
+<h3 id="召喚字符串-物件目錄-文檔-help-dir-__doc__">召喚字符串, 物件目錄, 文檔: help(), dir(), __doc__<a class="anchor ms-1" href="#召喚字符串-物件目錄-文檔-help-dir-__doc__"><i class="fas fa-link"></i></a></h3>
+<ol start="20">
+<li><strong><code>help()</code>召喚字符串</strong>: 利用Python的內置函數<code>help()</code>可召喚出「物件字符串」. 例如:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="n">Help</span> <span class="n">on</span> <span class="k">class</span> <span class="nc">str</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="k">class</span> <span class="nc">str</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span> <span class="o">|</span>  <span class="nb">str</span><span class="p">(</span><span class="nb">object</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span> <span class="o">|</span>  <span class="nb">str</span><span class="p">(</span><span class="n">bytes_or_buffer</span><span class="p">[,</span> <span class="n">encoding</span><span class="p">[,</span> <span class="n">errors</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span> <span class="o">|</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span> <span class="o">|</span>  <span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">string</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">given</span> <span class="nb">object</span><span class="o">.</span> <span class="n">If</span> <span class="n">encoding</span> <span class="ow">or</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span> <span class="o">|</span>  <span class="n">errors</span> <span class="n">are</span> <span class="n">specified</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">must</span> <span class="n">expose</span> <span class="n">a</span> <span class="n">data</span> <span class="n">buffer</span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span> <span class="o">|</span>  <span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">decoded</span> <span class="n">using</span> <span class="n">the</span> <span class="n">given</span> <span class="n">encoding</span> <span class="ow">and</span> <span class="n">error</span> <span class="n">handler</span><span class="o">.</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span> <span class="o">|</span>  <span class="n">Otherwise</span><span class="p">,</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="p">(</span><span class="k">if</span> <span class="n">defined</span><span class="p">)</span>
+<span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span> <span class="o">|</span>  <span class="ow">or</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span><span class="o">.</span>
+<span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span> <span class="o">|</span>  <span class="n">encoding</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">getdefaultencoding</span><span class="p">()</span><span class="o">.</span>
+<span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span> <span class="o">|</span>  <span class="n">errors</span> <span class="n">defaults</span> <span class="n">to</span> <span class="s1">&#39;strict&#39;</span><span class="o">.</span>
+<span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span> <span class="c1"># Truncated for readability</span>
+</code></pre></div><ol start="21">
+<li><strong><code>dir()</code>召喚物件目錄</strong>: 在Python中, 什麼都是物件(Object). 利用函數<code>dir()</code>可召喚出物件的目錄(directory).</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="p">[</span><span class="s1">&#39;__add__&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;zfill&#39;</span><span class="p">]</span> <span class="c1"># Truncated for readability</span>
+</code></pre></div><ol start="22">
+<li><strong>目錄的屬性:<code>__doc__</code></strong>: 在召喚出來的物件目錄中, 有個特殊的屬性<code>__doc__</code>, 其內容如下:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="nb">str</span><span class="p">(</span><span class="nb">object</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span><span class="nb">str</span><span class="p">(</span><span class="n">bytes_or_buffer</span><span class="p">[,</span> <span class="n">encoding</span><span class="p">[,</span> <span class="n">errors</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">string</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">given</span> <span class="nb">object</span><span class="o">.</span> <span class="n">If</span> <span class="n">encoding</span> <span class="ow">or</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span><span class="n">errors</span> <span class="n">are</span> <span class="n">specified</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">must</span> <span class="n">expose</span> <span class="n">a</span> <span class="n">data</span> <span class="n">buffer</span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">decoded</span> <span class="n">using</span> <span class="n">the</span> <span class="n">given</span> <span class="n">encoding</span> <span class="ow">and</span> <span class="n">error</span> <span class="n">handler</span><span class="o">.</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="n">Otherwise</span><span class="p">,</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="p">(</span><span class="k">if</span> <span class="n">defined</span><span class="p">)</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span><span class="ow">or</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span><span class="o">.</span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="n">encoding</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">getdefaultencoding</span><span class="p">()</span><span class="o">.</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="n">errors</span> <span class="n">defaults</span> <span class="n">to</span> <span class="s1">&#39;strict&#39;</span><span class="o">.</span>
+</code></pre></div><h3 id="文檔客製物件編輯__doc__-三引號triple-double-quote註解-多行字符串">文檔客製物件:編輯__doc__, 三引號(triple-double quote)註解, 多行字符串<a class="anchor ms-1" href="#文檔客製物件編輯__doc__-三引號triple-double-quote註解-多行字符串"><i class="fas fa-link"></i></a></h3>
+<ol start="23">
+<li><strong>客製物件的文檔1: 編輯<code>__doc__</code></strong>: 自定義函數, 可以透過編輯其<code>__doc__</code>屬性來提供文檔.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, is it me you&#39;re looking for?&#34;</span><span class="p">)</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span><span class="n">say_hello</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="s2">&#34;A simple function that says hello... Richie style&#34;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">say_hello</span><span class="p">)</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">say_hello</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span><span class="n">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span>    <span class="n">A</span> <span class="n">simple</span> <span class="n">function</span> <span class="n">that</span> <span class="n">says</span> <span class="n">hello</span><span class="o">...</span> <span class="n">Richie</span> <span class="n">style</span>
+</code></pre></div><ol start="24">
+<li><strong>客製物件的文檔2:三引號(triple-double quote)註解</strong>:另一種方法來寫函數的文檔, 是直接在def的下面加註解.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>    <span class="s2">&#34;&#34;&#34;A simple function that says hello... Richie style&#34;&#34;&#34;</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, is it me you&#39;re looking for?&#34;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">say_hello</span><span class="p">)</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">say_hello</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span><span class="n">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span>    <span class="n">A</span> <span class="n">simple</span> <span class="n">function</span> <span class="n">that</span> <span class="n">says</span> <span class="n">hello</span><span class="o">...</span> <span class="n">Richie</span> <span class="n">style</span>
+</code></pre></div><ol start="25">
+<li><strong>多行字符串的格式</strong>: 當文檔較為精緻, 成為多行字符串, 則建議包含以下四個部分:</li>
+</ol>
+<ul>
+<li>A one-line summary line 一行總結</li>
+<li>A blank line proceeding the summary 一行空白</li>
+<li>Any further elaboration for the docstring 更細緻的描述</li>
+<li>Another blank line 另一行空白</li>
+</ul>
+<h2 id="三大文檔類型-類字符串-包與模組字符串-腳本字符串">三大文檔類型: 類字符串, 包與模組字符串, 腳本字符串<a class="anchor ms-1" href="#三大文檔類型-類字符串-包與模組字符串-腳本字符串"><i class="fas fa-link"></i></a></h2>
+<ol start="26">
+<li><strong>定義三大文檔類型</strong>:</li>
+</ol>
+<ul>
+<li>Class Docstrings: 類(Class) and 類方法(class methods)</li>
+<li>Package and Module Docstrings: 包(Package), 模組(modules), and 函數(functions)</li>
+<li>Script Docstrings: 腳本(Script) and 函數(functions)</li>
+</ul>
+<h3 id="類字符串-__init__類方法上">類字符串: __init__類方法上<a class="anchor ms-1" href="#類字符串-__init__類方法上"><i class="fas fa-link"></i></a></h3>
+<ol start="27">
+<li><strong>類與類方法字符串</strong>: 定義類與類方法以後, 建議就加上文檔.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="k">class</span> <span class="nc">SimpleClass</span><span class="p">:</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>    <span class="s2">&#34;&#34;&#34;Class docstrings go here.&#34;&#34;&#34;</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span>    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span>        <span class="s2">&#34;&#34;&#34;Class method docstrings go here.&#34;&#34;&#34;</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6">6</a></span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7">7</a></span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div><p>其中有<code>SimpleClass</code>這個類的文檔, 也有<code>say_hello</code>這個類方法的文檔.</p>
+<ol start="28">
+<li><strong>類文檔應有資訊</strong>:類文檔應有以下四種資訊</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>A brief summary of its purpose and behavior 簡述類的「目的」與「行為」</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Any public methods, along with a brief description 任何「公用方法」與其簡單描述</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Any class properties (attributes) 任何「類屬性」</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Anything related to the interface for subclassers, if the class is intended to be subclassed 是否是作為「介面(interface)」而建立的類</li>
+</ol>
+</li>
+</ul>
+<ol start="29">
+<li>
+<p><strong><code>__init__</code>類方法文檔</strong>: 在<code>__init__</code>類方法的字符串, 應該要聞黨類創造子的參數(class constructor parameters). 類創造子是一個物件導向中的基礎概念, 其限定了類創造物件時的細節.</p>
+</li>
+<li>
+<p><strong>類方法字符串應有資訊</strong>: 類方法字符串應有資訊包含以下六點:</p>
+</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>A brief description of what the method is and what it’s used for 方法的簡單描述與其目的</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Any arguments (both required and optional) that are passed including keyword arguments 任何會在「關鍵字參數 (Keyword arguments)」中「必要(required)」或「可選(optional)」的「實際參數(argument)」</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Label any arguments that are considered optional or have a default value 標記可選參數或其預設值</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Any side effects that occur when executing the method 方法的副作用</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Any exceptions that are raised 會出現的例外</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>Any restrictions on when the method can be called 呼叫方法後會引發的限制</li>
+</ol>
+</li>
+</ul>
+<ol start="31">
+<li><strong>實例: <code>Animal</code>類</strong>: 這個類有簡單的「類屬性(class properties)」, 「實例屬性(instance properties)」, 「<code>__init__</code>類方法」, 「實例方法(<a href="https://realpython.com/instance-class-and-static-methods-demystified/" target="_blank" rel="noopener noreferrer">instance method</a>
+)」</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span>    <span class="s2">&#34;&#34;&#34;
+</span><span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span><span class="s2">    A class used to represent an Animal
+</span><span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="s2">
+</span><span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="s2">    ...
+</span><span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span><span class="s2">
+</span><span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="s2">    Attributes
+</span><span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="s2">    ----------
+</span><span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span><span class="s2">    says_str : str
+</span><span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="s2">        a formatted string to print out what the animal says
+</span><span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="s2">    name : str
+</span><span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span><span class="s2">        the name of the animal
+</span><span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span><span class="s2">    sound : str
+</span><span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span><span class="s2">        the sound that the animal makes
+</span><span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span><span class="s2">    num_legs : int
+</span><span class="ln" id="16"><a style="outline: none; text-decoration:none; color:inherit" href="#16">16</a></span><span class="s2">        the number of legs the animal has (default 4)
+</span><span class="ln" id="17"><a style="outline: none; text-decoration:none; color:inherit" href="#17">17</a></span><span class="s2">
+</span><span class="ln" id="18"><a style="outline: none; text-decoration:none; color:inherit" href="#18">18</a></span><span class="s2">    Methods
+</span><span class="ln" id="19"><a style="outline: none; text-decoration:none; color:inherit" href="#19">19</a></span><span class="s2">    -------
+</span><span class="ln" id="20"><a style="outline: none; text-decoration:none; color:inherit" href="#20">20</a></span><span class="s2">    says(sound=None)
+</span><span class="ln" id="21"><a style="outline: none; text-decoration:none; color:inherit" href="#21">21</a></span><span class="s2">        Prints the animals name and what sound it makes
+</span><span class="ln" id="22"><a style="outline: none; text-decoration:none; color:inherit" href="#22">22</a></span><span class="s2">    &#34;&#34;&#34;</span>
+<span class="ln" id="23"><a style="outline: none; text-decoration:none; color:inherit" href="#23">23</a></span>
+<span class="ln" id="24"><a style="outline: none; text-decoration:none; color:inherit" href="#24">24</a></span>    <span class="n">says_str</span> <span class="o">=</span> <span class="s2">&#34;A </span><span class="si">{name}</span><span class="s2"> says </span><span class="si">{sound}</span><span class="s2">&#34;</span>
+<span class="ln" id="25"><a style="outline: none; text-decoration:none; color:inherit" href="#25">25</a></span>
+<span class="ln" id="26"><a style="outline: none; text-decoration:none; color:inherit" href="#26">26</a></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sound</span><span class="p">,</span> <span class="n">num_legs</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="ln" id="27"><a style="outline: none; text-decoration:none; color:inherit" href="#27">27</a></span>        <span class="s2">&#34;&#34;&#34;
+</span><span class="ln" id="28"><a style="outline: none; text-decoration:none; color:inherit" href="#28">28</a></span><span class="s2">        Parameters
+</span><span class="ln" id="29"><a style="outline: none; text-decoration:none; color:inherit" href="#29">29</a></span><span class="s2">        ----------
+</span><span class="ln" id="30"><a style="outline: none; text-decoration:none; color:inherit" href="#30">30</a></span><span class="s2">        name : str
+</span><span class="ln" id="31"><a style="outline: none; text-decoration:none; color:inherit" href="#31">31</a></span><span class="s2">            The name of the animal
+</span><span class="ln" id="32"><a style="outline: none; text-decoration:none; color:inherit" href="#32">32</a></span><span class="s2">        sound : str
+</span><span class="ln" id="33"><a style="outline: none; text-decoration:none; color:inherit" href="#33">33</a></span><span class="s2">            The sound the animal makes
+</span><span class="ln" id="34"><a style="outline: none; text-decoration:none; color:inherit" href="#34">34</a></span><span class="s2">        num_legs : int, optional
+</span><span class="ln" id="35"><a style="outline: none; text-decoration:none; color:inherit" href="#35">35</a></span><span class="s2">            The number of legs the animal (default is 4)
+</span><span class="ln" id="36"><a style="outline: none; text-decoration:none; color:inherit" href="#36">36</a></span><span class="s2">        &#34;&#34;&#34;</span>
+<span class="ln" id="37"><a style="outline: none; text-decoration:none; color:inherit" href="#37">37</a></span>
+<span class="ln" id="38"><a style="outline: none; text-decoration:none; color:inherit" href="#38">38</a></span>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="ln" id="39"><a style="outline: none; text-decoration:none; color:inherit" href="#39">39</a></span>        <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="n">sound</span>
+<span class="ln" id="40"><a style="outline: none; text-decoration:none; color:inherit" href="#40">40</a></span>        <span class="bp">self</span><span class="o">.</span><span class="n">num_legs</span> <span class="o">=</span> <span class="n">num_legs</span>
+<span class="ln" id="41"><a style="outline: none; text-decoration:none; color:inherit" href="#41">41</a></span>
+<span class="ln" id="42"><a style="outline: none; text-decoration:none; color:inherit" href="#42">42</a></span>    <span class="k">def</span> <span class="nf">says</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ln" id="43"><a style="outline: none; text-decoration:none; color:inherit" href="#43">43</a></span>        <span class="s2">&#34;&#34;&#34;Prints what the animals name is and what sound it makes.
+</span><span class="ln" id="44"><a style="outline: none; text-decoration:none; color:inherit" href="#44">44</a></span><span class="s2">
+</span><span class="ln" id="45"><a style="outline: none; text-decoration:none; color:inherit" href="#45">45</a></span><span class="s2">        If the argument `sound` isn&#39;t passed in, the default Animal
+</span><span class="ln" id="46"><a style="outline: none; text-decoration:none; color:inherit" href="#46">46</a></span><span class="s2">        sound is used.
+</span><span class="ln" id="47"><a style="outline: none; text-decoration:none; color:inherit" href="#47">47</a></span><span class="s2">
+</span><span class="ln" id="48"><a style="outline: none; text-decoration:none; color:inherit" href="#48">48</a></span><span class="s2">        Parameters
+</span><span class="ln" id="49"><a style="outline: none; text-decoration:none; color:inherit" href="#49">49</a></span><span class="s2">        ----------
+</span><span class="ln" id="50"><a style="outline: none; text-decoration:none; color:inherit" href="#50">50</a></span><span class="s2">        sound : str, optional
+</span><span class="ln" id="51"><a style="outline: none; text-decoration:none; color:inherit" href="#51">51</a></span><span class="s2">            The sound the animal makes (default is None)
+</span><span class="ln" id="52"><a style="outline: none; text-decoration:none; color:inherit" href="#52">52</a></span><span class="s2">
+</span><span class="ln" id="53"><a style="outline: none; text-decoration:none; color:inherit" href="#53">53</a></span><span class="s2">        Raises
+</span><span class="ln" id="54"><a style="outline: none; text-decoration:none; color:inherit" href="#54">54</a></span><span class="s2">        ------
+</span><span class="ln" id="55"><a style="outline: none; text-decoration:none; color:inherit" href="#55">55</a></span><span class="s2">        NotImplementedError
+</span><span class="ln" id="56"><a style="outline: none; text-decoration:none; color:inherit" href="#56">56</a></span><span class="s2">            If no sound is set for the animal or passed in as a
+</span><span class="ln" id="57"><a style="outline: none; text-decoration:none; color:inherit" href="#57">57</a></span><span class="s2">            parameter.
+</span><span class="ln" id="58"><a style="outline: none; text-decoration:none; color:inherit" href="#58">58</a></span><span class="s2">        &#34;&#34;&#34;</span>
+<span class="ln" id="59"><a style="outline: none; text-decoration:none; color:inherit" href="#59">59</a></span>
+<span class="ln" id="60"><a style="outline: none; text-decoration:none; color:inherit" href="#60">60</a></span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">sound</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ln" id="61"><a style="outline: none; text-decoration:none; color:inherit" href="#61">61</a></span>            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&#34;Silent Animals are not supported!&#34;</span><span class="p">)</span>
+<span class="ln" id="62"><a style="outline: none; text-decoration:none; color:inherit" href="#62">62</a></span>
+<span class="ln" id="63"><a style="outline: none; text-decoration:none; color:inherit" href="#63">63</a></span>        <span class="n">out_sound</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="k">if</span> <span class="n">sound</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">sound</span>
+<span class="ln" id="64"><a style="outline: none; text-decoration:none; color:inherit" href="#64">64</a></span>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">says_str</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">sound</span><span class="o">=</span><span class="n">out_sound</span><span class="p">))</span>
+</code></pre></div><h3 id="包與模組字符串-__init__py檔案中">包與模組字符串: __init__.py檔案中<a class="anchor ms-1" href="#包與模組字符串-__init__py檔案中"><i class="fas fa-link"></i></a></h3>
+<ol start="32">
+<li>
+<p><strong>包字符串</strong>: 包字符串要在包頂層的<code>__init__.py</code>檔案中. 這個字符串要包含「模組(modules)」與「子包(subpackages)」的列表.</p>
+</li>
+<li>
+<p><strong>模組字符串</strong>: 模組字符串要列表出任何其包含的函數. 模組字符串要在整的文件的最頂端. 須包含以下兩點:</p>
+</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>A brief description of the module and its purpose 簡述模組與其目的</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>A list of any classes, exception, functions, and any other objects exported by the module 列表類, 例外, 函數, 其他任何模組會輸出的物件.</li>
+</ol>
+</li>
+</ul>
+<ol start="34">
+<li><strong>模組函數文檔</strong>: 其規則與「類方法」類似, 要包含六點:</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>A brief description of what the method is and what it’s used for 方法的簡單描述與其目的</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Any arguments (both required and optional) that are passed including keyword arguments 任何會在「關鍵字參數 (Keyword arguments)」中「必要(required)」或「可選(optional)」的「實際參數(argument)」</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Label any arguments that are considered optional or have a default value 標記可選參數或其預設值</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Any side effects that occur when executing the method 方法的副作用</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Any exceptions that are raised 會出現的例外</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>Any restrictions on when the method can be called 呼叫方法後會引發的限制</li>
+</ol>
+</li>
+</ul>
+<h3 id="腳本字符串-argparse活用">腳本字符串: argparse活用<a class="anchor ms-1" href="#腳本字符串-argparse活用"><i class="fas fa-link"></i></a></h3>
+<ol start="35">
+<li>
+<p><strong>定義腳本</strong>: 腳本(Scripts)是主機(Console)可執行的單檔案. Scripts are considered to be single file executables run from the console.</p>
+</li>
+<li>
+<p><strong>腳本字符串</strong>: 要在檔案最上方, 要提供足夠資訊讓用戶能使用腳本.</p>
+</li>
+<li>
+<p><strong>使用<code>argparse</code></strong>:使用<code>argparser.parser.add_argument</code>函數, 利用<code>argpase</code>的<code>__doc__</code>文檔來對參數的<code>description</code>. (詳細請見<a href="https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/" target="_blank" rel="noopener noreferrer">Command-Line Parsing Libraries</a>
+)</p>
+</li>
+<li>
+<p><strong>列出腳本前置包</strong>: 文檔要包含讓用戶知道要先安裝哪些包.  以下是列印表格欄的腳本. 有說明要安裝<code>pandas</code>還有要輸入模組<code>get_spreadsheet_cols</code>，並包含函數<code>main</code>.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="s2">&#34;&#34;&#34;Spreadsheet Column Printer
+</span><span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="s2">
+</span><span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span><span class="s2">This script allows the user to print to the console all columns in the
+</span><span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="s2">spreadsheet. It is assumed that the first row of the spreadsheet is the
+</span><span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="s2">location of the columns.
+</span><span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span><span class="s2">
+</span><span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="s2">This tool accepts comma separated value files (.csv) as well as excel
+</span><span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="s2">(.xls, .xlsx) files.
+</span><span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span><span class="s2">
+</span><span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="s2">This script requires that `pandas` be installed within the Python
+</span><span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="s2">environment you are running this script in.
+</span><span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span><span class="s2">
+</span><span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span><span class="s2">This file can also be imported as a module and contains the following
+</span><span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span><span class="s2">functions:
+</span><span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span><span class="s2">
+</span><span class="ln" id="16"><a style="outline: none; text-decoration:none; color:inherit" href="#16">16</a></span><span class="s2">    * get_spreadsheet_cols - returns the column headers of the file
+</span><span class="ln" id="17"><a style="outline: none; text-decoration:none; color:inherit" href="#17">17</a></span><span class="s2">    * main - the main function of the script
+</span><span class="ln" id="18"><a style="outline: none; text-decoration:none; color:inherit" href="#18">18</a></span><span class="s2">&#34;&#34;&#34;</span>
+<span class="ln" id="19"><a style="outline: none; text-decoration:none; color:inherit" href="#19">19</a></span>
+<span class="ln" id="20"><a style="outline: none; text-decoration:none; color:inherit" href="#20">20</a></span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="ln" id="21"><a style="outline: none; text-decoration:none; color:inherit" href="#21">21</a></span>
+<span class="ln" id="22"><a style="outline: none; text-decoration:none; color:inherit" href="#22">22</a></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ln" id="23"><a style="outline: none; text-decoration:none; color:inherit" href="#23">23</a></span>
+<span class="ln" id="24"><a style="outline: none; text-decoration:none; color:inherit" href="#24">24</a></span>
+<span class="ln" id="25"><a style="outline: none; text-decoration:none; color:inherit" href="#25">25</a></span><span class="k">def</span> <span class="nf">get_spreadsheet_cols</span><span class="p">(</span><span class="n">file_loc</span><span class="p">,</span> <span class="n">print_cols</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="ln" id="26"><a style="outline: none; text-decoration:none; color:inherit" href="#26">26</a></span>    <span class="s2">&#34;&#34;&#34;Gets and prints the spreadsheet&#39;s header columns
+</span><span class="ln" id="27"><a style="outline: none; text-decoration:none; color:inherit" href="#27">27</a></span><span class="s2">
+</span><span class="ln" id="28"><a style="outline: none; text-decoration:none; color:inherit" href="#28">28</a></span><span class="s2">    Parameters
+</span><span class="ln" id="29"><a style="outline: none; text-decoration:none; color:inherit" href="#29">29</a></span><span class="s2">    ----------
+</span><span class="ln" id="30"><a style="outline: none; text-decoration:none; color:inherit" href="#30">30</a></span><span class="s2">    file_loc : str
+</span><span class="ln" id="31"><a style="outline: none; text-decoration:none; color:inherit" href="#31">31</a></span><span class="s2">        The file location of the spreadsheet
+</span><span class="ln" id="32"><a style="outline: none; text-decoration:none; color:inherit" href="#32">32</a></span><span class="s2">    print_cols : bool, optional
+</span><span class="ln" id="33"><a style="outline: none; text-decoration:none; color:inherit" href="#33">33</a></span><span class="s2">        A flag used to print the columns to the console (default is
+</span><span class="ln" id="34"><a style="outline: none; text-decoration:none; color:inherit" href="#34">34</a></span><span class="s2">        False)
+</span><span class="ln" id="35"><a style="outline: none; text-decoration:none; color:inherit" href="#35">35</a></span><span class="s2">
+</span><span class="ln" id="36"><a style="outline: none; text-decoration:none; color:inherit" href="#36">36</a></span><span class="s2">    Returns
+</span><span class="ln" id="37"><a style="outline: none; text-decoration:none; color:inherit" href="#37">37</a></span><span class="s2">    -------
+</span><span class="ln" id="38"><a style="outline: none; text-decoration:none; color:inherit" href="#38">38</a></span><span class="s2">    list
+</span><span class="ln" id="39"><a style="outline: none; text-decoration:none; color:inherit" href="#39">39</a></span><span class="s2">        a list of strings used that are the header columns
+</span><span class="ln" id="40"><a style="outline: none; text-decoration:none; color:inherit" href="#40">40</a></span><span class="s2">    &#34;&#34;&#34;</span>
+<span class="ln" id="41"><a style="outline: none; text-decoration:none; color:inherit" href="#41">41</a></span>
+<span class="ln" id="42"><a style="outline: none; text-decoration:none; color:inherit" href="#42">42</a></span>    <span class="n">file_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_loc</span><span class="p">)</span>
+<span class="ln" id="43"><a style="outline: none; text-decoration:none; color:inherit" href="#43">43</a></span>    <span class="n">col_headers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="ln" id="44"><a style="outline: none; text-decoration:none; color:inherit" href="#44">44</a></span>
+<span class="ln" id="45"><a style="outline: none; text-decoration:none; color:inherit" href="#45">45</a></span>    <span class="k">if</span> <span class="n">print_cols</span><span class="p">:</span>
+<span class="ln" id="46"><a style="outline: none; text-decoration:none; color:inherit" href="#46">46</a></span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col_headers</span><span class="p">))</span>
+<span class="ln" id="47"><a style="outline: none; text-decoration:none; color:inherit" href="#47">47</a></span>
+<span class="ln" id="48"><a style="outline: none; text-decoration:none; color:inherit" href="#48">48</a></span>    <span class="k">return</span> <span class="n">col_headers</span>
+<span class="ln" id="49"><a style="outline: none; text-decoration:none; color:inherit" href="#49">49</a></span>
+<span class="ln" id="50"><a style="outline: none; text-decoration:none; color:inherit" href="#50">50</a></span>
+<span class="ln" id="51"><a style="outline: none; text-decoration:none; color:inherit" href="#51">51</a></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="ln" id="52"><a style="outline: none; text-decoration:none; color:inherit" href="#52">52</a></span>    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="ln" id="53"><a style="outline: none; text-decoration:none; color:inherit" href="#53">53</a></span>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+<span class="ln" id="54"><a style="outline: none; text-decoration:none; color:inherit" href="#54">54</a></span>        <span class="s1">&#39;input_file&#39;</span><span class="p">,</span>
+<span class="ln" id="55"><a style="outline: none; text-decoration:none; color:inherit" href="#55">55</a></span>        <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+<span class="ln" id="56"><a style="outline: none; text-decoration:none; color:inherit" href="#56">56</a></span>        <span class="n">help</span><span class="o">=</span><span class="s2">&#34;The spreadsheet file to pring the columns of&#34;</span>
+<span class="ln" id="57"><a style="outline: none; text-decoration:none; color:inherit" href="#57">57</a></span>    <span class="p">)</span>
+<span class="ln" id="58"><a style="outline: none; text-decoration:none; color:inherit" href="#58">58</a></span>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="ln" id="59"><a style="outline: none; text-decoration:none; color:inherit" href="#59">59</a></span>    <span class="n">get_spreadsheet_cols</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input_file</span><span class="p">,</span> <span class="n">print_cols</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ln" id="60"><a style="outline: none; text-decoration:none; color:inherit" href="#60">60</a></span>
+<span class="ln" id="61"><a style="outline: none; text-decoration:none; color:inherit" href="#61">61</a></span>
+<span class="ln" id="62"><a style="outline: none; text-decoration:none; color:inherit" href="#62">62</a></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+<span class="ln" id="63"><a style="outline: none; text-decoration:none; color:inherit" href="#63">63</a></span>    <span class="n">main</span><span class="p">()</span>
+</code></pre></div><h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="39">
+<li><strong>發展文檔</strong>: 原文後面有個文檔進展的五個階段:</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>No Documentation</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Some Documentation</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Complete Documentation</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Good Documentation</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Great Documentation
+感覺這也很適合講正在執筆寫的論文. 從No, some, complete, good, great. 先搞出完整的, 再到好, 再到很棒. 用這樣子來分類項目的成熟度, 十分不錯.</li>
+</ol>
+</li>
+</ul>
+<ol start="40">
+<li>
+<p>到此紀錄了由<a href="https://realpython.com/documenting-python-code/" target="_blank" rel="noopener noreferrer">Documenting Python Code: A Complete Guide</a>
+中, 節選的相關段落. 首先理解註解是為開發者而服務, 而文檔是為用戶而服務. 接著看了類與類方法, 包與模組, 腳本三種Python文件的文檔字符串寫法.</p>
+</li>
+<li>
+<p>非常好！今天是每日一篇文章的第九天. 今天這個技術文章很長, 一段一段讀, 改寫, 也刺激自己對這些技術概念的融會貫通, 感覺心中更踏實. 持續輸出! 共勉之！</p>
+</li>
+</ol>
+<p>2022.01.07.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
+</a>
+          <span class="float-end post-date">2022-01-06
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur007%E6%B8%85%E5%96%AE%E9%AB%94/">MUR007 清單體的四個角度
+</a>
+          <span class="float-end post-date">2022-01-05
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur006%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81%E5%B0%8B%E6%A0%B9/">MUR006 差分隱私尋根
+</a>
+          <span class="float-end post-date">2022-01-04
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur005%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E9%97%9C%E8%81%AF%E5%81%B5%E6%B8%AC%E8%A9%90%E6%AC%BA/">MUR005 合成數據如何幫助基於機器學習的偵測詐欺?
+</a>
+          <span class="float-end post-date">2022-01-03
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur004%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E4%BA%94%E5%80%8B%E8%A7%92%E5%BA%A6/">MUR004 知識管理的五個角度
+</a>
+          <span class="float-end post-date">2022-01-02
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/">MUR009 思辨註釋與文檔
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur007%E6%B8%85%E5%96%AE%E9%AB%94/">MUR007 清單體的四個角度
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur006%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81%E5%B0%8B%E6%A0%B9/">MUR006 差分隱私尋根
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur005%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E9%97%9C%E8%81%AF%E5%81%B5%E6%B8%AC%E8%A9%90%E6%AC%BA/">MUR005 合成數據如何幫助基於機器學習的偵測詐欺?
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E8%A9%90%E6%AC%BA%E5%81%B5%E6%B8%AC/" class="badge rounded post-taxonomy" title="詐欺偵測">
+            詐欺偵測
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%82%8F%E8%BC%AF%E6%B5%81/" class="badge rounded post-taxonomy" title="邏輯流">
+            邏輯流
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
