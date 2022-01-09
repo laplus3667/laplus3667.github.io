@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>educative 課程 on 紫式晦澀</title>
+    <link>https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/</link>
+    <description>Recent content in educative 課程 on 紫式晦澀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
+    <lastBuildDate>Sun, 09 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR011 思考Bash中的Globbing與Quoting</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/</link>
+      <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/</guid>
+      <description>思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來</description>
+    </item>
+    
+  </channel>
+</rss>

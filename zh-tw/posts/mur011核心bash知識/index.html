@@ -1,0 +1,623 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR011 思考Bash中的Globbing與Quoting - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR011 思考Bash中的Globbing與Quoting">
+<meta itemprop="description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來"><meta itemprop="datePublished" content="2022-01-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1242">
+<meta itemprop="keywords" content="Bash," /><meta property="og:title" content="MUR011 思考Bash中的Globbing與Quoting" />
+<meta property="og:description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-09T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR011 思考Bash中的Globbing與Quoting"/>
+<meta name="twitter:description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR011%20%e6%80%9d%e8%80%83Bash%e4%b8%ad%e7%9a%84Globbing%e8%88%87Quoting&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur011%25E6%25A0%25B8%25E5%25BF%2583bash%25E7%259F%25A5%25E8%25AD%2598%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur011%25E6%25A0%25B8%25E5%25BF%2583bash%25E7%259F%25A5%25E8%25AD%2598%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR011 思考Bash中的Globbing與Quoting</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR011 思考Bash中的Globbing與Quoting
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-08 19:00:00 -0500 EST。">
+    2022-01-09
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded-pill post-taxonomy">educative 課程</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded-pill post-taxonomy">Bash</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#bash是shell程序">Bash是shell程序</a></li>
+    <li><a href="#globbing與quoting">Globbing與Quoting</a></li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="思考bash中的globbing與quoting">思考Bash中的Globbing與Quoting<a class="anchor ms-1" href="#思考bash中的globbing與quoting"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/SyUO1xFnF.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第11天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來組織educative課程裡面關於Bash相關的知識.</p>
+</li>
+<li>
+<p>今天的素材主要來自<a href="https://www.educative.io/courses/master-the-bash-shell/3j8399P3M6M" target="_blank" rel="noopener noreferrer">educative 課程-Master the Bash Shell-Core Bash</a>
+中, 節選相關段落與紀錄個人理解與心得.</p>
+</li>
+</ol>
+<h2 id="bash是shell程序">Bash是shell程序<a class="anchor ms-1" href="#bash是shell程序"><i class="fas fa-link"></i></a></h2>
+<ol start="3">
+<li><strong>Bash是shell程序</strong>: shell 程序通常是一個「可執行二進製文件」. 它接受鍵入的命令，並且（一旦按return）將這些命令轉換為（最終）對操作系統 API 的系統調用。 (二進制: A binary is a file that contains the instructions for a program, ie it is a ‘program’ file, rather than a ‘text’ file, or an ‘application’ file (such as a Word document).)</li>
+</ol>
+<blockquote>
+<p>Shell程序: 告訴電腦做什麼. 把不同的程序glue在一起.</p>
+</blockquote>
+<ol start="4">
+<li>
+<p><strong>其他的shell程序</strong>: 市面上還有其他的shell程序, 包含<code>sh</code>, <code>ash</code>, <code>dash</code>, <code>ksh</code>, <code>tcsh</code>, <code>zsh</code>, <code>tclsh</code>. 只有看過<code>sh</code>.</p>
+</li>
+<li>
+<p><strong>Bash的歷史</strong>: Bash原名 ‘Bourne Again SHell’. 是‘Thompson Shell’ 的後代. 其兄弟有‘siblings’ (eg, <code>ksh</code>), ‘cousins’ (eg, <code>tcsh</code>), and ‘children’, (eg, <code>zsh</code>).</p>
+</li>
+</ol>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/SJk5DJt2Y.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="globbing與quoting">Globbing與Quoting<a class="anchor ms-1" href="#globbing與quoting"><i class="fas fa-link"></i></a></h2>
+<ol start="6">
+<li>
+<p><strong><code>*</code>指令的意思</strong>: shell轉換<code>*</code>轉換, 配對到「current working directory的所有檔案」.</p>
+</li>
+<li>
+<p><strong>正規表達式</strong>:正規表達式是用來matching字串的模式. 與globbing達到的matching檔案不一樣.</p>
+</li>
+<li>
+<p><strong>glob</strong>: 在電腦編程中, glob模式指定一組帶著通配符的檔案名字 In computer programming, glob patterns specify sets of filenames with wildcard characters.</p>
+</li>
+<li>
+<p><strong>例子: 看所有在工作目錄中的檔案</strong>:</p>
+</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>製造三個檔案<code>file1</code>, <code>file2</code>, <code>file3</code>.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>用<code>ls</code>看存在的檔案, match <code>*</code></li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>用<code>echo</code>印出檔案, match <code>*</code>.</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span>touch file1 file2 file3
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>ls *
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span><span class="nb">echo</span> *
+</code></pre></div><ol start="10">
+<li>
+<p><strong>Quoting</strong>:用單引號「<code>*</code>」與雙引號「<code>*</code>」會改變bash讀取內容的方式. 在變數環節會學到更多.</p>
+</li>
+<li>
+<p><strong>Globbing primitive</strong>:</p>
+</li>
+</ol>
+<ul>
+<li><code>*</code> - matches files in current working directory 工作目錄的檔案</li>
+<li><code>?</code> - matches any single character 單字元</li>
+<li><code>[abd]</code> - matches any character from a, b or d 特定字元</li>
+<li><code>[a-d]</code> - matches any character from a, b, c or d 範圍內字元</li>
+</ul>
+<ol start="12">
+<li><strong>實例: 配對檔案</strong> 找有1的, 有file數字的</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span>root@educative:~/glob# ls *1
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>file1
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>root@educative:~/glob# ls file<span class="o">[</span>a-z<span class="o">]</span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span>ls: cannot access <span class="s1">&#39;file[a-z]&#39;</span>: No such file or directory
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span>root@educative:~/glob# ls file<span class="o">[</span>0-9<span class="o">]</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6">6</a></span>file1  file2  file3
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7">7</a></span>root@educative:~/glob# ls file?
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8">8</a></span>file1  file2  file3
+</code></pre></div><ol start="13">
+<li><strong>Dotfiles</strong>: 造了也在<code>ls</code>, <code>ls*</code>看不到的檔案們. 這樣這些檔案不會被簡單改動</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span>root@educative:~/glob# touch .adotfile
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>root@educative:~/glob# mkdir .adotfolder
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>root@educative:~/glob# touch .adotfolder/file1 .adotfolder/.adotfile
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span>root@educative:~/glob# ls
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span>file1  file2  file3
+</code></pre></div><ol start="14">
+<li>
+<p><strong>單點<code>.</code>表示目前檔案夾</strong>: single dot folder <code>.</code> 表達目前在的檔案夾. <code>cd . </code>就會在原地不動</p>
+</li>
+<li>
+<p><strong>雙點<code>..</code>表示雙親檔案夾</strong>: double dot folder <code>..</code> 表達雙親檔案夾. <code>cd ..</code>會到上一層.</p>
+</li>
+</ol>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="16">
+<li>
+<p>到此學習了<a href="https://www.educative.io/courses/master-the-bash-shell/3j8399P3M6M" target="_blank" rel="noopener noreferrer">educative 課程-Master the Bash Shell-Core Bash</a>
+中前兩節的內容. 首先了解Bash是一種Shell 程序, 主要讓我們能與把不同的program一起合作. 接下來看了globbing, 關於<code>*</code>表達「目前工作目錄的所有檔案」有了基礎認識; 接著quoting則提到單引號雙引號, 會有不同的效果. 可惜還沒精力讀到variable的章節, 之後再來思考quoting的深刻用法.</p>
+</li>
+<li>
+<p>今天看了很不熟的主題-Bash編程, 知道的很少, 所以得慢慢前進. 接下來一年要主力投資工程技能, 增加工程能力去做更寬廣的研究. 實踐數學, 用最新科技, 創造新價值, 推動時代. 天天向上, 共勉之！</p>
+</li>
+</ol>
+<p>2022.01.09.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
+</a>
+          <span class="float-end post-date">2022-01-08
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/">MUR009 思辨註釋與文檔
+</a>
+          <span class="float-end post-date">2022-01-07
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
+</a>
+          <span class="float-end post-date">2022-01-06
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur007%E6%B8%85%E5%96%AE%E9%AB%94/">MUR007 清單體的四個角度
+</a>
+          <span class="float-end post-date">2022-01-05
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur006%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81%E5%B0%8B%E6%A0%B9/">MUR006 差分隱私尋根
+</a>
+          <span class="float-end post-date">2022-01-04
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/">MUR011 思考Bash中的Globbing與Quoting
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/">MUR009 思辨註釋與文檔
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur007%E6%B8%85%E5%96%AE%E9%AB%94/">MUR007 清單體的四個角度
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%BE%97%E5%88%B0%E8%81%BD%E6%9B%B8/" class="badge rounded post-taxonomy" title="得到聽書">
+            得到聽書
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E8%A9%90%E6%AC%BA%E5%81%B5%E6%B8%AC/" class="badge rounded post-taxonomy" title="詐欺偵測">
+            詐欺偵測
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%82%8F%E8%BC%AF%E6%B5%81/" class="badge rounded post-taxonomy" title="邏輯流">
+            邏輯流
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>

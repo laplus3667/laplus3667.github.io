@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR011 思考Bash中的Globbing與Quoting</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/</link>
+      <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/</guid>
+      <description>思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來</description>
+    </item>
+    
     <item>
       <title>MUR010 全新思維裡的三感三力</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/</link>
