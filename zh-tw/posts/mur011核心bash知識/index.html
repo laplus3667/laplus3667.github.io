@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MUR011 思考Bash中的Globbing與Quoting - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>MUR011思考Bash中的Globbing與Quoting - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="MUR011 思考Bash中的Globbing與Quoting">
+<meta name="description" content="" /><meta itemprop="name" content="MUR011思考Bash中的Globbing與Quoting">
 <meta itemprop="description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來"><meta itemprop="datePublished" content="2022-01-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-01-09T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1242">
-<meta itemprop="keywords" content="Bash," /><meta property="og:title" content="MUR011 思考Bash中的Globbing與Quoting" />
+<meta itemprop="keywords" content="Bash," /><meta property="og:title" content="MUR011思考Bash中的Globbing與Quoting" />
 <meta property="og:description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/" /><meta property="article:section" content="posts" />
@@ -22,7 +22,7 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MUR011 思考Bash中的Globbing與Quoting"/>
+<meta name="twitter:title" content="MUR011思考Bash中的Globbing與Quoting"/>
 <meta name="twitter:description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來"/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
@@ -45,7 +45,7 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=MUR011%20%e6%80%9d%e8%80%83Bash%e4%b8%ad%e7%9a%84Globbing%e8%88%87Quoting&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur011%25E6%25A0%25B8%25E5%25BF%2583bash%25E7%259F%25A5%25E8%25AD%2598%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR011%e6%80%9d%e8%80%83Bash%e4%b8%ad%e7%9a%84Globbing%e8%88%87Quoting&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur011%25E6%25A0%25B8%25E5%25BF%2583bash%25E7%259F%25A5%25E8%25AD%2598%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
@@ -217,7 +217,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR011 思考Bash中的Globbing與Quoting</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR011思考Bash中的Globbing與Quoting</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -245,7 +245,7 @@ Murasaki
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">MUR011 思考Bash中的Globbing與Quoting
+    <h1 class="card-title post-title">MUR011思考Bash中的Globbing與Quoting
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
@@ -405,6 +405,10 @@ Murasaki
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
     <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
 </a>
+  </div><div class="post-nav post-next">
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur012%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%96%BCchase%E7%9A%84%E9%87%91%E8%9E%8D%E6%87%89%E7%94%A8/">MUR012合成數據於Chase銀行的金融應用
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
   </div></div></div>
 </article><section class="related-posts row card component">
     <div class="card-header">
@@ -472,7 +476,10 @@ Murasaki
   </div>
   <div class="card-body">
     <ul class="post-list"><li>
-        <a href="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/">MUR011 思考Bash中的Globbing與Quoting
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur012%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%96%BCchase%E7%9A%84%E9%87%91%E8%9E%8D%E6%87%89%E7%94%A8/">MUR012合成數據於Chase銀行的金融應用
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/">MUR011思考Bash中的Globbing與Quoting
 </a>
       </li><li>
         <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
@@ -482,9 +489,6 @@ Murasaki
 </a>
       </li><li>
         <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
-</a>
-      </li><li>
-        <a href="https://laplus3667.github.io/zh-tw/posts/mur007%E6%B8%85%E5%96%AE%E9%AB%94/">MUR007 清單體的四個角度
 </a>
       </li></ul>
   </div>
@@ -499,10 +503,10 @@ Murasaki
             寫作
           </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
             可信任的AI
-          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
-            educative 課程
           </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
             合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
           </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
             得到課程
           </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
