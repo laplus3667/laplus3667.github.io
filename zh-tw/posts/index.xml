@@ -6,9 +6,18 @@
     <description>Recent content in Posts on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MUR012合成數據於Chase銀行的金融應用</title>
+      <title>MUR013 思考Obsidian外掛templater</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur013%E6%80%9D%E8%80%83obsidian%E5%A4%96%E6%8E%9Btemplater/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur013%E6%80%9D%E8%80%83obsidian%E5%A4%96%E6%8E%9Btemplater/</guid>
+      <description>思考Obsidian外掛templater 紫式晦澀每日一篇文章第13天 前言 今天是2022年第11天, 全年第2週, 一月的第二個週二. 今天狀態不</description>
+    </item>
+    
+    <item>
+      <title>MUR012 合成數據於Chase銀行的金融應用</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur012%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%96%BCchase%E7%9A%84%E9%87%91%E8%9E%8D%E6%87%89%E7%94%A8/</link>
       <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
       
@@ -17,7 +26,7 @@
     </item>
     
     <item>
-      <title>MUR011思考Bash中的Globbing與Quoting</title>
+      <title>MUR011 思考Bash中的Globbing與Quoting</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/</link>
       <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
       
