@@ -2,17 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://laplus3667.github.io/zh-tw/posts/mur013%E6%80%9D%E8%80%83obsidian%E5%A4%96%E6%8E%9Btemplater/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/tags/obsidian/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
+    <loc>https://laplus3667.github.io/zh-tw/posts/mur014%E5%BE%9E%E5%AD%B8%E7%BF%922do%E8%BB%9F%E9%AB%94%E5%8F%8D%E6%80%9D%E5%80%8B%E4%BA%BA%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <lastmod>2022-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/posts/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/series/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -23,6 +20,31 @@
                 hreflang="zh-tw"
                 href="https://laplus3667.github.io/zh-tw/series/"
                 />
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <lastmod>2022-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2022-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/</loc>
+    <lastmod>2022-01-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://laplus3667.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://laplus3667.github.io/zh-tw/"
+                />
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/posts/mur013%E6%80%9D%E8%80%83obsidian%E5%A4%96%E6%8E%9Btemplater/</loc>
+    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/tags/obsidian/</loc>
+    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/tags/</loc>
     <lastmod>2022-01-11T00:00:00+00:00</lastmod>
@@ -35,22 +57,6 @@
                 rel="alternate"
                 hreflang="zh-tw"
                 href="https://laplus3667.github.io/zh-tw/tags/"
-                />
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://laplus3667.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://laplus3667.github.io/zh-tw/"
                 />
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/categories/</loc>
