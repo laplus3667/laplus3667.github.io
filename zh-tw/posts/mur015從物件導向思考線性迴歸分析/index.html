@@ -1,0 +1,1001 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR015 從物件導向思考線性迴歸分析 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR015 從物件導向思考線性迴歸分析">
+<meta itemprop="description" content="從物件導向思考線性迴歸分析 紫式晦澀每日一篇文章第15天 前言 今天是2022年第14天, 全年第2週, 一月的第二個週四. 昨日生成自己的「元工作流」"><meta itemprop="datePublished" content="2022-01-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2551">
+<meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR015 從物件導向思考線性迴歸分析" />
+<meta property="og:description" content="從物件導向思考線性迴歸分析 紫式晦澀每日一篇文章第15天 前言 今天是2022年第14天, 全年第2週, 一月的第二個週四. 昨日生成自己的「元工作流」" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur015%E5%BE%9E%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E6%80%9D%E8%80%83%E7%B7%9A%E6%80%A7%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-13T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR015 從物件導向思考線性迴歸分析"/>
+<meta name="twitter:description" content="從物件導向思考線性迴歸分析 紫式晦澀每日一篇文章第15天 前言 今天是2022年第14天, 全年第2週, 一月的第二個週四. 昨日生成自己的「元工作流」"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR015%20%e5%be%9e%e7%89%a9%e4%bb%b6%e5%b0%8e%e5%90%91%e6%80%9d%e8%80%83%e7%b7%9a%e6%80%a7%e8%bf%b4%e6%ad%b8%e5%88%86%e6%9e%90&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur015%25E5%25BE%259E%25E7%2589%25A9%25E4%25BB%25B6%25E5%25B0%258E%25E5%2590%2591%25E6%2580%259D%25E8%2580%2583%25E7%25B7%259A%25E6%2580%25A7%25E8%25BF%25B4%25E6%25AD%25B8%25E5%2588%2586%25E6%259E%2590%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur015%25E5%25BE%259E%25E7%2589%25A9%25E4%25BB%25B6%25E5%25B0%258E%25E5%2590%2591%25E6%2580%259D%25E8%2580%2583%25E7%25B7%259A%25E6%2580%25A7%25E8%25BF%25B4%25E6%25AD%25B8%25E5%2588%2586%25E6%259E%2590%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR015 從物件導向思考線性迴歸分析</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR015 從物件導向思考線性迴歸分析
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-12 19:00:00 -0500 EST。">
+    2022-01-13
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded-pill post-taxonomy">物件導向編程</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded-pill post-taxonomy">編程思維</a><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded-pill post-taxonomy">Python</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#物件導向基礎-克隆的藍圖">物件導向基礎: 克隆的藍圖</a>
+      <ul>
+        <li><a href="#編程範式-從單純系統到複雜系統">編程範式: 從單純系統到複雜系統</a></li>
+        <li><a href="#物件-as-資料結構-類-as-藍圖">物件 as 資料結構; 類 as 藍圖</a></li>
+      </ul>
+    </li>
+    <li><a href="#物件導向python實踐-狀態-屬性-變數-行為-方法-函數">物件導向Python實踐: 狀態, 屬性, 變數; 行為, 方法, 函數.</a>
+      <ul>
+        <li><a href="#物件狀態行為-狀態-as-物件屬性-行為-as-物件方法">物件=狀態+行為; 狀態 as 物件屬性; 行為 as 物件方法</a></li>
+        <li><a href="#物件狀態行為-數學物件變數函數-編程物件屬性方法">物件=狀態+行為; 數學物件=變數+函數; 編程物件=屬性+方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#以物件導向理解線性迴歸模組-type-dir與help">以物件導向理解線性迴歸模組: <code>type()</code>, <code>dir()</code>與<code>help()</code></a>
+      <ul>
+        <li><a href="#用typelinearregression找到線性模型的藍圖狀態與行為的封裝">用<code>type(LinearRegression)</code>找到線性模型的藍圖(狀態與行為的封裝)</a></li>
+        <li><a href="#用dirlinearregression找到線性模型的狀態與行為">用<code>dir(LinearRegression)</code>找到線性模型的「狀態」與「行為」</a></li>
+        <li><a href="#用helplinearregression找到公用的屬性與方法">用<code>help(LinearRegression)</code>找到「公用」的屬性與方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="從物件導向思考線性迴歸分析">從物件導向思考線性迴歸分析<a class="anchor ms-1" href="#從物件導向思考線性迴歸分析"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://miro.medium.com/max/1200/1*N1-K-A43_98pYZ27fnupDA.jpeg" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第15天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第14天, 全年第2週, 一月的第二個週四. 昨日生成自己的「元工作流」以後, 感覺安排任務好很多, 可以更有精力去規劃任務!</p>
+</li>
+<li>
+<p>今天的素材主要來自<a href="https://app.datacamp.com/learn/courses/object-oriented-programming-in-python" target="_blank" rel="noopener noreferrer">Datacamp課程-Object-Oriented Programming in Python</a>
+ 結合之前的研究經驗. 目標是用物件導向編程的角度來重新思考線性回歸方法.</p>
+</li>
+</ol>
+<h2 id="物件導向基礎-克隆的藍圖">物件導向基礎: 克隆的藍圖<a class="anchor ms-1" href="#物件導向基礎-克隆的藍圖"><i class="fas fa-link"></i></a></h2>
+<h3 id="編程範式-從單純系統到複雜系統">編程範式: 從單純系統到複雜系統<a class="anchor ms-1" href="#編程範式-從單純系統到複雜系統"><i class="fas fa-link"></i></a></h3>
+<ol start="3">
+<li><strong>過程式編程</strong>: 我們那個年代一開始程式教育的編程模式.</li>
+</ol>
+<ul>
+<li>過程式程序設計（英語：Procedural programming），又稱過程化編程，一種編程典範，衍生自指令式編程，有時會被視為是同義語。</li>
+<li>主要要採取過程調用或函數調用的方式來進行流程控制。</li>
+</ul>
+<ol start="4">
+<li><strong>過程式編程的好處</strong>: 比較符合我們傳統的數學教育, 但對現代的Python編程就產生gap了.</li>
+</ol>
+<ul>
+<li>Code as a sequence of steps 代碼=一串動作</li>
+<li>Great for data analysis 適合資料分析</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rk8qV2Tnt.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="5">
+<li>
+<p><strong>物件導向編程</strong>: 在物件導向程式編程裡，電腦程式會被設計成彼此相關的物件。 面向對象程序設計可以看作一種在程序中包含各種獨立而又互相調用的對象的思想.</p>
+</li>
+<li>
+<p><strong>物件導向編程的好處</strong>: 我們這個時代的編程思維.</p>
+</li>
+</ol>
+<ul>
+<li>Code as interactions of objects 代碼=物件之間的互動</li>
+<li>Great for building frameworks and tools 建立框架與工具</li>
+<li>Maintainable and reusable code! 好維護, 好重複使用</li>
+</ul>
+<blockquote>
+<p>單純系統: 過程式編程
+複雜系統: 物件導向編程</p>
+</blockquote>
+<h3 id="物件-as-資料結構-類-as-藍圖">物件 as 資料結構; 類 as 藍圖<a class="anchor ms-1" href="#物件-as-資料結構-類-as-藍圖"><i class="fas fa-link"></i></a></h3>
+<ol start="7">
+<li>
+<p><strong>原則: 封裝 (Encapsulation)</strong>: bundling data with code operating on it. 將「資料」與「作用他的代碼」捆綁在一起.</p>
+</li>
+<li>
+<p><strong>物件(Object)</strong>: 定義物件, 思考其會有的狀態, 以及他需要的行為.</p>
+</li>
+</ol>
+<blockquote>
+<p>物件 = 狀態 + 行為
+Object = State + Behavior</p>
+</blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/vVr9i8THPCXB8GqvTnnNHF-3t4oxza2ssYlJuSPuJso.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="9">
+<li><strong>類(Class)</strong>: 物件可能的「狀態」與「行為」的藍圖. Blueprint for objects outlining possible states and behaviors.</li>
+</ol>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/6pWRq6OhyorcUeai-p6L8okjKLHW1ARsgW7eE11vuKQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="物件導向python實踐-狀態-屬性-變數-行為-方法-函數">物件導向Python實踐: 狀態, 屬性, 變數; 行為, 方法, 函數.<a class="anchor ms-1" href="#物件導向python實踐-狀態-屬性-變數-行為-方法-函數"><i class="fas fa-link"></i></a></h2>
+<ol start="10">
+<li><strong>Python中的物件</strong>: 找到任何看到的Python code背後的藍圖.</li>
+</ol>
+<ul>
+<li>Python中什麼都是「物件」. Everything in Python is an object.</li>
+<li>所有物件背後都有「類」. Every object has a class.</li>
+<li>用內建函數<code>type()</code>可以找到「物件背後的類」. Use type() to find the class</li>
+</ul>
+<h3 id="物件狀態行為-狀態-as-物件屬性-行為-as-物件方法">物件=狀態+行為; 狀態 as 物件屬性; 行為 as 物件方法<a class="anchor ms-1" href="#物件狀態行為-狀態-as-物件屬性-行為-as-物件方法"><i class="fas fa-link"></i></a></h3>
+<ol start="11">
+<li><strong>召喚Python物件資訊</strong>: 利用<code>obj.</code>可以讀取「屬性(attributes)」與「方法 (methods)」.</li>
+</ol>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/UHru6bOyt8MxCoLeV1tgnwOjbRMlsOIIu7Z61Ez1hDc.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="物件狀態行為-數學物件變數函數-編程物件屬性方法">物件=狀態+行為; 數學物件=變數+函數; 編程物件=屬性+方法<a class="anchor ms-1" href="#物件狀態行為-數學物件變數函數-編程物件屬性方法"><i class="fas fa-link"></i></a></h3>
+<ol start="12">
+<li><strong>類比物件導向編程與數學</strong>: 屬性對應變數; 方法對應函數</li>
+</ol>
+<ul>
+<li>attribute 對應 variables 對應 <code>obj.my_attribute</code></li>
+<li>method 對應 function() 對應 <code>obj.my_method()</code></li>
+<li>用內建函數<code>dir()</code>查詢所有的屬性與方法.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/dR0q9HJo3Alsmg-vLQYvSyohe394Y-ivxFeJ_8sYLTk.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>練習使用<code>type()</code>與<code>dir()</code></p>
+</blockquote>
+<h2 id="以物件導向理解線性迴歸模組-type-dir與help">以物件導向理解線性迴歸模組: type(), dir()與help()<a class="anchor ms-1" href="#以物件導向理解線性迴歸模組-type-dir與help"><i class="fas fa-link"></i></a></h2>
+<ol start="13">
+<li><strong>實踐物件導向思維於<code>LinearRegression</code>模組</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="c1"># Program 01: Run linear regression.</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</code></pre></div><h3 id="用typelinearregression找到線性模型的藍圖狀態與行為的封裝">用type(LinearRegression)找到線性模型的藍圖(狀態與行為的封裝)<a class="anchor ms-1" href="#用typelinearregression找到線性模型的藍圖狀態與行為的封裝"><i class="fas fa-link"></i></a></h3>
+<ol start="14">
+<li><strong>執行<code>type(LinearRegression)</code></strong>: 會跑出很簡潔的<code>abc.ABCMeta</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span>type(LinearRegression)
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>abc.ABCMeta
+</code></pre></div><h3 id="用dirlinearregression找到線性模型的狀態與行為">用dir(LinearRegression)找到線性模型的「狀態」與「行為」<a class="anchor ms-1" href="#用dirlinearregression找到線性模型的狀態與行為"><i class="fas fa-link"></i></a></h3>
+<ol start="15">
+<li><strong>執行<code>dir(LinearRegression)</code></strong>: 會跑出一大串類方法(class methods)! 其中有私有方法(Private method)也有公用方法(Public method).</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span>dir(LinearRegression)
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span>[&#39;__abstractmethods__&#39;,
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span> &#39;__class__&#39;,
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span> &#39;__delattr__&#39;,
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span> &#39;__dict__&#39;,
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span> &#39;__dir__&#39;,
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span> &#39;__doc__&#39;,
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span> &#39;__eq__&#39;,
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span> &#39;__format__&#39;,
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span> &#39;__ge__&#39;,
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span> &#39;__getattribute__&#39;,
+<span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span> &#39;__getstate__&#39;,
+<span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span> &#39;__gt__&#39;,
+<span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span> &#39;__hash__&#39;,
+<span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span> &#39;__init__&#39;,
+<span class="ln" id="16"><a style="outline: none; text-decoration:none; color:inherit" href="#16">16</a></span> &#39;__init_subclass__&#39;,
+<span class="ln" id="17"><a style="outline: none; text-decoration:none; color:inherit" href="#17">17</a></span> &#39;__le__&#39;,
+<span class="ln" id="18"><a style="outline: none; text-decoration:none; color:inherit" href="#18">18</a></span> &#39;__lt__&#39;,
+<span class="ln" id="19"><a style="outline: none; text-decoration:none; color:inherit" href="#19">19</a></span> &#39;__module__&#39;,
+<span class="ln" id="20"><a style="outline: none; text-decoration:none; color:inherit" href="#20">20</a></span> &#39;__ne__&#39;,
+<span class="ln" id="21"><a style="outline: none; text-decoration:none; color:inherit" href="#21">21</a></span> &#39;__new__&#39;,
+<span class="ln" id="22"><a style="outline: none; text-decoration:none; color:inherit" href="#22">22</a></span> &#39;__reduce__&#39;,
+<span class="ln" id="23"><a style="outline: none; text-decoration:none; color:inherit" href="#23">23</a></span> &#39;__reduce_ex__&#39;,
+<span class="ln" id="24"><a style="outline: none; text-decoration:none; color:inherit" href="#24">24</a></span> &#39;__repr__&#39;,
+<span class="ln" id="25"><a style="outline: none; text-decoration:none; color:inherit" href="#25">25</a></span> &#39;__setattr__&#39;,
+<span class="ln" id="26"><a style="outline: none; text-decoration:none; color:inherit" href="#26">26</a></span> &#39;__setstate__&#39;,
+<span class="ln" id="27"><a style="outline: none; text-decoration:none; color:inherit" href="#27">27</a></span> &#39;__sizeof__&#39;,
+<span class="ln" id="28"><a style="outline: none; text-decoration:none; color:inherit" href="#28">28</a></span> &#39;__str__&#39;,
+<span class="ln" id="29"><a style="outline: none; text-decoration:none; color:inherit" href="#29">29</a></span> &#39;__subclasshook__&#39;,
+<span class="ln" id="30"><a style="outline: none; text-decoration:none; color:inherit" href="#30">30</a></span> &#39;__weakref__&#39;,
+<span class="ln" id="31"><a style="outline: none; text-decoration:none; color:inherit" href="#31">31</a></span> &#39;_abc_impl&#39;,
+<span class="ln" id="32"><a style="outline: none; text-decoration:none; color:inherit" href="#32">32</a></span> &#39;_check_feature_names&#39;,
+<span class="ln" id="33"><a style="outline: none; text-decoration:none; color:inherit" href="#33">33</a></span> &#39;_check_n_features&#39;,
+<span class="ln" id="34"><a style="outline: none; text-decoration:none; color:inherit" href="#34">34</a></span> &#39;_decision_function&#39;,
+<span class="ln" id="35"><a style="outline: none; text-decoration:none; color:inherit" href="#35">35</a></span> &#39;_estimator_type&#39;,
+<span class="ln" id="36"><a style="outline: none; text-decoration:none; color:inherit" href="#36">36</a></span> &#39;_get_param_names&#39;,
+<span class="ln" id="37"><a style="outline: none; text-decoration:none; color:inherit" href="#37">37</a></span> &#39;_get_tags&#39;,
+<span class="ln" id="38"><a style="outline: none; text-decoration:none; color:inherit" href="#38">38</a></span> &#39;_more_tags&#39;,
+<span class="ln" id="39"><a style="outline: none; text-decoration:none; color:inherit" href="#39">39</a></span> &#39;_preprocess_data&#39;,
+<span class="ln" id="40"><a style="outline: none; text-decoration:none; color:inherit" href="#40">40</a></span> &#39;_repr_html_&#39;,
+<span class="ln" id="41"><a style="outline: none; text-decoration:none; color:inherit" href="#41">41</a></span> &#39;_repr_html_inner&#39;,
+<span class="ln" id="42"><a style="outline: none; text-decoration:none; color:inherit" href="#42">42</a></span> &#39;_repr_mimebundle_&#39;,
+<span class="ln" id="43"><a style="outline: none; text-decoration:none; color:inherit" href="#43">43</a></span> &#39;_set_intercept&#39;,
+<span class="ln" id="44"><a style="outline: none; text-decoration:none; color:inherit" href="#44">44</a></span> &#39;_validate_data&#39;,
+<span class="ln" id="45"><a style="outline: none; text-decoration:none; color:inherit" href="#45">45</a></span> &#39;fit&#39;,
+<span class="ln" id="46"><a style="outline: none; text-decoration:none; color:inherit" href="#46">46</a></span> &#39;get_params&#39;,
+<span class="ln" id="47"><a style="outline: none; text-decoration:none; color:inherit" href="#47">47</a></span> &#39;predict&#39;,
+<span class="ln" id="48"><a style="outline: none; text-decoration:none; color:inherit" href="#48">48</a></span> &#39;score&#39;,
+<span class="ln" id="49"><a style="outline: none; text-decoration:none; color:inherit" href="#49">49</a></span> &#39;set_params&#39;]
+</code></pre></div><h3 id="用helplinearregression找到公用的屬性與方法">用help(LinearRegression)找到「公用」的屬性與方法<a class="anchor ms-1" href="#用helplinearregression找到公用的屬性與方法"><i class="fas fa-link"></i></a></h3>
+<p><strong>公用方法(Public Method)</strong>: 注意沒加底線的那些方法, 就是我們讀官方指南會先出現的, 給「用戶」所使用的方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span> &#39;fit&#39;,
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span> &#39;get_params&#39;,
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span> &#39;predict&#39;,
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span> &#39;score&#39;,
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span> &#39;set_params&#39;
+</code></pre></div><p>這些與官方API解釋的方法一致:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/07kT_U8glY1TPnkc-qMaFFD9J88_RZ3NXVcnU3afyQQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="16">
+<li><strong>執行help(LinearRegression)</strong>: 會出現詳細的文檔, 對公用的屬性與方法做詳細解釋</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">  1</a></span><span class="n">Help</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">class</span><span class="w"> </span><span class="n">LinearRegression</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">sklearn</span><span class="p">.</span><span class="n">linear_model</span><span class="p">.</span><span class="n">_base</span><span class="p">:</span><span class="w">
+</span><span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">  2</a></span><span class="w">
+</span><span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">  3</a></span><span class="w"></span><span class="n">class</span><span class="w"> </span><span class="nf">LinearRegression</span><span class="p">(</span><span class="n">sklearn</span><span class="p">.</span><span class="n">base</span><span class="p">.</span><span class="n">MultiOutputMixin</span><span class="p">,</span><span class="w"> </span><span class="n">sklearn</span><span class="p">.</span><span class="n">base</span><span class="p">.</span><span class="n">RegressorMixin</span><span class="p">,</span><span class="w"> </span><span class="n">LinearModel</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">  4</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="nf">LinearRegression</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">fit_intercept</span><span class="o">=</span><span class="no">True</span><span class="p">,</span><span class="w"> </span><span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;deprecated&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">copy_X</span><span class="o">=</span><span class="no">True</span><span class="p">,</span><span class="w"> </span><span class="n">n_jobs</span><span class="o">=</span><span class="n">None</span><span class="p">,</span><span class="w"> </span><span class="n">positive</span><span class="o">=</span><span class="no">False</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">  5</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6">  6</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Ordinary</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="n">squares</span><span class="w"> </span><span class="n">Linear</span><span class="w"> </span><span class="n">Regression</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7">  7</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8">  8</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">LinearRegression</span><span class="w"> </span><span class="n">fits</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">coefficients</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">w1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">wp</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9">  9</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="k">to</span><span class="w"> </span><span class="n">minimize</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">residual</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">squares</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">observed</span><span class="w"> </span><span class="n">targets</span><span class="w"> </span><span class="k">in</span><span class="w">
+</span><span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10"> 10</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">the</span><span class="w"> </span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">targets</span><span class="w"> </span><span class="n">predicted</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">approximation</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11"> 11</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12"> 12</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Parameters</span><span class="w">
+</span><span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13"> 13</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">--------</span><span class="c1">--
+</span><span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14"> 14</a></span><span class="c1"> |  fit_intercept : bool, default=True
+</span><span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15"> 15</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Whether</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">intercept</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="kt">set</span><span class="w">
+</span><span class="ln" id="16"><a style="outline: none; text-decoration:none; color:inherit" href="#16"> 16</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">to</span><span class="w"> </span><span class="no">False</span><span class="p">,</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">intercept</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">calculations</span><span class="w">
+</span><span class="ln" id="17"><a style="outline: none; text-decoration:none; color:inherit" href="#17"> 17</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">centered</span><span class="p">).</span><span class="w">
+</span><span class="ln" id="18"><a style="outline: none; text-decoration:none; color:inherit" href="#18"> 18</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="19"><a style="outline: none; text-decoration:none; color:inherit" href="#19"> 19</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">normalize</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">=</span><span class="no">False</span><span class="w">
+</span><span class="ln" id="20"><a style="outline: none; text-decoration:none; color:inherit" href="#20"> 20</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">This</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">ignored</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="o">``</span><span class="n">fit_intercept</span><span class="o">``</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="no">False</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="21"><a style="outline: none; text-decoration:none; color:inherit" href="#21"> 21</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">If</span><span class="w"> </span><span class="no">True</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">regressors</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">normalized</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="n">regression</span><span class="w"> </span><span class="k">by</span><span class="w">
+</span><span class="ln" id="22"><a style="outline: none; text-decoration:none; color:inherit" href="#22"> 22</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">subtracting</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">dividing</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">l2</span><span class="o">-</span><span class="n">norm</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="23"><a style="outline: none; text-decoration:none; color:inherit" href="#23"> 23</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">wish</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">standardize</span><span class="p">,</span><span class="w"> </span><span class="n">please</span><span class="w"> </span><span class="k">use</span><span class="w">
+</span><span class="ln" id="24"><a style="outline: none; text-decoration:none; color:inherit" href="#24"> 24</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="p">:</span><span class="n">class</span><span class="p">:</span><span class="o">`~</span><span class="n">sklearn</span><span class="p">.</span><span class="n">preprocessing</span><span class="p">.</span><span class="n">StandardScaler</span><span class="o">`</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="n">calling</span><span class="w"> </span><span class="o">``</span><span class="n">fit</span><span class="o">``</span><span class="w">
+</span><span class="ln" id="25"><a style="outline: none; text-decoration:none; color:inherit" href="#25"> 25</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">on</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">estimator</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="o">``</span><span class="n">normalize</span><span class="o">=</span><span class="no">False</span><span class="o">``</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="26"><a style="outline: none; text-decoration:none; color:inherit" href="#26"> 26</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="27"><a style="outline: none; text-decoration:none; color:inherit" href="#27"> 27</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="p">..</span><span class="w"> </span><span class="n">deprecated</span><span class="p">::</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="w">
+</span><span class="ln" id="28"><a style="outline: none; text-decoration:none; color:inherit" href="#28"> 28</a></span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="o">`</span><span class="n">normalize</span><span class="o">`</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">deprecated</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w">
+</span><span class="ln" id="29"><a style="outline: none; text-decoration:none; color:inherit" href="#29"> 29</a></span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="n">removed</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="30"><a style="outline: none; text-decoration:none; color:inherit" href="#30"> 30</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="31"><a style="outline: none; text-decoration:none; color:inherit" href="#31"> 31</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">copy_X</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">=</span><span class="no">True</span><span class="w">
+</span><span class="ln" id="32"><a style="outline: none; text-decoration:none; color:inherit" href="#32"> 32</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">If</span><span class="w"> </span><span class="no">True</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">copied</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="p">,</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">overwritten</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="33"><a style="outline: none; text-decoration:none; color:inherit" href="#33"> 33</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="34"><a style="outline: none; text-decoration:none; color:inherit" href="#34"> 34</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">n_jobs</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">=</span><span class="n">None</span><span class="w">
+</span><span class="ln" id="35"><a style="outline: none; text-decoration:none; color:inherit" href="#35"> 35</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">The</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">jobs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">computation</span><span class="p">.</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">provide</span><span class="w">
+</span><span class="ln" id="36"><a style="outline: none; text-decoration:none; color:inherit" href="#36"> 36</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">speedup</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">sufficiently</span><span class="w"> </span><span class="n">large</span><span class="w"> </span><span class="n">problems</span><span class="p">,</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">firstly</span><span class="w">
+</span><span class="ln" id="37"><a style="outline: none; text-decoration:none; color:inherit" href="#37"> 37</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="o">`</span><span class="n">n_targets</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="o">`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">secondly</span><span class="w"> </span><span class="o">`</span><span class="n">X</span><span class="o">`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">sparse</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">`</span><span class="n">positive</span><span class="o">`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">set</span><span class="w">
+</span><span class="ln" id="38"><a style="outline: none; text-decoration:none; color:inherit" href="#38"> 38</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">to</span><span class="w"> </span><span class="o">`</span><span class="no">True</span><span class="o">`</span><span class="p">.</span><span class="w"> </span><span class="o">``</span><span class="n">None</span><span class="o">``</span><span class="w"> </span><span class="n">means</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">unless</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="w">
+</span><span class="ln" id="39"><a style="outline: none; text-decoration:none; color:inherit" href="#39"> 39</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="p">:</span><span class="n">obj</span><span class="p">:</span><span class="o">`</span><span class="n">joblib</span><span class="p">.</span><span class="n">parallel_backend</span><span class="o">`</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="w"> </span><span class="o">``-</span><span class="mi">1</span><span class="o">``</span><span class="w"> </span><span class="n">means</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="k">all</span><span class="w">
+</span><span class="ln" id="40"><a style="outline: none; text-decoration:none; color:inherit" href="#40"> 40</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">processors</span><span class="p">.</span><span class="w"> </span><span class="n">See</span><span class="w"> </span><span class="p">:</span><span class="n">term</span><span class="p">:</span><span class="o">`</span><span class="n">Glossary</span><span class="w"> </span><span class="o">&lt;</span><span class="n">n_jobs</span><span class="o">&gt;`</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="41"><a style="outline: none; text-decoration:none; color:inherit" href="#41"> 41</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="42"><a style="outline: none; text-decoration:none; color:inherit" href="#42"> 42</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">positive</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">=</span><span class="no">False</span><span class="w">
+</span><span class="ln" id="43"><a style="outline: none; text-decoration:none; color:inherit" href="#43"> 43</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">When</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="o">``</span><span class="no">True</span><span class="o">``</span><span class="p">,</span><span class="w"> </span><span class="n">forces</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">coefficients</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">positive</span><span class="p">.</span><span class="w"> </span><span class="n">This</span><span class="w">
+</span><span class="ln" id="44"><a style="outline: none; text-decoration:none; color:inherit" href="#44"> 44</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">option</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">supported</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">dense</span><span class="w"> </span><span class="n">arrays</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="45"><a style="outline: none; text-decoration:none; color:inherit" href="#45"> 45</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="46"><a style="outline: none; text-decoration:none; color:inherit" href="#46"> 46</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="p">..</span><span class="w"> </span><span class="n">versionadded</span><span class="p">::</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">24</span><span class="w">
+</span><span class="ln" id="47"><a style="outline: none; text-decoration:none; color:inherit" href="#47"> 47</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="48"><a style="outline: none; text-decoration:none; color:inherit" href="#48"> 48</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Attributes</span><span class="w">
+</span><span class="ln" id="49"><a style="outline: none; text-decoration:none; color:inherit" href="#49"> 49</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">--------</span><span class="c1">--
+</span><span class="ln" id="50"><a style="outline: none; text-decoration:none; color:inherit" href="#50"> 50</a></span><span class="c1"> |  coef_ : array of shape (n_features, ) or (n_targets, n_features)
+</span><span class="ln" id="51"><a style="outline: none; text-decoration:none; color:inherit" href="#51"> 51</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Estimated</span><span class="w"> </span><span class="n">coefficients</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">regression</span><span class="w"> </span><span class="n">problem</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="52"><a style="outline: none; text-decoration:none; color:inherit" href="#52"> 52</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">If</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">targets</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span><span class="n">during</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">fit</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="mi">2</span><span class="n">D</span><span class="p">),</span><span class="w"> </span><span class="n">this</span><span class="w">
+</span><span class="ln" id="53"><a style="outline: none; text-decoration:none; color:inherit" href="#53"> 53</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mi">2</span><span class="n">D</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="nf">shape</span><span class="w"> </span><span class="p">(</span><span class="n">n_targets</span><span class="p">,</span><span class="w"> </span><span class="n">n_features</span><span class="p">),</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">only</span><span class="w">
+</span><span class="ln" id="54"><a style="outline: none; text-decoration:none; color:inherit" href="#54"> 54</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">one</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">passed</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mi">1</span><span class="n">D</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="n">n_features</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="55"><a style="outline: none; text-decoration:none; color:inherit" href="#55"> 55</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="56"><a style="outline: none; text-decoration:none; color:inherit" href="#56"> 56</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">rank_</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">int</span><span class="w">
+</span><span class="ln" id="57"><a style="outline: none; text-decoration:none; color:inherit" href="#57"> 57</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Rank</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="o">`</span><span class="n">X</span><span class="o">`</span><span class="p">.</span><span class="w"> </span><span class="n">Only</span><span class="w"> </span><span class="n">available</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="o">`</span><span class="n">X</span><span class="o">`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">dense</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="58"><a style="outline: none; text-decoration:none; color:inherit" href="#58"> 58</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="59"><a style="outline: none; text-decoration:none; color:inherit" href="#59"> 59</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">singular_</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="nf">shape</span><span class="w"> </span><span class="p">(</span><span class="nf">min</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">),)</span><span class="w">
+</span><span class="ln" id="60"><a style="outline: none; text-decoration:none; color:inherit" href="#60"> 60</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Singular</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="o">`</span><span class="n">X</span><span class="o">`</span><span class="p">.</span><span class="w"> </span><span class="n">Only</span><span class="w"> </span><span class="n">available</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="o">`</span><span class="n">X</span><span class="o">`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">dense</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="61"><a style="outline: none; text-decoration:none; color:inherit" href="#61"> 61</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="62"><a style="outline: none; text-decoration:none; color:inherit" href="#62"> 62</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">intercept_</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="nf">shape</span><span class="w"> </span><span class="p">(</span><span class="n">n_targets</span><span class="p">,)</span><span class="w">
+</span><span class="ln" id="63"><a style="outline: none; text-decoration:none; color:inherit" href="#63"> 63</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Independent</span><span class="w"> </span><span class="n">term</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="w"> </span><span class="kt">Set</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="k">if</span><span class="w">
+</span><span class="ln" id="64"><a style="outline: none; text-decoration:none; color:inherit" href="#64"> 64</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="o">`</span><span class="n">fit_intercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">False</span><span class="o">`</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="65"><a style="outline: none; text-decoration:none; color:inherit" href="#65"> 65</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="66"><a style="outline: none; text-decoration:none; color:inherit" href="#66"> 66</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">n_features_in_</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">int</span><span class="w">
+</span><span class="ln" id="67"><a style="outline: none; text-decoration:none; color:inherit" href="#67"> 67</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="n">seen</span><span class="w"> </span><span class="n">during</span><span class="w"> </span><span class="p">:</span><span class="n">term</span><span class="p">:</span><span class="o">`</span><span class="n">fit</span><span class="o">`</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="68"><a style="outline: none; text-decoration:none; color:inherit" href="#68"> 68</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="69"><a style="outline: none; text-decoration:none; color:inherit" href="#69"> 69</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="p">..</span><span class="w"> </span><span class="n">versionadded</span><span class="p">::</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">24</span><span class="w">
+</span><span class="ln" id="70"><a style="outline: none; text-decoration:none; color:inherit" href="#70"> 70</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="71"><a style="outline: none; text-decoration:none; color:inherit" href="#71"> 71</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">feature_names_in_</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ndarray</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="nf">shape</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">n_features_in_</span><span class="o">`</span><span class="p">,)</span><span class="w">
+</span><span class="ln" id="72"><a style="outline: none; text-decoration:none; color:inherit" href="#72"> 72</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Names</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="n">seen</span><span class="w"> </span><span class="n">during</span><span class="w"> </span><span class="p">:</span><span class="n">term</span><span class="p">:</span><span class="o">`</span><span class="n">fit</span><span class="o">`</span><span class="p">.</span><span class="w"> </span><span class="n">Defined</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="o">`</span><span class="n">X</span><span class="o">`</span><span class="w">
+</span><span class="ln" id="73"><a style="outline: none; text-decoration:none; color:inherit" href="#73"> 73</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">has</span><span class="w"> </span><span class="n">feature</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">strings</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="74"><a style="outline: none; text-decoration:none; color:inherit" href="#74"> 74</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="75"><a style="outline: none; text-decoration:none; color:inherit" href="#75"> 75</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="p">..</span><span class="w"> </span><span class="n">versionadded</span><span class="p">::</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="w">
+</span><span class="ln" id="76"><a style="outline: none; text-decoration:none; color:inherit" href="#76"> 76</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="77"><a style="outline: none; text-decoration:none; color:inherit" href="#77"> 77</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">See</span><span class="w"> </span><span class="n">Also</span><span class="w">
+</span><span class="ln" id="78"><a style="outline: none; text-decoration:none; color:inherit" href="#78"> 78</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">------</span><span class="c1">--
+</span><span class="ln" id="79"><a style="outline: none; text-decoration:none; color:inherit" href="#79"> 79</a></span><span class="c1"> |  Ridge : Ridge regression addresses some of the
+</span><span class="ln" id="80"><a style="outline: none; text-decoration:none; color:inherit" href="#80"> 80</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">problems</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Ordinary</span><span class="w"> </span><span class="n">Least</span><span class="w"> </span><span class="n">Squares</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">imposing</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">penalty</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">the</span><span class="w">
+</span><span class="ln" id="81"><a style="outline: none; text-decoration:none; color:inherit" href="#81"> 81</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">coefficients</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">l2</span><span class="w"> </span><span class="n">regularization</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="82"><a style="outline: none; text-decoration:none; color:inherit" href="#82"> 82</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Lasso</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">Lasso</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">estimates</span><span class="w">
+</span><span class="ln" id="83"><a style="outline: none; text-decoration:none; color:inherit" href="#83"> 83</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">sparse</span><span class="w"> </span><span class="n">coefficients</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">l1</span><span class="w"> </span><span class="n">regularization</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="84"><a style="outline: none; text-decoration:none; color:inherit" href="#84"> 84</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">ElasticNet</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Elastic</span><span class="o">-</span><span class="n">Net</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">regression</span><span class="w">
+</span><span class="ln" id="85"><a style="outline: none; text-decoration:none; color:inherit" href="#85"> 85</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">model</span><span class="w"> </span><span class="n">trained</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">both</span><span class="w"> </span><span class="n">l1</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">l2</span><span class="w"> </span><span class="o">-</span><span class="n">norm</span><span class="w"> </span><span class="n">regularization</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w">
+</span><span class="ln" id="86"><a style="outline: none; text-decoration:none; color:inherit" href="#86"> 86</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">coefficients</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="87"><a style="outline: none; text-decoration:none; color:inherit" href="#87"> 87</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="88"><a style="outline: none; text-decoration:none; color:inherit" href="#88"> 88</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Notes</span><span class="w">
+</span><span class="ln" id="89"><a style="outline: none; text-decoration:none; color:inherit" href="#89"> 89</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">---</span><span class="c1">--
+</span><span class="ln" id="90"><a style="outline: none; text-decoration:none; color:inherit" href="#90"> 90</a></span><span class="c1"> |  From the implementation point of view, this is just plain Ordinary
+</span><span class="ln" id="91"><a style="outline: none; text-decoration:none; color:inherit" href="#91"> 91</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Least</span><span class="w"> </span><span class="nf">Squares</span><span class="w"> </span><span class="p">(</span><span class="n">scipy</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">lstsq</span><span class="p">)</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">Non</span><span class="w"> </span><span class="n">Negative</span><span class="w"> </span><span class="n">Least</span><span class="w"> </span><span class="n">Squares</span><span class="w">
+</span><span class="ln" id="92"><a style="outline: none; text-decoration:none; color:inherit" href="#92"> 92</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="p">(</span><span class="n">scipy</span><span class="p">.</span><span class="k">optimize</span><span class="p">.</span><span class="n">nnls</span><span class="p">)</span><span class="w"> </span><span class="n">wrapped</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">predictor</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="93"><a style="outline: none; text-decoration:none; color:inherit" href="#93"> 93</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="94"><a style="outline: none; text-decoration:none; color:inherit" href="#94"> 94</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Examples</span><span class="w">
+</span><span class="ln" id="95"><a style="outline: none; text-decoration:none; color:inherit" href="#95"> 95</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">------</span><span class="c1">--
+</span><span class="ln" id="96"><a style="outline: none; text-decoration:none; color:inherit" href="#96"> 96</a></span><span class="c1"> |  &gt;&gt;&gt; import numpy as np
+</span><span class="ln" id="97"><a style="outline: none; text-decoration:none; color:inherit" href="#97"> 97</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sklearn</span><span class="p">.</span><span class="n">linear_model</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">LinearRegression</span><span class="w">
+</span><span class="ln" id="98"><a style="outline: none; text-decoration:none; color:inherit" href="#98"> 98</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]])</span><span class="w">
+</span><span class="ln" id="99"><a style="outline: none; text-decoration:none; color:inherit" href="#99"> 99</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="c1"># y = 1 * x_0 + 2 * x_1 + 3
+</span><span class="ln" id="100"><a style="outline: none; text-decoration:none; color:inherit" href="#100">100</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="ln" id="101"><a style="outline: none; text-decoration:none; color:inherit" href="#101">101</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">LinearRegression</span><span class="p">().</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="102"><a style="outline: none; text-decoration:none; color:inherit" href="#102">102</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">reg</span><span class="p">.</span><span class="nf">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="103"><a style="outline: none; text-decoration:none; color:inherit" href="#103">103</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="w">
+</span><span class="ln" id="104"><a style="outline: none; text-decoration:none; color:inherit" href="#104">104</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">reg</span><span class="p">.</span><span class="n">coef_</span><span class="w">
+</span><span class="ln" id="105"><a style="outline: none; text-decoration:none; color:inherit" href="#105">105</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">.,</span><span class="w"> </span><span class="mi">2</span><span class="p">.])</span><span class="w">
+</span><span class="ln" id="106"><a style="outline: none; text-decoration:none; color:inherit" href="#106">106</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">reg</span><span class="p">.</span><span class="n">intercept_</span><span class="w">
+</span><span class="ln" id="107"><a style="outline: none; text-decoration:none; color:inherit" href="#107">107</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="p">...</span><span class="w">
+</span><span class="ln" id="108"><a style="outline: none; text-decoration:none; color:inherit" href="#108">108</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">reg</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]]))</span><span class="w">
+</span><span class="ln" id="109"><a style="outline: none; text-decoration:none; color:inherit" href="#109">109</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="nf">array</span><span class="p">([</span><span class="mi">16</span><span class="p">.])</span><span class="w">
+</span><span class="ln" id="110"><a style="outline: none; text-decoration:none; color:inherit" href="#110">110</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="111"><a style="outline: none; text-decoration:none; color:inherit" href="#111">111</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Method</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="k">order</span><span class="p">:</span><span class="w">
+</span><span class="ln" id="112"><a style="outline: none; text-decoration:none; color:inherit" href="#112">112</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">LinearRegression</span><span class="w">
+</span><span class="ln" id="113"><a style="outline: none; text-decoration:none; color:inherit" href="#113">113</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">sklearn</span><span class="p">.</span><span class="n">base</span><span class="p">.</span><span class="n">MultiOutputMixin</span><span class="w">
+</span><span class="ln" id="114"><a style="outline: none; text-decoration:none; color:inherit" href="#114">114</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">sklearn</span><span class="p">.</span><span class="n">base</span><span class="p">.</span><span class="n">RegressorMixin</span><span class="w">
+</span><span class="ln" id="115"><a style="outline: none; text-decoration:none; color:inherit" href="#115">115</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">LinearModel</span><span class="w">
+</span><span class="ln" id="116"><a style="outline: none; text-decoration:none; color:inherit" href="#116">116</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">sklearn</span><span class="p">.</span><span class="n">base</span><span class="p">.</span><span class="n">BaseEstimator</span><span class="w">
+</span><span class="ln" id="117"><a style="outline: none; text-decoration:none; color:inherit" href="#117">117</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">builtins</span><span class="p">.</span><span class="n">object</span><span class="w">
+</span><span class="ln" id="118"><a style="outline: none; text-decoration:none; color:inherit" href="#118">118</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="119"><a style="outline: none; text-decoration:none; color:inherit" href="#119">119</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="n">Methods</span><span class="w"> </span><span class="n">defined</span><span class="w"> </span><span class="n">here</span><span class="p">:</span><span class="w">
+</span><span class="ln" id="120"><a style="outline: none; text-decoration:none; color:inherit" href="#120">120</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="121"><a style="outline: none; text-decoration:none; color:inherit" href="#121">121</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">fit_intercept</span><span class="o">=</span><span class="no">True</span><span class="p">,</span><span class="w"> </span><span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;deprecated&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">copy_X</span><span class="o">=</span><span class="no">True</span><span class="p">,</span><span class="w"> </span><span class="n">n_jobs</span><span class="o">=</span><span class="n">None</span><span class="p">,</span><span class="w"> </span><span class="n">positive</span><span class="o">=</span><span class="no">False</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="122"><a style="outline: none; text-decoration:none; color:inherit" href="#122">122</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Initialize</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="w">  </span><span class="n">See</span><span class="w"> </span><span class="nf">help</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">self</span><span class="p">))</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">accurate</span><span class="w"> </span><span class="n">signature</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="123"><a style="outline: none; text-decoration:none; color:inherit" href="#123">123</a></span><span class="w"> </span><span class="o">|</span><span class="w">  
+</span><span class="ln" id="124"><a style="outline: none; text-decoration:none; color:inherit" href="#124">124</a></span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="nf">fit</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">sample_weight</span><span class="o">=</span><span class="n">None</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="125"><a style="outline: none; text-decoration:none; color:inherit" href="#125">125</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Fit</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="126"><a style="outline: none; text-decoration:none; color:inherit" href="#126">126</a></span><span class="w"> </span><span class="o">|</span><span class="w">      
+</span><span class="ln" id="127"><a style="outline: none; text-decoration:none; color:inherit" href="#127">127</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Parameters</span><span class="w">
+</span><span class="ln" id="128"><a style="outline: none; text-decoration:none; color:inherit" href="#128">128</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="o">--------</span><span class="c1">--
+</span><span class="ln" id="129"><a style="outline: none; text-decoration:none; color:inherit" href="#129">129</a></span><span class="c1"> |      X : {array-like, sparse matrix} of shape (n_samples, n_features)
+</span><span class="ln" id="130"><a style="outline: none; text-decoration:none; color:inherit" href="#130">130</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="n">Training</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="131"><a style="outline: none; text-decoration:none; color:inherit" href="#131">131</a></span><span class="w"> </span><span class="o">|</span><span class="w">      
+</span><span class="ln" id="132"><a style="outline: none; text-decoration:none; color:inherit" href="#132">132</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">y</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">array</span><span class="o">-</span><span class="k">like</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="nf">shape</span><span class="w"> </span><span class="p">(</span><span class="n">n_samples</span><span class="p">,)</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span><span class="w"> </span><span class="n">n_targets</span><span class="p">)</span><span class="w">
+</span><span class="ln" id="133"><a style="outline: none; text-decoration:none; color:inherit" href="#133">133</a></span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="n">Target</span><span class="w"> </span><span class="k">values</span><span class="p">.</span><span class="w"> </span><span class="n">Will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">cast</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">X</span><span class="s1">&#39;s dtype if necessary.
+</span><span class="ln" id="134"><a style="outline: none; text-decoration:none; color:inherit" href="#134">134</a></span><span class="s1"> |      
+</span><span class="ln" id="135"><a style="outline: none; text-decoration:none; color:inherit" href="#135">135</a></span><span class="s1"> |      sample_weight : array-like of shape (n_samples,), default=None
+</span><span class="ln" id="136"><a style="outline: none; text-decoration:none; color:inherit" href="#136">136</a></span><span class="s1"> |          Individual weights for each sample.
+</span><span class="ln" id="137"><a style="outline: none; text-decoration:none; color:inherit" href="#137">137</a></span><span class="s1"> |      
+</span><span class="ln" id="138"><a style="outline: none; text-decoration:none; color:inherit" href="#138">138</a></span><span class="s1"> |          .. versionadded:: 0.17
+</span><span class="ln" id="139"><a style="outline: none; text-decoration:none; color:inherit" href="#139">139</a></span><span class="s1"> |             parameter *sample_weight* support to LinearRegression.
+</span><span class="ln" id="140"><a style="outline: none; text-decoration:none; color:inherit" href="#140">140</a></span><span class="s1"> |      
+</span><span class="ln" id="141"><a style="outline: none; text-decoration:none; color:inherit" href="#141">141</a></span><span class="s1"> |      Returns
+</span><span class="ln" id="142"><a style="outline: none; text-decoration:none; color:inherit" href="#142">142</a></span><span class="s1"> |      -------
+</span><span class="ln" id="143"><a style="outline: none; text-decoration:none; color:inherit" href="#143">143</a></span><span class="s1"> |      self : object
+</span><span class="ln" id="144"><a style="outline: none; text-decoration:none; color:inherit" href="#144">144</a></span><span class="s1"> |          Fitted Estimator.
+</span><span class="ln" id="145"><a style="outline: none; text-decoration:none; color:inherit" href="#145">145</a></span><span class="s1"> |  
+</span><span class="ln" id="146"><a style="outline: none; text-decoration:none; color:inherit" href="#146">146</a></span><span class="s1"> |  ----------------------------------------------------------------------
+</span><span class="ln" id="147"><a style="outline: none; text-decoration:none; color:inherit" href="#147">147</a></span><span class="s1"> |  Data and other attributes defined here:
+</span><span class="ln" id="148"><a style="outline: none; text-decoration:none; color:inherit" href="#148">148</a></span><span class="s1"> |  
+</span><span class="ln" id="149"><a style="outline: none; text-decoration:none; color:inherit" href="#149">149</a></span><span class="s1"> |  __abstractmethods__ = frozenset()
+</span><span class="ln" id="150"><a style="outline: none; text-decoration:none; color:inherit" href="#150">150</a></span><span class="s1"> |  
+</span><span class="ln" id="151"><a style="outline: none; text-decoration:none; color:inherit" href="#151">151</a></span><span class="s1"> |  ----------------------------------------------------------------------
+</span><span class="ln" id="152"><a style="outline: none; text-decoration:none; color:inherit" href="#152">152</a></span><span class="s1"> |  Data descriptors inherited from sklearn.base.MultiOutputMixin:
+</span><span class="ln" id="153"><a style="outline: none; text-decoration:none; color:inherit" href="#153">153</a></span><span class="s1"> |  
+</span><span class="ln" id="154"><a style="outline: none; text-decoration:none; color:inherit" href="#154">154</a></span><span class="s1"> |  __dict__
+</span><span class="ln" id="155"><a style="outline: none; text-decoration:none; color:inherit" href="#155">155</a></span><span class="s1"> |      dictionary for instance variables (if defined)
+</span><span class="ln" id="156"><a style="outline: none; text-decoration:none; color:inherit" href="#156">156</a></span><span class="s1"> |  
+</span><span class="ln" id="157"><a style="outline: none; text-decoration:none; color:inherit" href="#157">157</a></span><span class="s1"> |  __weakref__
+</span><span class="ln" id="158"><a style="outline: none; text-decoration:none; color:inherit" href="#158">158</a></span><span class="s1"> |      list of weak references to the object (if defined)
+</span><span class="ln" id="159"><a style="outline: none; text-decoration:none; color:inherit" href="#159">159</a></span><span class="s1"> |  
+</span><span class="ln" id="160"><a style="outline: none; text-decoration:none; color:inherit" href="#160">160</a></span><span class="s1"> |  ----------------------------------------------------------------------
+</span><span class="ln" id="161"><a style="outline: none; text-decoration:none; color:inherit" href="#161">161</a></span><span class="s1"> |  Methods inherited from sklearn.base.RegressorMixin:
+</span><span class="ln" id="162"><a style="outline: none; text-decoration:none; color:inherit" href="#162">162</a></span><span class="s1"> |  
+</span><span class="ln" id="163"><a style="outline: none; text-decoration:none; color:inherit" href="#163">163</a></span><span class="s1"> |  score(self, X, y, sample_weight=None)
+</span><span class="ln" id="164"><a style="outline: none; text-decoration:none; color:inherit" href="#164">164</a></span><span class="s1"> |      Return the coefficient of determination of the prediction.
+</span><span class="ln" id="165"><a style="outline: none; text-decoration:none; color:inherit" href="#165">165</a></span><span class="s1"> |      
+</span><span class="ln" id="166"><a style="outline: none; text-decoration:none; color:inherit" href="#166">166</a></span><span class="s1"> |      The coefficient of determination :math:`R^2` is defined as
+</span><span class="ln" id="167"><a style="outline: none; text-decoration:none; color:inherit" href="#167">167</a></span><span class="s1"> |      :math:`(1 - \frac{u}{v})`, where :math:`u` is the residual
+</span><span class="ln" id="168"><a style="outline: none; text-decoration:none; color:inherit" href="#168">168</a></span><span class="s1"> |      sum of squares ``((y_true - y_pred)** 2).sum()`` and :math:`v`
+</span><span class="ln" id="169"><a style="outline: none; text-decoration:none; color:inherit" href="#169">169</a></span><span class="s1"> |      is the total sum of squares ``((y_true - y_true.mean()) ** 2).sum()``.
+</span><span class="ln" id="170"><a style="outline: none; text-decoration:none; color:inherit" href="#170">170</a></span><span class="s1"> |      The best possible score is 1.0 and it can be negative (because the
+</span><span class="ln" id="171"><a style="outline: none; text-decoration:none; color:inherit" href="#171">171</a></span><span class="s1"> |      model can be arbitrarily worse). A constant model that always predicts
+</span><span class="ln" id="172"><a style="outline: none; text-decoration:none; color:inherit" href="#172">172</a></span><span class="s1"> |      the expected value of `y`, disregarding the input features, would get
+</span><span class="ln" id="173"><a style="outline: none; text-decoration:none; color:inherit" href="#173">173</a></span><span class="s1"> |      a :math:`R^2` score of 0.0.
+</span><span class="ln" id="174"><a style="outline: none; text-decoration:none; color:inherit" href="#174">174</a></span><span class="s1"> |      
+</span><span class="ln" id="175"><a style="outline: none; text-decoration:none; color:inherit" href="#175">175</a></span><span class="s1"> |      Parameters
+</span><span class="ln" id="176"><a style="outline: none; text-decoration:none; color:inherit" href="#176">176</a></span><span class="s1"> |      ----------
+</span><span class="ln" id="177"><a style="outline: none; text-decoration:none; color:inherit" href="#177">177</a></span><span class="s1"> |      X : array-like of shape (n_samples, n_features)
+</span><span class="ln" id="178"><a style="outline: none; text-decoration:none; color:inherit" href="#178">178</a></span><span class="s1"> |          Test samples. For some estimators this may be a precomputed
+</span><span class="ln" id="179"><a style="outline: none; text-decoration:none; color:inherit" href="#179">179</a></span><span class="s1"> |          kernel matrix or a list of generic objects instead with shape
+</span><span class="ln" id="180"><a style="outline: none; text-decoration:none; color:inherit" href="#180">180</a></span><span class="s1"> |          ``(n_samples, n_samples_fitted)``, where ``n_samples_fitted``
+</span><span class="ln" id="181"><a style="outline: none; text-decoration:none; color:inherit" href="#181">181</a></span><span class="s1"> |          is the number of samples used in the fitting for the estimator.
+</span><span class="ln" id="182"><a style="outline: none; text-decoration:none; color:inherit" href="#182">182</a></span><span class="s1"> |      
+</span><span class="ln" id="183"><a style="outline: none; text-decoration:none; color:inherit" href="#183">183</a></span><span class="s1"> |      y : array-like of shape (n_samples,) or (n_samples, n_outputs)
+</span><span class="ln" id="184"><a style="outline: none; text-decoration:none; color:inherit" href="#184">184</a></span><span class="s1"> |          True values for `X`.
+</span><span class="ln" id="185"><a style="outline: none; text-decoration:none; color:inherit" href="#185">185</a></span><span class="s1"> |      
+</span><span class="ln" id="186"><a style="outline: none; text-decoration:none; color:inherit" href="#186">186</a></span><span class="s1"> |      sample_weight : array-like of shape (n_samples,), default=None
+</span><span class="ln" id="187"><a style="outline: none; text-decoration:none; color:inherit" href="#187">187</a></span><span class="s1"> |          Sample weights.
+</span><span class="ln" id="188"><a style="outline: none; text-decoration:none; color:inherit" href="#188">188</a></span><span class="s1"> |      
+</span><span class="ln" id="189"><a style="outline: none; text-decoration:none; color:inherit" href="#189">189</a></span><span class="s1"> |      Returns
+</span><span class="ln" id="190"><a style="outline: none; text-decoration:none; color:inherit" href="#190">190</a></span><span class="s1"> |      -------
+</span><span class="ln" id="191"><a style="outline: none; text-decoration:none; color:inherit" href="#191">191</a></span><span class="s1"> |      score : float
+</span><span class="ln" id="192"><a style="outline: none; text-decoration:none; color:inherit" href="#192">192</a></span><span class="s1"> |          :math:`R^2` of ``self.predict(X)`` wrt. `y`.
+</span><span class="ln" id="193"><a style="outline: none; text-decoration:none; color:inherit" href="#193">193</a></span><span class="s1"> |      
+</span><span class="ln" id="194"><a style="outline: none; text-decoration:none; color:inherit" href="#194">194</a></span><span class="s1"> |      Notes
+</span><span class="ln" id="195"><a style="outline: none; text-decoration:none; color:inherit" href="#195">195</a></span><span class="s1"> |      -----
+</span><span class="ln" id="196"><a style="outline: none; text-decoration:none; color:inherit" href="#196">196</a></span><span class="s1"> |      The :math:`R^2` score used when calling ``score`` on a regressor uses
+</span><span class="ln" id="197"><a style="outline: none; text-decoration:none; color:inherit" href="#197">197</a></span><span class="s1"> |      ``multioutput=&#39;</span><span class="n">uniform_average</span><span class="s1">&#39;`` from version 0.23 to keep consistent
+</span><span class="ln" id="198"><a style="outline: none; text-decoration:none; color:inherit" href="#198">198</a></span><span class="s1"> |      with default value of :func:`~sklearn.metrics.r2_score`.
+</span><span class="ln" id="199"><a style="outline: none; text-decoration:none; color:inherit" href="#199">199</a></span><span class="s1"> |      This influences the ``score`` method of all the multioutput
+</span><span class="ln" id="200"><a style="outline: none; text-decoration:none; color:inherit" href="#200">200</a></span><span class="s1"> |      regressors (except for
+</span><span class="ln" id="201"><a style="outline: none; text-decoration:none; color:inherit" href="#201">201</a></span><span class="s1"> |      :class:`~sklearn.multioutput.MultiOutputRegressor`).
+</span><span class="ln" id="202"><a style="outline: none; text-decoration:none; color:inherit" href="#202">202</a></span><span class="s1"> |  
+</span><span class="ln" id="203"><a style="outline: none; text-decoration:none; color:inherit" href="#203">203</a></span><span class="s1"> |  ----------------------------------------------------------------------
+</span><span class="ln" id="204"><a style="outline: none; text-decoration:none; color:inherit" href="#204">204</a></span><span class="s1"> |  Methods inherited from LinearModel:
+</span><span class="ln" id="205"><a style="outline: none; text-decoration:none; color:inherit" href="#205">205</a></span><span class="s1"> |  
+</span><span class="ln" id="206"><a style="outline: none; text-decoration:none; color:inherit" href="#206">206</a></span><span class="s1"> |  predict(self, X)
+</span><span class="ln" id="207"><a style="outline: none; text-decoration:none; color:inherit" href="#207">207</a></span><span class="s1"> |      Predict using the linear model.
+</span><span class="ln" id="208"><a style="outline: none; text-decoration:none; color:inherit" href="#208">208</a></span><span class="s1"> |      
+</span><span class="ln" id="209"><a style="outline: none; text-decoration:none; color:inherit" href="#209">209</a></span><span class="s1"> |      Parameters
+</span><span class="ln" id="210"><a style="outline: none; text-decoration:none; color:inherit" href="#210">210</a></span><span class="s1"> |      ----------
+</span><span class="ln" id="211"><a style="outline: none; text-decoration:none; color:inherit" href="#211">211</a></span><span class="s1"> |      X : array-like or sparse matrix, shape (n_samples, n_features)
+</span><span class="ln" id="212"><a style="outline: none; text-decoration:none; color:inherit" href="#212">212</a></span><span class="s1"> |          Samples.
+</span><span class="ln" id="213"><a style="outline: none; text-decoration:none; color:inherit" href="#213">213</a></span><span class="s1"> |      
+</span><span class="ln" id="214"><a style="outline: none; text-decoration:none; color:inherit" href="#214">214</a></span><span class="s1"> |      Returns
+</span><span class="ln" id="215"><a style="outline: none; text-decoration:none; color:inherit" href="#215">215</a></span><span class="s1"> |      -------
+</span><span class="ln" id="216"><a style="outline: none; text-decoration:none; color:inherit" href="#216">216</a></span><span class="s1"> |      C : array, shape (n_samples,)
+</span><span class="ln" id="217"><a style="outline: none; text-decoration:none; color:inherit" href="#217">217</a></span><span class="s1"> |          Returns predicted values.
+</span><span class="ln" id="218"><a style="outline: none; text-decoration:none; color:inherit" href="#218">218</a></span><span class="s1"> |  
+</span><span class="ln" id="219"><a style="outline: none; text-decoration:none; color:inherit" href="#219">219</a></span><span class="s1"> |  ----------------------------------------------------------------------
+</span><span class="ln" id="220"><a style="outline: none; text-decoration:none; color:inherit" href="#220">220</a></span><span class="s1"> |  Methods inherited from sklearn.base.BaseEstimator:
+</span><span class="ln" id="221"><a style="outline: none; text-decoration:none; color:inherit" href="#221">221</a></span><span class="s1"> |  
+</span><span class="ln" id="222"><a style="outline: none; text-decoration:none; color:inherit" href="#222">222</a></span><span class="s1"> |  __getstate__(self)
+</span><span class="ln" id="223"><a style="outline: none; text-decoration:none; color:inherit" href="#223">223</a></span><span class="s1"> |  
+</span><span class="ln" id="224"><a style="outline: none; text-decoration:none; color:inherit" href="#224">224</a></span><span class="s1"> |  __repr__(self, N_CHAR_MAX=700)
+</span><span class="ln" id="225"><a style="outline: none; text-decoration:none; color:inherit" href="#225">225</a></span><span class="s1"> |      Return repr(self).
+</span><span class="ln" id="226"><a style="outline: none; text-decoration:none; color:inherit" href="#226">226</a></span><span class="s1"> |  
+</span><span class="ln" id="227"><a style="outline: none; text-decoration:none; color:inherit" href="#227">227</a></span><span class="s1"> |  __setstate__(self, state)
+</span><span class="ln" id="228"><a style="outline: none; text-decoration:none; color:inherit" href="#228">228</a></span><span class="s1"> |  
+</span><span class="ln" id="229"><a style="outline: none; text-decoration:none; color:inherit" href="#229">229</a></span><span class="s1"> |  get_params(self, deep=True)
+</span><span class="ln" id="230"><a style="outline: none; text-decoration:none; color:inherit" href="#230">230</a></span><span class="s1"> |      Get parameters for this estimator.
+</span><span class="ln" id="231"><a style="outline: none; text-decoration:none; color:inherit" href="#231">231</a></span><span class="s1"> |      
+</span><span class="ln" id="232"><a style="outline: none; text-decoration:none; color:inherit" href="#232">232</a></span><span class="s1"> |      Parameters
+</span><span class="ln" id="233"><a style="outline: none; text-decoration:none; color:inherit" href="#233">233</a></span><span class="s1"> |      ----------
+</span><span class="ln" id="234"><a style="outline: none; text-decoration:none; color:inherit" href="#234">234</a></span><span class="s1"> |      deep : bool, default=True
+</span><span class="ln" id="235"><a style="outline: none; text-decoration:none; color:inherit" href="#235">235</a></span><span class="s1"> |          If True, will return the parameters for this estimator and
+</span><span class="ln" id="236"><a style="outline: none; text-decoration:none; color:inherit" href="#236">236</a></span><span class="s1"> |          contained subobjects that are estimators.
+</span><span class="ln" id="237"><a style="outline: none; text-decoration:none; color:inherit" href="#237">237</a></span><span class="s1"> |      
+</span><span class="ln" id="238"><a style="outline: none; text-decoration:none; color:inherit" href="#238">238</a></span><span class="s1"> |      Returns
+</span><span class="ln" id="239"><a style="outline: none; text-decoration:none; color:inherit" href="#239">239</a></span><span class="s1"> |      -------
+</span><span class="ln" id="240"><a style="outline: none; text-decoration:none; color:inherit" href="#240">240</a></span><span class="s1"> |      params : dict
+</span><span class="ln" id="241"><a style="outline: none; text-decoration:none; color:inherit" href="#241">241</a></span><span class="s1"> |          Parameter names mapped to their values.
+</span><span class="ln" id="242"><a style="outline: none; text-decoration:none; color:inherit" href="#242">242</a></span><span class="s1"> |  
+</span><span class="ln" id="243"><a style="outline: none; text-decoration:none; color:inherit" href="#243">243</a></span><span class="s1"> |  set_params(self, **params)
+</span><span class="ln" id="244"><a style="outline: none; text-decoration:none; color:inherit" href="#244">244</a></span><span class="s1"> |      Set the parameters of this estimator.
+</span><span class="ln" id="245"><a style="outline: none; text-decoration:none; color:inherit" href="#245">245</a></span><span class="s1"> |      
+</span><span class="ln" id="246"><a style="outline: none; text-decoration:none; color:inherit" href="#246">246</a></span><span class="s1"> |      The method works on simple estimators as well as on nested objects
+</span><span class="ln" id="247"><a style="outline: none; text-decoration:none; color:inherit" href="#247">247</a></span><span class="s1"> |      (such as :class:`~sklearn.pipeline.Pipeline`). The latter have
+</span><span class="ln" id="248"><a style="outline: none; text-decoration:none; color:inherit" href="#248">248</a></span><span class="s1"> |      parameters of the form ``&lt;component&gt;__&lt;parameter&gt;`` so that it&#39;</span><span class="n">s</span><span class="w">
+</span><span class="ln" id="249"><a style="outline: none; text-decoration:none; color:inherit" href="#249">249</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">possible</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">nested</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="250"><a style="outline: none; text-decoration:none; color:inherit" href="#250">250</a></span><span class="w"> </span><span class="o">|</span><span class="w">      
+</span><span class="ln" id="251"><a style="outline: none; text-decoration:none; color:inherit" href="#251">251</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Parameters</span><span class="w">
+</span><span class="ln" id="252"><a style="outline: none; text-decoration:none; color:inherit" href="#252">252</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="o">--------</span><span class="c1">--
+</span><span class="ln" id="253"><a style="outline: none; text-decoration:none; color:inherit" href="#253">253</a></span><span class="c1"> |      **params : dict
+</span><span class="ln" id="254"><a style="outline: none; text-decoration:none; color:inherit" href="#254">254</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="n">Estimator</span><span class="w"> </span><span class="n">parameters</span><span class="p">.</span><span class="w">
+</span><span class="ln" id="255"><a style="outline: none; text-decoration:none; color:inherit" href="#255">255</a></span><span class="w"> </span><span class="o">|</span><span class="w">      
+</span><span class="ln" id="256"><a style="outline: none; text-decoration:none; color:inherit" href="#256">256</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">Returns</span><span class="w">
+</span><span class="ln" id="257"><a style="outline: none; text-decoration:none; color:inherit" href="#257">257</a></span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="o">-----</span><span class="c1">--
+</span><span class="ln" id="258"><a style="outline: none; text-decoration:none; color:inherit" href="#258">258</a></span><span class="c1"> |      self : estimator instance
+</span><span class="ln" id="259"><a style="outline: none; text-decoration:none; color:inherit" href="#259">259</a></span><span class="c1"></span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="n">Estimator</span><span class="w"> </span><span class="n">instance</span><span class="p">.</span><span class="w">
+</span></code></pre></div><h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="17">
+<li>
+<p>延伸閱讀: 在<a href="https://laplus3667.github.io/zh-tw/posts/mur009%e8%a9%95%e8%ab%96%e8%88%87%e6%96%87%e6%aa%94/">MUR009 思辨註釋與文檔</a>
+我們有討論過註釋與文檔的差異. 現在看起來, 可以把「文檔(documentation)」理解為「面向用戶, 對公用方法的解釋」; 而「註釋(comment)理解為「面向開發者, 對私有方法的技術註解」.</p>
+</li>
+<li>
+<p>到此整合了<a href="https://app.datacamp.com/learn/courses/object-oriented-programming-in-python" target="_blank" rel="noopener noreferrer">Datacamp課程-Object-Oriented Programming in Python</a>
+的邏輯, 結合之前研究經驗, 用物件導向的世界觀來理解線性回歸模組.</p>
+</li>
+<li>
+<p>本文章分了三個面向. 從抽象逐漸具體, 涵蓋心法, 技法, 用法三個層次.</p>
+</li>
+</ol>
+<ul>
+<li>第一個面向為「物件導向基礎: 克隆的藍圖」: 扮演心法的角色</li>
+<li>第二個面向為「物件導向Python實踐: 狀態, 屬性, 變數; 行為, 方法, 函數.」: 扮演技法的角色</li>
+<li>第三個面向為「以物件導向理解線性迴歸模組: <code>type()</code>, <code>dir()</code>與<code>help()</code>: 扮演用法的角色.</li>
+</ul>
+<ol start="20">
+<li>感覺寫文章真的是思考最好的方式, 每天不斷的輸出, 讓各種文章寫作過程shape我們的思維. 不斷迭代往前, 逐漸專業, 用自己的宇宙觸碰物理宇宙或元宇宙. 天天向上, 共勉之！</li>
+</ol>
+<p>2022.01.13.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur014%E5%BE%9E%E5%AD%B8%E7%BF%922do%E8%BB%9F%E9%AB%94%E5%8F%8D%E6%80%9D%E5%80%8B%E4%BA%BA%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/">MUR014 從學習2Do軟體反思個人學術工作流
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/">MUR009 思辨註釋與文檔
+</a>
+          <span class="float-end post-date">2022-01-07
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur014%E5%BE%9E%E5%AD%B8%E7%BF%922do%E8%BB%9F%E9%AB%94%E5%8F%8D%E6%80%9D%E5%80%8B%E4%BA%BA%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/">MUR014 從學習2Do軟體反思個人學術工作流
+</a>
+          <span class="float-end post-date">2022-01-12
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur013%E6%80%9D%E8%80%83obsidian%E5%A4%96%E6%8E%9Btemplater/">MUR013 思考Obsidian外掛templater
+</a>
+          <span class="float-end post-date">2022-01-11
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur012%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%96%BCchase%E7%9A%84%E9%87%91%E8%9E%8D%E6%87%89%E7%94%A8/">MUR012 合成數據於Chase銀行的金融應用
+</a>
+          <span class="float-end post-date">2022-01-10
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/">MUR011 思考Bash中的Globbing與Quoting
+</a>
+          <span class="float-end post-date">2022-01-09
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur015%E5%BE%9E%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E6%80%9D%E8%80%83%E7%B7%9A%E6%80%A7%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90/">MUR015 從物件導向思考線性迴歸分析
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur014%E5%BE%9E%E5%AD%B8%E7%BF%922do%E8%BB%9F%E9%AB%94%E5%8F%8D%E6%80%9D%E5%80%8B%E4%BA%BA%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/">MUR014 從學習2Do軟體反思個人學術工作流
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur013%E6%80%9D%E8%80%83obsidian%E5%A4%96%E6%8E%9Btemplater/">MUR013 思考Obsidian外掛templater
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur012%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%96%BCchase%E7%9A%84%E9%87%91%E8%9E%8D%E6%87%89%E7%94%A8/">MUR012 合成數據於Chase銀行的金融應用
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/">MUR011 思考Bash中的Globbing與Quoting
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%BE%97%E5%88%B0%E8%81%BD%E6%9B%B8/" class="badge rounded post-taxonomy" title="得到聽書">
+            得到聽書
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E8%A9%90%E6%AC%BA%E5%81%B5%E6%B8%AC/" class="badge rounded post-taxonomy" title="詐欺偵測">
+            詐欺偵測
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%82%8F%E8%BC%AF%E6%B5%81/" class="badge rounded post-taxonomy" title="邏輯流">
+            邏輯流
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
