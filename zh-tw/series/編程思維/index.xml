@@ -6,7 +6,16 @@
     <description>Recent content in 編程思維 on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 14 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR018 沈思Python建構式</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur018-%E6%B2%88%E6%80%9Dpython%E5%BB%BA%E6%A7%8B%E5%BC%8F/</link>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur018-%E6%B2%88%E6%80%9Dpython%E5%BB%BA%E6%A7%8B%E5%BC%8F/</guid>
+      <description>沈思Python建構式 紫式晦澀每日一篇文章第18天 前言 今天是2022年第16天, 全年第3週, 一月的第三個週六. 今天來深思「構造Class」的</description>
+    </item>
+    
     <item>
       <title>MUR016 思考Chase合成數據技術細節</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur016%E6%80%9D%E8%80%83chase%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%8A%80%E8%A1%93%E7%B4%B0%E7%AF%80/</link>
