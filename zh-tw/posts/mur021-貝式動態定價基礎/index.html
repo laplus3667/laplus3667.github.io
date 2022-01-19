@@ -1,0 +1,824 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR021 貝式動態定價基礎-Ver(0.1) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR021 貝式動態定價基礎-Ver(0.1)">
+<meta itemprop="description" content="貝式動態定價基礎-Ver(0.1) 紫式晦澀每日一篇文章第21天 前言 今天是2022年第19天, 全年第3週, 一月的第三個週三. 今天來思考「貝式動"><meta itemprop="datePublished" content="2022-01-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-19T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3062">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="MUR021 貝式動態定價基礎-Ver(0.1)" />
+<meta property="og:description" content="貝式動態定價基礎-Ver(0.1) 紫式晦澀每日一篇文章第21天 前言 今天是2022年第19天, 全年第3週, 一月的第三個週三. 今天來思考「貝式動" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur021-%E8%B2%9D%E5%BC%8F%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9%E5%9F%BA%E7%A4%8E/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-19T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR021 貝式動態定價基礎-Ver(0.1)"/>
+<meta name="twitter:description" content="貝式動態定價基礎-Ver(0.1) 紫式晦澀每日一篇文章第21天 前言 今天是2022年第19天, 全年第3週, 一月的第三個週三. 今天來思考「貝式動"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR021%20%e8%b2%9d%e5%bc%8f%e5%8b%95%e6%85%8b%e5%ae%9a%e5%83%b9%e5%9f%ba%e7%a4%8e-Ver%280.1%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur021-%25E8%25B2%259D%25E5%25BC%258F%25E5%258B%2595%25E6%2585%258B%25E5%25AE%259A%25E5%2583%25B9%25E5%259F%25BA%25E7%25A4%258E%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur021-%25E8%25B2%259D%25E5%25BC%258F%25E5%258B%2595%25E6%2585%258B%25E5%25AE%259A%25E5%2583%25B9%25E5%259F%25BA%25E7%25A4%258E%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR021 貝式動態定價基礎-Ver(0.1)</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR021 貝式動態定價基礎-Ver(0.1)
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-18 19:00:00 -0500 EST。">
+    2022-01-19
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded-pill post-taxonomy">文獻閱讀</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded-pill post-taxonomy">動態定價</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#000-摘要">000 摘要</a></li>
+    <li><a href="#100-簡介">100 簡介</a></li>
+    <li><a href="#200-方法">200 方法</a>
+      <ul>
+        <li><a href="#21-basic-model-elements">2.1. Basic Model Elements</a></li>
+        <li><a href="#appendix-b-proofs-of-propositions-1-3">Appendix B. Proofs of Propositions 1-3</a></li>
+        <li><a href="#another-section">Another section</a></li>
+      </ul>
+    </li>
+    <li><a href="#300-結果">300 結果</a></li>
+    <li><a href="#400-討論">400 討論</a></li>
+    <li><a href="#900-形式結果">900 形式結果</a></li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="貝式動態定價基礎-ver01">貝式動態定價基礎-Ver(0.1)<a class="anchor ms-1" href="#貝式動態定價基礎-ver01"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://www.primaseller.com/wp-content/uploads/2019/10/dynamic-pricing.jpg" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第21天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第19天, 全年第3週, 一月的第三個週三. 今天來思考「貝式動態定價(Bayesian Dynamic Pricing)」的相關細節. 之前做動態定價的研究比較是從線上機器學習的角度, 在寫文章的過程也逐漸體會到「定價(Pricing)」本身就是另一個很困難的運籌學問題. 多累積見聞, 在literature裡面create space.</p>
+</li>
+<li>
+<p>今天的素材來源為Management Science於2012年的文章<a href="https://doi.org/10.1287/mnsc.1110.1426" target="_blank" rel="noopener noreferrer">J. Michael Harrison, N. Bora Keskin, Assaf Zeevi, (2012) Bayesian Dynamic Pricing Policies: Learning and Earning Under a Binary Prior Distribution. Management Science 58(3):570-586.</a>
+.</p>
+</li>
+</ol>
+<blockquote>
+<p>代碼BDP</p>
+</blockquote>
+<h2 id="000-摘要">000 摘要<a class="anchor ms-1" href="#000-摘要"><i class="fas fa-link"></i></a></h2>
+<h2 id="100-簡介">100 簡介<a class="anchor ms-1" href="#100-簡介"><i class="fas fa-link"></i></a></h2>
+<h2 id="200-方法">200 方法<a class="anchor ms-1" href="#200-方法"><i class="fas fa-link"></i></a></h2>
+<h3 id="21-basic-model-elements">2.1. Basic Model Elements<a class="anchor ms-1" href="#21-basic-model-elements"><i class="fas fa-link"></i></a></h3>
+<p><strong>BDP201 賣家定價機制與環境需求模型</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>賣家(Seller): 公司, 提供單一產品, 給序冠而來的買家</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>販售期間(Sales period): 在第t個販售期間, 由買家們身上, 所得到的收益(Revenue), 稱為「t販售期間收益」</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>定價(Pricing): 每個期間, 賣家從給定區間中選擇價錢(price); 接著, 賣家經歷成功(於所選價錢的銷售)或失敗(無銷售)</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>環境需求函數 (Ambient demand model): 定價的函數, 返回賣家提供定價後, 成功銷售的機率.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>邊際成本(Marginal cost): 販賣商品的邊際成本假設為零, 如此, 利潤(Profit)可與收益(Revenue)交替使用.</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>Consider a firm, hereafter called the seller(賣家), that offers a single product for sale to customers who arrive in sequential fashion.</li>
+<li>As a matter of convention, we associate with each successive customer(買家) a distinct sales &ldquo;period&rdquo; so that, for example, the phrase &ldquo;period- $t$ revenue&rdquo; simply means revenue realized from the $t^{\text {th }}$ arriving customer.</li>
+<li>In each period $t=$ $1,2, \ldots$, the seller must choose a price $p_{t}$ from a given interval $[l, u]$, where $0 \leq l&lt;u&lt;\infty$, after which the seller experiences either success (a sale at the offered price $p_{t}$ ) or failure (no sale).</li>
+<li>The probability of success when the seller offers price $p$ in any given period is $\rho(p)$; we call $\rho(\cdot)$ the ambient demand model(環境需求模型).</li>
+<li>The marginal cost(邊際成本) of the product being sold is set to zero without loss of generality (because prices can always be expressed as increments above cost); given this normalization, the terms &ldquo;profit&rdquo; and &ldquo;revenue&rdquo; can and will be used interchangeably.</li>
+</ul>
+</blockquote>
+<p><strong>BDP202 先驗機率, 假說, 期望收益與銷售序列</strong>:</p>
+<ul>
+<li>
+<ol>
+<li><strong>自然選擇環境需求模型(Nature chooses the ambient demand model)</strong>: 自然從兩個環境需求模型做選擇, 賣家無法觀察到此選擇, 此選擇在整個銷售期間(selling horizon)都不會改變.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>自然的選擇(Nature choice)與先驗機率(Prior probability): 自然的選擇, 為一個二元隨機變數; 在需求模型$\rho_0, \rho_1$中, 自然選擇了需求模型$\rho_1$的機率記為$q_0$, 稱為先驗機率(Prior probability).</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>先驗機率(Prior probability): 先驗機率$q_0$就會與之後定義的, 觀察到銷售結果後, 產生的機率做區分.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>設先驗機率以排除顯然狀況: 設置先驗機率為$0&lt;q_0&lt;1$, 以避免顯然的狀況. 否則$q_0=0$或者$q_0=1$, 賣家就會確定性知道特定到環境需求模型.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>假說(Hypothesis): 對「自然的選擇$\chi$」是需求模型$i$,所產生的事件${\chi = i}$, 稱為假說$i$.</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>假說下的期望收益(Expected revenue in a period under hypothesis): 期望收益函數$r_{i}(p)$為在「假說$i$」下, 「定價$p$」所得到期望收益, 定為「價錢$p$」乘以「需求模型$i$下, 價錢$p$的購買機率.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/-qFTYotFqUWemeNt41RhTvUp1vrJpK382PfaYNc--dQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>銷售序列(Sales sequence): 隨機過程$X\equiv (X_1, X_2, \cdots)$ 紀錄了銷售的成功(1)與失敗(0)的過程.</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>Before the first customer arrives, nature chooses either $\rho_{0}(\cdot)$ or $\rho_{1}(\cdot)$ as the ambient demand model; this choice is not observed by the seller, and it remains fixed over the entire selling horizon.</li>
+<li>We encode this choice via the random variable <img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/-GXZAxhzWRWi6mstLCCS38vXDF1onjbdMWVIYd0Ai2M.original.fullsize.png" loading="lazy"
+  
+   />
+
+ and denote by $q_{0}$ the prior probability assigned by the seller to the event ${\chi=1}$; this number is part of our problem data.</li>
+<li>(The subscript in the notation $q_{0}$ differentiates this initial probability assessment from the ones formed later, after sales outcomes are observed.)</li>
+<li>To exclude trivial cases, in which the seller knows the ambient demand model with certainty, we assume that $0&lt;q_{0}&lt;1$.</li>
+<li>We shall occasionally refer to the event or condition ${\chi=i}$ as hypothesis $i$.</li>
+<li>If price $p$ is chosen in a given period, then the seller&rsquo;s expected revenue in that period under hypothesis $i$ is
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/-qFTYotFqUWemeNt41RhTvUp1vrJpK382PfaYNc--dQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li>The only random variables other than $\chi$ that will figure in the development to follow are indicator variables $X_{1}, X_{2}, \ldots$ defined as follows: $X_{t}=1$ if there is a sale (success) in period $t$, and $X_{t}=0$ otherwise.</li>
+<li>Defining $X:=\left(X_{1}, X_{2}, \ldots\right)$, we call $X$ the sales sequence.</li>
+</ul>
+</blockquote>
+<p><strong>BDP203 現有價格銷售成功率可知的假設下, 制約需求函數與最佳定價所需要的優化條件</strong>:</p>
+<ul>
+<li>1.<strong>現有價格(Incumbent price)</strong>: 賣家假設知道現有價格$\hat{p} \in(l, u)$的銷售成功機率$\hat{\rho}$. (為何能知道?)</li>
+<li>2.<strong>需求假說制約(demand hypothese restriction)</strong>: 在「現有價格銷售成功率可知」的假設下, 需求假說得到制約, 對 $i=0,1$ 滿足$$\rho_{i}(\hat{p})=\hat{\rho}.$$</li>
+<li>3.<strong>需求模型的光滑性要求</strong>: 需求模型在出價區域$[l, u]$上, 假設是(1) 連續可微分 與(2)嚴格遞減 (愈貴愈沒人要買).</li>
+<li>4.<strong>價格彈性函數(Price elasticity functions)</strong> 價格彈性(price elasticity)是衡量由於價格變動所引起數量變動之敏感度指標. (🤯 為何是這樣的定義? 感覺與log有關係)
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Dxh6Phc0kU66lHqxS9YKV8BjyZ6ylm7ZE6X4lW6wPwA.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li>5.<strong>最佳定價的唯一性, 繼承於價格彈性的嚴格遞增性</strong>:  價格彈性的嚴格遞增, 蘊含期望收益函數在出價區間有唯一的最大值</li>
+<li>6.<strong>兩個假說下的最佳定價是是出價區間的內點</strong>: 優化理論的假設要求</li>
+<li>7.<strong>一階最優條件</strong>: 在此條件下, 得到一個微分方程$\rho_{i}(p)+ p \rho^{\prime}_{i}(p)$. 感覺就是有解的ODE.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/khPdYKRNgoPfmlCWdcCZyKU05l_lHKJDMMkRUVlYQt8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>The seller is assumed to know the success probability $\hat{\rho}$ for an incumbent price $\hat{p} \in(l, u)$.</li>
+<li>Consistent with this assumption, we restrict attention to demand hypotheses that satisfy $\rho_{i}(\hat{p})=\hat{\rho}$ for $i=0,1$.</li>
+<li>The demand models $\rho_{0}(\cdot)$ and $\rho_{1}(\cdot)$ are also assumed to be continuously differentiable and strictly decreasing over $[l, u]$, and we define the associated price elasticity functions $\varepsilon_{i}(\cdot)$ as usual (here and later, a prime denotes a derivative):
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Dxh6Phc0kU66lHqxS9YKV8BjyZ6ylm7ZE6X4lW6wPwA.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li>Both $\varepsilon_{0}(\cdot)$ and $\varepsilon_{1}(\cdot)$ are assumed to be strictly increasing, from which it follows that each of the single-period expected revenue functions $r_{i}(\cdot)$ has a unique maximizer $p_{i}^{*}$ in $[l, u]$.</li>
+<li>We assume are interior points of the feasible price range $[l, u]$ and without loss of generality that.</li>
+<li>The first-order conditions for optimality then give the following:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/khPdYKRNgoPfmlCWdcCZyKU05l_lHKJDMMkRUVlYQt8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ol>
+</blockquote>
+<p><strong>BDP204: 當需求函數值重合</strong>:</p>
+<ul>
+<li>
+<ol>
+<li><strong>現有價錢在最優價錢區間之間</strong>: 假設現有價錢$\hat{p}$在最優價錢區間$[p_{0}^{*}, p_{1}^{*}]$</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><strong>解釋</strong>: 如果兩個需求函數沒有相交, 則「短視貝式策略(Myopic Bayesian policy)」會給完美結果, 也就不存在此文章討論的問題</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li><strong>價格彈性函數單調性, 蘊含結果</strong>: 兩個需求函數的函數值重合, 會在「現有價錢」這個點上.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/I9dhsQTcTa4MNvKlf7Ga8TJnR0ddFOfVcTecyskQNMQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>We assume throughout that the incumbent price $\hat{p}$ lies in the interval $\left[p_{0}^{*}, p_{1}^{*}\right]$ because the opposite case is essentially trivial.</li>
+<li>(If the demand curves $\rho_{0}(\cdot)$ and $\rho_{1}(\cdot)$ do not intersect within that interval, then the arguments to follow can easily be modified to show that the myopic Bayesian policy itself gives excellent results, and so the issues addressed in this paper simply do not arise.)</li>
+<li>Monotonicity of the price elasticity functions then has the following implication.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/I9dhsQTcTa4MNvKlf7Ga8TJnR0ddFOfVcTecyskQNMQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ol>
+</blockquote>
+<p><strong>BDP205 唯一的無信息價格是現有價格</strong>:</p>
+<ul>
+<li>
+<ol>
+<li><strong>無信息價格(Uninformative price)</strong>: 一個價錢是「無信息」, 那他就對「環境需求函數」沒有信息.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><strong>白話Propsition 1</strong>: 在最佳價格之間內的「唯一」無信息價格, 是現有價錢$\hat{p}$.</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>A price $p$ that satisfies $\rho_{0}(p)=\rho_{1}(p)$ is uninformative, providing no information about the ambient demand model,</li>
+<li>so Proposition 1 can be verbally paraphrased as follows: Under our assumptions, the unique uninformative price between $p_{0}^{<em>}$ and $p_{1}^{</em>}$ is the incumbent price $\hat{p}$.</li>
+</ol>
+</blockquote>
+<h3 id="appendix-b-proofs-of-propositions-1-3">Appendix B. Proofs of Propositions 1-3<a class="anchor ms-1" href="#appendix-b-proofs-of-propositions-1-3"><i class="fas fa-link"></i></a></h3>
+<p><strong>BDP206 現有價格的優化論證</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>呼叫「現有價錢」的定義, 為兩種假說的需求函數所得到的購買機率相同的地方.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>考慮在最優價格區間之間, 也讓兩種假說的購買機率相同的「另外一點」.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>由於價格彈性函數的一個條件(此條件何來???), 得到「兩需求函數一階導數之差」為正值.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>因此, 「兩需求函數一階導數之差」是局部遞增, 在「另外一點」消失; 這樣只能有一個「另外一點」</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>因此, 在最優價格區間之間, 只能有一個點, 使得購買機率在兩個假說下相等</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>由於「現有價錢」已經是這樣的「另外一點」, 於是那個點就是現有價錢</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>有點像是存在性證明. 先抓出一個核心概念, 然後證明他就是這樣.</p>
+</blockquote>
+<p>Proof of Proposition 1.</p>
+<blockquote>
+<ol>
+<li>First, recall that the incumbent price $\hat{p}$ satisfies $\rho_{0}(\hat{p})=\rho_{1}(\hat{p})$.</li>
+<li>Now, let $\tilde{p}$ be an arbitrary price in $\left[p_{0}^{*}, p_{1}^{*}\right]$ such that $\rho_{1}(\tilde{p})=\rho_{0}(\tilde{p})$. Because $\varepsilon_{1}(p)&lt;1&lt;$ $\varepsilon_{0}(p)$ for all $p \in\left[p_{0}^{*}, p_{1}^{*}\right]$, we deduce that $\rho_{1}^{\prime}(\tilde{p})-\rho_{0}^{\prime}(\tilde{p})&gt;0$.</li>
+<li>Thus, the function $p \mapsto \rho_{1}(p)-\rho_{0}(p)$ is locally increasing around $\tilde{p}$ and vanishes at that point.</li>
+<li>This implies that there can be at most one price $p \in\left[p_{0}^{*}, p_{1}^{*}\right]$ satisfying $\rho_{1}(p)=\rho_{0}(p)$.</li>
+<li>Because the incumbent price $\hat{p}$ already satisfies that condition, we conclude that $\hat{p}$ is the unique price $p \in\left[p_{0}^{*}, p_{1}^{*}\right]$ such that $\rho_{1}(p)=\rho_{0}(p)$.</li>
+</ol>
+</blockquote>
+<h3 id="another-section">Another section<a class="anchor ms-1" href="#another-section"><i class="fas fa-link"></i></a></h3>
+<p><strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:</p>
+<p><strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:
+<strong>BDP</strong>:</p>
+<h2 id="300-結果">300 結果<a class="anchor ms-1" href="#300-結果"><i class="fas fa-link"></i></a></h2>
+<h2 id="400-討論">400 討論<a class="anchor ms-1" href="#400-討論"><i class="fas fa-link"></i></a></h2>
+<h2 id="900-形式結果">900 形式結果<a class="anchor ms-1" href="#900-形式結果"><i class="fas fa-link"></i></a></h2>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="3">
+<li>
+<p>到此, 我們學習了<a href="https://doi.org/10.1287/mnsc.1110.1426" target="_blank" rel="noopener noreferrer">J. Michael Harrison, N. Bora Keskin, Assaf Zeevi, (2012) Bayesian Dynamic Pricing Policies: Learning and Earning Under a Binary Prior Distribution. Management Science 58(3):570-586.</a>
+中對「貝式動態定價」的2.1節.</p>
+</li>
+<li>
+<p>本文章產出了六張知識卡片</p>
+</li>
+</ol>
+<ul>
+<li>BDP201 賣家定價機制與環境需求模型</li>
+<li>BDP202 先驗機率, 假說, 期望收益與銷售序列</li>
+<li>BDP203 現有價格銷售成功率可知的假設下, 制約需求函數與最佳定價所需要的優化條件</li>
+<li>BDP204 當需求函數值重合</li>
+<li>BDP205 唯一的無信息價格是現有價格</li>
+<li>BDP206 現有價格的優化論證</li>
+</ul>
+<ol start="5">
+<li>這個小節給了問題的形式化, 定義了許多概念. 其中還有很多數學優化上的考量所得到的論證, 需要再累積多點經驗. 天天向上, 共勉之!</li>
+</ol>
+<p>2022.01.19.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur020-%E6%B2%88%E6%80%9D%E8%BC%B8%E5%85%A5-%E8%99%95%E7%90%86-%E8%BC%B8%E5%87%BA%E6%A8%A1%E5%9E%8B/">MUR020 沈思輸入-處理-輸出模型
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur020-%E6%B2%88%E6%80%9D%E8%BC%B8%E5%85%A5-%E8%99%95%E7%90%86-%E8%BC%B8%E5%87%BA%E6%A8%A1%E5%9E%8B/">MUR020 沈思輸入-處理-輸出模型
+</a>
+          <span class="float-end post-date">2022-01-18
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur019-%E5%BE%9E%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98%E6%80%9D%E8%80%83%E8%98%87%E5%BE%B7%E6%88%B0%E7%88%AD/">MUR019 從幼女戰記思考蘇德戰爭
+</a>
+          <span class="float-end post-date">2022-01-17
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur018-%E6%B2%88%E6%80%9Dpython%E5%BB%BA%E6%A7%8B%E5%BC%8F/">MUR018 沈思Python建構式
+</a>
+          <span class="float-end post-date">2022-01-16
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur017-%E6%80%9D%E8%80%83%E9%9F%B3%E7%A8%8B%E8%88%87%E9%9F%B3%E9%9A%8E/">MUR017 思考音程與音階
+</a>
+          <span class="float-end post-date">2022-01-15
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur016%E6%80%9D%E8%80%83chase%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%8A%80%E8%A1%93%E7%B4%B0%E7%AF%80/">MUR016 思考Chase合成數據技術細節
+</a>
+          <span class="float-end post-date">2022-01-14
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur021-%E8%B2%9D%E5%BC%8F%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9%E5%9F%BA%E7%A4%8E/">MUR021 貝式動態定價基礎-Ver(0.1)
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur020-%E6%B2%88%E6%80%9D%E8%BC%B8%E5%85%A5-%E8%99%95%E7%90%86-%E8%BC%B8%E5%87%BA%E6%A8%A1%E5%9E%8B/">MUR020 沈思輸入-處理-輸出模型
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur019-%E5%BE%9E%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98%E6%80%9D%E8%80%83%E8%98%87%E5%BE%B7%E6%88%B0%E7%88%AD/">MUR019 從幼女戰記思考蘇德戰爭
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur018-%E6%B2%88%E6%80%9Dpython%E5%BB%BA%E6%A7%8B%E5%BC%8F/">MUR018 沈思Python建構式
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur017-%E6%80%9D%E8%80%83%E9%9F%B3%E7%A8%8B%E8%88%87%E9%9F%B3%E9%9A%8E/">MUR017 思考音程與音階
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded post-taxonomy" title="文獻閱讀">
+            文獻閱讀
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded post-taxonomy" title="動態定價">
+            動態定價
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98/" class="badge rounded post-taxonomy" title="幼女戰記">
+            幼女戰記
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%BE%97%E5%88%B0%E8%81%BD%E6%9B%B8/" class="badge rounded post-taxonomy" title="得到聽書">
+            得到聽書
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E8%A9%90%E6%AC%BA%E5%81%B5%E6%B8%AC/" class="badge rounded post-taxonomy" title="詐欺偵測">
+            詐欺偵測
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%82%8F%E8%BC%AF%E6%B5%81/" class="badge rounded post-taxonomy" title="邏輯流">
+            邏輯流
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
