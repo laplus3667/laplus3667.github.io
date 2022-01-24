@@ -1,0 +1,1434 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR026 讀山口拓郎的模板寫作法 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR026 讀山口拓郎的模板寫作法">
+<meta itemprop="description" content="讀山口拓郎的模板寫作法 紫式晦澀每日一篇文章第26天 前言 今天是2022年第24天, 全年第4週, 一月的第四個週一. 今天要寫ICML的文章, 因此來"><meta itemprop="datePublished" content="2022-01-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="8106">
+<meta itemprop="keywords" content="山口拓郎," /><meta property="og:title" content="MUR026 讀山口拓郎的模板寫作法" />
+<meta property="og:description" content="讀山口拓郎的模板寫作法 紫式晦澀每日一篇文章第26天 前言 今天是2022年第24天, 全年第4週, 一月的第四個週一. 今天要寫ICML的文章, 因此來" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur026-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%AF%AB%E4%BD%9C%E6%B3%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-24T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR026 讀山口拓郎的模板寫作法"/>
+<meta name="twitter:description" content="讀山口拓郎的模板寫作法 紫式晦澀每日一篇文章第26天 前言 今天是2022年第24天, 全年第4週, 一月的第四個週一. 今天要寫ICML的文章, 因此來"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR026%20%e8%ae%80%e5%b1%b1%e5%8f%a3%e6%8b%93%e9%83%8e%e7%9a%84%e6%a8%a1%e6%9d%bf%e5%af%ab%e4%bd%9c%e6%b3%95&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur026-%25E8%25AE%2580%25E5%25B1%25B1%25E5%258F%25A3%25E6%258B%2593%25E9%2583%258E%25E7%259A%2584%25E6%25A8%25A1%25E6%259D%25BF%25E5%25AF%25AB%25E4%25BD%259C%25E6%25B3%2595%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur026-%25E8%25AE%2580%25E5%25B1%25B1%25E5%258F%25A3%25E6%258B%2593%25E9%2583%258E%25E7%259A%2584%25E6%25A8%25A1%25E6%259D%25BF%25E5%25AF%25AB%25E4%25BD%259C%25E6%25B3%2595%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR026 讀山口拓郎的模板寫作法</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR026 讀山口拓郎的模板寫作法
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-23 19:00:00 -0500 EST。">
+    2022-01-24
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded-pill post-taxonomy">寫作</a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded-pill post-taxonomy">學術工作流</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E/" class="badge rounded-pill post-taxonomy">山口拓郎</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#三大模板的心法技法用法">三大模板的心法技法用法</a>
+      <ul>
+        <li><a href="#心法-守破離-守基本功以模板-破基本功以寫作-離基本功以文章">心法: 守破離-守基本功以模板; 破基本功以寫作; 離基本功以文章</a></li>
+        <li><a href="#技法-列舉-結論優先-故事-詳細訊息事實-獲得認同左腦-引起共鳴右腦">技法: 列舉, 結論優先, 故事; 詳細訊息(事實), 獲得認同(左腦), 引起共鳴(右腦)</a></li>
+        <li><a href="#用法-寫文章從一行字開始-整理資訊-抽象具體概念互換">用法: 寫文章從一行字開始, 整理資訊, 抽象具體概念互換</a></li>
+      </ul>
+    </li>
+    <li><a href="#列舉型模板-提供讀者詳細清楚的資訊">列舉型模板-提供讀者詳細清楚的資訊</a>
+      <ul>
+        <li><a href="#心法-組織傳達多條資訊">心法: 組織傳達多條資訊</a></li>
+        <li><a href="#技法-說明意圖-簡潔列舉-共通項抽象化">技法: 說明意圖, 簡潔列舉, 共通項抽象化</a></li>
+        <li><a href="#用法-宣傳介紹-會議報告-提供經驗-諮詢郵件">用法: 宣傳介紹, 會議報告, 提供經驗, 諮詢郵件</a></li>
+        <li><a href="#文法-最多七項-重要先說-分類列舉-刻意說一個關鍵點">文法: 最多七項, 重要先說, 分類列舉, 刻意說一個關鍵點.</a></li>
+      </ul>
+    </li>
+    <li><a href="#結論優先型模板-使讀者認同">結論優先型模板-使讀者認同</a>
+      <ul>
+        <li><a href="#心法-開門見山-幹枝葉-摘要力">心法: 開門見山, 幹枝葉, 摘要力</a></li>
+        <li><a href="#技法-以結論引起興趣-提供具有說服力的證據理由-使用具體事例表達真實情感">技法: 以結論引起興趣, 提供具有說服力的證據理由, 使用具體事例表達真實情感</a></li>
+        <li><a href="#用法介紹文-異議書-簡歷-聯絡文">用法:介紹文, 異議書, 簡歷, 聯絡文</a></li>
+        <li><a href="#文法-慣用表達-客觀理由依據-具體事例親身經歷-自反駁讓步-背景補充">文法: 慣用表達, 客觀理由依據, 具體事例親身經歷, 自反駁讓步, 背景補充</a></li>
+      </ul>
+    </li>
+    <li><a href="#故事型模板-引起讀者共鳴">故事型模板-引起讀者共鳴</a>
+      <ul>
+        <li><a href="#心法-逆轉勝-引發共鳴">心法: 逆轉勝, 引發共鳴</a></li>
+        <li><a href="#技法個體困境社會困境-多重轉機-製造大落差">技法：個體困境社會困境, 多重轉機, 製造大落差</a></li>
+        <li><a href="#用法-敘事方法故事-敘事產品推銷-讀書心得-老人言當年勇">用法: 敘事方法故事, 敘事產品推銷, 讀書心得, 老人言當年勇</a></li>
+        <li><a href="#文法-強大敵人深刻矛盾-簡單易懂故事-圓滿結局-應用場景-悲傷和自嘲擔憂與成效">文法: 強大敵人深刻矛盾, 簡單易懂故事, 圓滿結局, 應用場景, 悲傷和自嘲,擔憂與成效</a></li>
+      </ul>
+    </li>
+    <li><a href="#組合模板-套路中的套路">組合模板-套路中的套路</a>
+      <ul>
+        <li><a href="#心法組合更高的複雜度">心法:組合更高的複雜度</a></li>
+        <li><a href="#技法-故事結論-結論故事-結論列舉故事">技法: 故事+結論, 結論+故事, 結論+列舉+故事</a></li>
+        <li><a href="#用法-列舉-結論優先-故事">用法: 列舉, 結論優先, 故事</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="讀山口拓郎的模板寫作法">讀山口拓郎的模板寫作法<a class="anchor ms-1" href="#讀山口拓郎的模板寫作法"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rJ1lJB2TY.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第26天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第24天, 全年第4週, 一月的第四個週一. 今天要寫ICML的文章, 因此來學習增且自己組織資訊的能力. 得到App提供很好的電子書服務, 做筆記學習, 抽取書的內容非常方便. 在寫這文章的途中, 連帶思考自己於「學術元工作流」中的用例與工作流程.</p>
+</li>
+<li>
+<p>今天的素材主要來自<a href="https://www.amazon.co.jp/-/zh/kindle-dbs/entity/author/B00505TWH2?_encoding=UTF8&amp;offset=0&amp;pageSize=12&amp;searchAlias=stripbooks&amp;sort=date-desc-rank&amp;page=1&amp;langFilter=default#formatSelectorHeader" target="_blank" rel="noopener noreferrer">山口拓朗</a>
+的<a href="https://d.dedao.cn/DpTKnKTNdwTPgG0l" target="_blank" rel="noopener noreferrer">模板寫作法</a>
+. 本書的結構十分整齊漂亮, 守破離是邁向獨立學者必經的三個段落.</p>
+</li>
+</ol>
+<h2 id="三大模板的心法技法用法">三大模板的心法技法用法<a class="anchor ms-1" href="#三大模板的心法技法用法"><i class="fas fa-link"></i></a></h2>
+<h3 id="心法-守破離-守基本功以模板-破基本功以寫作-離基本功以文章">心法: 守破離-守基本功以模板; 破基本功以寫作; 離基本功以文章<a class="anchor ms-1" href="#心法-守破離-守基本功以模板-破基本功以寫作-離基本功以文章"><i class="fas fa-link"></i></a></h3>
+<blockquote>
+<p>模板就是輸出結構. 好的結構讓資訊能有效重用(Reusable).</p>
+</blockquote>
+<ol start="3">
+<li><strong>模板是作者展現個性的基礎舞台</strong>:</li>
+</ol>
+<ul>
+<li>模板只是起到規劃文章走向的向導作用。</li>
+<li>在使用模板的基礎上，在填充內容、詞匯選擇、表現方式以及文章體裁等方面再下些功夫，作者的個性會自然而然地散發出來，從而創作出扣人心弦的文章。</li>
+</ul>
+<blockquote>
+<p>Input: 守基本功以模板<br>
+Process: 破基本功以寫作<br>
+Output: 離基本功以文章</p>
+</blockquote>
+<ol start="4">
+<li><strong>守破離</strong>:</li>
+</ol>
+<ul>
+<li>“守破離”原指以劍道和茶道為首的武道以及藝道的“修行階段”。</li>
+<li>“守”，是指最初階段需遵從老師和流派的教誨，勤練基本功及技巧，達到熟練的境界。</li>
+<li>“破”，是指聽取其他老師或流派的教誨，達到吸取精華並發展心術的境界。</li>
+<li>“離”，是指脫離某個流派後，獨自創新招數，另開辟新境界。</li>
+</ul>
+<blockquote>
+<p>本書傳授的模板相當於守破離中的“守”。</p>
+</blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/urD9ixjYmEhib_-p87jGg5ISqxyMk9whtZOrJBh3lnk.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="技法-列舉-結論優先-故事-詳細訊息事實-獲得認同左腦-引起共鳴右腦">技法: 列舉, 結論優先, 故事; 詳細訊息(事實), 獲得認同(左腦), 引起共鳴(右腦)<a class="anchor ms-1" href="#技法-列舉-結論優先-故事-詳細訊息事實-獲得認同左腦-引起共鳴右腦"><i class="fas fa-link"></i></a></h3>
+<ol start="5">
+<li><strong>三種基礎模板:列舉, 結論優先, 故事</strong>:</li>
+</ol>
+<ul>
+<li>所謂模板，就是指文章走向的“結構模式”。</li>
+<li>如果按照“先寫什麽，然後寫什麽，接著寫什麽，最後寫什麽”的指定順序來寫的話，你就不會在文章構思上消耗大量的時間了。</li>
+<li>與此同時，你會非常流暢地寫出通俗易懂的文章。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/urD9ixjYmEhib_-p87jGg5ISqxyMk9whtZOrJBh3lnk.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="6">
+<li><strong>A. 闡述多個訊息-列舉型</strong>:</li>
+</ol>
+<ul>
+<li>【模板1】無壓力閱讀的“列舉型”</li>
+<li>將手頭的信息按要點分門別類後具體闡述的就是“列舉型”。</li>
+<li>寫作順序為“A:整體構思→B:列舉要點1→C:列舉要點2→D:列舉要點3→E：總結”。</li>
+<li>當你想闡述多個信息時，此模板非常有用。</li>
+</ul>
+<ol start="7">
+<li><strong>少則分; 多則合</strong>:</li>
+</ol>
+<ul>
+<li>當手頭的信息處於待具體化的狀態時，需要有“敢於分成幾個要點”的想法。</li>
+<li>相反，手頭的信息分得過於詳細時，需要有“敢於把信息合並在一起”“敢於給信息排優先順序（按排名高到低)”的想法。</li>
+</ul>
+<ol start="8">
+<li><strong>B. 獲得讀者認同-結論優先型</strong>:</li>
+</ol>
+<ul>
+<li>【模板2】提升信服度的“結論優先型”</li>
+<li>當你想「重點傳達核心內容」時，這個模板再適合不過了。</li>
+<li>寫作順序為“A：結論→B：理由·依據→C：具體事例·詳細內容→D：總結”。</li>
+<li>當你想通過文章得到讀者的認同，就用這個“結論優先型”模板</li>
+</ul>
+<ol start="9">
+<li><strong>結論-理由-具體事例</strong>:</li>
+</ol>
+<ul>
+<li>圍繞核心內容(結論)寫, 會使邏輯更清晰, 降低跑題的風險</li>
+<li>「理由」與「具體事例」是使結論或觀點,更有說服力, 而需要的支撐信息.</li>
+</ul>
+<blockquote>
+<p>Screening是一個Federation後的得到的好處, 也是加速整個任務表現的關鍵.
+理由: Federation帶來好處
+具體事例: Federated Lasso理論可以證明; 實驗也有好效果.</p>
+</blockquote>
+<ol start="10">
+<li><strong>C. 產生讀者共鳴-故事型</strong>:</li>
+</ol>
+<ul>
+<li>想通過故事記敘時就用這個模板。</li>
+<li>寫作順序為“A：消沈狀態→B：轉機→C：轉變與成長→D：展望未來”。</li>
+<li>當你想喚起讀者的共鳴時，就用這個“故事型”模板。</li>
+</ul>
+<ol start="11">
+<li><strong>問題-轉機-轉變-未來</strong>:</li>
+</ol>
+<ul>
+<li>問題: 找出研究斷層</li>
+<li>轉機: 利用新的研究方法來填補研究斷層</li>
+<li>轉變: 新的研究方法對存在的問題提供新的知識</li>
+<li>未來: 同樣的套路, 成為一個系列作法, 產生系統知識.</li>
+</ul>
+<h3 id="用法-寫文章從一行字開始-整理資訊-抽象具體概念互換">用法: 寫文章從一行字開始, 整理資訊, 抽象具體概念互換<a class="anchor ms-1" href="#用法-寫文章從一行字開始-整理資訊-抽象具體概念互換"><i class="fas fa-link"></i></a></h3>
+<ol start="12">
+<li><strong>一行字概括是邁向“條理清晰”的第一步</strong>:</li>
+</ol>
+<ul>
+<li>一言以蔽之:一篇文章最終都可以用一行字來概括，與文章的長短無關。論文的題目、書籍的名稱，都是用一行左右的文字來體現的。</li>
+<li>中心思想力：如果作者無法用一行文字概括的話，那麽這篇文章也不會好到哪去，因為這說明作者沒有把握好自己想傳達的核心內容。用一行文字傳達不了的東西，用10行、100行都是無法傳達的。這就是把握好中心思想的重要性。</li>
+<li>模板化輸出: 本書介紹的模板都分為4~5個部分。如果是平時經常寫的文章（已整理寫作素材），很快就可以進入寫作狀態中了。</li>
+<li>提綱軟實力: 如果是第一次寫或者是還未整理寫作素材的情況，可以先練習列提綱，一行字概括各部分內容。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/bvU0iWNlfSAfOFpUrzbJP2AlsON36DMjnORObhuHdMw.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="13">
+<li><strong>整理信息</strong>:</li>
+</ol>
+<ul>
+<li>实际上，如果能用一行文字准确地概括每段的内容的话，就能写出条理清晰、易于理解的文章。</li>
+<li>其实有些人读完上述提纲后已经理解了文章想表达的内容，这是因为作者已经准确地提炼出了想要传达的中心思想。</li>
+<li>反过来说，如果无法用一行文字提取文章中心思想的话，通往“条理清晰的文章”和“有魅力的文章”的道路就会很艰难。</li>
+<li>如果提纲不是很完美，或者不太满意，则说明尚未达到扩充内容的阶段。“零”再怎么扩充也只不过是“零”。</li>
+<li>列提纲就是用一句话提炼每段内容的中心思想的过程。</li>
+<li>当无法列出提纲时，要意识到自己头脑尚处于混乱状态，需要先整理信息。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/MFvrsQ-R_oACM8qvulPM3v3D2Em9fuq-oxkaZ4VEoEA.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/O0UtkFzTQ-AsyX4C4yH0GoC4j3YY-ik1XGOs5sTPKoM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="14">
+<li><strong>抽象概念与具体概念相互转换</strong>:</li>
+</ol>
+<ul>
+<li>写作就是将抽象概念和具体概念进行融合的过程。</li>
+<li>比如，在第37页的提纲中提到的“成本”，这个词本身就很抽象，不同的人理解的意思是不同的。</li>
+<li>成本的释义中含有生产成本、成本价格等，也包含劳力和时间的含义。</li>
+<li>在C“阐述具体事例·详细内容”中，针对B“阐述理由·依据”中体现的“成本”做了具体的描述。</li>
+<li>“去医院看病”指的是时间和劳力上的成本，“会增加医疗费、药费的开销”指的是金钱上的成本。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/4S-bclWoJwQvzkkfxGMT0WfnIJNcG05X_XjW2YomTds.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="15">
+<li><strong>具體抽象的取捨</strong>:</li>
+</ol>
+<ul>
+<li>写文章时，具体到什么程度，要根据写作者想传达到什么程度和读者想了解到什么程度而变化。</li>
+<li>需要注意的是，有时即使写作者认为这样写应该可以看得懂，但是对于读者来说还没有具体到能够理解、认同的水平（高度抽象）。</li>
+<li>重要的是，写作者不能随心所欲地决定具体化的程度，而是需要结合读者的理解、认知水平而定。</li>
+<li>从列提纲到扩展句子的过程可以理解为将中心思想（=高度抽象）具体化的过程。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/Bkp1BhhTK.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="16">
+<li><strong>三種模板比較</strong>:</li>
+</ol>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/BJ5mtH26Y.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rkTLYSnpK.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/SkgYFS3TY.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="列舉型模板-提供讀者詳細清楚的資訊">列舉型模板-提供讀者詳細清楚的資訊<a class="anchor ms-1" href="#列舉型模板-提供讀者詳細清楚的資訊"><i class="fas fa-link"></i></a></h2>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/BJ5mtH26Y.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="心法-組織傳達多條資訊">心法: 組織傳達多條資訊<a class="anchor ms-1" href="#心法-組織傳達多條資訊"><i class="fas fa-link"></i></a></h3>
+<ol start="17">
+<li><strong>組織並傳達多條信息的“列舉型”</strong>:</li>
+</ol>
+<ul>
+<li>列舉型模板是針對某一個主題、分成幾個要點傳達的模板。</li>
+<li>在文章開頭部分表明接下來要傳達的主題和列舉的要點的數量後，再依次傳達要點。</li>
+<li>通過傳達整體構思，可以了解到接下來具體會講幾方面的內容。這樣可以讓讀者提前做好心理準備，更容易接受接下來講的內容。</li>
+<li>這種結構不僅可以應用於寫作，善於表達的人經常會套用於各種場合。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/BEqlc0iBUulUNaNQ3yWhjsQ3NbVF_dGBpNTI5FWCq14.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="18">
+<li>
+<blockquote>
+<p>“傳達整體構思”也可以理解成“交出文本地圖”。拿到“地圖”的讀者，通過了解話題的行進方向，可以專注地聽下去。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="技法-說明意圖-簡潔列舉-共通項抽象化">技法: 說明意圖, 簡潔列舉, 共通項抽象化<a class="anchor ms-1" href="#技法-說明意圖-簡潔列舉-共通項抽象化"><i class="fas fa-link"></i></a></h3>
+<ol start="19">
+<li><strong>使用技巧①說明文章的寫作意圖</strong>:</li>
+</ol>
+<ul>
+<li>在文章開頭就明確表達講什麽、講幾點，這樣的話，讀者更容易掌握文章的來龍去脈，從而更容易理解下文。</li>
+<li>在傳達整體構思時，也可以不用數字，而是用“有如下幾點”這樣的表達方式：</li>
+<li>
+<ol>
+<li>有幾種提高時間效率的方法。</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>想順利畢業，必須通過幾項考試。</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>想要解決這個問題，需要研究幾個方案。</li>
+</ol>
+</li>
+</ul>
+<ol start="20">
+<li><strong>使用技巧②列舉的要點要簡潔</strong>:</li>
+</ol>
+<ul>
+<li>在開頭部分傳達整體構思後，再將需要傳達的事項（列舉要點） 一一闡述清楚（B~D）。</li>
+</ul>
+<ol start="21">
+<li><strong>使用技巧③總結時把共通項抽象化</strong>:</li>
+</ol>
+<ul>
+<li>整理完B~D的列舉要點後，最後寫E的總結部分。寫文章的總結部分時，要意識到將所有的列舉要點概括起來。</li>
+<li>前面講的例文中將增加知識和提高自身素養、加強詞匯能力、變得更加寬容這3個好處作為未來的志向進行了概括。</li>
+</ul>
+<h3 id="用法-宣傳介紹-會議報告-提供經驗-諮詢郵件">用法: 宣傳介紹, 會議報告, 提供經驗, 諮詢郵件<a class="anchor ms-1" href="#用法-宣傳介紹-會議報告-提供經驗-諮詢郵件"><i class="fas fa-link"></i></a></h3>
+<ol start="22">
+<li>
+<p><strong>例文①PR文章（宣傳類文章）“關於上門做飯服務的介紹</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/DNh-RLkn2lYwvKnPLh_xM-sAi5Ml4JkOThyWNfTpbng.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+<li>
+<p><strong>例文②會議報告（商務文件）“關於展會上展位的決定事宜”</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/R5e9ISXtlCVGLlyJAlZaCD3C8CiBCNZuD3Q3WrLrGn4.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+<li>
+<p><strong>例文③　提供經驗（博客文章）“預防夏日倦怠癥的3種食材”</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/6eLzgtspVLpdjUL5lxnR1-TqpF2HDGq45oAWFATz9YE.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+<li>
+<p><strong>例文④　咨詢文（郵件）“關於貴公司提供的新服務”</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/WuUvU5MXtXLQmINciVZslHlIAJerYA25eASARfOdqvc.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+</ol>
+<h3 id="文法-最多七項-重要先說-分類列舉-刻意說一個關鍵點">文法: 最多七項, 重要先說, 分類列舉, 刻意說一個關鍵點.<a class="anchor ms-1" href="#文法-最多七項-重要先說-分類列舉-刻意說一個關鍵點"><i class="fas fa-link"></i></a></h3>
+<ol start="26">
+<li><strong>立竿見影的技巧①列舉的數量控制在2~7項</strong>:</li>
+<li><strong>立竿見影的技巧②按照重要性由高到低的順序排列</strong>:</li>
+<li><strong>立竿見影的技巧③分類別列舉</strong>:</li>
+<li><strong>立竿見影的技巧④在“整體構思”部分只闡述一個關鍵點</strong>:</li>
+<li><strong>編排①按照“首先”“其次”“最後”的順序</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/2ypCObc2HUI0UFtQpSIDf5wkhabcrsflyynt_i0WV2M.original.fullsize.png" loading="lazy"
+  
+   />
+
+
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/zn-DiBfYtXDmxewTvjJSxayQ89VXnHdvx-Hn6qtuIIQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li><strong>編排②按照“首先”“其次”“再者”的順序</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/_Q14UAli5PiO5NBX3_DxwXLeiKM5Jyk6-jhNT8wQYbY.original.fullsize.png" loading="lazy"
+  
+   />
+
+
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/MdsHobCbQQuBk_p_AfmzuKvx6dqiGxckb8o_tGc0Ies.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li><strong>編排③8條以上的信息采用逐條列舉的方式</strong>:</li>
+</ol>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/Skxdzh3pF.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rkEKM33aY.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="結論優先型模板-使讀者認同">結論優先型模板-使讀者認同<a class="anchor ms-1" href="#結論優先型模板-使讀者認同"><i class="fas fa-link"></i></a></h2>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rkTLYSnpK.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="心法-開門見山-幹枝葉-摘要力">心法: 開門見山, 幹枝葉, 摘要力<a class="anchor ms-1" href="#心法-開門見山-幹枝葉-摘要力"><i class="fas fa-link"></i></a></h3>
+<ol start="33">
+<li><strong>開門見山</strong>:</li>
+</ol>
+<ul>
+<li>“結論優先型”，顧名思義就是開門見山先說結論，再針對結論闡述詳細的見解。</li>
+<li>在開頭部分先痛快地推出結論，然後寫“為什麽會得出此結論”的理由，再寫具體事例和詳細內容來提高結論的說服力。</li>
+<li>按照“結論→理由→具體事例”的順序寫的文章更能提高讀者的認可度。</li>
+<li>結論優先型文章開頭就揭曉文章的結論（最重要的信息)。</li>
+<li>推出結論後，接下來闡述的理由和具體事例也會令人過目不忘了。</li>
+</ul>
+<ol start="34">
+<li><strong>幹枝葉</strong>:</li>
+</ol>
+<ul>
+<li>遵循結論優先型的流程，就是按照“幹（結論）→枝（理由·依據）→葉（具體事例·詳細內容） ”的順序傳達。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/AxBU5RddKWeBCq4oxpZUqEKSq6TH8CJGTUKRIGLEnSc.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="35">
+<li><strong>精選資訊:摘要力</strong>:</li>
+</ol>
+<ul>
+<li>並不是說所有的信息都要寫出來，而要為了讀者能夠正確地理解、認同，判斷哪些信息需要發表，哪些信息需要隱藏。</li>
+<li>這個取舍和選擇是寫作者應具備的能力。</li>
+<li>寫作者必須按照讀者易於理解的順序寫，而不是自己想怎麽安排就怎麽寫。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/S1P8_vn6t.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="技法-以結論引起興趣-提供具有說服力的證據理由-使用具體事例表達真實情感">技法: 以結論引起興趣, 提供具有說服力的證據理由, 使用具體事例表達真實情感<a class="anchor ms-1" href="#技法-以結論引起興趣-提供具有說服力的證據理由-使用具體事例表達真實情感"><i class="fas fa-link"></i></a></h3>
+<ol start="36">
+<li><strong>使用技巧①用結論引起興趣</strong>:</li>
+</ol>
+<ul>
+<li>結論優先型模板最典型的特點就是A部分，即“推出結論（傳達最重要的信息）”。</li>
+<li>結論要簡單:開門見山式地亮出結論，可以提高讀者的理解度。 如果結論不易理解或過於錯綜覆雜，那麽讀者的理解度會下降。千萬不要寫得啰里啰唆，直截了當地傳達到位才是最重要的。</li>
+<li>結論要有趣: 但是，這並不意味著只要簡潔且準確地傳達好就萬事大吉了（盡管在某些情況下僅作為傳達信息的目的使用）。為什麽這麽說呢？那是因為如果結論寫得一點吸引力都沒有，讀者根本不會有讀的欲望。</li>
+<li>文章的魅力不是單由“寫法”決定的，而是由“內容+寫法”的完美結合決定的。其中“結論”是內容的核心部分，起著至關重要的作用。</li>
+<li>推出結論時，不采用“不容易引起興趣的結論”，采用“容易引起興趣的結論”；不采用“過於平庸的結論”，采用“新穎的結論”。</li>
+</ul>
+<ol start="37">
+<li><strong>使用技巧②提供足夠有說服力的理由或依據</strong>:</li>
+</ol>
+<ul>
+<li>B部分的“理由·依據”為結論提高說服力起著重要的作用。下面①~③的句子中，你最認同的是哪一個呢？</li>
+<li>理由和依據是為了使開頭推出的結論更具有說服力。</li>
+<li>因此，在闡述理由和依據時要充分考慮到，理由和依據是否“合情合理”。</li>
+<li>在闡述理由和依據時，也要考慮插入「客觀事實」。如果能加上具有說服力的數據和資料的話，其邏輯性會更加突出（提高有效性）</li>
+<li>個人的主觀感覺和判斷，作為支撐結論的理由和依據是比較弱的。</li>
+<li>因為讀者會認為“這只能代表你個人的體驗（意見/判斷/感覺） ”而不認同你的觀點（根據結論的類型，某些情況下個人體驗也是可以說服讀者的）</li>
+</ul>
+<ol start="38">
+<li><strong>使用技巧③　使用具體事例表達真實情感</strong>:</li>
+</ol>
+<ul>
+<li>從B“闡述理由·依據”轉到C部分，C“闡述具體事例·詳細內容”要求闡述個人的體驗經歷和實際案例。</li>
+<li>理由和依據要求具有一定的“邏輯性”，而具體事例要傳達情感（情緒）。</li>
+<li>前者是方便讀者理解的必要信息，後者是為了讓讀者心服口服所需的支撐信息。</li>
+<li>在C的“具體事例·詳細內容”, 引起讀者的“伴隨體驗（自己親身體驗別人的經驗） ”。</li>
+<li>即使自己認為“結論+理由·依據”很清晰，讀者卻可能沒有完全明白。在這一點上，具有真實感的經驗之談和實際案例才會有滿滿的誘惑力。</li>
+<li>想要提高自己寫的文章的說服力，就要有意識地插入具體事例，這要比講一堆大道理強很多。</li>
+</ul>
+<h3 id="用法介紹文-異議書-簡歷-聯絡文">用法:介紹文, 異議書, 簡歷, 聯絡文<a class="anchor ms-1" href="#用法介紹文-異議書-簡歷-聯絡文"><i class="fas fa-link"></i></a></h3>
+<ol start="39">
+<li><strong>例文①介紹文（博客文章）“個人色彩診斷的介紹”</strong>:</li>
+</ol>
+<ul>
+<li>按照“結論→理由·依據→具體事例·詳細內容”的順序讀取的過程中加深“個人色彩診斷”知識的文章</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/iPDdBFBV2r_VshfSGrJyPoG5SUrEMnKwA_hPfpZ1nS4.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="40">
+<li><strong>例文②異議書（商務文件）“我反對”</strong>:</li>
+</ol>
+<ul>
+<li>不管是讚同的文章還是反對的文章，理由都起著極其關鍵的作用。</li>
+<li>理由合情合理，結論的說服力就會高；反之，則說服力就會下降。</li>
+<li>結論優先型就是像這樣按照“結論→理由·依據→具體事例·詳細內容”的順序展現給讀者並獲得讀者的認可的.</li>
+<li>當發表自己的見解或觀點時，結論優先型模板是非常有效的。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/cwxxrMGXde70q3jlD-BlFdsqLdjzmC_yP7fP1ydtaXc.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="41">
+<li><strong>例文③PR文章（簡歷）“回答‘你的長處是什麽？’”</strong>:</li>
+</ol>
+<ul>
+<li>填寫書寫空間有限的簡歷時，結論優先型模板是很有用的。如果先寫一堆沒用的廢話，空間會瞬間被填滿。</li>
+<li>在刪減無用的語句之後，為了寫出具有說服力的文章，按照“結論→理由→具體事例”的順序寫是最理想的。</li>
+<li>在商務場景中“結論在先”的表達方式很被看好。企業的面試官通過審核簡歷推斷應聘者的表達能力和傳達能力是很常見的事情。</li>
+<li>因此，通過B部分的“闡述理由·根據”和C部分的“具體事例·詳細說明”，展示具有獨創性的經驗之談是很重要的。</li>
+<li>像例文那樣舉出具體的經驗之談（活動成功案例），就可以證明結論是“真的”。</li>
+<li>你想在眾人中脫穎而出，那麽取勝的關鍵就在於如何闡述“經驗之談”。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Azkx8ZpOFDU0n1ndu-FVWf1Av-qzsSajdmSEYrNXGRM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="42">
+<li><strong>例文④聯絡文（商務文件）“會議內容的變更事項”</strong>:</li>
+</ol>
+<ul>
+<li>這是一篇通知舉辦與以往不同的會議的文章，像這樣的聯絡文也可以使用結論優先型模板，每個部分中隱藏的問題如下：
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Yd-UkRoxYqZXnHHptUc7qNXd7mXnO7i4sNzDC6CTaP4.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li>在傳達這次不分組的意向（結論）的同時，說明了變更的理由。如果未談及其理由或理由不夠充分，則得不到讀者的認同。</li>
+<li>正是因為是一篇聯絡事項的文章，所以需要在C的“具體事例·詳細內容”部分描述具體有哪些變更事項。</li>
+<li>反之，如果沒有詳細內容的記載（為了促進交流而準備的具體方案），讀者可能還是會擔心“盡管是這種形式，恐怕也沒有太多的交流和互動的機會”。</li>
+<li>而且，如果之前有過舉辦的經歷，那麽可以考慮在C的“具體事例·詳細內容”的部分插入之前的“成功經驗（具體案例） ”。</li>
+<li>當了解到曾經有過成功案例，讀者就會產生“有過成功案例就放心了”的想法。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Xji8IU5fIahiCuqisYt5mv-dKGHezFsKL19OkO22ABk.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="文法-慣用表達-客觀理由依據-具體事例親身經歷-自反駁讓步-背景補充">文法: 慣用表達, 客觀理由依據, 具體事例親身經歷, 自反駁讓步, 背景補充<a class="anchor ms-1" href="#文法-慣用表達-客觀理由依據-具體事例親身經歷-自反駁讓步-背景補充"><i class="fas fa-link"></i></a></h3>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rJ5KnD26Y.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="43">
+<li><strong>立竿見影的技巧①結論優先型的常用短語</strong>:</li>
+<li><strong>立竿見影的技巧②將可靠的數據作為“理由、依據”</strong>:</li>
+<li><strong>立竿見影的技巧③具體事例中插入親身經歷</strong>:</li>
+<li><strong>編排①表明某種觀點時，加入對可預見反駁的回應</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/HdnToScl9NyunuYzHuI7hhCGP1BzilxmS0jCCmzKH1M.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li><strong>編排②加入“背景”，提供有益信</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/MgAbpkiksVsw7uL3ak-V4BA7v7gBz-WYERjv4LBtVfQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ol>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/S1L5Z2n6F.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="故事型模板-引起讀者共鳴">故事型模板-引起讀者共鳴<a class="anchor ms-1" href="#故事型模板-引起讀者共鳴"><i class="fas fa-link"></i></a></h2>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/SkgYFS3TY.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="心法-逆轉勝-引發共鳴">心法: 逆轉勝, 引發共鳴<a class="anchor ms-1" href="#心法-逆轉勝-引發共鳴"><i class="fas fa-link"></i></a></h3>
+<ol start="48">
+<li><strong>什麽是“故事型”模板？</strong>:</li>
+</ol>
+<ul>
+<li>故事型模板是指，以引起讀者共鳴為目的，將某個故事情節通過“連續劇形式”呈現出來的模板。</li>
+<li>在開頭部分描述主人公的消沈狀態（不良狀態），接著描述是什麽改變了主人公、主人公具體發生了哪些轉變，是如何成長的，最後以快樂圓滿的結局收尾。</li>
+<li>故事型模板可以用以下示意圖表示。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/a9tx35HYuWNfmCtINM3m5-IwoeM8ObvaumiCaymv5Bc.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/3_JyriUqmppuTDwfvcndqulV0cQ8nPRGVUdmU6HKugg.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="49">
+<li><strong>傳達信息為目的的商務場景, 不適合用故事型模板</strong>:</li>
+</ol>
+<ul>
+<li>結論優先型適合取得共識</li>
+<li>列舉型適合給詳細資訊</li>
+</ul>
+<h3 id="技法個體困境社會困境-多重轉機-製造大落差">技法：個體困境社會困境, 多重轉機, 製造大落差<a class="anchor ms-1" href="#技法個體困境社會困境-多重轉機-製造大落差"><i class="fas fa-link"></i></a></h3>
+<ol start="50">
+<li><strong>使用技巧①消沈狀態分個體性和社會性兩方面</strong>:</li>
+</ol>
+<ul>
+<li>在A“闡述消沈狀態”中，打開心扉講述自己失敗的經驗、丟人的經歷和自卑的表現等，讀者更容易投入感情傾聽。</li>
+<li>同樣是成功的經驗，如果不講述取得成功的詳細過程，那麽只能讓人認為你是在自吹自擂。當然，也不會引起讀者的共鳴，不容易被理解。</li>
+<li>在談成功經驗時，建議以失敗點為起點，按照漸入佳境的趨勢寫故事。</li>
+</ul>
+<ol start="51">
+<li><strong>使用技巧②思考不同的轉機</strong>:</li>
+</ol>
+<ul>
+<li>B部分“闡述轉機”的內容（轉折點）可以寫人、物、作品、場所、發生的事情等各種各樣的內容。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/7Nd12SYDfLdgqPyinQEfBuhps9uSvPR85I6R28vijpI.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="52">
+<li><strong>使用技巧③制造大的“落差”</strong>:</li>
+</ol>
+<ul>
+<li>故事中一定會存在落差的。在A“闡述消沈狀態”中描述的狀況，到D“展望未來”中發生了巨大變化。</li>
+<li>為了引起讀者的強烈共鳴，“強烈的痛苦”和“巨大的喜悅”這兩個要素是必不可少的。</li>
+</ul>
+<h3 id="用法-敘事方法故事-敘事產品推銷-讀書心得-老人言當年勇">用法: 敘事方法故事, 敘事產品推銷, 讀書心得, 老人言當年勇<a class="anchor ms-1" href="#用法-敘事方法故事-敘事產品推銷-讀書心得-老人言當年勇"><i class="fas fa-link"></i></a></h3>
+<ol start="53">
+<li><strong>例文①敘事文（博客文章）“推薦三明治溝通法”</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/HXawWlgbyGzb2mlmz5x0FfYdioV5vs8dZQwyjyxkRsM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ol>
+<blockquote>
+<p>實驗與因果</p>
+</blockquote>
+<ol start="54">
+<li><strong>例文②敘事文（散文風格）“移動的便當屋”</strong>:</li>
+</ol>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/blyjWaP1jcEAgwtQhaqlOQzP0xFTU6GkHU90-8IBWXc.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紀錄新體驗</p>
+</blockquote>
+<ol start="55">
+<li><strong>例文③書評（博客文章）“《花錢買來的幸福感》書評”</strong>:</li>
+</ol>
+<ul>
+<li>使用故事型模板寫的文章，並不是寫書中的內容，而是寫出通過讀這本書給自己帶來了怎樣的變化，以經驗之談為中心豐富文章的內容。</li>
+<li>通過寫出不斷轉變、成長的經歷，很容易讓讀者心動、產生共鳴，從而對這本書感興趣的讀者會越來越多。</li>
+<li>用故事型模板描述自身變化時，一定要縮小描述要點的範圍。</li>
+<li>這篇文章是在各種學習和領悟的過程中鎖定了“對金錢的消極印象只不過是自己情感的投射”這一要點展開的。</li>
+<li>如果要點過多，那麽每個要點都會被稀釋，讀者可能不太好理解，還有些讀者會因書中的信息量過大而中途放棄閱讀。</li>
+<li>我想再強調一遍，信息量不在於多，而在於精。通過篩選出最值得講述的信息，讀者會更好地理解文章。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/YQ7cKRLrSeteqJ9DQfu5yX6FCleheIRgIhOZ4efKNsQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>讀書心得</p>
+</blockquote>
+<ol start="56">
+<li><strong>例文④寫給學生的寄語“為失敗而高興吧”</strong>:</li>
+</ol>
+<ul>
+<li>適合講以前的經驗, 來改變後輩的行動</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/l1sL_0LC5Y8WxVuP8ME74zT4x0z4OdqxPXtR-MUSj00.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>當年勇, 老人言</p>
+</blockquote>
+<h3 id="文法-強大敵人深刻矛盾-簡單易懂故事-圓滿結局-應用場景-悲傷和自嘲擔憂與成效">文法: 強大敵人深刻矛盾, 簡單易懂故事, 圓滿結局, 應用場景, 悲傷和自嘲,擔憂與成效<a class="anchor ms-1" href="#文法-強大敵人深刻矛盾-簡單易懂故事-圓滿結局-應用場景-悲傷和自嘲擔憂與成效"><i class="fas fa-link"></i></a></h3>
+<ol start="57">
+<li>
+<p><strong>立竿見影的技巧①寫強大的敵人和深刻的矛盾</strong>:</p>
+</li>
+<li>
+<p><strong>立竿見影的技巧②講故事的基本原則是“簡單易懂”</strong>:</p>
+</li>
+<li>
+<p><strong>立竿見影的技巧③圓滿的結局更容易催釋多巴</strong>:</p>
+</li>
+<li>
+<p><strong>立竿見影的技巧④應用到商務場景中</strong>:</p>
+</li>
+<li>
+<p><strong>編排①在悲傷的故事中加入自嘲</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/eCuqYgaaZo2wkCXCoyLqGrJ-hIhcvuO9Dew1igQSKo4.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+<li>
+<p><strong>編排②寫軟文時加入“擔憂”和“成效”</strong>:</p>
+</li>
+</ol>
+<ul>
+<li>“軟文”是指，以銷售商品或服務為目的編寫的文章。</li>
+<li>想在讀者看完“軟文”後勾起他們“想買”的欲望，那麽這篇文章必須動人心弦。</li>
+<li>這是因為，消費者的購買欲望根據情感上下浮動。</li>
+<li>能夠引起共鳴的故事，可以直接編排成軟文。
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/dl8u4F590iSgkO-9v7xMmurZJOY8MbQ_ZPNS0tX25iY.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/Skcpe226t.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="組合模板-套路中的套路">組合模板-套路中的套路<a class="anchor ms-1" href="#組合模板-套路中的套路"><i class="fas fa-link"></i></a></h2>
+<h3 id="心法組合更高的複雜度">心法:組合更高的複雜度<a class="anchor ms-1" href="#心法組合更高的複雜度"><i class="fas fa-link"></i></a></h3>
+<ol start="63">
+<li><strong>模板是可以组合使用的</strong>:</li>
+</ol>
+<ul>
+<li>到目前为止，我们介绍了“列举型”“结论优先型”和“故事型”这3种模板。</li>
+<li>写长篇文章时，可以把这3种模板组合起来使用。</li>
+<li>一般来说，列举型和结论优先型的文章容易影响左脑派（擅长逻辑性思考的人），故事型的文章则容易影响右脑派（情绪和感情丰富的人）。</li>
+<li>如果能将这两种组合起来的话，那么无论是左脑派还是右脑派就都容易产生共鸣。</li>
+<li>当然，模板不能盲目地组合使用，应充分考虑文章的目的、想要传达的信息、想留给读者的印象、各种模板所具备的效果后，选择最佳的组合方式。</li>
+</ul>
+<h3 id="技法-故事結論-結論故事-結論列舉故事">技法: 故事+結論, 結論+故事, 結論+列舉+故事<a class="anchor ms-1" href="#技法-故事結論-結論故事-結論列舉故事"><i class="fas fa-link"></i></a></h3>
+<ol start="64">
+<li><strong>模板组合①“故事型+结论优先型”</strong>:</li>
+</ol>
+<ul>
+<li>首先，介绍一下故事型中插入结论优先型的样式，在故事型的“B：阐述转机”部分插入结论优先型模板。</li>
+<li>动人心弦的“故事型”与提高理解能力和认可度的“结论优先型”相结合是能够引起大众兴趣和关注的方法之一。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/wDlgxNMEXBs4OLLJ3Qo6XJq4uwekKxjiwoI2Vw_46cY.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="65">
+<li><strong>模板组合②“结论优先型+故事型”</strong>:</li>
+</ol>
+<ul>
+<li>同样的内容，可以采用结论优先型为主、故事型为辅的风格。</li>
+<li>这时，相比之前逻辑性会更占优势。</li>
+<li>文章的内容虽然基本相同，但是给人的印象是不同的。</li>
+<li>将体验经历作为依据编入理论的“故事型+结论优先型”的文章更能打动人心，而将理论作为依据编入体验经历的“结论优先型+故事型”的文章更容易让人理解。</li>
+<li>如果是发布到微博上的文章就应用前者，如果是登载到商务期刊的文章就应用后者，可以根据“文章的目的”“读者的属性”“传递的信息”区分使用。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/h5T5FiN0J8t1-FhAGIHLU_9gMgifEcLvaKxYi1l8Vl0.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ol start="66">
+<li><strong>模板组合③“结论优先型+列举型+故事型”</strong>:</li>
+</ol>
+<ul>
+<li>这次介绍的是结论优先型中编入列举型和故事型的风格。</li>
+<li>在B“阐述理由·依据”中编入列举型，在C“阐述具体事例·详细内容”中编入故事型。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/ZSRuCrDoTssT799TXdKwSqZl8pPaqxs3HsLiG6WWPAs.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/HyteU2npt.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rkezL23pt.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="用法-列舉-結論優先-故事">用法: 列舉, 結論優先, 故事<a class="anchor ms-1" href="#用法-列舉-結論優先-故事"><i class="fas fa-link"></i></a></h3>
+<ol start="67">
+<li><strong>列舉型</strong>:</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>傳達的事項較多時（例：商品有多個特征）</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>有多個疑問事項和確認事項時</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>整理並記錄談話的內容時</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>想讓讀者零壓力閱讀時</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>整理並傳達覆雜的信息時</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>介紹&hellip;的流程時（例：&hellip; 的做法/到&hellip;路線)</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>歸納總結時</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>有諸多同類的信息時</li>
+</ol>
+</li>
+<li>
+<ol start="9">
+<li>從大量的信息中笑選重要信息時</li>
+</ol>
+</li>
+<li>
+<ol start="10">
+<li>做筆記時（例：感悟/知識/靈感/優勢/劣勢 ）</li>
+</ol>
+</li>
+<li>
+<ol start="11">
+<li>寫待辦事項時</li>
+</ol>
+</li>
+</ul>
+<ol start="68">
+<li><strong>結論優先型</strong>:</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>有一個非常重要的事項必須傳達到位時</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>針對一個主題進行深入探究時</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>有邏輯性地傳達事項時</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>想提高讀者的理解度時</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>想得到讀者的認同時</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>想提高說服力時</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>做 &hellip; 的匯報時</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>做 &hellip; 的說明時</li>
+</ol>
+</li>
+<li>
+<ol start="9">
+<li>商量 &hellip; 時</li>
+</ol>
+</li>
+<li>
+<ol start="10">
+<li>通知 &hellip; 時</li>
+</ol>
+</li>
+<li>
+<ol start="11">
+<li>提醒注意 &hellip; 時</li>
+</ol>
+</li>
+<li>
+<ol start="12">
+<li>推薦 &hellip; 時</li>
+</ol>
+</li>
+<li>
+<ol start="13">
+<li>寫小論文或報告書時</li>
+</ol>
+</li>
+</ul>
+<ol start="69">
+<li><strong>故事型</strong>:</li>
+</ol>
+<ul>
+<li>1.想引起對方共鳴時</li>
+<li>2.想給對方留下深刻印象</li>
+<li>3.想讓對方投入感情時</li>
+<li>4.講述 &hellip; 的經驗之談時</li>
+<li>5.想吸引對方關注時</li>
+<li>6.寫故事梗概時（例：廣告構思、視頻簡介）</li>
+<li>7.推銷產品或服務時</li>
+<li>8.招攬顧客時</li>
+<li>9.編寫公司簡介時</li>
+<li>10.編寫童話故事和小說時</li>
+<li>11.編寫淺顯易懂的舉例說明的文章時</li>
+<li>12.請求對方做某事時</li>
+<li>13.做 &hellip; 的方案或策劃時</li>
+</ul>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="70">
+<li>
+<p>到此終於把模板寫作法的內容做複製重新編碼. 平時紀錄資訊用「列表」, 寫論文要說服人用「結論優先」,講故事與人聊天改變對方行為用「故事」.</p>
+</li>
+<li>
+<p>左腦是理性, 右腦是感性. 寫證明時兩種都用, 寫paper時兩種都用, 高級的溝通能力, 需要實踐寫作與編輯於每一天, 每一份遭遇的資訊與文本. 天天向上, 共勉之！</p>
+</li>
+</ol>
+<p>2022.01.23.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur025%E6%80%9D%E8%80%83%E4%BF%84%E8%AA%9E%E7%AC%AC%E4%B8%89%E6%A0%BC/">MUR025 思考俄語第三格
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur025%E6%80%9D%E8%80%83%E4%BF%84%E8%AA%9E%E7%AC%AC%E4%B8%89%E6%A0%BC/">MUR025 思考俄語第三格
+</a>
+          <span class="float-end post-date">2022-01-23
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur024%E6%80%9D%E8%80%83%E8%AA%BF%E5%BC%8F%E8%88%87%E9%A2%A8%E6%A0%BC/">MUR024 思考調式與風格
+</a>
+          <span class="float-end post-date">2022-01-22
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur023%E9%B3%A5%E7%9E%B0%E9%87%91%E8%9E%8D%E9%A2%A8%E9%9A%AA%E7%AE%A1%E7%90%86%E8%88%87%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/">MUR023 鳥瞰金融風險管理與合成數據
+</a>
+          <span class="float-end post-date">2022-01-21
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur022%E6%96%87%E7%8D%BB%E7%B6%9C%E8%BF%B0%E8%A9%95%E7%9A%84%E4%B9%9D%E5%80%8B%E4%BB%BB%E5%8B%99/">MUR022 文獻綜述評的九個任務
+</a>
+          <span class="float-end post-date">2022-01-20
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur021-%E8%B2%9D%E5%BC%8F%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9%E5%9F%BA%E7%A4%8E/">MUR021 貝式動態定價基礎-Ver(0.1)
+</a>
+          <span class="float-end post-date">2022-01-19
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur026-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%AF%AB%E4%BD%9C%E6%B3%95/">MUR026 讀山口拓郎的模板寫作法
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur025%E6%80%9D%E8%80%83%E4%BF%84%E8%AA%9E%E7%AC%AC%E4%B8%89%E6%A0%BC/">MUR025 思考俄語第三格
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur024%E6%80%9D%E8%80%83%E8%AA%BF%E5%BC%8F%E8%88%87%E9%A2%A8%E6%A0%BC/">MUR024 思考調式與風格
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur023%E9%B3%A5%E7%9E%B0%E9%87%91%E8%9E%8D%E9%A2%A8%E9%9A%AA%E7%AE%A1%E7%90%86%E8%88%87%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/">MUR023 鳥瞰金融風險管理與合成數據
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur022%E6%96%87%E7%8D%BB%E7%B6%9C%E8%BF%B0%E8%A9%95%E7%9A%84%E4%B9%9D%E5%80%8B%E4%BB%BB%E5%8B%99/">MUR022 文獻綜述評的九個任務
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded post-taxonomy" title="文獻閱讀">
+            文獻閱讀
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E8%AA%9E%E8%A8%80%E5%AD%B8/" class="badge rounded post-taxonomy" title="語言學">
+            語言學
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded post-taxonomy" title="動態定價">
+            動態定價
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%9F%B3%E6%A8%82/" class="badge rounded post-taxonomy" title="音樂">
+            音樂
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E4%BF%84%E8%AA%9E/" class="badge rounded post-taxonomy" title="俄語">
+            俄語
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E/" class="badge rounded post-taxonomy" title="山口拓郎">
+            山口拓郎
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98/" class="badge rounded post-taxonomy" title="幼女戰記">
+            幼女戰記
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
