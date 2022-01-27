@@ -1,0 +1,722 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR028 Bregman鞅集中不等式基礎-Ver(0.1) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR028 Bregman鞅集中不等式基礎-Ver(0.1)">
+<meta itemprop="description" content="Bregman鞅集中不等式基礎-Ver(0.1) 紫式晦澀每日一篇文章第28天 前言 今天是2022年第26天, 全年第4週, 一月的第四個週三. 今天"><meta itemprop="datePublished" content="2022-01-26T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-26T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3446">
+<meta itemprop="keywords" content="鞅集中不等式," /><meta property="og:title" content="MUR028 Bregman鞅集中不等式基礎-Ver(0.1)" />
+<meta property="og:description" content="Bregman鞅集中不等式基礎-Ver(0.1) 紫式晦澀每日一篇文章第28天 前言 今天是2022年第26天, 全年第4週, 一月的第四個週三. 今天" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur028-bregman%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%9F%BA%E7%A4%8E/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-26T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR028 Bregman鞅集中不等式基礎-Ver(0.1)"/>
+<meta name="twitter:description" content="Bregman鞅集中不等式基礎-Ver(0.1) 紫式晦澀每日一篇文章第28天 前言 今天是2022年第26天, 全年第4週, 一月的第四個週三. 今天"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR028%20Bregman%e9%9e%85%e9%9b%86%e4%b8%ad%e4%b8%8d%e7%ad%89%e5%bc%8f%e5%9f%ba%e7%a4%8e-Ver%280.1%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur028-bregman%25E9%259E%2585%25E9%259B%2586%25E4%25B8%25AD%25E4%25B8%258D%25E7%25AD%2589%25E5%25BC%258F%25E5%259F%25BA%25E7%25A4%258E%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur028-bregman%25E9%259E%2585%25E9%259B%2586%25E4%25B8%25AD%25E4%25B8%258D%25E7%25AD%2589%25E5%25BC%258F%25E5%259F%25BA%25E7%25A4%258E%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR028 Bregman鞅集中不等式基礎-Ver(0.1)</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR028 Bregman鞅集中不等式基礎-Ver(0.1)
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-25 19:00:00 -0500 EST。">
+    2022-01-26
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded-pill post-taxonomy">文獻閱讀</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F/" class="badge rounded-pill post-taxonomy">鞅集中不等式</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#000-摘要">000 摘要</a></li>
+    <li><a href="#100-簡介">100 簡介</a>
+      <ul>
+        <li><a href="#10-introduction-p1-p2">1.0 Introduction (P.1-P.2)</a></li>
+      </ul>
+    </li>
+    <li><a href="#200-方法">200 方法</a>
+      <ul>
+        <li><a href="#20-exponential-families-and-bregman-divergence-p3">2.0 Exponential Families and Bregman Divergence (P.3)</a></li>
+        <li><a href="#30-time-uniform-bregman-concentration-p4">3.0 Time-Uniform Bregman Concentration (P.4)</a></li>
+        <li><a href="#31-a-generic-deviation-inequality-p4-p6">3.1 A Generic Deviation Inequality (P.4-P.6)</a></li>
+        <li><a href="#32-specification-to-classical-families-p6-p7">3.2 Specification to Classical Families (P.6-P.7)</a></li>
+        <li><a href="#33-proof-sketch-theorem-1-p7-p8">3.3 Proof Sketch: Theorem 1 (P.7-P.8)</a></li>
+        <li><a href="#another-section">Another section</a></li>
+        <li><a href="#another-section-1">Another section</a></li>
+      </ul>
+    </li>
+    <li><a href="#300-結果">300 結果</a>
+      <ul>
+        <li><a href="#40-numerical-experiments-p8-p11">4.0 Numerical Experiments (P.8-P.11)</a></li>
+        <li><a href="#50-linear-bandits-revisited-p11-p12">5.0 Linear Bandits Revisited (P.11-P.12)</a></li>
+      </ul>
+    </li>
+    <li><a href="#400-討論">400 討論</a>
+      <ul>
+        <li><a href="#60-conclusion-p12-p13">6.0 Conclusion (P.12-P.13)</a></li>
+      </ul>
+    </li>
+    <li><a href="#900-形式結果">900 形式結果</a>
+      <ul>
+        <li><a href="#a0-proof-of-the-main-result-about-bregman-deviations-p15">A.0 Proof of the main result about Bregman deviations (P.15)</a></li>
+        <li><a href="#b0-properties-of-bregman-divergence-p20">B.0 Properties of Bregman Divergence (P.20)</a></li>
+        <li><a href="#c0-specification-to-illustrative-exponential-families-p21">C.0 Specification to illustrative exponential families (P.21)</a></li>
+        <li><a href="#d0-empirical-comparision-with-existing-time-uniform-confidence-sequences-p25">D.0 Empirical Comparision with existing time-uniform confidence sequences (P.25)</a></li>
+        <li><a href="#e0-tuning-of-the-regularization-parameter-c-p33">E.0 Tuning of the regularization parameter c (P.33)</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="bregman鞅集中不等式基礎-ver01">Bregman鞅集中不等式基礎-Ver(0.1)<a class="anchor ms-1" href="#bregman鞅集中不等式基礎-ver01"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://www.researchgate.net/profile/Daniela-Portes/publication/284899225/figure/fig1/AS:401374723493888@1472706599282/Geometric-interpretation-of-Bregman-Divergence.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第28天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第26天, 全年第4週, 一月的第四個週三. 今天來嘗試寫「非漸進鞅集中不等式 (Non-Asymptotic Martingale Concentration Inequality)」, 提升自己對集中不等式的理解.</p>
+</li>
+<li>
+<p>今天的素材主要來自<a href="https://arxiv.org/pdf/2201.07306.pdf" target="_blank" rel="noopener noreferrer">Bregman Deviations of Generic Exponential Families</a>
+. 作者Odalric-Ambrym Maillard的文章是我學習非漸進鞅不等式的主要材料, 值得持續投資時間來累積自己的機率功力.</p>
+</li>
+</ol>
+<blockquote>
+<p>代碼BEF</p>
+</blockquote>
+<h2 id="000-摘要">000 摘要<a class="anchor ms-1" href="#000-摘要"><i class="fas fa-link"></i></a></h2>
+<p><strong>拉普拉斯方法(Laplace method)</strong>: We revisit the method of mixture technique, also known as the Laplace method, to study the concentration phenomenon in generic exponential families.</p>
+<p><strong>控制「有限樣本估計」與「指數族參數」之間的「Bregman散度」</strong>: Combining the properties of Bregman divergence associated with log-partition function of the family with the method of mixtures for super-martingales, we establish a generic bound controlling the Bregman divergence between the parameter of the family and a finite sample estimate of the parameter.</p>
+<p><strong>Bregman資訊得 (Bregman information gain) 建立時間均勻結果</strong>: Our bound is time-uniform and makes appear a quantity extending the classical information gain to exponential families, which we call the Bregman information gain.</p>
+<p><strong>經典參數族的具體「信心集(confidence sets)」與「Bregman資訊得」</strong>: For the practitioner, we instantiate this novel bound to several classical families, e.g., Gaussian, Bernoulli, Exponential and Chi-square yielding explicit forms of the confidence sets and the Bregman information gain.</p>
+<p><strong>數值上與SOTA表現相當</strong>:We further numerically compare the resulting confidence bounds to state-of-the-art alternatives for time-uniform concentration and show that this novel method yields competitive results.</p>
+<p><strong>實踐在線性脈絡多臂強盜問題</strong>: Finally, we highlight how our results can be applied in a linear contextual multi-armed bandit problem.</p>
+<h2 id="100-簡介">100 簡介<a class="anchor ms-1" href="#100-簡介"><i class="fas fa-link"></i></a></h2>
+<h3 id="10-introduction-p1-p2">1.0 Introduction (P.1-P.2)<a class="anchor ms-1" href="#10-introduction-p1-p2"><i class="fas fa-link"></i></a></h3>
+<p><strong>BEF101 集中不等式以拿到估計誤差</strong>:</p>
+<ul>
+<li>集中不等式: 理論統計的工具箱, 在機器學習有核心應用</li>
+<li>原因: 機器學習中, 常常用「來自未知分佈的樣本」估計東西, 且想要知道「估計誤差(estimation error)」</li>
+<li>例子: 可測實隨機變數的平均, 利用i.i.d.樣本的經驗平均估計.</li>
+<li>脈絡:</li>
+<li>a. Ste ́phane Boucheron, Ga ́bor Lugosi, and Pascal Massart. Concentration inequalities: A nonasymptotic theory of independence. Oxford university press, 2013.</li>
+<li>b. Maxim Raginsky and Igal Sason. Concentration of measure inequalities in information theory, communications and coding. arXiv preprint arXiv:1212.4663, 2012.</li>
+<li>c. A Dembo O Zeitouni and A Dembo. Large deviations techniques and applications. Applications of Mathe- matics, 38, 1998.</li>
+</ul>
+<blockquote>
+<p>Concentration inequalities are a powerful set of methods in statistical theory with key applications in machine learning. This is due to the fact that in many machine learning applications, a learner often estimates some quantity solely based on samples from an unknown distribution, and would like to know the magnitude of the estimation error. The typical example is that of the mean $\mu$ of some measurable real-valued random variable $X$, estimated by its empirical mean built from a sample of $n$ independent and identically distributed (i.i.d.) observations. We refer the interested reader to the monographs of Boucheron et al. (2013); Raginsky and Sason (2012); Zeitouni and Dembo (1998) for standard results in this and related topics.</p>
+</blockquote>
+<p><strong>BEF102 指數族是估計向量參數融通的參數族模型</strong>:</p>
+<ul>
+<li>需求: 許多狀況下也會要估計「向量參數(Vector Parameter)」, 例如線性迴歸分析.</li>
+<li>需求: 估計參數族分佈的參數</li>
+<li>指數族: 很融通的參數族分佈$p_{\theta}(x) \propto h(x) \exp (\langle\theta, F(x)\rangle)$</li>
+<li>指數族實例: Gaussian (possibly multivariate, with or without known covariance), Poisson, Exponential, Gamma, Chi-square, Bernoulli and Multinomial (over a fixed alphabet) distributions.</li>
+</ul>
+<blockquote>
+<p>In many situations, one may want to further estimate some vector parameter, as in e.g. linear regression (Abbasi-Yadkori et al., 2011). A closely related problem is to estimate the parameter of a distribution coming from a parametric family (Chowdhury et al., 2021). Exponential families are a flexible way to formalize such distributions, where a distribution on some set $\mathcal{X}$ is described by its density $p_{\theta}$ such that $p_{\theta}(x) \propto h(x) \exp (\langle\theta, F(x)\rangle)$, for some given feature function $F: \mathcal{X} \mapsto \mathbb{R}^{d}$ and base function $h$ (see details in Section 2). Most classical distributions fall into this category, including Gaussian (possibly multivariate, with or without known covariance), Poisson, Exponential, Gamma, Chi-square, Bernoulli and Multinomial (over a fixed alphabet) distributions, to name a few; see e.g. Amari (2016).</p>
+</blockquote>
+<p><strong>BEF103 序貫主動取樣策略下, 需要隨機停時集中不等式</strong>:</p>
+<ul>
+<li>序貫主動取樣策略: 當代機器學習問題, 很多都有「序貫主動取樣策略(Sequential, active data-sampling strategies)」.</li>
+<li>實例: 多手臂強盜 multi-armed bandits, 強化學習 reinforcement learning, 主動學習 active learning, 聯邦學習 federated learning.</li>
+<li>需求: 「取樣決策 (decision to sample)」來自學習算法與環境之間的互動, 與過去觀察相關, 因此需求「樣本數是隨機停時」的集中不等式結果.</li>
+<li>作法: 時間均勻集中不等式, 信賴區間序列, 而不再只是對固定樣本成立的結果.</li>
+</ul>
+<blockquote>
+<p>A number of problems in current-day machine learning involve sequential, active data-sampling strategies (Cesa-Bianchi and Lugosi, 2006). This includes multi-armed bandits, reinforcement learning, active learning and federated learning, to mention a few application domains. Since the decision to sample a novel observation results from the interaction between the learning algorithm and the environment, and depends on past observations, one needs to design concentration inequalities working with a random number of observations typically at a random stopping time (Durrett, 2019). A natural way to handle this difficulty is to derive time-uniform concentration inequalities, producing sequences of confidence sets valid uniformly over all number of observations with high probability, as initiated by Robbins (1970), as opposed to being valid for a single number of observation.</p>
+</blockquote>
+<p><strong>BEF104 時間剝皮法-超鞅與幾何時間格</strong>:</p>
+<ul>
+<li>來自「強盜理論 (bandit theory)」的技術, 是使用「超鞅(Super-martingale)」與「幾何時間格 (geometric time grid)」, 又稱「時間剝皮 (time peeling)」的技術.</li>
+<li>近期的進展看Howard 2020.</li>
+</ul>
+<blockquote>
+<p>A popular technique in bandit theory is to combine super-martingale techniques with union bound arguments over a geometric time grid, a technique known as time peeling - see Bubeck (2010), Cappé et al. (2013) for early uses in bandits, as well as Garivier (2013), or more recently Maillard (2019). See also Howard et al. (2020) for a recent, complementary survey of the history of this field.</p>
+</blockquote>
+<p><strong>BEF105 拉普拉斯法的進展:1949, 2008, 2011, 2017, 2018, 2019, 2020, 2021</strong>:</p>
+<ul>
+<li>替代方法: 混合法(method of mixtures).</li>
+<li>線性強盜: Abbasi-Yadkori的Improved linear bandit那篇, 影響力很大的文章.</li>
+<li>Emilie Kaufmann and Koolen (2018): 混合法與指數族, 姐具體Gaussian (known variance)與Gamma(known shape)</li>
+<li>Shafer and Vovk(2019): 對「有界分佈(bounded distributions)造另一種capital process, 由Waudby-Smoth and Ramdas(2020)推廣.</li>
+<li>Kuchibhotla and Zheng (2021): 結合Bentkus集中不等式結果, 結合剝皮法, 得到很sharp的有界隨機變數deviation結果.</li>
+</ul>
+<blockquote>
+<p>The method of mixtures, initiated by Robbins and Pitman (1949) and popularized in Peña et al. (2008) is a powerful alternative to develop time-uniform confidence sets. It has been applied to sub-Gaussian families in Abbasi-Yadkori et al. (2011), leading to a variety of applications (see Chowdhury and Gopalan (2017); Durand et al. (2017); Kirschner and Krause (2018) among others). In Kaufmann and Koolen (2018), a generalization to handle exponential families is considered, with applications to the cases of Gaussian (with known variance) and Gamma distributions (with known shape). A fairly different &lsquo;capital process&rsquo; construction technique has been recently developed for bounded distributions in Shafer and Vovk (2019), and popularized further in Waudby-Smith and Ramdas (2020). Very recently, Kuchibhotla and Zheng (2021) incorporate Bentkus' concentration results (Bentkus, 2004) with the peeling technique to prove deviation results for bounded random variables.</p>
+</blockquote>
+<p><strong>BEF106 拉普拉斯法的積分計算, 可由貝式參數更新化約</strong>:</p>
+<ul>
+<li>本作: 參數指數族的拉普拉斯法, 得到Bregman散度的偏離結果.</li>
+<li>拉普拉斯法主要難點: 需要計算積分, 對廣義分佈有實踐阻礙.</li>
+<li>貝氏解釋: 用共軛先驗, 可以把積分計算轉為「參數更新(parameter update)」</li>
+<li>計算可追(Computationally tractable)信賴集: sharp與computationally tractable, 對「通用指數族(generic exponential families)」執行拉普拉斯法</li>
+</ul>
+<blockquote>
+<p>In this article, we revisit the method of mixtures for the case of parametric exponential families, expressing deviations in the natural (Bregman) divergence of the problem. Our motivation is the following: On the one hand, an a priori difficulty of applying the method of mixture is that it involves computation of integrals, which can be tedious for general distributions. On the other hand, the setting of parametric exponential families is known to be convenient when dealing with integration in a Bayesian setup, thanks to the notion of a conjugate prior that enables us to reduce computation of a tedious integral to a simple parameter update. While the case of Gaussian distributions has been extensively studied for several decades, in this work, we investigate to which extent one can obtain both sharp and computationally tractable confidence sets using the method of mixture beyond the Gaussian case, for generic exponential families.</p>
+</blockquote>
+<p>很精彩資訊豐富的Introduction, 對瞭解相關理論技術的人, 是非常好的文件, 來學習最進階的拉普拉斯法與時間均勻集中不等式.</p>
+<h2 id="200-方法">200 方法<a class="anchor ms-1" href="#200-方法"><i class="fas fa-link"></i></a></h2>
+<h3 id="20-exponential-families-and-bregman-divergence-p3">2.0 Exponential Families and Bregman Divergence (P.3)<a class="anchor ms-1" href="#20-exponential-families-and-bregman-divergence-p3"><i class="fas fa-link"></i></a></h3>
+<p><strong>BEF201 指數族(Exponentil Families)</strong>:</p>
+<ul>
+<li>參數化分佈: 用開集合當參數範圍, 指定具體的密度函數形式.</li>
+<li>密度函數成員: 特徵函數(feature), 基礎函數(base), 對數分割函數(log-partition)</li>
+<li>優化正規性條: (1) 對數分割函數有限 (2) 對數分割函數的Gradient是一對一(3) 對數分割函數的Hessian矩陣可逆.</li>
+<li>期望泛函(Expectional Functional): 在此參數族內, 執行機率測度與期望算子.</li>
+</ul>
+<blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/IGGpHdIz4wC_oY4ql6BIofaN9jcIlcmocP4kRy6sZW0.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</blockquote>
+<p><strong>BEF202 指數族的Bregman散度 (Bregman Divergence)</strong>:</p>
+<ul>
+<li>KL散度: 指數族中兩個密度函數的距離, 可以表達成一種「泰勒二階餘項 (Taylor second order remainder)」</li>
+<li>對偶參數(Dual parameter): 期望值, 在這個框架下, 可以被理解為對偶參數, 而因為在指數族中, 期望等於對數分割函數的梯度(Gradient)</li>
+<li>在這個意義下, 「指數族中兩密度的KL散度」等同於「兩對偶參數的Bregman散度」</li>
+<li>在這個新的脈絡下, 對數分割函數, 成為「勢能函數 (Potential function)」, 而Bregman散度成為勢能函數, 貨真價實的泰勒二階餘項.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/no4URy7syYVNbvnTMgoGfY0IGM-JPVwWb1FygBg7cHw.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>BEF203 Bregman散度, 好控制尾端行為, 好操作代數</strong>:</p>
+<ul>
+<li>典範Bregman散度(Canonical Bregman divergnce): 指數族的典範Bregman散度有兩個基礎性質.</li>
+<li>性質一: 隨機變數的「對數動差生成函數(log-moment generating function)」, 讓Bregman散度能很好控制「隨機變數尾端行為 (Tail-behaviour of random variables)」.</li>
+<li>性質二: 對偶性(Duality)可以讓我們做方便的代數操作.</li>
+</ul>
+<blockquote>
+<p>Tail and Duality Properties The canonical Bregman divergence of an exponential family enjoys two fundamental properties that we recall below. The first one links it to the log-moment generating function (MGF) of the random variable $F(X)$, which makes Bregman divergences especially well suited to control the tail-behaviour of random variables appearing for instance in concentration inequalities. The second one highlights duality properties that enables convenient algebraic manipulations.</p>
+</blockquote>
+<p><strong>BEF204 Bregman散度: 位移, 對偶, 內差梯度</strong>:</p>
+<ul>
+<li>位移: Bregman散度下的位移, 可以被對數動差生成函數給描述</li>
+<li>對偶: 如果勢能函數的梯度是一對一, 則有「Bregman對偶性」: 兩對偶參數的Bregman散度, 等同「勢能梯度」之間的「對偶Bregman散度」.</li>
+<li>內插梯度: 梯度面向的位移, 與對偶參數內差量有個互相表達的關係, 與內插梯度有關.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/QR0BBZic3th7XaryXn2RYatXNp5YfLXyvUmP4jZpp74.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="30-time-uniform-bregman-concentration-p4">3.0 Time-Uniform Bregman Concentration (P.4)<a class="anchor ms-1" href="#30-time-uniform-bregman-concentration-p4"><i class="fas fa-link"></i></a></h3>
+<h3 id="31-a-generic-deviation-inequality-p4-p6">3.1 A Generic Deviation Inequality (P.4-P.6)<a class="anchor ms-1" href="#31-a-generic-deviation-inequality-p4-p6"><i class="fas fa-link"></i></a></h3>
+<h3 id="32-specification-to-classical-families-p6-p7">3.2 Specification to Classical Families (P.6-P.7)<a class="anchor ms-1" href="#32-specification-to-classical-families-p6-p7"><i class="fas fa-link"></i></a></h3>
+<h3 id="33-proof-sketch-theorem-1-p7-p8">3.3 Proof Sketch: Theorem 1 (P.7-P.8)<a class="anchor ms-1" href="#33-proof-sketch-theorem-1-p7-p8"><i class="fas fa-link"></i></a></h3>
+<h3 id="another-section">Another section<a class="anchor ms-1" href="#another-section"><i class="fas fa-link"></i></a></h3>
+<p><strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:</p>
+<h3 id="another-section-1">Another section<a class="anchor ms-1" href="#another-section-1"><i class="fas fa-link"></i></a></h3>
+<p><strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:
+<strong>BEF</strong>:</p>
+<h2 id="300-結果">300 結果<a class="anchor ms-1" href="#300-結果"><i class="fas fa-link"></i></a></h2>
+<h3 id="40-numerical-experiments-p8-p11">4.0 Numerical Experiments (P.8-P.11)<a class="anchor ms-1" href="#40-numerical-experiments-p8-p11"><i class="fas fa-link"></i></a></h3>
+<h3 id="50-linear-bandits-revisited-p11-p12">5.0 Linear Bandits Revisited (P.11-P.12)<a class="anchor ms-1" href="#50-linear-bandits-revisited-p11-p12"><i class="fas fa-link"></i></a></h3>
+<h2 id="400-討論">400 討論<a class="anchor ms-1" href="#400-討論"><i class="fas fa-link"></i></a></h2>
+<h3 id="60-conclusion-p12-p13">6.0 Conclusion (P.12-P.13)<a class="anchor ms-1" href="#60-conclusion-p12-p13"><i class="fas fa-link"></i></a></h3>
+<h2 id="900-形式結果">900 形式結果<a class="anchor ms-1" href="#900-形式結果"><i class="fas fa-link"></i></a></h2>
+<h3 id="a0-proof-of-the-main-result-about-bregman-deviations-p15">A.0 Proof of the main result about Bregman deviations (P.15)<a class="anchor ms-1" href="#a0-proof-of-the-main-result-about-bregman-deviations-p15"><i class="fas fa-link"></i></a></h3>
+<h3 id="b0-properties-of-bregman-divergence-p20">B.0 Properties of Bregman Divergence (P.20)<a class="anchor ms-1" href="#b0-properties-of-bregman-divergence-p20"><i class="fas fa-link"></i></a></h3>
+<h3 id="c0-specification-to-illustrative-exponential-families-p21">C.0 Specification to illustrative exponential families (P.21)<a class="anchor ms-1" href="#c0-specification-to-illustrative-exponential-families-p21"><i class="fas fa-link"></i></a></h3>
+<h3 id="d0-empirical-comparision-with-existing-time-uniform-confidence-sequences-p25">D.0 Empirical Comparision with existing time-uniform confidence sequences (P.25)<a class="anchor ms-1" href="#d0-empirical-comparision-with-existing-time-uniform-confidence-sequences-p25"><i class="fas fa-link"></i></a></h3>
+<h3 id="e0-tuning-of-the-regularization-parameter-c-p33">E.0 Tuning of the regularization parameter c (P.33)<a class="anchor ms-1" href="#e0-tuning-of-the-regularization-parameter-c-p33"><i class="fas fa-link"></i></a></h3>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="3">
+<li>到此解讀了摘要以及製作十張知識卡片. 之後再持續累積, 快思慢想把這個文章吃透. 天天向上, 共勉之!</li>
+</ol>
+<p>2022.01.26.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur027-%E7%B3%BB%E7%B5%B1%E6%80%9D%E8%80%83%E5%AD%90%E5%8F%A5%E7%90%86%E8%AB%96/">MUR027 系統思考子句理論
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur027-%E7%B3%BB%E7%B5%B1%E6%80%9D%E8%80%83%E5%AD%90%E5%8F%A5%E7%90%86%E8%AB%96/">MUR027 系統思考子句理論
+</a>
+          <span class="float-end post-date">2022-01-25
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur026-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%AF%AB%E4%BD%9C%E6%B3%95/">MUR026 讀山口拓郎的模板寫作法
+</a>
+          <span class="float-end post-date">2022-01-24
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur025%E6%80%9D%E8%80%83%E4%BF%84%E8%AA%9E%E7%AC%AC%E4%B8%89%E6%A0%BC/">MUR025 思考俄語第三格
+</a>
+          <span class="float-end post-date">2022-01-23
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur024%E6%80%9D%E8%80%83%E8%AA%BF%E5%BC%8F%E8%88%87%E9%A2%A8%E6%A0%BC/">MUR024 思考調式與風格
+</a>
+          <span class="float-end post-date">2022-01-22
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur023%E9%B3%A5%E7%9E%B0%E9%87%91%E8%9E%8D%E9%A2%A8%E9%9A%AA%E7%AE%A1%E7%90%86%E8%88%87%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/">MUR023 鳥瞰金融風險管理與合成數據
+</a>
+          <span class="float-end post-date">2022-01-21
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur028-bregman%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%9F%BA%E7%A4%8E/">MUR028 Bregman鞅集中不等式基礎-Ver(0.1)
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur027-%E7%B3%BB%E7%B5%B1%E6%80%9D%E8%80%83%E5%AD%90%E5%8F%A5%E7%90%86%E8%AB%96/">MUR027 系統思考子句理論
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur026-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%AF%AB%E4%BD%9C%E6%B3%95/">MUR026 讀山口拓郎的模板寫作法
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur025%E6%80%9D%E8%80%83%E4%BF%84%E8%AA%9E%E7%AC%AC%E4%B8%89%E6%A0%BC/">MUR025 思考俄語第三格
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur024%E6%80%9D%E8%80%83%E8%AA%BF%E5%BC%8F%E8%88%87%E9%A2%A8%E6%A0%BC/">MUR024 思考調式與風格
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded post-taxonomy" title="文獻閱讀">
+            文獻閱讀
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E8%AA%9E%E8%A8%80%E5%AD%B8/" class="badge rounded post-taxonomy" title="語言學">
+            語言學
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded post-taxonomy" title="動態定價">
+            動態定價
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%9F%B3%E6%A8%82/" class="badge rounded post-taxonomy" title="音樂">
+            音樂
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E4%BF%84%E8%AA%9E/" class="badge rounded post-taxonomy" title="俄語">
+            俄語
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E/" class="badge rounded post-taxonomy" title="山口拓郎">
+            山口拓郎
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98/" class="badge rounded post-taxonomy" title="幼女戰記">
+            幼女戰記
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
