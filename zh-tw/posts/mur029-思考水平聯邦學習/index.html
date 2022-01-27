@@ -1,0 +1,733 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR029 思考水平聯邦學習 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR029 思考水平聯邦學習">
+<meta itemprop="description" content="思考水平聯邦學習 紫式晦澀每日一篇文章第27天 前言 今天是2022年第2˙天, 全年第4週, 一月的第四個週四. 今天來仔細思考「水平聯邦學習 (Horizontal Federated Le"><meta itemprop="datePublished" content="2022-01-27T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3314">
+<meta itemprop="keywords" content="聯邦學習," /><meta property="og:title" content="MUR029 思考水平聯邦學習" />
+<meta property="og:description" content="思考水平聯邦學習 紫式晦澀每日一篇文章第27天 前言 今天是2022年第2˙天, 全年第4週, 一月的第四個週四. 今天來仔細思考「水平聯邦學習 (Horizontal Federated Le" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur029-%E6%80%9D%E8%80%83%E6%B0%B4%E5%B9%B3%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-27T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR029 思考水平聯邦學習"/>
+<meta name="twitter:description" content="思考水平聯邦學習 紫式晦澀每日一篇文章第27天 前言 今天是2022年第2˙天, 全年第4週, 一月的第四個週四. 今天來仔細思考「水平聯邦學習 (Horizontal Federated Le"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR029%20%e6%80%9d%e8%80%83%e6%b0%b4%e5%b9%b3%e8%81%af%e9%82%a6%e5%ad%b8%e7%bf%92&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur029-%25E6%2580%259D%25E8%2580%2583%25E6%25B0%25B4%25E5%25B9%25B3%25E8%2581%25AF%25E9%2582%25A6%25E5%25AD%25B8%25E7%25BF%2592%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur029-%25E6%2580%259D%25E8%2580%2583%25E6%25B0%25B4%25E5%25B9%25B3%25E8%2581%25AF%25E9%2582%25A6%25E5%25AD%25B8%25E7%25BF%2592%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR029 思考水平聯邦學習</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR029 思考水平聯邦學習
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-26 19:00:00 -0500 EST。">
+    2022-01-27
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/" class="badge rounded-pill post-taxonomy">機器學習</a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded-pill post-taxonomy">可信任的AI</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/" class="badge rounded-pill post-taxonomy">聯邦學習</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#心法">心法</a>
+      <ul>
+        <li><a href="#聯邦學習-隱私保護去中心化的機器學習">聯邦學習-隱私保護去中心化的機器學習</a></li>
+        <li><a href="#水平聯邦學習-用戶不同-業務相似">水平聯邦學習-用戶不同, 業務相似</a></li>
+        <li><a href="#水平聯邦學習的安全性-誠實但好奇的服務器">水平聯邦學習的安全性: 誠實但好奇的服務器</a></li>
+      </ul>
+    </li>
+    <li><a href="#技法">技法</a>
+      <ul>
+        <li><a href="#資料-特徵-標記-樣本身份feature-label-sample-id">資料: (特徵, 標記, 樣本身份)=(feature, label, sample ID)</a></li>
+      </ul>
+    </li>
+    <li><a href="#用法">用法</a>
+      <ul>
+        <li><a href="#聯邦學習比分佈機器學習更沒有資料的完全使用權">聯邦學習比分佈機器學習更沒有資料的完全使用權</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="思考水平聯邦學習">思考水平聯邦學習<a class="anchor ms-1" href="#思考水平聯邦學習"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://i0.wp.com/bdtechtalks.com/wp-content/uploads/2021/08/federated-learning.jpg?w=1392&amp;ssl=1" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第27天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第2˙天, 全年第4週, 一月的第四個週四. 今天來仔細思考「水平聯邦學習 (Horizontal Federated Learning)」的相關故事與細節. 即將截稿ICML, 打鐵趁熱, 剛好我們設計的communication protocol與水平聯邦學習的結構相似, 可以藉著相關的故事與文獻串起來.</p>
+</li>
+<li>
+<p>今天的素材主要來自<a href="https://dl.acm.org/doi/pdf/10.1145/3298981?casa_token=7t7nTfanMPMAAAAA:h5IrTKV2NGI2kgZYoY8haYHLvCp8SPHeXJDUIVe0ky6VCQE87RyY2RMrQsGleAtW8p3XQEqPr858" target="_blank" rel="noopener noreferrer">Federated Machine Learning: Concept and Applications</a>
+裡面關於水平聯邦學習的段落.</p>
+</li>
+</ol>
+<h2 id="心法">心法<a class="anchor ms-1" href="#心法"><i class="fas fa-link"></i></a></h2>
+<h3 id="聯邦學習-隱私保護去中心化的機器學習">聯邦學習-隱私保護去中心化的機器學習<a class="anchor ms-1" href="#聯邦學習-隱私保護去中心化的機器學習"><i class="fas fa-link"></i></a></h3>
+<ol start="3">
+<li><strong>聯邦學習概覽</strong>:</li>
+</ol>
+<ul>
+<li>Google提出聯邦學習[36,37,41].</li>
+<li>Google主要想法: 防止「資料洩漏(Data leakage), 建立機器學習模型, 基於分佈在多個裝置上的資料集.</li>
+<li>主要研究: 統計挑戰[60, 77], 安全性改良[9,23], 個人化[13, 60].</li>
+<li>On-device聯邦學習:  分佈式裝置用戶互動, 溝通成本高, 非均衡資料分佈, 裝置可靠性, 都是優化的挑戰.</li>
+<li>水平分割(Horizontal partitioned data): 資料以用戶id裝置id被分割了.</li>
+<li>隱私保護機器學習(Privacy-preserving ML): 聯邦學習考慮隱私, 以「去中心協力學習 (decentralized collaborative-learning)」的框架來保護隱私.</li>
+<li>組織之間的協力學習(Collaborative-learning among organizations): 聯邦學習= 隱私保護去中心化的機器學習技術. (privacy-preserving decentralized collaborative machine-learning)</li>
+<li>在[71]有聯邦學習技術&amp; 聯邦遷移學習技術</li>
+<li>本文章研究「安全性基礎(security foundations)」, 相關的「多代理人理論(Multiagent theory)」, 「隱私保護資料探勘(Privacy-preserving data mining)」.</li>
+</ul>
+<blockquote>
+<p>我們也是去中心協力探索(Decentralized collaborative exploration).</p>
+</blockquote>
+<blockquote>
+<p>The concept of federated learning was proposed by Google recently $[36,37,41]$. Google&rsquo;s main idea is to build machine-learning models based on datasets that are distributed across multiple devices while preventing data leakage. Recent improvements have been focusing on overcoming the statistical challenges $[60,77]$ and improving security $[9,23]$ in federated learning. There are also research efforts to make federated learning more personalizable $[13,60]$. The above works all focus on on-device federated learning in which distributed mobile-user interactions are involved and communication cost in massive distribution, unbalanced data distribution, and device reliability are some of the major factors for optimization. In addition, data is partitioned by user Ids or device Ids, therefore, horizontally in the data space. This line of work is highly related to privacy-preserving machine learning, as reported in [58] because it also considers data privacy in a decentralized collaborative-learning setting. To extend the concept of federated learning to cover collaborative-learning scenarios among organizations, we extend the original &ldquo;federated learning&rdquo; to a general concept for all privacy-preserving decentralized collaborative machine-learning techniques. In [71], we have given a preliminary overview of the federated-learning and federated transfer-learning technique. In this article, we further survey the relevant security foundations and explore the relationship with several other related areas, such as multiagent theory and privacypreserving data mining. In this section, we provide a more comprehensive definition of federated learning that considers data partitions, security, and applications. We also describe a workflow and system architecture for the federated-learning system.</p>
+</blockquote>
+<h3 id="水平聯邦學習-用戶不同-業務相似">水平聯邦學習-用戶不同, 業務相似<a class="anchor ms-1" href="#水平聯邦學習-用戶不同-業務相似"><i class="fas fa-link"></i></a></h3>
+<ol start="4">
+<li><strong>水平聯邦學習: 用戶不同, 但業務相同</strong>:</li>
+</ol>
+<ul>
+<li>水平聯邦學習=基於樣本的聯邦學習: 資料集有同樣的特徵空間, 但樣本的空間不同.</li>
+<li>例子: 兩個銀行可以有很不同的用戶群, 但他們的業務很類似, 所以特徵空間相同.</li>
+<li>[58]: 協同深度學習-參與者獨立訓練, 只分享參數更新的子集</li>
+<li>[41]: 2017年Google利用水平聯邦學習來做Android的模型更新. 協同學習一個中心模型.</li>
+<li>安全聚合方案(Secure aggregation scheme)來保護被拒和用戶更新的隱私, 在聯邦學習的框架下</li>
+<li>同態加密( homomorphic encryption):同態加密指的是一種加密方式，使得使用者可以對密文做計算，計算出來的結果，再做解密的時候的明文是預期的計算結果。</li>
+</ul>
+<blockquote>
+<p>2.3.1 Horizontal Federated Learning. Horizontal federated learning, or sample-based federated learning, is introduced in the scenarios in which datasets share the same feature space but different space in samples (Figure 2(a)). For example, two regional banks may have very different user groups from their respective regions, and the intersection set of their users is very small. However, their business is very similar, so the feature spaces are the same. The authors of [58] proposed a collaboratively deep-learning scheme in which participants train independently and share only subsets of updates of parameters. In 2017, Google proposed a horizontal federated-learning solution for Android phone model updates [41]. In that framework, a single user using an Android phone updates the model parameters locally and uploads the parameters to the Android cloud, thus jointly training the centralized model together with other data owners. A secure aggregation scheme to protect the privacy of aggregated user updates under their federated-learning framework is also introduced in [9]. The authors of [51] use additively homomorphic encryption for model parameter aggregation to provide security against the central server.</p>
+</blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/iKCsMKqaD9ZRN1XnUnhykXIsgVyj6Iiw-kLAit8XXSQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="水平聯邦學習的安全性-誠實但好奇的服務器">水平聯邦學習的安全性: 誠實但好奇的服務器<a class="anchor ms-1" href="#水平聯邦學習的安全性-誠實但好奇的服務器"><i class="fas fa-link"></i></a></h3>
+<ol start="5">
+<li><strong>水平聯邦學習的安全性</strong>:</li>
+</ol>
+<ul>
+<li>誠實的參與者(honest participants); 誠實但好奇的服務器(honest-but-curious server) [9,51]</li>
+<li>只有服務器可以破壞資料參與者的隱私.</li>
+<li>[29] 惡意用戶</li>
+<li>服務器完成訓練, 會把參數分享給所有資料參與者.</li>
+</ul>
+<blockquote>
+<p>Security Definition. A horizontal federated learning system typically assumes honest participants and security against an honest-but-curious server $[9,51]$. That is, only the server can compromise the privacy of data participants. Security proof has been provided in these works. Recently, another security model considering malicious users [29] was also proposed, posing additional privacy challenges. At the end of the training, the universal model and all of the model parameters are exposed to all participants.</p>
+</blockquote>
+<ol start="6">
+<li><strong>水平, 垂直, 遷移聯邦學習</strong>:
+<table>
+<thead>
+<tr>
+<th>聯邦學習</th>
+<th>實例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤩 水平聯邦學習: 用戶不同, 業務相同</td>
+<td>兩個城市的「銀行」</td>
+</tr>
+<tr>
+<td>😍 垂直聯邦學習: 用戶相同, 業務不同</td>
+<td>同一個城市的「銀行」與「電子商務」</td>
+</tr>
+<tr>
+<td>🤯 遷移聯邦學習: 用戶不同, 業務不同</td>
+<td>美國的電子商務, 亞洲的銀行</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="技法">技法<a class="anchor ms-1" href="#技法"><i class="fas fa-link"></i></a></h2>
+<h3 id="資料-特徵-標記-樣本身份feature-label-sample-id">資料: (特徵, 標記, 樣本身份)=(feature, label, sample ID)<a class="anchor ms-1" href="#資料-特徵-標記-樣本身份feature-label-sample-id"><i class="fas fa-link"></i></a></h3>
+<ol start="7">
+<li><strong>資料: (特徵, 標記, 樣本身份)=(feature, label, sample ID)</strong>:</li>
+</ol>
+<ul>
+<li>資料矩陣: row是sample, column是feature.</li>
+<li>資料符號: feature是X, label是Y, sample ID是 I</li>
+<li>金融的例子: label = 信用 (credit)</li>
+<li>行銷的例子: label = 用戶購買慾(user&rsquo;s purchase desire)</li>
+<li>教育的例子: label = 學位(degree of the students. )</li>
+<li>分類: 水平聯邦學習, 垂直聯邦學習, 聯邦遷移學習(feature, label都不一樣)</li>
+</ul>
+<blockquote>
+<p>Let matrix $\mathcal{D}_{i}$ denote the data held by each data owner $i$. Each row of the matrix represents a sample, and each column represents a feature. At the same time, some datasets may also contain label data. We denote the feature space as $\mathcal{X}$, the label space as $\mathcal{Y}$, and we use $\mathcal{I}$ to denote the sample ID space. For example, in the financial field, labels may be users' credit; in the marketing field, labels may be the user&rsquo;s purchase desire; in the education field, $y$ may be the degree of the students. The feature $\mathcal{X}$, label $\mathcal{Y}$, and sample Ids $\mathcal{I}$ constitute the complete training dataset $(I, \mathcal{X}, \mathcal{Y})$. The feature and sample spaces of the data parties may not be identical, and we classify federated learning into horizontally federated learning, vertically federated learning, and federated transfer learning based on how data is distributed among various parties in the feature and sample ID space. Figure 2 shows the various federated learning frameworks for a two-party scenario.</p>
+</blockquote>
+<ol start="8">
+<li><strong>水平聯邦學習在資料下的表達</strong>:</li>
+</ol>
+<ul>
+<li>(特徵, 標記)相同&ndash;&gt;業務相同</li>
+<li>樣本ID不同&ndash;&gt; 用戶不同</li>
+</ul>
+<blockquote>
+<p>We summarize horizontal federated learning as
+$X_{i}=X_{j}, \quad y_{i}=y_{j}, I_{i} \neq I_{j}, \quad \forall \mathcal{D}<em>{i}, \mathcal{D}</em>{j}, i \neq j .$</p>
+</blockquote>
+<ol start="9">
+<li><strong>水平聯邦學習執行流程</strong>:</li>
+</ol>
+<ul>
+<li>有相同資料結構的k個參與者, 協同學習機器學型模型, 利用雲端服務器來幫忙.</li>
+<li>假設參與者誠實, 服務器誠實但好奇. 所以沒有資訊洩漏從參與者到服務器.</li>
+<li>訓練流程:</li>
+<li>
+<ol>
+<li>參與者計算局部的訓練梯度, 給梯度戴面具, 用加密[51], 差分隱私[58], 秘密分享[9]. 將面具後的結果傳給服務器.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>服務器計算聚合結果.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>服務器傳回聚合結果給參與者.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>參與者更新模型, 利用加密梯度.</li>
+</ol>
+</li>
+<li>接著持續跑, 讓損失函數收斂, 完成整個訓練過程.</li>
+<li>所有參與者分享最後的結果.</li>
+</ul>
+<blockquote>
+<p>我們只會傳Lasso, 但不會傳其訓練出來的regularization level, 所以也不會洩漏隱私.</p>
+</blockquote>
+<blockquote>
+<p>2.4.1 Horizontal Federated Learning. A typical architecture for a horizontal federated-learning system is shown in Figure 3 . In this system, $\mathrm{k}$ participants with the same data structure collaboratively learn a machine-learning model with the help of a parameter or cloud server. A typical assumption is that the participants are honest whereas the server is honest but curious; therefore, no leakage of information from any participants to the server is allowed [51]. The training process of such a system usually contains the following four steps.</p>
+</blockquote>
+<ul>
+<li>Step 1: Participants locally compute training gradients; mask a selection of gradients with encryption [51], differential privacy [58], or secret sharing [9] techniques; and send masked results to the server.</li>
+<li>Step 2: The server performs secure aggregation without learning information about any participant.</li>
+<li>Step 3: The server sends back the aggregated results to participants.</li>
+<li>Step 4: Participants update their respective model with the decrypted gradients.</li>
+</ul>
+<blockquote>
+<p>Iterations through the above steps continue until the loss function converges, thus completing the entire training process. This architecture is independent of specific machine-learning algorithms (logistic regression, DNN, etc.) and all participants will share the final model parameters.</p>
+</blockquote>
+<h2 id="用法">用法<a class="anchor ms-1" href="#用法"><i class="fas fa-link"></i></a></h2>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/gpYsddNSwC3vluSndGeGd5jhvdpItiG3wUxaOJbIVEg.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="聯邦學習比分佈機器學習更沒有資料的完全使用權">聯邦學習比分佈機器學習更沒有資料的完全使用權<a class="anchor ms-1" href="#聯邦學習比分佈機器學習更沒有資料的完全使用權"><i class="fas fa-link"></i></a></h3>
+<ol start="10">
+<li><strong>聯邦學習VS分佈機器學習:對資料有沒有完全使用權</strong>:</li>
+</ol>
+<ul>
+<li>分佈式機器學習: 訓練資料的分佈儲存, 計算任務的分佈執行, 模型結果的分佈分發.</li>
+<li>參數服務器: 加速訓練過程, 存資料, 分配計算資源, 配資源, 讓模型訓練更有效率.</li>
+<li>水平聯邦學習: node是資料擁有者, 不一定需要配合</li>
+<li>聯邦學習面對更複雜的學習環境</li>
+<li>聯邦學習強調對資料擁有者於訓練過程中的「資料隱私保護 (Data-privacy protection)」</li>
+<li>保護資料隱私的度量, 要在未來加強資料安全規範環境上更增強</li>
+<li>聯邦學習要討論non-IID資料.</li>
+</ul>
+<blockquote>
+<p>3.2 Federated Learning versus Distributed Machine Learning
+Horizontal federated learning at first sight is somewhat similar to distributed machine learning. Distributed machine learning covers many aspects, including distributed storage of training data, distributed operation of computing tasks, and distributed distribution of model results. A parameter server [30] is a typical element in distributed machine learning. As a tool to accelerate the training process, the parameter server stores data on distributed working nodes and allocates data and computing resources through a central scheduling node to train the model more efficiently. For horizontally federated learning, the working node represents the data owner. It has full autonomy for the local data; it can decide when and how to join the federated learning. In the parameter server, the central node always takes control; thus, federated learning is faced with a more complex learning environment. In addition, federated learning emphasizes the data-privacy protection of the data owner during the model training process. Effective measures to protect data privacy can better cope with the increasingly stringent data privacy and data security regulatory environment in the future.
+As in distributed machine-learning settings, federated learning will also need to address non-IID data. The authors of [77] showed that, with non-IID local data, performance can be greatly reduced for federated learning. The authors in response supplied a new method to address the issue similar to transfer learning.</p>
+</blockquote>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="11">
+<li>
+<p>讀了<a href="https://dl.acm.org/doi/pdf/10.1145/3298981?casa_token=7t7nTfanMPMAAAAA:h5IrTKV2NGI2kgZYoY8haYHLvCp8SPHeXJDUIVe0ky6VCQE87RyY2RMrQsGleAtW8p3XQEqPr858" target="_blank" rel="noopener noreferrer">Federated Machine Learning: Concept and Applications</a>
+後, 收穫很多！ 感覺對聯邦學習很多的技術細節更了解了! 這樣做問題就可以抓住核心需要的概念, 寫出對方覺得重要的點!</p>
+</li>
+<li>
+<p>持續利用文章輸出的方法來學習與整理資訊成知識, 效果真的比之前邊找邊讀還要好很多! 加上打字夠快, 把讀過的記下來的東西都變成之後reference的資料庫, 成為時間的朋友, 感受知識的複利! 天天向上, 共勉之!</p>
+</li>
+</ol>
+<p>2022.01.27.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur028-bregman%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%9F%BA%E7%A4%8E/">MUR028 Bregman鞅集中不等式基礎-Ver(0.1)
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur028-bregman%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%9F%BA%E7%A4%8E/">MUR028 Bregman鞅集中不等式基礎-Ver(0.1)
+</a>
+          <span class="float-end post-date">2022-01-26
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur027-%E7%B3%BB%E7%B5%B1%E6%80%9D%E8%80%83%E5%AD%90%E5%8F%A5%E7%90%86%E8%AB%96/">MUR027 系統思考子句理論
+</a>
+          <span class="float-end post-date">2022-01-25
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur026-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%AF%AB%E4%BD%9C%E6%B3%95/">MUR026 讀山口拓郎的模板寫作法
+</a>
+          <span class="float-end post-date">2022-01-24
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur025%E6%80%9D%E8%80%83%E4%BF%84%E8%AA%9E%E7%AC%AC%E4%B8%89%E6%A0%BC/">MUR025 思考俄語第三格
+</a>
+          <span class="float-end post-date">2022-01-23
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur024%E6%80%9D%E8%80%83%E8%AA%BF%E5%BC%8F%E8%88%87%E9%A2%A8%E6%A0%BC/">MUR024 思考調式與風格
+</a>
+          <span class="float-end post-date">2022-01-22
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur029-%E6%80%9D%E8%80%83%E6%B0%B4%E5%B9%B3%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/">MUR029 思考水平聯邦學習
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur028-bregman%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%9F%BA%E7%A4%8E/">MUR028 Bregman鞅集中不等式基礎-Ver(0.1)
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur027-%E7%B3%BB%E7%B5%B1%E6%80%9D%E8%80%83%E5%AD%90%E5%8F%A5%E7%90%86%E8%AB%96/">MUR027 系統思考子句理論
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur026-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%AF%AB%E4%BD%9C%E6%B3%95/">MUR026 讀山口拓郎的模板寫作法
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur025%E6%80%9D%E8%80%83%E4%BF%84%E8%AA%9E%E7%AC%AC%E4%B8%89%E6%A0%BC/">MUR025 思考俄語第三格
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded post-taxonomy" title="文獻閱讀">
+            文獻閱讀
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E8%AA%9E%E8%A8%80%E5%AD%B8/" class="badge rounded post-taxonomy" title="語言學">
+            語言學
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%97%A5%E6%9C%AC/" class="badge rounded post-taxonomy" title="日本">
+            日本
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded post-taxonomy" title="動態定價">
+            動態定價
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%9F%B3%E6%A8%82/" class="badge rounded post-taxonomy" title="音樂">
+            音樂
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E4%BF%84%E8%AA%9E/" class="badge rounded post-taxonomy" title="俄語">
+            俄語
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E/" class="badge rounded post-taxonomy" title="山口拓郎">
+            山口拓郎
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98/" class="badge rounded post-taxonomy" title="幼女戰記">
+            幼女戰記
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
