@@ -6,7 +6,25 @@
     <description>Recent content in Tags on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://laplus3667.github.io/zh-tw/tags/python/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>演算法交易</title>
+      <link>https://laplus3667.github.io/zh-tw/tags/%E6%BC%94%E7%AE%97%E6%B3%95%E4%BA%A4%E6%98%93/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/tags/%E6%BC%94%E7%AE%97%E6%B3%95%E4%BA%A4%E6%98%93/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>聯邦學習</title>
       <link>https://laplus3667.github.io/zh-tw/tags/%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/</link>
@@ -58,15 +76,6 @@
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://laplus3667.github.io/zh-tw/tags/python/</link>
-      <pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://laplus3667.github.io/zh-tw/tags/python/</guid>
       <description></description>
     </item>
     

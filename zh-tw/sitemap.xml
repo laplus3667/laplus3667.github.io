@@ -2,6 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%8050%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/posts/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/tags/python/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/series/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://laplus3667.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://laplus3667.github.io/zh-tw/series/"
+                />
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/tags/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://laplus3667.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://laplus3667.github.io/zh-tw/tags/"
+                />
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/tags/%E6%BC%94%E7%AE%97%E6%B3%95%E4%BA%A4%E6%98%93/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://laplus3667.github.io/zh-tw/</loc>
+    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://laplus3667.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://laplus3667.github.io/zh-tw/"
+                />
+  </url><url>
     <loc>https://laplus3667.github.io/zh-tw/categories/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -18,56 +72,11 @@
     <loc>https://laplus3667.github.io/zh-tw/posts/mur029-%E6%80%9D%E8%80%83%E6%B0%B4%E5%B9%B3%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/posts/</loc>
-    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/series/</loc>
-    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://laplus3667.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://laplus3667.github.io/zh-tw/series/"
-                />
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/tags/</loc>
-    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://laplus3667.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://laplus3667.github.io/zh-tw/tags/"
-                />
-  </url><url>
     <loc>https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/</loc>
-    <lastmod>2022-01-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://laplus3667.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://laplus3667.github.io/zh-tw/"
-                />
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/tags/%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
@@ -133,9 +142,6 @@
     <lastmod>2022-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/posts/mur020-%E6%B2%88%E6%80%9D%E8%BC%B8%E5%85%A5-%E8%99%95%E7%90%86-%E8%BC%B8%E5%87%BA%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2022-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://laplus3667.github.io/zh-tw/tags/python/</loc>
     <lastmod>2022-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/</loc>
