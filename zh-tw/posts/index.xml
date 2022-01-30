@@ -6,13 +6,22 @@
     <description>Recent content in Posts on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR031 DataFrames操作基礎</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/</guid>
+      <description>DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram</description>
+    </item>
+    
     <item>
       <title>MUR030 演算法交易入門</title>
-      <link>https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%8050%E6%A6%82%E5%BF%B5/</link>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%80/</link>
       <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%8050%E6%A6%82%E5%BF%B5/</guid>
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%80/</guid>
       <description>演算法交易入門 紫式晦澀每日一篇文章第30天 前言 今天是2022年第28天, 全年第4週, 一月的第四個週五. 今天來入門程式交易, 由於完全沒有經驗,</description>
     </item>
     
@@ -302,6 +311,15 @@
       
       <guid>https://laplus3667.github.io/zh-tw/posts/art001-guidance/</guid>
       <description>這是第一篇文章 思考一: 實踐寫作套路, 學習寫作工作總結 想要研究寫作的套路，早上看了一些關於文案寫作的書。但他們的性質跟我們平常知識生產的模式不</description>
+    </item>
+    
+    <item>
+      <title>GFH001 樹籬公平算法</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Fri, 28 Dec 1990 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/</guid>
+      <description>Group Fairness + Hedge Group Fairness + Hedge: If each of finitely many experts approximately satisfies a certain notion of group fairness, then a clever use of the Hedge algorithm (running it separately on each group) also approximately satisfies the same notion of group fairness while still enjoying $O(\sqrt{T})$ regret. 每個experts都滿足一點group fairness,</description>
     </item>
     
   </channel>

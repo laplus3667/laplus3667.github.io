@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DataCamp on 紫式晦澀</title>
+    <link>https://laplus3667.github.io/zh-tw/categories/datacamp/</link>
+    <description>Recent content in DataCamp on 紫式晦澀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/categories/datacamp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR031 DataFrames操作基礎</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/</guid>
+      <description>DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram</description>
+    </item>
+    
+  </channel>
+</rss>

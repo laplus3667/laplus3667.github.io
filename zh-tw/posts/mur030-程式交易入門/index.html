@@ -1,0 +1,737 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR030 演算法交易入門 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR030 演算法交易入門">
+<meta itemprop="description" content="演算法交易入門 紫式晦澀每日一篇文章第30天 前言 今天是2022年第28天, 全年第4週, 一月的第四個週五. 今天來入門程式交易, 由於完全沒有經驗,"><meta itemprop="datePublished" content="2022-01-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2981">
+<meta itemprop="keywords" content="Python,演算法交易," /><meta property="og:title" content="MUR030 演算法交易入門" />
+<meta property="og:description" content="演算法交易入門 紫式晦澀每日一篇文章第30天 前言 今天是2022年第28天, 全年第4週, 一月的第四個週五. 今天來入門程式交易, 由於完全沒有經驗," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%80/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-28T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR030 演算法交易入門"/>
+<meta name="twitter:description" content="演算法交易入門 紫式晦澀每日一篇文章第30天 前言 今天是2022年第28天, 全年第4週, 一月的第四個週五. 今天來入門程式交易, 由於完全沒有經驗,"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR030%20%e6%bc%94%e7%ae%97%e6%b3%95%e4%ba%a4%e6%98%93%e5%85%a5%e9%96%80&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur030-%25E7%25A8%258B%25E5%25BC%258F%25E4%25BA%25A4%25E6%2598%2593%25E5%2585%25A5%25E9%2596%2580%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur030-%25E7%25A8%258B%25E5%25BC%258F%25E4%25BA%25A4%25E6%2598%2593%25E5%2585%25A5%25E9%2596%2580%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR030 演算法交易入門</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR030 演算法交易入門
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-01-27 19:00:00 -0500 EST。">
+    2022-01-28
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded-pill post-taxonomy">Python</a><a href="https://laplus3667.github.io/zh-tw/tags/%E6%BC%94%E7%AE%97%E6%B3%95%E4%BA%A4%E6%98%93/" class="badge rounded-pill post-taxonomy">演算法交易</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#算法交易">算法交易</a></li>
+    <li><a href="#網路擷取股票數據資源">網路擷取股票數據資源</a>
+      <ul>
+        <li><a href="#技巧25-網頁的組成結構心法">技巧25: 網頁的組成結構(心法)</a></li>
+        <li><a href="#技巧26-網頁的標籤介紹技法">技巧26: 網頁的標籤介紹(技法)</a></li>
+      </ul>
+    </li>
+    <li><a href="#進行歷史數據回測">進行歷史數據回測</a>
+      <ul>
+        <li><a href="#技巧62-認識歷史回測-心法">技巧62 認識歷史回測 (心法)</a></li>
+        <li><a href="#技巧63-回測流程建構心法">技巧63 回測流程建構(心法)</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="演算法交易入門">演算法交易入門<a class="anchor ms-1" href="#演算法交易入門"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://gbksoft.com/blog/wp-content/uploads/2019/07/trading-984x555.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第30天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第28天, 全年第4週, 一月的第四個週五. 今天來入門程式交易, 由於完全沒有經驗, 先以收集專有術語開始. 會講鬼話後, 才可以搞鬼.</p>
+</li>
+<li>
+<p>今天的素材主要來自<a href="https://play.google.com/store/books/details/%e9%85%86%e5%a3%ab%e6%98%8c_%e5%8a%89%e6%89%bf%e5%bd%a5_Python_%e8%82%a1%e7%a5%a8%e6%bc%94%e7%ae%97%e6%b3%95%e4%ba%a4%e6%98%93%e5%af%a6%e5%8b%99147%e5%80%8b%e9%97%9c%e9%8d%b5%e6%8a%80%e5%b7%a7%e8%a9%b3%e8%a7%a3_%e7%ac%ac%e4%ba%8c%e7%89%88?id=CMIsEAAAQBAJ" target="_blank" rel="noopener noreferrer">Python：股票演算法交易實務147個關鍵技巧詳解(第二版)</a>
+. 感覺是對新手很容易學的材料!</p>
+</li>
+</ol>
+<h2 id="算法交易">算法交易<a class="anchor ms-1" href="#算法交易"><i class="fas fa-link"></i></a></h2>
+<ol start="3">
+<li><strong>算法交易（Algorithmic trading)</strong>:</li>
+</ol>
+<ul>
+<li>程序化交易，或自動交易，是指運用自動化的電腦程式，或運用人工智慧，根據預設的算法，進行自動化的投資和買賣行為。</li>
+<li>一般而言，算法交易是指人們開發程式，自動根據指定的市場的技術資料和財務比率（例如市盈率、市帳率、移動平均線）等，自動由電腦操作買賣行為。</li>
+<li>交易演算法是將主觀交易的想法具體量化, 也就是寫成明確的規則, 並轉爲程式語言。</li>
+<li>對於一般交易者而言, 往往無法明確提供量化的規則, 而程式撰寫者對於金融交易普遍陌生, 無法進入交易的領域。</li>
+<li>多數的交易者使用看盤軟體, 授用制式的圖表 與統計後的數據, 對於交易所原始的報價, 往往不知該如何處理。</li>
+<li>因此交易演算法是結合「金融交易」、「程式撰寫」與「數據分析」三大領域的新興產業, 具有較難進入的門檻。</li>
+</ul>
+<h2 id="網路擷取股票數據資源">網路擷取股票數據資源<a class="anchor ms-1" href="#網路擷取股票數據資源"><i class="fas fa-link"></i></a></h2>
+<ol start="4">
+<li><strong>爬蟲(網路擷取)</strong>:</li>
+</ol>
+<ul>
+<li>爬蟲能夠讓我們將網站上的資源擷取下來後進行分析, 也就是說, 任何在網際網 路上的資源都可以成為我們程式交易的資料來源。</li>
+<li>而本書中所介紹到的網路擷取技巧, 將不限於特定的應用, 不一定要做實單交易才用網路擷取, 也可以每天固定時間進行擷取, 並產生分析結果, 作為輔助我們交易判決的工具。</li>
+</ul>
+<h3 id="技巧25-網頁的組成結構心法">技巧25: 網頁的組成結構(心法)<a class="anchor ms-1" href="#技巧25-網頁的組成結構心法"><i class="fas fa-link"></i></a></h3>
+<ol start="7">
+<li><strong>網頁組成結構</strong>: 爬蟲會接觸三部分:</li>
+</ol>
+<ul>
+<li>HTML: 網頁的主體</li>
+<li>JavaScript: 定義網頁的動態行為</li>
+<li>CSS: 定義網頁樣式</li>
+</ul>
+<h3 id="技巧26-網頁的標籤介紹技法">技巧26: 網頁的標籤介紹(技法)<a class="anchor ms-1" href="#技巧26-網頁的標籤介紹技法"><i class="fas fa-link"></i></a></h3>
+<ol start="8">
+<li><strong>HTML網頁例子</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span>&lt;html&gt; 
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span>    &lt;head&gt; 
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>        &lt;title&gt;Hello Jack&lt;/title&gt; 
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span>    &lt;/head&gt; 
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span>    &lt;body&gt; 
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span>        &lt;h2 class=&#34;small&#34;&gt;test Header&lt;/h2&gt; 
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span>        &lt;p&gt;範例網站 &lt;/p&gt; 
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span>        &lt;a id=&#34;l1&#34; href=&#34;#&#34;&gt;第一行&lt;/a&gt; 
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span>        &lt;a id=&#34;l2&#34; href=&#34;#&#34;&gt;第二行&lt;/a&gt; &lt;p&gt;Hello, &lt;b&gt;您好&lt;/b&gt;&lt;/p&gt;
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span>        &lt;table&gt;
+<span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span>        &lt;tr&gt;&lt;td&gt;234&lt;/td&gt;&lt;td&gt;567&lt;/td&gt;&lt;td&gt;890&lt;/td&gt;&lt;/tr&gt;
+<span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span>        &lt;table&gt;
+<span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span>    &lt;body&gt; 
+<span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span>&lt;html&gt; 
+</code></pre></div><ul>
+<li>&lt;標籤名稱(tag)&gt;</li>
+<li><code>&lt;html&gt;</code>: 最上層的標籤</li>
+<li><code>&lt;head&gt;</code>: 網頁的表頭, 包含許多資訊</li>
+<li><code>&lt;body&gt;</code>: 網站內容</li>
+<li><code>&lt;title&gt;</code>: 網頁標題</li>
+<li><code>&lt;meta&gt;</code></li>
+<li><code>&lt;h2&gt;</code>: 標題2</li>
+<li><code>&lt;a&gt;</code>:超連結</li>
+<li><code>&lt;p&gt;</code>: 文字段落</li>
+</ul>
+<ol start="9">
+<li><strong>標籤+屬性&ndash;&gt;特定目的</strong></li>
+</ol>
+<ul>
+<li>標籤+屬性&ndash;&gt;特定目的</li>
+<li><code>h2 class</code></li>
+<li><code>a href</code></li>
+<li><code>img src</code></li>
+<li><code>p style</code>
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/hRYC5c5EYXUiwRUAKwxQ3qGXYEUT74qcvXwZy3BtOHQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<h2 id="進行歷史數據回測">進行歷史數據回測<a class="anchor ms-1" href="#進行歷史數據回測"><i class="fas fa-link"></i></a></h2>
+<ol start="10">
+<li><strong>交易策略歷史回測</strong></li>
+</ol>
+<ul>
+<li>當我們面對不理解的事物, 必須先去了解並在其中找到自己的適應方式, 好比我 們在爬山以前, 必須要做足功課, 先理解登山路徑並做好裝備準備等。</li>
+<li>而交易市場也是如此, 若我們沒有做足準備, 很有可能讓自己身處在危險的環境之中。</li>
+<li>在交易前應該要理解市場, 最常見的方法是將想法或策略量化並做歷史回測, 了解 我們的交易方法在歷史中的績效為何。- 本章將討論如何透過既有的歷史數據進行交易策略的回測, 從策略的角度切入市場, 找出自己的交易邏輯。</li>
+</ul>
+<ol start="11">
+<li><strong>歷史回測以得穩定獲利機會</strong></li>
+</ol>
+<ul>
+<li>對於交易者而言, 歷史回測通常能幫助我們更快找到穩定獲利的機會。</li>
+<li>在交易的 過程中, 歷史回測是否必要, 答案為 「是」, 因為透過程式驗證數據, 能查看更多的細節, 這往往無法由主觀交易得知。</li>
+<li>許多數據一閃即逝, 容易被人忽略, 而 這些情況在計量回測中都能被正確驗證, 本章將會說明建構歷史回測的細節, 讓 大家快速投入計量回測的世界。</li>
+</ul>
+<h3 id="技巧62-認識歷史回測-心法">技巧62 認識歷史回測 (心法)<a class="anchor ms-1" href="#技巧62-認識歷史回測-心法"><i class="fas fa-link"></i></a></h3>
+<ol start="12">
+<li><strong>歷史回測:數學計量模型+市場行為分析</strong>:</li>
+</ol>
+<ul>
+<li>當我們在市場上交易、但對於當前市場的趨勢變動沒有把握時, 就需要歷史回測來驗證自己的想法是否可行</li>
+<li>歷史回測不僅是數學計量模型的計算, 也包含了計量模型以外的市場行爲分析。</li>
+<li>以往大家沒有完整的歷史數據時, 若只有網路上散播的統計資訊、盤後資料, 並沒有辦法準確進行歷史回測, 而現在強調大數據的時代, 計量回測已經成爲一門不可或缺的技術了。</li>
+</ul>
+<ol start="13">
+<li><strong>回測:用歷史資料回朔測試</strong></li>
+</ol>
+<ul>
+<li>回測」的意思就是使用歷史資料回溯測試。</li>
+<li>當我們有一個交易的想法時, 首先會將規則明確列出, 並寫爲具體的程式碼, 接著就會拿出歷史資料加以驗證, 了解我們的想法在之前的交易日中具體成效爲何。</li>
+<li>這時如果擁有夠多的歷史資料, 就能更準確了解可用性, 並在末來的預測中提供更準確的依據。</li>
+</ul>
+<h3 id="技巧63-回測流程建構心法">技巧63 回測流程建構(心法)<a class="anchor ms-1" href="#技巧63-回測流程建構心法"><i class="fas fa-link"></i></a></h3>
+<ol start="14">
+<li><strong>股票交易:選股+交易策略</strong>:</li>
+</ol>
+<ul>
+<li>選定「交易標的」</li>
+<li>做「交易策略」歷史回測</li>
+</ul>
+<ol start="15">
+<li><strong>回測演算法</strong>:</li>
+</ol>
+<ul>
+<li>「回測演算法」是透過歷史資料模擬開盤的情況, 進行資料解讀、計算、制斷, 以 決定是否進場、出場, 並且獲得進出場點的紀錄, 最後進行歷史績效的評估, 這樣的流 程是演算法開發的必要流程。</li>
+<li>本技巧將會依序闆述建構的流程, 引導讀者去取得歷史資 料, 接著開始歷史回測。</li>
+</ul>
+<ol start="16">
+<li>
+<p><strong>歷史資料: 逐筆資料, K線資料</strong>:
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/dm_V4f8XE5lWJIhPkgGa94_2FWwJODzs3hPvl1PGWMA.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+<li>
+<p><strong>轉換回測指標</strong>:</p>
+</li>
+</ol>
+<ul>
+<li>「轉換回測指標」是將歷史資料轉換爲量化數據, 讓交易者易於根據這些數據進行交易的制斷, 而每個交易者對於指標的定義都不盡相同, 所以必須明確定義指標後, 才能 進一步設計演算法。</li>
+<li>股票逐筆報價可以轉換指標, 例如：內外盤、大單, K線可以計算 MA, RSI 等技術指標, 主要是我們需要建構怎樣的策略, 再去思考要如何計算指標。</li>
+</ul>
+<ol start="18">
+<li><strong>歷史演算法設計: List為逐筆資料; Dictionary 為K線資料</strong>:</li>
+</ol>
+<ul>
+<li>回測演算法所運用的資訊是歷史資料, 所以在編制回測演算法時, 可以依照需求去䫛取需要部分的資訊, 這裡也會依照「逐筆資料」、「K 線資料」而有所不同, 本書中將會針對這兩種資料分別去做回測。</li>
+<li>逐筆資料會透過 Python 的 List 物件來操作, 而 K 線資料會透過 Python 的 Dictionary 來操作, 以迴圈的方式去進行歷史回測, 本章將會介紹逐筆資料以及 K 線資料的回測撰寫方式。</li>
+<li>回測演算法也是交易演算法, 依照流程會有趨勢判斷、進場、出場、停損等相關步驟,這部分會在本章接下來的策略技巧中介紹到。</li>
+</ul>
+<ol start="19">
+<li><strong>歷史回測回傳明細格式設計</strong>:</li>
+</ol>
+<ul>
+<li>回測交易格式的設計是希望完整保存回測交易紀錄, 並且忠實表達交易事件的細節, 最後讓這些紀錄能夠被適度的分析, 讓回測的效益最佳化。</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/FTXCFVsduxRCJjBPzh7aLZdlrVU8OETMSpNloHWJOug.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ul>
+<li>爲什麼欄位中沒有盈虧欄位呢 ?</li>
+<li>因爲若要計算盈㿥, 只會增加撰寫演算法的麻煩度, 且回測所帶來的效盆也不一定是盈虧所產生的數字, 怎麼說呢 ?</li>
+<li>就好比一支回測程式雖 然一個月的總盈虧是 $-1000$, 但它並不代表就是一支不好的策略, 或許買方的部位淨利是 3000 , 賣方的部位淨利是 $-4000$, 那只要將這支策略設定爲只做買方, 便會是一支賺錢的策略。</li>
+<li>除了盈虧, 也有很多角度可以分析策略的好壞, 例如 : 交易時間、在倉時間等, 這些對於交易而言也是相當重要的, 在下一個技巧會介紹到。</li>
+<li>每個欄位都有存在的價值, 第一個欄位的交易序號代表唯一值, 所以每筆資料並不會 發生重複的現象。</li>
+<li>以上的交易回傳格式不一定符合每種交易類型的需求, 可以依照自己 的需求來更改, 接下來的回測範例程式將會記錄進出場資訊, 讀者可以自行改善及延伸。</li>
+</ul>
+<ol start="20">
+<li><strong>績效計算工具</strong>:</li>
+</ol>
+<ul>
+<li>
+<p>取得交易紀錄後, 就可以依照交易回傳的資料去加以計算分析。</p>
+</li>
+<li>
+<p>績效不單可從盈虧去 觀察, 也可以從買賣、交易次數、交易時間點來進行分析。</p>
+</li>
+<li>
+<p>本書提供的績效分析範例雖 然不多, 但主要讓讀者熟悉系統分析指令的用法。</p>
+</li>
+<li>
+<p>某些策略會符合某些時期的赹勢條件, 但不代表那些策略會符合長期市場的走勢, 畢竟交易市場是瞬息萬變的, 若要校調出一個長期穩定獲利的策略, 必須經過長期回測的測試的。</p>
+</li>
+<li>
+<p>而計算績效不一定是從獲利盈餘的數字上來看, 以下提供其他參考績效的方向 讓讀者參考：交易次數勝率, 買賣個別成交結果.</p>
+</li>
+</ul>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<ol start="21">
+<li>這次稍微讀了幾個技巧, 之後根據需求再來找書繼續研究. 天天向上！共勉之！</li>
+</ol>
+<p>2022.01.28.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur029-%E6%80%9D%E8%80%83%E6%B0%B4%E5%B9%B3%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/">MUR029 思考水平聯邦學習
+</a>
+  </div><div class="post-nav post-next">
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/">MUR031 DataFrames操作基礎
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur020-%E6%B2%88%E6%80%9D%E8%BC%B8%E5%85%A5-%E8%99%95%E7%90%86-%E8%BC%B8%E5%87%BA%E6%A8%A1%E5%9E%8B/">MUR020 沈思輸入-處理-輸出模型
+</a>
+          <span class="float-end post-date">2022-01-18
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur018-%E6%B2%88%E6%80%9Dpython%E5%BB%BA%E6%A7%8B%E5%BC%8F/">MUR018 沈思Python建構式
+</a>
+          <span class="float-end post-date">2022-01-16
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur015%E5%BE%9E%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E6%80%9D%E8%80%83%E7%B7%9A%E6%80%A7%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90/">MUR015 從物件導向思考線性迴歸分析
+</a>
+          <span class="float-end post-date">2022-01-13
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/">MUR009 思辨註釋與文檔
+</a>
+          <span class="float-end post-date">2022-01-07
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur029-%E6%80%9D%E8%80%83%E6%B0%B4%E5%B9%B3%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/">MUR029 思考水平聯邦學習
+</a>
+          <span class="float-end post-date">2022-01-27
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/">MUR031 DataFrames操作基礎
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%80/">MUR030 演算法交易入門
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur029-%E6%80%9D%E8%80%83%E6%B0%B4%E5%B9%B3%E8%81%AF%E9%82%A6%E5%AD%B8%E7%BF%92/">MUR029 思考水平聯邦學習
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur028-bregman%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%9F%BA%E7%A4%8E/">MUR028 Bregman鞅集中不等式基礎-Ver(0.1)
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur027-%E7%B3%BB%E7%B5%B1%E6%80%9D%E8%80%83%E5%AD%90%E5%8F%A5%E7%90%86%E8%AB%96/">MUR027 系統思考子句理論
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded post-taxonomy" title="文獻閱讀">
+            文獻閱讀
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E8%AA%9E%E8%A8%80%E5%AD%B8/" class="badge rounded post-taxonomy" title="語言學">
+            語言學
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/datacamp/" class="badge rounded post-taxonomy" title="DataCamp">
+            DataCamp
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%BE%97%E5%88%B0%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="得到課程">
+            得到課程
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded post-taxonomy" title="動態定價">
+            動態定價
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%9F%B3%E6%A8%82/" class="badge rounded post-taxonomy" title="音樂">
+            音樂
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E4%BF%84%E8%AA%9E/" class="badge rounded post-taxonomy" title="俄語">
+            俄語
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E/" class="badge rounded post-taxonomy" title="山口拓郎">
+            山口拓郎
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98/" class="badge rounded post-taxonomy" title="幼女戰記">
+            幼女戰記
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
