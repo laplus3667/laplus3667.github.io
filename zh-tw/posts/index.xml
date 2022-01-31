@@ -332,9 +332,18 @@
     </item>
     
     <item>
+      <title>GFH002 實踐群體公平性以機會均等</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/gfh002-%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%AC%E5%B9%B3%E5%9F%BA%E7%A4%8E/</link>
+      <pubDate>Tue, 02 Jan 1990 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/gfh002-%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%AC%E5%B9%B3%E5%9F%BA%E7%A4%8E/</guid>
+      <description>Question Q. 樹籬算法(Hedge algorithm)的公平性基礎? Q. 樹籬算法(Hedge algorithm)的公平性基礎? 群體脈絡線上學習 a.group-outcome sequence tuple: 時間</description>
+    </item>
+    
+    <item>
       <title>GFH001 樹籬公平算法</title>
       <link>https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Fri, 28 Dec 1990 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 1990 00:00:00 +0000</pubDate>
       
       <guid>https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/</guid>
       <description>Group Fairness + Hedge Group Fairness + Hedge: If each of finitely many experts approximately satisfies a certain notion of group fairness, then a clever use of the Hedge algorithm (running it separately on each group) also approximately satisfies the same notion of group fairness while still enjoying $O(\sqrt{T})$ regret. 每個experts都滿足一點group fairness,</description>
