@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MUR031 DataFrames操作基礎 (Ver 0.2) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>MUR031 DataFrames操作基礎 (Ver 0.3) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="MUR031 DataFrames操作基礎 (Ver 0.2)">
+<meta name="description" content="" /><meta itemprop="name" content="MUR031 DataFrames操作基礎 (Ver 0.3)">
 <meta itemprop="description" content="DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram"><meta itemprop="datePublished" content="2022-01-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-01-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="5193">
-<meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR031 DataFrames操作基礎 (Ver 0.2)" />
+<meta itemprop="wordCount" content="6619">
+<meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR031 DataFrames操作基礎 (Ver 0.3)" />
 <meta property="og:description" content="DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/" /><meta property="article:section" content="posts" />
@@ -22,7 +22,7 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MUR031 DataFrames操作基礎 (Ver 0.2)"/>
+<meta name="twitter:title" content="MUR031 DataFrames操作基礎 (Ver 0.3)"/>
 <meta name="twitter:description" content="DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram"/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
@@ -45,7 +45,7 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=MUR031%20DataFrames%e6%93%8d%e4%bd%9c%e5%9f%ba%e7%a4%8e%20%28Ver%200.2%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur031-dataframe%25E6%2593%258D%25E4%25BD%259C%25E5%259F%25BA%25E7%25A4%258E%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR031%20DataFrames%e6%93%8d%e4%bd%9c%e5%9f%ba%e7%a4%8e%20%28Ver%200.3%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur031-dataframe%25E6%2593%258D%25E4%25BD%259C%25E5%259F%25BA%25E7%25A4%258E%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
@@ -217,7 +217,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR031 DataFrames操作基礎 (Ver 0.2)</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR031 DataFrames操作基礎 (Ver 0.3)</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -245,7 +245,7 @@ Murasaki
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">MUR031 DataFrames操作基礎 (Ver 0.2)
+    <h1 class="card-title post-title">MUR031 DataFrames操作基礎 (Ver 0.3)
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
@@ -1001,7 +1001,218 @@ data[condition]就把需要的股票列了出來.</p>
 <span class="ln" id="61"><a style="outline: none; text-decoration:none; color:inherit" href="#61">61</a></span>
 <span class="ln" id="62"><a style="outline: none; text-decoration:none; color:inherit" href="#62">62</a></span><span class="p">[</span><span class="mi">16500</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">3</span> <span class="n">columns</span><span class="p">]</span>
 <span class="ln" id="63"><a style="outline: none; text-decoration:none; color:inherit" href="#63">63</a></span>
-</code></pre></div><p>****:
+</code></pre></div><p><strong>b.用.loc[]取子集(Subsetting with .loc[])</strong>:</p>
+<ul>
+<li><code>.loc[]</code>:索引(Indexes)的殺手功能.</li>
+<li>舊有方法: <code>df[df[&quot;column&quot;].isin(values)]</code></li>
+<li>新方法: <code>df_ind.loc[values]</code></li>
+<li>想找的城市-莫斯科&amp;聖彼得堡: <code>cities = [&quot;Moscow&quot;, &quot;Saint Petersburg&quot;]</code>.</li>
+<li>用之前<code>.isin()</code>的方法: <code>print(temperatures[temperatures[&quot;city&quot;].isin(cities)])</code>.</li>
+<li>現在更簡潔, 用<code>.loc[]</code>方法: <code>print(temperatures_ind.loc[cities])</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="c1"># Make a list of cities to subset on</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Moscow&#34;</span><span class="p">,</span> <span class="s2">&#34;Saint Petersburg&#34;</span><span class="p">]</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="c1"># 單純的取子資料- Subset temperatures using square brackets</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures</span><span class="p">[</span><span class="n">temperatures</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cities</span><span class="p">)])</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span>            <span class="n">date</span>              <span class="n">city</span> <span class="n">country</span>  <span class="n">avg_temp_c</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="mi">10725</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>            <span class="n">Moscow</span>  <span class="n">Russia</span>      <span class="o">-</span><span class="mf">7.313</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span><span class="mi">10726</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>            <span class="n">Moscow</span>  <span class="n">Russia</span>      <span class="o">-</span><span class="mf">3.551</span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="mi">10727</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>            <span class="n">Moscow</span>  <span class="n">Russia</span>      <span class="o">-</span><span class="mf">1.661</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="mi">10728</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>            <span class="n">Moscow</span>  <span class="n">Russia</span>      <span class="mf">10.096</span>
+<span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span><span class="mi">10729</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>            <span class="n">Moscow</span>  <span class="n">Russia</span>      <span class="mf">10.357</span>
+<span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span><span class="o">...</span>          <span class="o">...</span>               <span class="o">...</span>     <span class="o">...</span>         <span class="o">...</span>
+<span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span><span class="mi">13360</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Saint</span> <span class="n">Petersburg</span>  <span class="n">Russia</span>      <span class="mf">12.355</span>
+<span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span><span class="mi">13361</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Saint</span> <span class="n">Petersburg</span>  <span class="n">Russia</span>      <span class="mf">17.185</span>
+<span class="ln" id="16"><a style="outline: none; text-decoration:none; color:inherit" href="#16">16</a></span><span class="mi">13362</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Saint</span> <span class="n">Petersburg</span>  <span class="n">Russia</span>      <span class="mf">17.234</span>
+<span class="ln" id="17"><a style="outline: none; text-decoration:none; color:inherit" href="#17">17</a></span><span class="mi">13363</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Saint</span> <span class="n">Petersburg</span>  <span class="n">Russia</span>      <span class="mf">17.153</span>
+<span class="ln" id="18"><a style="outline: none; text-decoration:none; color:inherit" href="#18">18</a></span><span class="mi">13364</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Saint</span> <span class="n">Petersburg</span>  <span class="n">Russia</span>         <span class="n">NaN</span>
+<span class="ln" id="19"><a style="outline: none; text-decoration:none; color:inherit" href="#19">19</a></span>
+<span class="ln" id="20"><a style="outline: none; text-decoration:none; color:inherit" href="#20">20</a></span>
+<span class="ln" id="21"><a style="outline: none; text-decoration:none; color:inherit" href="#21">21</a></span><span class="c1"># 以選取的索引擺前面 Subset temperatures_ind using .loc[]</span>
+<span class="ln" id="22"><a style="outline: none; text-decoration:none; color:inherit" href="#22">22</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_ind</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cities</span><span class="p">])</span>
+<span class="ln" id="23"><a style="outline: none; text-decoration:none; color:inherit" href="#23">23</a></span>                       <span class="n">date</span> <span class="n">country</span>  <span class="n">avg_temp_c</span>
+<span class="ln" id="24"><a style="outline: none; text-decoration:none; color:inherit" href="#24">24</a></span><span class="n">city</span>                                           
+<span class="ln" id="25"><a style="outline: none; text-decoration:none; color:inherit" href="#25">25</a></span><span class="n">Moscow</span>           <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="o">-</span><span class="mf">7.313</span>
+<span class="ln" id="26"><a style="outline: none; text-decoration:none; color:inherit" href="#26">26</a></span><span class="n">Moscow</span>           <span class="mi">2000</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="o">-</span><span class="mf">3.551</span>
+<span class="ln" id="27"><a style="outline: none; text-decoration:none; color:inherit" href="#27">27</a></span><span class="n">Moscow</span>           <span class="mi">2000</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="o">-</span><span class="mf">1.661</span>
+<span class="ln" id="28"><a style="outline: none; text-decoration:none; color:inherit" href="#28">28</a></span><span class="n">Moscow</span>           <span class="mi">2000</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="mf">10.096</span>
+<span class="ln" id="29"><a style="outline: none; text-decoration:none; color:inherit" href="#29">29</a></span><span class="n">Moscow</span>           <span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="mf">10.357</span>
+<span class="ln" id="30"><a style="outline: none; text-decoration:none; color:inherit" href="#30">30</a></span><span class="o">...</span>                     <span class="o">...</span>     <span class="o">...</span>         <span class="o">...</span>
+<span class="ln" id="31"><a style="outline: none; text-decoration:none; color:inherit" href="#31">31</a></span><span class="n">Saint</span> <span class="n">Petersburg</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="mf">12.355</span>
+<span class="ln" id="32"><a style="outline: none; text-decoration:none; color:inherit" href="#32">32</a></span><span class="n">Saint</span> <span class="n">Petersburg</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="mf">17.185</span>
+<span class="ln" id="33"><a style="outline: none; text-decoration:none; color:inherit" href="#33">33</a></span><span class="n">Saint</span> <span class="n">Petersburg</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="mf">17.234</span>
+<span class="ln" id="34"><a style="outline: none; text-decoration:none; color:inherit" href="#34">34</a></span><span class="n">Saint</span> <span class="n">Petersburg</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>      <span class="mf">17.153</span>
+<span class="ln" id="35"><a style="outline: none; text-decoration:none; color:inherit" href="#35">35</a></span><span class="n">Saint</span> <span class="n">Petersburg</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Russia</span>         <span class="n">NaN</span>
+</code></pre></div><blockquote>
+<p>可能要先把需要的column整理到前面?</p>
+</blockquote>
+<p><strong>c.設定多等級索引(Setting multi-level indexes)</strong>:</p>
+<ul>
+<li>多欄位索引:索引可以來自很多行. Indexes can also be made out of multiple columns, forming a multi-level index (sometimes called a hierarchical index).</li>
+<li>好處: 「巢狀類別變數(Nested Categorical Variables)」比較自然.</li>
+<li>壞處: 操作多等級索引會比操作columns還要複雜一點.</li>
+<li><code>.set_index()</code>: 可以指定兩個column names當作list</li>
+<li><code>[(&quot;a&quot;, &quot;b&quot;), (&quot;c&quot;, &quot;d&quot;)]</code>: 節選的subset得用<code>tuple</code>資料型態來寫.</li>
+<li><code>.loc[]</code>:帶入需要的subset.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="c1"># 指定索引 : Index temperatures by country &amp; city</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="n">temperatures_ind</span> <span class="o">=</span> <span class="n">temperatures</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&#34;country&#34;</span><span class="p">,</span> <span class="s2">&#34;city&#34;</span><span class="p">])</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="nb">type</span><span class="p">(</span><span class="n">temperatures_ind</span><span class="p">)</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span><span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="o">&gt;</span> <span class="n">得到DataFrame</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="n">temperatures_ind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span><span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+<span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span>
+<span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span>                            <span class="n">date</span>  <span class="n">avg_temp_c</span>
+<span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span><span class="n">country</span>       <span class="n">city</span>                          
+<span class="ln" id="16"><a style="outline: none; text-decoration:none; color:inherit" href="#16">16</a></span><span class="n">Côte</span> <span class="n">D</span><span class="s1">&#39;Ivoire Abidjan 2000-01-01      27.293</span>
+<span class="ln" id="17"><a style="outline: none; text-decoration:none; color:inherit" href="#17">17</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">27.685</span>
+<span class="ln" id="18"><a style="outline: none; text-decoration:none; color:inherit" href="#18">18</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">29.061</span>
+<span class="ln" id="19"><a style="outline: none; text-decoration:none; color:inherit" href="#19">19</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">28.162</span>
+<span class="ln" id="20"><a style="outline: none; text-decoration:none; color:inherit" href="#20">20</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">27.547</span>
+<span class="ln" id="21"><a style="outline: none; text-decoration:none; color:inherit" href="#21">21</a></span>
+<span class="ln" id="22"><a style="outline: none; text-decoration:none; color:inherit" href="#22">22</a></span>
+<span class="ln" id="23"><a style="outline: none; text-decoration:none; color:inherit" href="#23">23</a></span><span class="c1"># List of tuples: Brazil, Rio De Janeiro &amp; Pakistan, Lahore</span>
+<span class="ln" id="24"><a style="outline: none; text-decoration:none; color:inherit" href="#24">24</a></span><span class="n">rows_to_keep</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&#34;Brazil&#34;</span><span class="p">,</span> <span class="s2">&#34;Rio De Janeiro&#34;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&#34;Pakistan&#34;</span><span class="p">,</span> <span class="s2">&#34;Lahore&#34;</span><span class="p">)]</span>
+<span class="ln" id="25"><a style="outline: none; text-decoration:none; color:inherit" href="#25">25</a></span>
+<span class="ln" id="26"><a style="outline: none; text-decoration:none; color:inherit" href="#26">26</a></span><span class="c1"># Subset for rows to keep</span>
+<span class="ln" id="27"><a style="outline: none; text-decoration:none; color:inherit" href="#27">27</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_ind</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows_to_keep</span><span class="p">])</span>
+<span class="ln" id="28"><a style="outline: none; text-decoration:none; color:inherit" href="#28">28</a></span>
+<span class="ln" id="29"><a style="outline: none; text-decoration:none; color:inherit" href="#29">29</a></span><span class="o">&gt;</span> <span class="n">用巢狀列表排好</span><span class="p">,</span> <span class="n">只留下兩個城市</span>
+<span class="ln" id="30"><a style="outline: none; text-decoration:none; color:inherit" href="#30">30</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_ind</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows_to_keep</span><span class="p">])</span>
+<span class="ln" id="31"><a style="outline: none; text-decoration:none; color:inherit" href="#31">31</a></span>                              <span class="n">date</span>  <span class="n">avg_temp_c</span>
+<span class="ln" id="32"><a style="outline: none; text-decoration:none; color:inherit" href="#32">32</a></span><span class="n">country</span>  <span class="n">city</span>                                 
+<span class="ln" id="33"><a style="outline: none; text-decoration:none; color:inherit" href="#33">33</a></span><span class="n">Brazil</span>   <span class="n">Rio</span> <span class="n">De</span> <span class="n">Janeiro</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">25.974</span>
+<span class="ln" id="34"><a style="outline: none; text-decoration:none; color:inherit" href="#34">34</a></span>         <span class="n">Rio</span> <span class="n">De</span> <span class="n">Janeiro</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">26.699</span>
+<span class="ln" id="35"><a style="outline: none; text-decoration:none; color:inherit" href="#35">35</a></span>         <span class="n">Rio</span> <span class="n">De</span> <span class="n">Janeiro</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">26.270</span>
+<span class="ln" id="36"><a style="outline: none; text-decoration:none; color:inherit" href="#36">36</a></span>         <span class="n">Rio</span> <span class="n">De</span> <span class="n">Janeiro</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">25.750</span>
+<span class="ln" id="37"><a style="outline: none; text-decoration:none; color:inherit" href="#37">37</a></span>         <span class="n">Rio</span> <span class="n">De</span> <span class="n">Janeiro</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">24.356</span>
+<span class="ln" id="38"><a style="outline: none; text-decoration:none; color:inherit" href="#38">38</a></span><span class="o">...</span>                            <span class="o">...</span>         <span class="o">...</span>
+<span class="ln" id="39"><a style="outline: none; text-decoration:none; color:inherit" href="#39">39</a></span><span class="n">Pakistan</span> <span class="n">Lahore</span>         <span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">33.457</span>
+<span class="ln" id="40"><a style="outline: none; text-decoration:none; color:inherit" href="#40">40</a></span>         <span class="n">Lahore</span>         <span class="mi">2013</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">34.456</span>
+<span class="ln" id="41"><a style="outline: none; text-decoration:none; color:inherit" href="#41">41</a></span>         <span class="n">Lahore</span>         <span class="mi">2013</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">33.279</span>
+<span class="ln" id="42"><a style="outline: none; text-decoration:none; color:inherit" href="#42">42</a></span>         <span class="n">Lahore</span>         <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">31.511</span>
+<span class="ln" id="43"><a style="outline: none; text-decoration:none; color:inherit" href="#43">43</a></span>         <span class="n">Lahore</span>         <span class="mi">2013</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">01</span>         <span class="n">NaN</span>
+<span class="ln" id="44"><a style="outline: none; text-decoration:none; color:inherit" href="#44">44</a></span>
+<span class="ln" id="45"><a style="outline: none; text-decoration:none; color:inherit" href="#45">45</a></span><span class="p">[</span><span class="mi">330</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">2</span> <span class="n">columns</span><span class="p">]</span>
+</code></pre></div><blockquote>
+<p>如何設計適當的「巢狀索引」來過濾出需要的股票收益率?</p>
+</blockquote>
+<p><strong>d.利用索引值排序(Sorting by index values)</strong>:</p>
+<ul>
+<li>之前使用<code>.sort_values()</code>來改變rows的順序</li>
+<li>現在介紹<code>.sort_index()</code>來根據索引排序.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="c1"># 照「國家」名稱ABCD排序: Sort temperatures_ind by index values</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_ind</span><span class="o">.</span><span class="n">sort_index</span><span class="p">())</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span>                         <span class="n">date</span>  <span class="n">avg_temp_c</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span><span class="n">country</span>     <span class="n">city</span>                         
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="n">Afghanistan</span> <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>       <span class="mf">3.326</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>       <span class="mf">3.454</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>       <span class="mf">9.612</span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">17.925</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">24.658</span>
+<span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span><span class="o">...</span>                       <span class="o">...</span>         <span class="o">...</span>
+<span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span><span class="n">Zimbabwe</span>    <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">18.298</span>
+<span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">17.020</span>
+<span class="ln" id="15"><a style="outline: none; text-decoration:none; color:inherit" href="#15">15</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">16.299</span>
+<span class="ln" id="16"><a style="outline: none; text-decoration:none; color:inherit" href="#16">16</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">19.232</span>
+<span class="ln" id="17"><a style="outline: none; text-decoration:none; color:inherit" href="#17">17</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">01</span>         <span class="n">NaN</span>
+<span class="ln" id="18"><a style="outline: none; text-decoration:none; color:inherit" href="#18">18</a></span>
+<span class="ln" id="19"><a style="outline: none; text-decoration:none; color:inherit" href="#19">19</a></span><span class="c1"># 照「城市」名稱ABCD排序: Sort temperatures_ind by index values at the city level</span>
+<span class="ln" id="20"><a style="outline: none; text-decoration:none; color:inherit" href="#20">20</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_ind</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&#34;city&#34;</span><span class="p">))</span>
+<span class="ln" id="21"><a style="outline: none; text-decoration:none; color:inherit" href="#21">21</a></span>
+<span class="ln" id="22"><a style="outline: none; text-decoration:none; color:inherit" href="#22">22</a></span>                            <span class="n">date</span>  <span class="n">avg_temp_c</span>
+<span class="ln" id="23"><a style="outline: none; text-decoration:none; color:inherit" href="#23">23</a></span><span class="n">country</span>       <span class="n">city</span>                          
+<span class="ln" id="24"><a style="outline: none; text-decoration:none; color:inherit" href="#24">24</a></span><span class="n">Côte</span> <span class="n">D</span><span class="s1">&#39;Ivoire Abidjan 2000-01-01      27.293</span>
+<span class="ln" id="25"><a style="outline: none; text-decoration:none; color:inherit" href="#25">25</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">27.685</span>
+<span class="ln" id="26"><a style="outline: none; text-decoration:none; color:inherit" href="#26">26</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">29.061</span>
+<span class="ln" id="27"><a style="outline: none; text-decoration:none; color:inherit" href="#27">27</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">28.162</span>
+<span class="ln" id="28"><a style="outline: none; text-decoration:none; color:inherit" href="#28">28</a></span>              <span class="n">Abidjan</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">27.547</span>
+<span class="ln" id="29"><a style="outline: none; text-decoration:none; color:inherit" href="#29">29</a></span><span class="o">...</span>                          <span class="o">...</span>         <span class="o">...</span>
+<span class="ln" id="30"><a style="outline: none; text-decoration:none; color:inherit" href="#30">30</a></span><span class="n">China</span>         <span class="n">Xian</span>    <span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">18.979</span>
+<span class="ln" id="31"><a style="outline: none; text-decoration:none; color:inherit" href="#31">31</a></span>              <span class="n">Xian</span>    <span class="mi">2013</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">23.522</span>
+<span class="ln" id="32"><a style="outline: none; text-decoration:none; color:inherit" href="#32">32</a></span>              <span class="n">Xian</span>    <span class="mi">2013</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">25.251</span>
+<span class="ln" id="33"><a style="outline: none; text-decoration:none; color:inherit" href="#33">33</a></span>              <span class="n">Xian</span>    <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">24.528</span>
+<span class="ln" id="34"><a style="outline: none; text-decoration:none; color:inherit" href="#34">34</a></span>              <span class="n">Xian</span>    <span class="mi">2013</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">01</span>         <span class="n">NaN</span>
+<span class="ln" id="35"><a style="outline: none; text-decoration:none; color:inherit" href="#35">35</a></span>
+<span class="ln" id="36"><a style="outline: none; text-decoration:none; color:inherit" href="#36">36</a></span><span class="p">[</span><span class="mi">16500</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">2</span> <span class="n">columns</span><span class="p">]</span>
+<span class="ln" id="37"><a style="outline: none; text-decoration:none; color:inherit" href="#37">37</a></span>
+<span class="ln" id="38"><a style="outline: none; text-decoration:none; color:inherit" href="#38">38</a></span><span class="c1"># 「國家」名稱ABCD排序;「城市」名稱ZYXW排序. Sort temperatures_ind by country then descending city</span>
+<span class="ln" id="39"><a style="outline: none; text-decoration:none; color:inherit" href="#39">39</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_ind</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;country&#34;</span><span class="p">,</span> <span class="s2">&#34;city&#34;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]))</span>
+<span class="ln" id="40"><a style="outline: none; text-decoration:none; color:inherit" href="#40">40</a></span>
+<span class="ln" id="41"><a style="outline: none; text-decoration:none; color:inherit" href="#41">41</a></span>                         <span class="n">date</span>  <span class="n">avg_temp_c</span>
+<span class="ln" id="42"><a style="outline: none; text-decoration:none; color:inherit" href="#42">42</a></span><span class="n">country</span>     <span class="n">city</span>                         
+<span class="ln" id="43"><a style="outline: none; text-decoration:none; color:inherit" href="#43">43</a></span><span class="n">Afghanistan</span> <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>       <span class="mf">3.326</span>
+<span class="ln" id="44"><a style="outline: none; text-decoration:none; color:inherit" href="#44">44</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>       <span class="mf">3.454</span>
+<span class="ln" id="45"><a style="outline: none; text-decoration:none; color:inherit" href="#45">45</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>       <span class="mf">9.612</span>
+<span class="ln" id="46"><a style="outline: none; text-decoration:none; color:inherit" href="#46">46</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">17.925</span>
+<span class="ln" id="47"><a style="outline: none; text-decoration:none; color:inherit" href="#47">47</a></span>            <span class="n">Kabul</span>  <span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">24.658</span>
+<span class="ln" id="48"><a style="outline: none; text-decoration:none; color:inherit" href="#48">48</a></span><span class="o">...</span>                       <span class="o">...</span>         <span class="o">...</span>
+<span class="ln" id="49"><a style="outline: none; text-decoration:none; color:inherit" href="#49">49</a></span><span class="n">Zimbabwe</span>    <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">18.298</span>
+<span class="ln" id="50"><a style="outline: none; text-decoration:none; color:inherit" href="#50">50</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">17.020</span>
+<span class="ln" id="51"><a style="outline: none; text-decoration:none; color:inherit" href="#51">51</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">16.299</span>
+<span class="ln" id="52"><a style="outline: none; text-decoration:none; color:inherit" href="#52">52</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span>      <span class="mf">19.232</span>
+<span class="ln" id="53"><a style="outline: none; text-decoration:none; color:inherit" href="#53">53</a></span>            <span class="n">Harare</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">01</span>         <span class="n">NaN</span>
+<span class="ln" id="54"><a style="outline: none; text-decoration:none; color:inherit" href="#54">54</a></span>
+<span class="ln" id="55"><a style="outline: none; text-decoration:none; color:inherit" href="#55">55</a></span><span class="p">[</span><span class="mi">16500</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">2</span> <span class="n">columns</span><span class="p">]</span>
+</code></pre></div><blockquote>
+<p>股票編號排序, 時間排序.</p>
+</blockquote>
+<p><strong>e.切片索引值(Slicing index values)</strong>:</p>
+<ul>
+<li>選取範圍: <code>first:last</code>只要在可排序的東西上都可以切片.</li>
+<li>切片之前要用<code>.sort_index()</code>來排序</li>
+<li>切片公式: <code>df.loc[&quot;a&quot;:&quot;b&quot;]</code>.</li>
+<li>切片公式進階: <code>df.loc[(&quot;a&quot;, &quot;b&quot;):(&quot;c&quot;, &quot;d&quot;)]</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="c1"># Sort the index of temperatures_ind</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="n">temperatures_srt</span> <span class="o">=</span> <span class="n">temperatures_ind</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="c1"># 篩選國家 Subset rows from Pakistan to Russia</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_srt</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&#34;Pakistan&#34;</span><span class="p">:</span><span class="s2">&#34;Russia&#34;</span><span class="p">])</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="c1"># 篩選城市 Try to subset rows from Lahore to Moscow</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_srt</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&#34;Lahore&#34;</span><span class="p">:</span><span class="s2">&#34;Moscow&#34;</span><span class="p">])</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="c1"># 篩選國家城市 Subset rows from Pakistan, Lahore to Russia, Moscow</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_srt</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&#34;Pakistan&#34;</span><span class="p">,</span> <span class="s2">&#34;Lahore&#34;</span><span class="p">):(</span><span class="s2">&#34;Russia&#34;</span><span class="p">,</span> <span class="s2">&#34;Moscow&#34;</span><span class="p">)])</span>
+</code></pre></div><p><strong>f.雙方向切片(Slicing in both directions)</strong>:</p>
+<ul>
+<li>列切片(Row slicing):<code>.loc[]</code>可以先subset特定國家城市; <code>df.loc[(&quot;a&quot;, &quot;b&quot;):(&quot;c&quot;, &quot;d&quot;)]</code></li>
+<li>行切片(Column slicing):<code>.loc[]</code>再一次切片「時間」與「溫度; <code>df.loc[:, &quot;e&quot;:&quot;f&quot;]</code></li>
+<li>雙切片(Row&amp;Column slicing): <code>df.loc[(&quot;a&quot;, &quot;b&quot;):(&quot;c&quot;, &quot;d&quot;), &quot;e&quot;:&quot;f&quot;]</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="c1"># Subset rows from India, Hyderabad to Iraq, Baghdad</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_srt</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&#34;India&#34;</span><span class="p">,</span> <span class="s2">&#34;Hyderabad&#34;</span><span class="p">):(</span><span class="s2">&#34;Iraq&#34;</span><span class="p">,</span> <span class="s2">&#34;Baghdad&#34;</span><span class="p">)])</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span><span class="c1"># Subset columns from date to avg_temp_c</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_srt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&#34;date&#34;</span><span class="p">:</span><span class="s2">&#34;avg_temp_c&#34;</span><span class="p">])</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6">6</a></span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7">7</a></span><span class="c1"># Subset in both directions at once</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8">8</a></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatures_srt</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&#34;India&#34;</span><span class="p">,</span> <span class="s2">&#34;Hyderabad&#34;</span><span class="p">):(</span><span class="s2">&#34;Iraq&#34;</span><span class="p">,</span> <span class="s2">&#34;Baghdad&#34;</span><span class="p">),</span> <span class="s2">&#34;date&#34;</span><span class="p">:</span><span class="s2">&#34;avg_temp_c&#34;</span><span class="p">])</span>
+</code></pre></div><p><strong>g.</strong>:
+<strong>h.</strong>:
+<strong>i.</strong>:
+<strong>j.</strong>:
+<strong>k.</strong>:
+<strong>l.</strong>:
+****:
+****:
+****:
+****:
+****:
+****:
+****:
 ****:</p>
 <h2 id="d-創造與可視化dataframes-creating-and-visualizing-dataframes">D. 創造與可視化DataFrames (Creating and Visualizing DataFrames)<a class="anchor ms-1" href="#d-創造與可視化dataframes-creating-and-visualizing-dataframes"><i class="fas fa-link"></i></a></h2>
 <p><strong>具現Pandas</strong>: 有3大技能</p>
@@ -1051,6 +1262,11 @@ data[condition]就把需要的股票列了出來.</p>
 <td>0.2</td>
 <td>2022-01-31</td>
 <td>完成第二的模塊</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>2022-02-01</td>
+<td>花30分鐘, 學習怎麼操作「索引(Index)」來做切片(Slicing). 此功能對「特定範圍」, 「特定日期」的股票報酬率會有幫助, 像是一種更進階的樞紐操作.</td>
 </tr>
 </tbody>
 </table>
@@ -1148,7 +1364,7 @@ data[condition]就把需要的股票列了出來.</p>
         <a href="https://laplus3667.github.io/zh-tw/posts/mur032-%E6%80%9D%E8%80%83information-ratio/">MUR032 思考Information Ratio
 </a>
       </li><li>
-        <a href="https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/">MUR031 DataFrames操作基礎 (Ver 0.2)
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/">MUR031 DataFrames操作基礎 (Ver 0.3)
 </a>
       </li><li>
         <a href="https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%80/">MUR030 演算法交易入門
