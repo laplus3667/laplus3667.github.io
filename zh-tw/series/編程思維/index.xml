@@ -6,7 +6,16 @@
     <description>Recent content in 編程思維 on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Tue, 18 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR034 作為可重用區塊的Python函數</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur034-%E4%BD%9C%E7%82%BA%E5%8F%AF%E9%87%8D%E7%94%A8%E5%8D%80%E5%A1%8A%E7%9A%84python%E5%87%BD%E6%95%B8/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur034-%E4%BD%9C%E7%82%BA%E5%8F%AF%E9%87%8D%E7%94%A8%E5%8D%80%E5%A1%8A%E7%9A%84python%E5%87%BD%E6%95%B8/</guid>
+      <description>作為可重用區塊的Python函數 紫式晦澀每日一篇文章第34天 前言 今天是2022年第32天, 全年第5週, 一月的第5個週二. 今天思考「可重用性(</description>
+    </item>
+    
     <item>
       <title>MUR020 沈思輸入-處理-輸出模型</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur020-%E6%B2%88%E6%80%9D%E8%BC%B8%E5%85%A5-%E8%99%95%E7%90%86-%E8%BC%B8%E5%87%BA%E6%A8%A1%E5%9E%8B/</link>

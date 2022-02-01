@@ -3,27 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MUR012 合成數據於Chase銀行的金融應用 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>MUR034 作為可重用區塊的Python函數 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="MUR012 合成數據於Chase銀行的金融應用">
-<meta itemprop="description" content="合成數據於Chase銀行的金融應用 紫式晦澀每日一篇文章第12天 前言 今天是2022年第10天, 全年第2週, 一月的第二個週一. 今天來累積金融應用"><meta itemprop="datePublished" content="2022-01-10T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-01-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2247">
-<meta itemprop="keywords" content="金融科技," /><meta property="og:title" content="MUR012 合成數據於Chase銀行的金融應用" />
-<meta property="og:description" content="合成數據於Chase銀行的金融應用 紫式晦澀每日一篇文章第12天 前言 今天是2022年第10天, 全年第2週, 一月的第二個週一. 今天來累積金融應用" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR034 作為可重用區塊的Python函數">
+<meta itemprop="description" content="作為可重用區塊的Python函數 紫式晦澀每日一篇文章第34天 前言 今天是2022年第32天, 全年第5週, 一月的第5個週二. 今天思考「可重用性("><meta itemprop="datePublished" content="2022-02-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1554">
+<meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR034 作為可重用區塊的Python函數" />
+<meta property="og:description" content="作為可重用區塊的Python函數 紫式晦澀每日一篇文章第34天 前言 今天是2022年第32天, 全年第5週, 一月的第5個週二. 今天思考「可重用性(" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur012%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%96%BCchase%E7%9A%84%E9%87%91%E8%9E%8D%E6%87%89%E7%94%A8/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-01-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-01-10T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur034-%E4%BD%9C%E7%82%BA%E5%8F%AF%E9%87%8D%E7%94%A8%E5%8D%80%E5%A1%8A%E7%9A%84python%E5%87%BD%E6%95%B8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-01T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MUR012 合成數據於Chase銀行的金融應用"/>
-<meta name="twitter:description" content="合成數據於Chase銀行的金融應用 紫式晦澀每日一篇文章第12天 前言 今天是2022年第10天, 全年第2週, 一月的第二個週一. 今天來累積金融應用"/>
+<meta name="twitter:title" content="MUR034 作為可重用區塊的Python函數"/>
+<meta name="twitter:description" content="作為可重用區塊的Python函數 紫式晦澀每日一篇文章第34天 前言 今天是2022年第32天, 全年第5週, 一月的第5個週二. 今天思考「可重用性("/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
   <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -45,11 +46,11 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=MUR012%20%e5%90%88%e6%88%90%e6%95%b8%e6%93%9a%e6%96%bcChase%e9%8a%80%e8%a1%8c%e7%9a%84%e9%87%91%e8%9e%8d%e6%87%89%e7%94%a8&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur012%25E5%2590%2588%25E6%2588%2590%25E6%2595%25B8%25E6%2593%259A%25E6%2596%25BCchase%25E7%259A%2584%25E9%2587%2591%25E8%259E%258D%25E6%2587%2589%25E7%2594%25A8%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR034%20%e4%bd%9c%e7%82%ba%e5%8f%af%e9%87%8d%e7%94%a8%e5%8d%80%e5%a1%8a%e7%9a%84Python%e5%87%bd%e6%95%b8&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur034-%25E4%25BD%259C%25E7%2582%25BA%25E5%258F%25AF%25E9%2587%258D%25E7%2594%25A8%25E5%258D%2580%25E5%25A1%258A%25E7%259A%2584python%25E5%2587%25BD%25E6%2595%25B8%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur012%25E5%2590%2588%25E6%2588%2590%25E6%2595%25B8%25E6%2593%259A%25E6%2596%25BCchase%25E7%259A%2584%25E9%2587%2591%25E8%259E%258D%25E6%2587%2589%25E7%2594%25A8%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur034-%25E4%25BD%259C%25E7%2582%25BA%25E5%258F%25AF%25E9%2587%258D%25E7%2594%25A8%25E5%258D%2580%25E5%25A1%258A%25E7%259A%2584python%25E5%2587%25BD%25E6%2595%25B8%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -217,7 +218,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR012 合成數據於Chase銀行的金融應用</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR034 作為可重用區塊的Python函數</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -245,145 +246,235 @@ Murasaki
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">MUR012 合成數據於Chase銀行的金融應用
+    <h1 class="card-title post-title">MUR034 作為可重用區塊的Python函數
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
-  <span class="post-date" title="創建於 2022-01-09 19:00:00 -0500 EST。">
-    2022-01-10
-  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded-pill post-taxonomy">合成數據</a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded-pill post-taxonomy">可信任的AI</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded-pill post-taxonomy">金融科技</a></span>
+  <span class="post-date" title="創建於 2022-01-31 19:00:00 -0500 EST。">
+    2022-02-01
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded-pill post-taxonomy">物件導向編程</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded-pill post-taxonomy">編程思維</a><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded-pill post-taxonomy">Python</a></span>
 </div>
 <div class="post-toc mb-4" id="postTOC">
   <h2 class="mb-4">目錄</h2>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#合成數據-作為大數據時代隱私保護解決方案">合成數據: 作為大數據時代隱私保護解決方案</a></li>
-    <li><a href="#訓練方法-真實數據的生成模式建模或深度神經網路學習">訓練方法: 真實數據的「生成模式建模」或「深度神經網路學習」</a></li>
-    <li><a href="#場景洞察-詐欺檢測-異常偵測-反洗錢-客戶旅程-市場執行">場景洞察: 詐欺檢測, 異常偵測, 反洗錢, 客戶旅程, 市場執行</a></li>
-    <li><a href="#研究社群-用戶公司互動模擬-強監管產業的新研究範式">研究社群: 用戶公司互動模擬, 強監管產業的新研究範式</a></li>
+    <li><a href="#心法-模組化大事化小-抽象化以簡馭繁-形式參數開發者-實際參數使用者">心法: 模組化大事化小, 抽象化以簡馭繁, 形式參數開發者, 實際參數使用者</a>
+      <ul>
+        <li><a href="#lesson-20-建築能持續的程序">Lesson 20: 建築能持續的程序</a></li>
+        <li><a href="#lesson-21-利用函數達到模組化與抽象">Lesson 21: 利用函數達到模組化與抽象</a></li>
+        <li><a href="#lesson-22-函數的進階操作">Lesson 22: 函數的進階操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#技法">技法</a></li>
+    <li><a href="#用法">用法</a></li>
+    <li><a href="#文法">文法</a></li>
     <li><a href="#後記">後記</a></li>
   </ul>
 </nav>
-</div><div class="post-content mb-3"><h1 id="合成數據於chase銀行的金融應用">合成數據於Chase銀行的金融應用<a class="anchor ms-1" href="#合成數據於chase銀行的金融應用"><i class="fas fa-link"></i></a></h1>
-<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/rJ-2SZq2Y.jpg" loading="lazy"
+</div><div class="post-content mb-3"><h1 id="作為可重用區塊的python函數">作為可重用區塊的Python函數<a class="anchor ms-1" href="#作為可重用區塊的python函數"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2020/01/python-function-parameters.jpg" loading="lazy"
   
    />
 
 </p>
 <blockquote>
-<p>紫式晦澀每日一篇文章第12天</p>
+<p>紫式晦澀每日一篇文章第34天</p>
 </blockquote>
 <h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
 <ol>
 <li>
-<p>今天是2022年第10天, 全年第2週, 一月的第二個週一. 今天來累積金融應用的各種術語知識.</p>
+<p>今天是2022年第32天, 全年第5週, 一月的第5個週二. 今天思考「可重用性(Reusability)」. 在Python裡面「可重用性」的最基礎, 就是「寫好函數」的技能. 今天利用文章來組織這項軟技能.</p>
 </li>
 <li>
-<p>今天的素材主要來自Chase銀行的技術部落格 <a href="https://www.jpmorgan.com/technology/technology-blog/synthetic-data-for-real-insights" target="_blank" rel="noopener noreferrer">Synthetic Data for Real Insights</a>
-中, 翻譯內文, 閱讀思考的紀錄.</p>
+<p>今天的素材主要來自文章:</p>
 </li>
 </ol>
-<h2 id="合成數據-作為大數據時代隱私保護解決方案">合成數據: 作為大數據時代隱私保護解決方案<a class="anchor ms-1" href="#合成數據-作為大數據時代隱私保護解決方案"><i class="fas fa-link"></i></a></h2>
-<ol start="3">
-<li>
-<p><strong>合成數據的背景</strong>: J.P. Morgan AI Research 生成合成數據集，以加速金融服務領域的研究和模型開發。要使 AI 模型有效地展示業務場景中的人類行為，它們需要接受大量代表現實的數據的訓練。 金融服務行業會產生大量可能非常有益的數據，但這些數據通常無法使用。 這對研究人員和開發人員提出了根本性挑戰。</p>
-</li>
-<li>
-<p><strong>真實數據的限制</strong>: 真實數據在許多方面可能難以訪問，包括隱私、法律許可以及與數量、表示和含義相關的技術方面。</p>
-</li>
-</ol>
+<ul>
+<li><a href="https://www.manning.com/books/get-programming" target="_blank" rel="noopener noreferrer">2018: Get Programming Learn to code with Python</a>
+的第五單元(P.181-232). 此單元完整講解了如何執行模組化與抽象化,</li>
+</ul>
 <blockquote>
-<p>如何實現依賴數據的新產品和服務的創新和構建?</p>
-<p>一個答案是使用合成數據!</p>
+<p>收集「三」的表達.</p>
 </blockquote>
-<ol start="5">
-<li>
-<p><strong>合成數據優點一: 替代真實數據, 但共享格式與分佈</strong>: 可以與真實數據共享格式、分佈和標準化內容，同時不會產生使用真實數據的風險。</p>
-</li>
-<li>
-<p><strong>合成數據優點二: 增加AI算法穩健性, 因可探索歷史數據外的場景</strong>:合成數據可能具有額外的好處，即代表歷史數據之外的探索性場景，以準備 AI 算法並支持在新情況下的決策。 因此，合成數據使我們能夠更加穩健地應對具有挑戰性的情況。</p>
-</li>
-<li>
-<p><strong>合成數據優點三: 增加罕見示例, 更有效訓練ML算法</strong>:合成數據可以增加真實數據中可能很少見的示例，以便更有效地訓練機器學習算法。</p>
-</li>
-<li>
-<p><strong>合成數據優點四: 生成測試場景, 快速驗證新想法效果</strong>:最終，如果一個新想法在合成數據上顯示出前景，我們可以考慮將其推進實際部署並在真實數據上使用。</p>
-</li>
-</ol>
-<h2 id="訓練方法-真實數據的生成模式建模或深度神經網路學習">訓練方法: 真實數據的「生成模式建模」或「深度神經網路學習」<a class="anchor ms-1" href="#訓練方法-真實數據的生成模式建模或深度神經網路學習"><i class="fas fa-link"></i></a></h2>
-<ol start="9">
-<li>
-<p><strong>不同數據類型, 不同合成方法</strong>: 通過研究，摩根大通的人工智能研究團隊確定了幾種創建合成數據的方法，並了解到不同的方法可能適用於不同類型的數據。</p>
-</li>
-<li>
-<p><strong>方法一: 真實數據生成模式建模(Generative Modeling)</strong>: 我們可以通過了解生成真實數據的過程來創建真實的合成數據，然後對過程本身進行建模以生成合成數據。該模型可以是聲明性(declarative)的或在模擬中捕獲(captured in simulations)。</p>
-</li>
-<li>
-<p><strong>方法二: 真實數據深度神經網路學習</strong>: 直接使用真實數據來訓練生成神經網絡（GNN），它已成功用於生成各種其他合成數據。</p>
-</li>
-</ol>
-<h2 id="場景洞察-詐欺檢測-異常偵測-反洗錢-客戶旅程-市場執行">場景洞察: 詐欺檢測, 異常偵測, 反洗錢, 客戶旅程, 市場執行<a class="anchor ms-1" href="#場景洞察-詐欺檢測-異常偵測-反洗錢-客戶旅程-市場執行"><i class="fas fa-link"></i></a></h2>
-<ol start="12">
-<li>
-<p><strong>合成數據提供新洞察</strong>: 合成的新樣本具有真實數據的屬性，但無法映射回真實數據。新樣本提供了對可能未被發現的數據的洞察。</p>
-</li>
-<li>
-<p><strong>關鍵場景一:欺詐檢測(fraud detection)模型訓練</strong>:</p>
-</li>
-</ol>
+<h2 id="心法-模組化大事化小-抽象化以簡馭繁-形式參數開發者-實際參數使用者">心法: 模組化大事化小, 抽象化以簡馭繁, 形式參數開發者, 實際參數使用者<a class="anchor ms-1" href="#心法-模組化大事化小-抽象化以簡馭繁-形式參數開發者-實際參數使用者"><i class="fas fa-link"></i></a></h2>
+<p><strong>三課內容</strong>:</p>
 <ul>
-<li>合成數據為 AI 模型提供了正常(normal transactions)和欺詐交易(fraudulent transactions)的示例，以了解可疑交易模式(suspicious transaction patterns)。</li>
-<li>由於與非欺詐案件相比，欺詐案件的數量非常少，因此建模方法難以從可用數據中有效地訓練關於欺詐行為的模型。</li>
+<li>20 建築能持續的程序</li>
+<li>21 利用函數達到模組化與抽象</li>
+<li>22 函數的進階操作</li>
 </ul>
-<ol start="14">
-<li><strong>關鍵場景二:異常行為(anomalous behavior)模型訓練</strong>:</li>
-</ol>
+<p><strong>三課小節: 共11小節</strong>:</p>
 <ul>
-<li>成數據可用於訓練異常行為(anomalous behavior)模型。</li>
-<li>該過程使不符合預期行為的交易比例更高，從而生成更多欺詐案例的合成樣本，以改進模型訓練。</li>
+<li>20.1 Breaking a big task into smaller tasks:</li>
+<li>20.2 Introducing black boxes of code in programming</li>
+<li>20.3 Subtasks exist in their own environments</li>
+<li>21.1 Writing a function</li>
+<li>21.2 Using functions</li>
+<li>21.3 Documenting your functions</li>
+<li>22.1 Thinking about functions with two hats</li>
+<li>22.2 Function scope</li>
+<li>22.3 Nesting functions</li>
+<li>22.4 Passing functions as parameters</li>
+<li>22.5 Returning a function</li>
 </ul>
-<ol start="15">
+<p><strong>三課小小節: 共11小節</strong>:</p>
+<ul>
+<li>20.1 Breaking a big task into smaller tasks:</li>
 <li>
-<p><strong>關鍵場景三:反洗錢 (Anti0money laundering) 行為</strong></p>
+<ul>
+<li>20.1.1.任務相關/獨立性(Task dependence/independence).</li>
+</ul>
 </li>
 <li>
-<p><strong>關鍵場景四:客戶旅程(Customer journey)事件</strong></p>
+<ul>
+<li>20.1.2.黑盒子(black box)-模組(Module).</li>
+</ul>
+</li>
+<li>20.2 Introducing black boxes of code in programming</li>
+<li>
+<ul>
+<li>20.2.1. Using code modules: 模組化(Modularity)</li>
+</ul>
 </li>
 <li>
-<p><strong>關鍵場景五:市場執行(Markets execution)數據</strong></p>
+<ul>
+<li>20.2.2. Abstracting code: 字符串(docstring)</li>
+</ul>
 </li>
 <li>
-<p><strong>關鍵場景六:用於欺詐檢測的支付數據(Payments data)</strong></p>
+<ul>
+<li>20.2.3. Reusing code: 代碼包裝(code wrapper)</li>
+</ul>
 </li>
+<li>20.3 Subtasks exist in their own environments: 切任務成子任務(dividing a larger task into subtasks), 細節抽象化(abstraction of details).</li>
+<li>21.1 Writing a function</li>
+<li>
+<ul>
+<li>21.1.1. 輸入 Function basics: what the function takes in: 參數有兩個英文, parameters, arguments. 在設計函數的層面, 是「形式參數(formal parameters, formal arguments)」</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>21.1.2. 處理 Function basics: what the function does</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>21.1.3  輸出 Function basics: what the function returns</li>
+</ul>
+</li>
+<li>21.2 Using functions: 真實參數(Actual parameters).</li>
+<li>21.2.1 Returning more than one value: 雖然函數只會回傳「一個物件(a object)」, 但我們可以把需要的東西都包裝成物件.</li>
+<li>
+<ul>
+<li>21.2.2 Functions without a return statement: 沒寫return的話, Python automatically returns the value None in the function.</li>
+</ul>
+</li>
+<li>21.3 Documenting your functions:函數指定(function specifications)或字符串(docstrings)來實踐抽象化.</li>
+<li>22.1 Thinking about functions with two hats</li>
+<li>
+<ul>
+<li>22.1.1 Writer hat: 輸入為「形式參數(Formal parameters)」</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>22.1.2 User hat: 輸入為「實際參數(Actual parameters)」</li>
+</ul>
+</li>
+<li>22.2 Function scope</li>
+<li>
+<ul>
+<li>22.2.1 Simple scoping example 作用域影響函數回傳</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>22.2.2 Scoping rules 作用域規則</li>
+</ul>
+</li>
+<li>22.3 Nesting functions</li>
+<li>22.4 Passing functions as parameters</li>
+<li>22.5 Returning a function</li>
+</ul>
+<h3 id="lesson-20-建築能持續的程序">Lesson 20: 建築能持續的程序<a class="anchor ms-1" href="#lesson-20-建築能持續的程序"><i class="fas fa-link"></i></a></h3>
+<p><strong>Lesson 20:建築能持續的程序</strong>:</p>
+<ul>
+<li>如何: 大任務成小模組(how a bigger task is divided into modules)</li>
+<li>為何: 隱藏複雜任務的細節( why you should hide away details of complicated tasks)</li>
+<li>是什麼: 任務之間「獨立」與「相依」的意涵 ( what it means for tasks to be dependent on or independent ofother tasks)</li>
+</ul>
+<h3 id="lesson-21-利用函數達到模組化與抽象">Lesson 21: 利用函數達到模組化與抽象<a class="anchor ms-1" href="#lesson-21-利用函數達到模組化與抽象"><i class="fas fa-link"></i></a></h3>
+<p><strong>Lesson 21 利用函數達到模組化與抽象</strong>:</p>
+<ul>
+<li>寫使用「函數(Functions)」的代碼</li>
+<li>寫有「參數(Parameters)」的函數</li>
+<li>寫會「回傳特定職(return a specified value)」的函數</li>
+<li>理解「變數值(Variable)」是如何在不同函數環境下變化</li>
+</ul>
+<p><strong>模組化大事化小;抽象化以簡馭繁</strong>:</p>
+<ul>
+<li>模組化: 把問題拆小, 一個個解決. Modularity is having smaller (more or less independent) problems to tackle, one by one.</li>
+<li>抽象化: 以模組為單位思考,不擔心模組內細節. Abstraction is being able to think about the modules themselves at a higher level, without worrying about the details of implementing each.</li>
+</ul>
+<blockquote>
+<p>模組化大事化小;抽象化以簡馭繁</p>
+</blockquote>
+<h3 id="lesson-22-函數的進階操作">Lesson 22: 函數的進階操作<a class="anchor ms-1" href="#lesson-22-函數的進階操作"><i class="fas fa-link"></i></a></h3>
+<p><strong>Lesson 22 函數的進階操作</strong>:</p>
+<ul>
+<li>將「函數」作為「另一函數的參數」(Pass functions (as an object) as a parameter to another function)</li>
+<li>從「函數」回傳「作為物件的函數」(Return a function (as an object) from another function)</li>
+<li>利用特定規則, 理解變數所在的「作用域(Scope)」(Understand which variables belong to which scope based on certain rules)</li>
+</ul>
+<p>****:
+****:</p>
+<h2 id="技法">技法<a class="anchor ms-1" href="#技法"><i class="fas fa-link"></i></a></h2>
+<p><strong>字符串(Docstring)</strong>:</p>
+<ul>
+<li>A docstring contains the following information:</li>
+<li>
+<ol>
+<li>All inputs to the module—Represented by variables and their types.</li>
 </ol>
-<h2 id="研究社群-用戶公司互動模擬-強監管產業的新研究範式">研究社群: 用戶公司互動模擬, 強監管產業的新研究範式<a class="anchor ms-1" href="#研究社群-用戶公司互動模擬-強監管產業的新研究範式"><i class="fas fa-link"></i></a></h2>
-<ol start="19">
-<li>
-<p><strong>合成數據: 本質上模擬用戶與公司的互動</strong>: 該公司人工智能研究主管 Manuela Veloso 回顧了該團隊在零售銀行業務中啟用的合成數據功能。 “例如，合成數據生成讓我們能夠思考客戶開戶和申請貸款的整個生命週期。我們不只是檢查數據以了解人們在做什麼，而且我們還能夠分析他們與公司的互動，並從本質上模擬整個過程。”</p>
 </li>
 <li>
-<p><strong>合成數據的工作延伸</strong>: 該團隊的合成數據工作已經發展。自 2 月份提供其合成數據集以來，該團隊已經收到了許多對這些功能的請求。此外，該公司在斯坦福大學、康奈爾大學、CMU、布法羅大學、紐約大學和其他大學的教師<a href="https://www.jpmorgan.com/technology/artificial-intelligence/research-awards" target="_blank" rel="noopener noreferrer">研究獲獎者</a>
-正在利用數據集開發算法，以解決欺詐和洗錢、客戶旅程、市場執行和金融領域的其他領域。</p>
-</li>
-<li>
-<p><strong>合成數據: 強監管產業的新研究範式</strong>:AI Research 執行董事 Rob Tillman 總結了其合成數據所面臨的挑戰及其優勢。 “在金融等處理敏感數據的高度監管行業中，通常存在重大障礙，阻礙或延遲研究人員和開發人員使用數據開發人工智能解決方案以改善體驗或解決欺詐檢測和反欺詐等重要問題的能力。洗錢。該團隊的合成數據工作旨在解決這個問題，加速摩根大通人工智能解決方案的開發，並促進與學術界的合作。”</p>
-</li>
+<ol start="2">
+<li>What the module is supposed to do—Its function.</li>
 </ol>
+</li>
+<li>
+<ol start="3">
+<li>What output the module gives you—This might be an object (variable) or it might be something that the module prints.</li>
+</ol>
+</li>
+</ul>
+<p>****:
+****:
+****:
+****:
+****:</p>
+<h2 id="用法">用法<a class="anchor ms-1" href="#用法"><i class="fas fa-link"></i></a></h2>
+<p>****:
+****:
+****:
+****:
+****:
+****:</p>
+<h2 id="文法">文法<a class="anchor ms-1" href="#文法"><i class="fas fa-link"></i></a></h2>
+<p>****:
+****:
+****:
+****:
+****:
+****:</p>
 <h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
-<ol start="22">
-<li>
-<p>到此翻譯思考了<a href="https://www.jpmorgan.com/technology/technology-blog/synthetic-data-for-real-insights" target="_blank" rel="noopener noreferrer">Synthetic Data for Real Insights</a>
-大部分的內容. 首先合成數據作為大數據時代隱私保護解決方案, 希望能替代真實數據的使用, 成為新時代的可再生能源. 訓練方法上, 可以執行「生成模式建模」或「深度神經網路學習」. 使用的場景主要是詐欺偵測與異常偵測. 對於金融業界而言, 合成數據能夠模擬用戶與公司的互動, 有望成為強監管產業的新研究範式.</p>
-</li>
-<li>
-<p>閱讀翻譯過這篇文章以後, 感覺AI for Finance是一個很好研究AI知識如何落地的很好的場景. 聯想到今天聽到的元宇宙是AI科技落地的一大場景, 感覺五年十年會有許多新的商業模式可以出來. 非常有趣.</p>
-</li>
-<li>
-<p>每天加強自己的coding能力, 將思維從科學轉為工程, 是解決自己時代問題的負責任的態度！主動實踐, 創造個人經驗, 推動時代, 共勉之！</p>
-</li>
-</ol>
-<p>2022.01.10.
+<p>Ver0.1(1/31): 今天對文章中各種圖, 文章結構想強調的點, 進行了80分鐘的思考.本文章的結構非常好, 從「連環圖」的角度講了很棒的科學研究故事. 多欣賞好文章, 來讓自己的文章的readability上升.</p>
+<blockquote>
+<p>對於證明類的文本, 如何做圖與可視化呢? 收集好的文獻?</p>
+</blockquote>
+<p>2022.01.31.
 紫蕊
 於 西拉法葉, 印第安納, 美國.</p>
 </div>
@@ -398,12 +489,8 @@ Murasaki
 </div>
   <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/">MUR011 思考Bash中的Globbing與Quoting
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur033-%E5%A6%82%E4%BD%95%E8%A1%A1%E9%87%8F%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E7%9A%84%E7%9C%9F%E5%AF%A6%E6%80%A7%E8%88%87%E6%BA%96%E7%A2%BA%E6%80%A7/">MUR033 如何衡量合成數據的真實性與準確性?
 </a>
-  </div><div class="post-nav post-next">
-    <a href="https://laplus3667.github.io/zh-tw/posts/mur013%E6%80%9D%E8%80%83obsidian%E5%A4%96%E6%8E%9Btemplater/">MUR013 思考Obsidian外掛templater
-</a>
-    <i class="fas fa-fw fa-chevron-right"></i>
   </div></div></div>
 </article><section class="related-posts row card component">
     <div class="card-header">
@@ -411,29 +498,29 @@ Murasaki
     </div>
     <div class="card-body">
       <ul class="post-list"><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur005%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E9%97%9C%E8%81%AF%E5%81%B5%E6%B8%AC%E8%A9%90%E6%AC%BA/">MUR005 合成數據如何幫助基於機器學習的偵測詐欺?
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/">MUR031 DataFrames操作基礎 (Ver 0.2)
 </a>
-          <span class="float-end post-date">2022-01-03
+          <span class="float-end post-date">2022-01-29
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/">MUR011 思考Bash中的Globbing與Quoting
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur030-%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93%E5%85%A5%E9%96%80/">MUR030 演算法交易入門
 </a>
-          <span class="float-end post-date">2022-01-09
+          <span class="float-end post-date">2022-01-28
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur020-%E6%B2%88%E6%80%9D%E8%BC%B8%E5%85%A5-%E8%99%95%E7%90%86-%E8%BC%B8%E5%87%BA%E6%A8%A1%E5%9E%8B/">MUR020 沈思輸入-處理-輸出模型
 </a>
-          <span class="float-end post-date">2022-01-08
+          <span class="float-end post-date">2022-01-18
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/">MUR009 思辨註釋與文檔
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur018-%E6%B2%88%E6%80%9Dpython%E5%BB%BA%E6%A7%8B%E5%BC%8F/">MUR018 沈思Python建構式
 </a>
-          <span class="float-end post-date">2022-01-07
+          <span class="float-end post-date">2022-01-16
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur015%E5%BE%9E%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E6%80%9D%E8%80%83%E7%B7%9A%E6%80%A7%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90/">MUR015 從物件導向思考線性迴歸分析
 </a>
-          <span class="float-end post-date">2022-01-06
+          <span class="float-end post-date">2022-01-13
 </span>
         </li></ul>
     </div>
