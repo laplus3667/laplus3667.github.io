@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>MUR033 如何衡量合成數據的真實性與準確性?</title>
+      <title>MUR033 如何衡量合成數據的真實性與準確性? (Ver 0.2)</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur033-%E5%A6%82%E4%BD%95%E8%A1%A1%E9%87%8F%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E7%9A%84%E7%9C%9F%E5%AF%A6%E6%80%A7%E8%88%87%E6%BA%96%E7%A2%BA%E6%80%A7/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
       
@@ -352,11 +352,20 @@ Hugo makes use of a variety of open source projects including:
     </item>
     
     <item>
+      <title>GFH003 具體滿足群體公平性的樹籬算法</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/gfh003-%E5%85%B7%E9%AB%94%E6%BB%BF%E8%B6%B3%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E7%9A%84%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 03 Jan 1990 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/gfh003-%E5%85%B7%E9%AB%94%E6%BB%BF%E8%B6%B3%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E7%9A%84%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95/</guid>
+      <description>Question Q. 樹籬算法(Hedge algorithm)的公平性基礎? Q. 樹籬算法(Hedge algorithm)的公平性基礎? 群體脈絡線上學習 a.group-outcome sequence tuple: 時間</description>
+    </item>
+    
+    <item>
       <title>GFH002 實踐群體公平性以機會均等</title>
-      <link>https://laplus3667.github.io/zh-tw/posts/gfh002-%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%AC%E5%B9%B3%E5%9F%BA%E7%A4%8E/</link>
+      <link>https://laplus3667.github.io/zh-tw/posts/gfh002-%E5%AF%A6%E8%B8%90%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E4%BB%A5%E6%A9%9F%E6%9C%83%E5%9D%87%E7%AD%89/</link>
       <pubDate>Tue, 02 Jan 1990 00:00:00 +0000</pubDate>
       
-      <guid>https://laplus3667.github.io/zh-tw/posts/gfh002-%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%AC%E5%B9%B3%E5%9F%BA%E7%A4%8E/</guid>
+      <guid>https://laplus3667.github.io/zh-tw/posts/gfh002-%E5%AF%A6%E8%B8%90%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E4%BB%A5%E6%A9%9F%E6%9C%83%E5%9D%87%E7%AD%89/</guid>
       <description>Question Q. 樹籬算法(Hedge algorithm)的公平性基礎? Q. 樹籬算法(Hedge algorithm)的公平性基礎? 群體脈絡線上學習 a.group-outcome sequence tuple: 時間</description>
     </item>
     

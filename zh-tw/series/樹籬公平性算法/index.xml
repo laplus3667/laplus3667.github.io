@@ -6,13 +6,22 @@
     <description>Recent content in 樹籬公平性算法 on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Tue, 02 Jan 1990 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/series/%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E6%80%A7%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Jan 1990 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/series/%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E6%80%A7%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GFH003 具體滿足群體公平性的樹籬算法</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/gfh003-%E5%85%B7%E9%AB%94%E6%BB%BF%E8%B6%B3%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E7%9A%84%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 03 Jan 1990 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/gfh003-%E5%85%B7%E9%AB%94%E6%BB%BF%E8%B6%B3%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E7%9A%84%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95/</guid>
+      <description>Question Q. 樹籬算法(Hedge algorithm)的公平性基礎? Q. 樹籬算法(Hedge algorithm)的公平性基礎? 群體脈絡線上學習 a.group-outcome sequence tuple: 時間</description>
+    </item>
+    
     <item>
       <title>GFH002 實踐群體公平性以機會均等</title>
-      <link>https://laplus3667.github.io/zh-tw/posts/gfh002-%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%AC%E5%B9%B3%E5%9F%BA%E7%A4%8E/</link>
+      <link>https://laplus3667.github.io/zh-tw/posts/gfh002-%E5%AF%A6%E8%B8%90%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E4%BB%A5%E6%A9%9F%E6%9C%83%E5%9D%87%E7%AD%89/</link>
       <pubDate>Tue, 02 Jan 1990 00:00:00 +0000</pubDate>
       
-      <guid>https://laplus3667.github.io/zh-tw/posts/gfh002-%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%AC%E5%B9%B3%E5%9F%BA%E7%A4%8E/</guid>
+      <guid>https://laplus3667.github.io/zh-tw/posts/gfh002-%E5%AF%A6%E8%B8%90%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E4%BB%A5%E6%A9%9F%E6%9C%83%E5%9D%87%E7%AD%89/</guid>
       <description>Question Q. 樹籬算法(Hedge algorithm)的公平性基礎? Q. 樹籬算法(Hedge algorithm)的公平性基礎? 群體脈絡線上學習 a.group-outcome sequence tuple: 時間</description>
     </item>
     
