@@ -352,12 +352,12 @@ Hugo makes use of a variety of open source projects including:
     </item>
     
     <item>
-      <title>GFH003 具體滿足群體公平性的樹籬算法</title>
-      <link>https://laplus3667.github.io/zh-tw/posts/gfh003-%E5%85%B7%E9%AB%94%E6%BB%BF%E8%B6%B3%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E7%9A%84%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95/</link>
+      <title>GFH003 行動就是參數; 損失就是脈絡</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/gfh003-%E8%A1%8C%E5%8B%95%E5%B0%B1%E6%98%AF%E5%8F%83%E6%95%B8-%E6%90%8D%E5%A4%B1%E5%B0%B1%E6%98%AF%E8%84%88%E7%B5%A1/</link>
       <pubDate>Wed, 03 Jan 1990 00:00:00 +0000</pubDate>
       
-      <guid>https://laplus3667.github.io/zh-tw/posts/gfh003-%E5%85%B7%E9%AB%94%E6%BB%BF%E8%B6%B3%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E7%9A%84%E6%A8%B9%E7%B1%AC%E7%AE%97%E6%B3%95/</guid>
-      <description>Question Q. 樹籬算法(Hedge algorithm)的公平性基礎? Q. 樹籬算法(Hedge algorithm)的公平性基礎? 群體脈絡線上學習 a.group-outcome sequence tuple: 時間</description>
+      <guid>https://laplus3667.github.io/zh-tw/posts/gfh003-%E8%A1%8C%E5%8B%95%E5%B0%B1%E6%98%AF%E5%8F%83%E6%95%B8-%E6%90%8D%E5%A4%B1%E5%B0%B1%E6%98%AF%E8%84%88%E7%B5%A1/</guid>
+      <description>Question Q. 樹籬算法(Hedge algorithm)的公平性基礎? Q. 樹籬算法(Hedge algorithm)的公平性基礎? Formulation 問題設定: 「行動$w_t</description>
     </item>
     
     <item>
@@ -375,7 +375,7 @@ Hugo makes use of a variety of open source projects including:
       <pubDate>Mon, 01 Jan 1990 00:00:00 +0000</pubDate>
       
       <guid>https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/</guid>
-      <description>Group Fairness + Hedge Group Fairness + Hedge: If each of finitely many experts approximately satisfies a certain notion of group fairness, then a clever use of the Hedge algorithm (running it separately on each group) also approximately satisfies the same notion of group fairness while still enjoying $O(\sqrt{T})$ regret. 每個experts都滿足一點group fairness,</description>
+      <description>Group Fairness + Hedge Group Fairness + Hedge: 2021:Best-Case Lower Bounds in Online Learning If each of finitely many experts approximately satisfies a certain notion of group fairness, then a clever use of the Hedge algorithm (running it separately on each group) also approximately satisfies the same notion of group fairness while still enjoying $O(\sqrt{T})$ regret. 每個experts都滿足一點</description>
     </item>
     
     <item>
