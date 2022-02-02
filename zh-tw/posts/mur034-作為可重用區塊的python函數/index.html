@@ -12,7 +12,7 @@
 <meta name="description" content="" /><meta itemprop="name" content="MUR034 作為可重用區塊的Python函數">
 <meta itemprop="description" content="作為可重用區塊的Python函數 紫式晦澀每日一篇文章第34天 前言 今天是2022年第32天, 全年第5週, 一月的第5個週二. 今天思考「可重用性("><meta itemprop="datePublished" content="2022-02-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-02-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1554">
+<meta itemprop="wordCount" content="2112">
 <meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR034 作為可重用區塊的Python函數" />
 <meta property="og:description" content="作為可重用區塊的Python函數 紫式晦澀每日一篇文章第34天 前言 今天是2022年第32天, 全年第5週, 一月的第5個週二. 今天思考「可重用性(" />
 <meta property="og:type" content="article" />
@@ -463,14 +463,98 @@ Murasaki
 ****:
 ****:</p>
 <h2 id="文法">文法<a class="anchor ms-1" href="#文法"><i class="fas fa-link"></i></a></h2>
+<p><strong>相關任務(Dependent Task)</strong>:</p>
+<ul>
+<li>一個任務要依賴於另一個任務結束才能開始, 就是相關任務.</li>
+<li>獨立任務: 兩個任務獨立, 他們就可以同時做.</li>
+</ul>
+<blockquote>
+<p>DEFINITION A task depends on another one if it can&rsquo;t start before the other one completes. Two tasks are independent if they can be performed at the same time.</p>
+</blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/rkwOHWgT8LQpNaXfo2YirOiHTBtTzntA0UotpxJ8x7U.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>任務抽象(Abstraction of a task)</strong>:</p>
+<ul>
+<li>用最少資訊就可以理解任務內容; 隱藏不必要的細節.</li>
+<li>Definition Abstraction of a task is a way to simplify the task such that you understand it by using the least amount of information; you hide all unnecessary details.</li>
+</ul>
+<p><strong>可重用子任務(Reusable subtasks)</strong>:</p>
+<ul>
+<li>其步驟, 可以用不同的輸入, 來得到不同的輸出</li>
+<li>DEFINITION Reusable subtasks are tasks whose steps can be reused with different inputs to produce different output.</li>
+</ul>
+<p><strong>黑盒子(Black box)</strong>:</p>
+<ul>
+<li>可視化做某件任務的系統.</li>
+<li>DEFINITION A black box is a way to visualize a system that does a certain task. A black box on top of the system reminds you that you don&rsquo;t get to [or need to] see inside the box in order to understand what the system does.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/5PoyBb0mDFX8V1Z-fLmWd3-tNSVW45wXxvTTzPKEuxM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>模塊(Module): IPO-輸入, 任務, 輸出</strong>:</p>
+<ul>
+<li>代碼模塊: 達成特定任務的代碼</li>
+<li>模塊: 輸入-任務-輸出</li>
+<li>A code module is a piece of code that achieves a certain task. A module is associated with input, a task, and output.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/tAb7WX5W1aKZ5lx0doEZUwb5kTjgTFpCel3fcOz7jwY.original.fullsize.png" loading="lazy"
+  
+   />
+
+
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/CpRWnac1Q-jjYcCaXjMg9d3JsN8A_UcrwYspdXYW3Tw.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<p><strong>函數(Function):簡單任務的代碼模組</strong>:</p>
+<ul>
+<li>函數輸入; 函數處理; 函數輸出</li>
+<li>In many programing languages, a function is used to stand for a module of code that achieves a simple task. When you’re writing a function, you have to think about three things:</li>
+<li>
+<ol>
+<li>What input the function takes in</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>What operations/calculations the function does</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>What the function returns</li>
+</ol>
+</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/ZKj8DDOOTYDLrx_oQrtaE6gfT_D1nNFx7Coyi03N4cM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>作用域(Scope)</strong>:</p>
+<ul>
+<li>同name的變數, 要靠作用域來區分.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/oS8hQ6V9exJeK_RfbWK1KIroR6UeBe36aQYaSO1F108.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/PhgFK0E2lkFOFTh9PKSXCPAMObmLbojUQheP00DiuAA.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
 <p>****:
-****:
-****:
-****:
-****:
 ****:</p>
 <h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
-<p>Ver0.1(1/31): 今天對文章中各種圖, 文章結構想強調的點, 進行了80分鐘的思考.本文章的結構非常好, 從「連環圖」的角度講了很棒的科學研究故事. 多欣賞好文章, 來讓自己的文章的readability上升.</p>
+<p>Ver0.1 (2/1): 今天對文章中各種圖, 文章結構想強調的點, 進行了80分鐘的思考.本文章的結構非常好, 從「連環圖」的角度講了很棒的科學研究故事. 多欣賞好文章, 來讓自己的文章的readability上升. 又追加30分鐘, 把一些專有名詞與配圖補上. 要把函數寫好, 心中要常有「可複用」的原則, 才可以抽象鍛鍊出好的「函數」. 作為函數的文本, 要如何在不同的paper中重複被使用呢?</p>
 <blockquote>
 <p>對於證明類的文本, 如何做圖與可視化呢? 收集好的文獻?</p>
 </blockquote>
