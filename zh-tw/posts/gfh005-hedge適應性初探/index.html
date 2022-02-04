@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RDD001 研究設計系列導文 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>GFH005 Hedge適應性初探 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="RDD001 研究設計系列導文">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="0">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="RDD001 研究設計系列導文" />
-<meta property="og:description" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="GFH005 Hedge適應性初探">
+<meta itemprop="description" content="Question Q. 樹籬算法(Hedge algorithm)的證明技巧? Q. 樹籬算法(Hedge algorithm)的證明技巧? Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization 2021:Relaxing the I.I.D."><meta itemprop="datePublished" content="1990-01-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="1990-01-05T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1143">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="GFH005 Hedge適應性初探" />
+<meta property="og:description" content="Question Q. 樹籬算法(Hedge algorithm)的證明技巧? Q. 樹籬算法(Hedge algorithm)的證明技巧? Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization 2021:Relaxing the I.I.D." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/rdd001-%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88%E7%B3%BB%E5%88%97%E5%B0%8E%E6%96%87/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-12-28T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/gfh005-hedge%E9%81%A9%E6%87%89%E6%80%A7%E5%88%9D%E6%8E%A2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="1990-01-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="1990-01-05T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RDD001 研究設計系列導文"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="GFH005 Hedge適應性初探"/>
+<meta name="twitter:description" content="Question Q. 樹籬算法(Hedge algorithm)的證明技巧? Q. 樹籬算法(Hedge algorithm)的證明技巧? Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization 2021:Relaxing the I.I.D."/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
   <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -45,11 +45,11 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=RDD001%20%e7%a0%94%e7%a9%b6%e8%a8%ad%e8%a8%88%e7%b3%bb%e5%88%97%e5%b0%8e%e6%96%87&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2frdd001-%25E7%25A0%2594%25E7%25A9%25B6%25E8%25A8%25AD%25E8%25A8%2588%25E7%25B3%25BB%25E5%2588%2597%25E5%25B0%258E%25E6%2596%2587%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=GFH005%20Hedge%e9%81%a9%e6%87%89%e6%80%a7%e5%88%9d%e6%8e%a2&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fgfh005-hedge%25E9%2581%25A9%25E6%2587%2589%25E6%2580%25A7%25E5%2588%259D%25E6%258E%25A2%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2frdd001-%25E7%25A0%2594%25E7%25A9%25B6%25E8%25A8%25AD%25E8%25A8%2588%25E7%25B3%25BB%25E5%2588%2597%25E5%25B0%258E%25E6%2596%2587%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fgfh005-hedge%25E9%2581%25A9%25E6%2587%2589%25E6%2580%25A7%25E5%2588%259D%25E6%258E%25A2%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -217,7 +217,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">RDD001 研究設計系列導文</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">GFH005 Hedge適應性初探</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -238,20 +238,166 @@ Murasaki
     <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
   <i class="fas fa-fw fa-comments"></i>
 </a>
-    
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
     
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">RDD001 研究設計系列導文
+    <h1 class="card-title post-title">GFH005 Hedge適應性初探
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
-  <span class="post-date" title="創建於 2021-12-27 19:00:00 -0500 EST。">
-    2021-12-28
-  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded-pill post-taxonomy">寫作</a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded-pill post-taxonomy">研究設計</a></span>
+  <span class="post-date" title="創建於 1990-01-04 19:00:00 -0500 EST。">
+    1990-01-05
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/series/%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E6%80%A7%E7%AE%97%E6%B3%95/" class="badge rounded-pill post-taxonomy">樹籬公平性算法</a></span>
 </div>
-<div class="post-content mb-3"></div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#question">Question</a>
+      <ul>
+        <li><a href="#q-樹籬算法hedge-algorithm的證明技巧">Q. 樹籬算法(Hedge algorithm)的證明技巧?</a></li>
+      </ul>
+    </li>
+    <li><a href="#evidence-2021relaxing-the-iid-assumption-adaptively-minimax-optimal-regret-via-root-entropic-regularization">Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization</a>
+      <ul>
+        <li><a href="#測度集中-凸包-證明dhedge-ftrl-care-meta-care">測度集中: 凸包, 證明D.Hedge, FTRL-CARE, Meta-Care.</a></li>
+        <li><a href="#凸限制五實例">凸限制五實例:</a></li>
+        <li><a href="#測度集中定理">測度集中定理</a></li>
+        <li><a href="#適應性--有效專家個數-有效隨機檻">適應性 = (有效專家個數, 有效隨機檻)</a></li>
+      </ul>
+    </li>
+    <li><a href="#answer">Answer</a>
+      <ul>
+        <li><a href="#a-隨即群體公平的落差分析">A. 隨即群體公平的落差分析</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h2 id="question">Question<a class="anchor ms-1" href="#question"><i class="fas fa-link"></i></a></h2>
+<h3 id="q-樹籬算法hedge-algorithm的證明技巧">Q. 樹籬算法(Hedge algorithm)的證明技巧?<a class="anchor ms-1" href="#q-樹籬算法hedge-algorithm的證明技巧"><i class="fas fa-link"></i></a></h3>
+<blockquote>
+<p>Q. 樹籬算法(Hedge algorithm)的證明技巧?</p>
+</blockquote>
+<h2 id="evidence-2021relaxing-the-iid-assumption-adaptively-minimax-optimal-regret-via-root-entropic-regularization">Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization<a class="anchor ms-1" href="#evidence-2021relaxing-the-iid-assumption-adaptively-minimax-optimal-regret-via-root-entropic-regularization"><i class="fas fa-link"></i></a></h2>
+<ul>
+<li><a href="https://arxiv.org/pdf/2007.06552.pdf" target="_blank" rel="noopener noreferrer">2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization</a>
+</li>
+</ul>
+<h3 id="測度集中-凸包-證明dhedge-ftrl-care-meta-care">測度集中: 凸包, 證明D.Hedge, FTRL-CARE, Meta-Care.<a class="anchor ms-1" href="#測度集中-凸包-證明dhedge-ftrl-care-meta-care"><i class="fas fa-link"></i></a></h3>
+<p><strong>測度集中(Concentration of Measure)</strong>:</p>
+<ul>
+<li>非i.i.d.的「測度集中(Concentration of Measure)</li>
+<li>可用來upper bounds本文章的三種算法: D.Hedge, FTRL-CARE, Meta-Care.</li>
+<li>要求「凸限制級(Convex constraint)」; 非凸的就使用到「凸包(Convex hull)」.</li>
+<li>凸集: 原始可用分佈的混合(Mixtures).</li>
+<li>專家與環境都可以任選分佈來產生資料.</li>
+</ul>
+<blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/iZQVEFlEzA3cUXUyYDGyEPUiAAC7660IYvx1qtfMK_k.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</blockquote>
+<h3 id="凸限制五實例">凸限制五實例:<a class="anchor ms-1" href="#凸限制五實例"><i class="fas fa-link"></i></a></h3>
+<p><strong>隨機帶檻(Stochastic-with-a-gap)</strong>:</p>
+<ul>
+<li>只有一個真值$\mu_{0}$</li>
+<li>存在一個最好的專家, 其與第二好的專家差$\Delta$.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/JFQrrVp1h2Pz0kIkIBW8LunExWn7FHuSBecN9AHc744.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<p><strong>對抗(Adversarial)</strong>:</p>
+<ul>
+<li>限制: 所有的機率測度 &mdash;&gt; 對抗設定
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Ofjm6netoTYr3YHsjcX1mAxTfVJ1Bg6u7co1ZehGUu4.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<p><strong>對抗帶檻(Adversarial-with-a-gap)</strong>:</p>
+<ul>
+<li>混合最好的專家, 滿足gap條件
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/uFbCsYJynoAADA1hfyV7rkYqN8wyfgi9meeATvqz_Fc.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<blockquote>
+<p>與Lasso bandit很多很像.</p>
+</blockquote>
+<p><strong>對抗帶期望檻(Adversarial-with-an-E-gap)</strong>:</p>
+<ul>
+<li>期望版本
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/oAnrKT9kHO35EHC2ThWROu-JT2-midgD8fFgz-NlNbg.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<p><strong>球環IID(Ball-around-I.I.D.)</strong>:</p>
+<ul>
+<li>靠近的機率測度.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/LhEhS4qZo3589KXHev-oNg_4WT49bWX8vLIryk2Zzf8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<h3 id="測度集中定理">測度集中定理<a class="anchor ms-1" href="#測度集中定理"><i class="fas fa-link"></i></a></h3>
+<p><strong>定理一</strong>:</p>
+<ul>
+<li>每一輪的「最好專家」可能不同, 可以接著用Azuma-Hoeffding inequality.</li>
+<li>就算每一輪最好專家不同, 「最有效專家」與「任何無效專家」的gap至少上漲得如「均勻次高斯隨機變數」, 其均值為$-\Delta_0$.</li>
+<li>證明依賴於von Neumann&rsquo;s minimax theorem.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/U8pM7s9QTYDYw6Z09Qp1Iyl3lC20n2tlOP4fb2HZad8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<blockquote>
+<p>整個很抽象！需要補很多脈絡！</p>
+</blockquote>
+<h3 id="適應性--有效專家個數-有效隨機檻">適應性 = (有效專家個數, 有效隨機檻)<a class="anchor ms-1" href="#適應性--有效專家個數-有效隨機檻"><i class="fas fa-link"></i></a></h3>
+<p><strong>時間一致凸限制 (Time-homogeneous convex constraints)</strong>:</p>
+<ul>
+<li>N個專家</li>
+<li>損失函數: $l:\hat{Y} \times Y \mapsto [0,1]$.</li>
+<li>機率測度: $M(\hat{Y} \times Y )$</li>
+<li>資料產生機制: $\pi$.</li>
+<li>專家預測的條件分佈, 是time-homogeneously constrined.</li>
+<li><code>有效專家(Effective Experts)</code>: $I_0(D)$收集可能在某些round成為最好專家的那些專家們.</li>
+<li>$N_0(D)$: 有效專家的個數</li>
+<li><code>有效隨機檻(Effective Stochastic Gap)</code>$\Delta_0$: 「無效專家(ineffective expert)」相比較於「有效專家(Effective expert)」的最小的額外損失</li>
+<li>利用「(有效專家個數, 有效隨機檻)」來描述問題的「適應性(Adaptivity)」</li>
+<li>接著收集相對應的資料生成機制.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/hi-BX6gQ9NFB9zCXcF19CqsF_4H7p6zerFMmEg1r6xQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<blockquote>
+<p>怎麼感覺Lasso bandit也與expert很像, 可以分有效專家, 無效專家.</p>
+</blockquote>
+<h2 id="answer">Answer<a class="anchor ms-1" href="#answer"><i class="fas fa-link"></i></a></h2>
+<h3 id="a-隨即群體公平的落差分析">A. 隨即群體公平的落差分析<a class="anchor ms-1" href="#a-隨即群體公平的落差分析"><i class="fas fa-link"></i></a></h3>
+<blockquote>
+<p>🤔 更中間的adaptivity是否能達到group fairness?
+或者, 達到adaptively minimax optimal的預測子, 其group fairness完成的如何?</p>
+</blockquote>
+<p>這次的50分鐘體會了, 這真的是一篇很技術性的paper! 竟然將適應性討論到了有幾個「有效專家」的地步. 感覺這是要先很了解「樹籬算法」的人, 才能appreciate他的工作. 可以下週再來挑戰.</p>
+</div>
 <div class="post-copyright mb-3" id="post-copyright">
     <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
   <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
@@ -263,10 +409,10 @@ Murasaki
 </div>
   <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://laplus3667.github.io/zh-tw/posts/art478-%E8%B1%86%E8%85%90%E5%A1%8A%E6%96%87%E7%AB%A0%E6%80%9D%E8%80%83/">ART478 思考豆腐塊文章的執行面
+    <a href="https://laplus3667.github.io/zh-tw/posts/gfh004-%E9%9A%A8%E6%99%82%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E7%9A%84%E8%90%BD%E5%B7%AE%E5%88%86%E6%9E%90/">GFH004 隨時群體公平的落差分析
 </a>
   </div><div class="post-nav post-next">
-    <a href="https://laplus3667.github.io/zh-tw/posts/mur001%E6%AF%8F%E6%97%A5%E5%AF%AB%E6%96%87%E7%AB%A0%E7%9A%84%E4%BA%94%E5%80%8B%E5%BF%83%E6%B3%95/">MUR001 每日寫文章的五個心法
+    <a href="https://laplus3667.github.io/zh-tw/about/">About
 </a>
     <i class="fas fa-fw fa-chevron-right"></i>
   </div></div></div>
@@ -276,29 +422,29 @@ Murasaki
     </div>
     <div class="card-body">
       <ul class="post-list"><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/art478-%E8%B1%86%E8%85%90%E5%A1%8A%E6%96%87%E7%AB%A0%E6%80%9D%E8%80%83/">ART478 思考豆腐塊文章的執行面
-</a>
-          <span class="float-end post-date">2021-12-23
-</span>
-        </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/art001-guidance/">ART001 文章概覽
-</a>
-          <span class="float-end post-date">2021-12-21
-</span>
-        </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/about/">About
-</a>
-          <span class="float-end post-date">2019-02-28
-</span>
-        </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/gfh005-hedge%E9%81%A9%E6%87%89%E6%80%A7%E5%88%9D%E6%8E%A2/">GFH005 Hedge適應性初探
-</a>
-          <span class="float-end post-date">1990-01-05
-</span>
-        </li><li>
           <a href="https://laplus3667.github.io/zh-tw/posts/gfh004-%E9%9A%A8%E6%99%82%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E7%9A%84%E8%90%BD%E5%B7%AE%E5%88%86%E6%9E%90/">GFH004 隨時群體公平的落差分析
 </a>
           <span class="float-end post-date">1990-01-04
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh003-%E8%A1%8C%E5%8B%95%E5%B0%B1%E6%98%AF%E5%8F%83%E6%95%B8-%E6%90%8D%E5%A4%B1%E5%B0%B1%E6%98%AF%E8%84%88%E7%B5%A1/">GFH003 行動就是參數; 損失就是脈絡
+</a>
+          <span class="float-end post-date">1990-01-03
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh002-%E5%AF%A6%E8%B8%90%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E4%BB%A5%E6%A9%9F%E6%9C%83%E5%9D%87%E7%AD%89/">GFH002 實踐群體公平性以機會均等
+</a>
+          <span class="float-end post-date">1990-01-02
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/">GFH001 樹籬公平算法
+</a>
+          <span class="float-end post-date">1990-01-01
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us
+</a>
+          <span class="float-end post-date">0001-01-01
 </span>
         </li></ul>
     </div>
