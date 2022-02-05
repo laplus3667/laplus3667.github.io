@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MUR011 思考Bash中的Globbing與Quoting - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>MUR037 學習理論工具箱 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="MUR011 思考Bash中的Globbing與Quoting">
-<meta itemprop="description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來"><meta itemprop="datePublished" content="2022-01-09T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-01-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1242">
-<meta itemprop="keywords" content="Bash," /><meta property="og:title" content="MUR011 思考Bash中的Globbing與Quoting" />
-<meta property="og:description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR037 學習理論工具箱">
+<meta itemprop="description" content="學習理論工具箱 紫式晦澀每日一篇文章第37天 前言 今天是2022年第35天, 全年第5週, 二月的第1個週五. 今天對「機器學習理論(Machine Learning"><meta itemprop="datePublished" content="1995-02-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="1995-02-04T00:00:00+00:00" />
+<meta itemprop="wordCount" content="906">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="MUR037 學習理論工具箱" />
+<meta property="og:description" content="學習理論工具箱 紫式晦澀每日一篇文章第37天 前言 今天是2022年第35天, 全年第5週, 二月的第1個週五. 今天對「機器學習理論(Machine Learning" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur011%E6%A0%B8%E5%BF%83bash%E7%9F%A5%E8%AD%98/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-01-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-01-09T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur-%E5%AD%B8%E7%BF%92%E7%90%86%E8%AB%96%E5%B7%A5%E5%85%B7%E7%AE%B1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="1995-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="1995-02-04T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MUR011 思考Bash中的Globbing與Quoting"/>
-<meta name="twitter:description" content="思考Bash中的Globbing與Quoting 紫式晦澀每日一篇文章第11天 前言 今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來"/>
+<meta name="twitter:title" content="MUR037 學習理論工具箱"/>
+<meta name="twitter:description" content="學習理論工具箱 紫式晦澀每日一篇文章第37天 前言 今天是2022年第35天, 全年第5週, 二月的第1個週五. 今天對「機器學習理論(Machine Learning"/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
   <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -45,11 +45,11 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=MUR011%20%e6%80%9d%e8%80%83Bash%e4%b8%ad%e7%9a%84Globbing%e8%88%87Quoting&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur011%25E6%25A0%25B8%25E5%25BF%2583bash%25E7%259F%25A5%25E8%25AD%2598%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR037%20%e5%ad%b8%e7%bf%92%e7%90%86%e8%ab%96%e5%b7%a5%e5%85%b7%e7%ae%b1&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur-%25E5%25AD%25B8%25E7%25BF%2592%25E7%2590%2586%25E8%25AB%2596%25E5%25B7%25A5%25E5%2585%25B7%25E7%25AE%25B1%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur011%25E6%25A0%25B8%25E5%25BF%2583bash%25E7%259F%25A5%25E8%25AD%2598%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur-%25E5%25AD%25B8%25E7%25BF%2592%25E7%2590%2586%25E8%25AB%2596%25E5%25B7%25A5%25E5%2585%25B7%25E7%25AE%25B1%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -217,7 +217,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR011 思考Bash中的Globbing與Quoting</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR037 學習理論工具箱</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -245,150 +245,195 @@ Murasaki
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">MUR011 思考Bash中的Globbing與Quoting
+    <h1 class="card-title post-title">MUR037 學習理論工具箱
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
-  <span class="post-date" title="創建於 2022-01-08 19:00:00 -0500 EST。">
-    2022-01-09
-  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded-pill post-taxonomy">educative 課程</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded-pill post-taxonomy">Bash</a></span>
+  <span class="post-date" title="創建於 1995-02-03 19:00:00 -0500 EST。">
+    1995-02-04
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/" class="badge rounded-pill post-taxonomy">機器學習</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a></span>
 </div>
 <div class="post-toc mb-4" id="postTOC">
   <h2 class="mb-4">目錄</h2>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#bash是shell程序">Bash是shell程序</a></li>
-    <li><a href="#globbing與quoting">Globbing與Quoting</a></li>
+    <li><a href="#簡介-限制最小平方">簡介: 限制最小平方</a>
+      <ul>
+        <li><a href="#基本的方法在高維度讓學習變困難-試著用正規化克服高維度學習的複雜度">基本的方法在高維度讓學習變困難, 試著用正規化克服高維度學習的複雜度</a></li>
+        <li><a href="#heading"></a></li>
+        <li><a href="#heading-1"></a></li>
+      </ul>
+    </li>
+    <li><a href="#變數選擇由l0懲罰">變數選擇由l0懲罰</a>
+      <ul>
+        <li><a href="#heading-2"></a></li>
+        <li><a href="#heading-3"></a></li>
+      </ul>
+    </li>
+    <li><a href="#高維度估計由l1正規">高維度估計由l1正規</a>
+      <ul>
+        <li><a href="#heading-4"></a></li>
+        <li><a href="#heading-5"></a></li>
+      </ul>
+    </li>
     <li><a href="#後記">後記</a></li>
   </ul>
 </nav>
-</div><div class="post-content mb-3"><h1 id="思考bash中的globbing與quoting">思考Bash中的Globbing與Quoting<a class="anchor ms-1" href="#思考bash中的globbing與quoting"><i class="fas fa-link"></i></a></h1>
-<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/SyUO1xFnF.png" loading="lazy"
+</div><div class="post-content mb-3"><h1 id="學習理論工具箱">學習理論工具箱<a class="anchor ms-1" href="#學習理論工具箱"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://i.pinimg.com/originals/c1/40/d0/c140d0773a9be6892d246bdf06dfbd66.jpg" loading="lazy"
   
    />
 
 </p>
 <blockquote>
-<p>紫式晦澀每日一篇文章第11天</p>
+<p>紫式晦澀每日一篇文章第37天</p>
 </blockquote>
 <h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
 <ol>
 <li>
-<p>今天是2022年第9天, 全年第2週, 一月的第二個週日. 今天來組織educative課程裡面關於Bash相關的知識.</p>
+<p>今天是2022年第35天, 全年第5週, 二月的第1個週五. 今天對「機器學習理論(Machine Learning Theory))」做學習思考.</p>
 </li>
 <li>
-<p>今天的素材主要來自<a href="https://www.educative.io/courses/master-the-bash-shell/3j8399P3M6M" target="_blank" rel="noopener noreferrer">educative 課程-Master the Bash Shell-Core Bash</a>
-中, 節選相關段落與紀錄個人理解與心得.</p>
+<p>今天的素材主要來自文章:</p>
 </li>
 </ol>
-<h2 id="bash是shell程序">Bash是shell程序<a class="anchor ms-1" href="#bash是shell程序"><i class="fas fa-link"></i></a></h2>
-<ol start="3">
-<li><strong>Bash是shell程序</strong>: shell 程序通常是一個「可執行二進製文件」. 它接受鍵入的命令，並且（一旦按return）將這些命令轉換為（最終）對操作系統 API 的系統調用。 (二進制: A binary is a file that contains the instructions for a program, ie it is a ‘program’ file, rather than a ‘text’ file, or an ‘application’ file (such as a Word document).)</li>
-</ol>
+<ul>
+<li><a href="https://www.di.ens.fr/~fbach/ltfp_book.pdf" target="_blank" rel="noopener noreferrer">2021: Learning Theory from First Principles</a>
+
+的第八單元</li>
+</ul>
+<h2 id="簡介-限制最小平方">簡介: 限制最小平方<a class="anchor ms-1" href="#簡介-限制最小平方"><i class="fas fa-link"></i></a></h2>
+<h3 id="基本的方法在高維度讓學習變困難-試著用正規化克服高維度學習的複雜度">基本的方法在高維度讓學習變困難, 試著用正規化克服高維度學習的複雜度<a class="anchor ms-1" href="#基本的方法在高維度讓學習變困難-試著用正規化克服高維度學習的複雜度"><i class="fas fa-link"></i></a></h3>
+<p><strong>為何要考慮高維度?</strong>:</p>
+<ul>
+<li>目標Lipschitz-continuous: 「過風險(Excess Risk)」隨著維度增加, 學習變困難</li>
+<li>目標linear: 過風險也隨維度增加, 學習變困難.</li>
+</ul>
 <blockquote>
-<p>Shell程序: 告訴電腦做什麼. 把不同的程序glue在一起.</p>
-</blockquote>
-<ol start="4">
-<li>
-<p><strong>其他的shell程序</strong>: 市面上還有其他的shell程序, 包含<code>sh</code>, <code>ash</code>, <code>dash</code>, <code>ksh</code>, <code>tcsh</code>, <code>zsh</code>, <code>tclsh</code>. 只有看過<code>sh</code>.</p>
-</li>
-<li>
-<p><strong>Bash的歷史</strong>: Bash原名 ‘Bourne Again SHell’. 是‘Thompson Shell’ 的後代. 其兄弟有‘siblings’ (eg, <code>ksh</code>), ‘cousins’ (eg, <code>tcsh</code>), and ‘children’, (eg, <code>zsh</code>).</p>
-</li>
-</ol>
-<p><img class="img-fluid" alt="" src="https://hackmd.io/_uploads/SJk5DJt2Y.png" loading="lazy"
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/cWvFkSBs_JIwmxW-iuv6JsW0iwcgrSpBHSZT1wS9fmQ.original.fullsize.png" loading="lazy"
   
    />
 
 </p>
-<h2 id="globbing與quoting">Globbing與Quoting<a class="anchor ms-1" href="#globbing與quoting"><i class="fas fa-link"></i></a></h2>
-<ol start="6">
-<li>
-<p><strong><code>*</code>指令的意思</strong>: shell轉換<code>*</code>轉換, 配對到「current working directory的所有檔案」.</p>
-</li>
-<li>
-<p><strong>正規表達式</strong>:正規表達式是用來matching字串的模式. 與globbing達到的matching檔案不一樣.</p>
-</li>
-<li>
-<p><strong>glob</strong>: 在電腦編程中, glob模式指定一組帶著通配符的檔案名字 In computer programming, glob patterns specify sets of filenames with wildcard characters.</p>
-</li>
-<li>
-<p><strong>例子: 看所有在工作目錄中的檔案</strong>:</p>
-</li>
-</ol>
+</blockquote>
+<p><strong>解法: 使用「正規化(Regularization)」</strong>:</p>
 <ul>
-<li>
-<ol>
-<li>製造三個檔案<code>file1</code>, <code>file2</code>, <code>file3</code>.</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>用<code>ls</code>看存在的檔案, match <code>*</code></li>
-</ol>
-</li>
-<li>
-<ol start="3">
-<li>用<code>echo</code>印出檔案, match <code>*</code>.</li>
-</ol>
+<li>Ridge: 得到「維度獨立」的bound, 最優已無法改良</li>
+<li>$l_0$: 選變數, 找到預測子, 只與小數量的變數有關.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/9CIQleTbj4DbYq5-eRJ94S9B5ANVfufkaIl5TYm7ITc.original.fullsize.png" loading="lazy"
+  
+   />
+
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span>touch file1 file2 file3
-<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>ls *
-<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span><span class="nb">echo</span> *
-</code></pre></div><ol start="10">
-<li>
-<p><strong>Quoting</strong>:用單引號「<code>*</code>」與雙引號「<code>*</code>」會改變bash讀取內容的方式. 在變數環節會學到更多.</p>
-</li>
-<li>
-<p><strong>Globbing primitive</strong>:</p>
-</li>
-</ol>
+<p><strong>選變數(Variable Selection)</strong>:</p>
 <ul>
-<li><code>*</code> - matches files in current working directory 工作目錄的檔案</li>
-<li><code>?</code> - matches any single character 單字元</li>
-<li><code>[abd]</code> - matches any character from a, b or d 特定字元</li>
-<li><code>[a-d]</code> - matches any character from a, b, c or d 範圍內字元</li>
+<li>原特徵集合很大</li>
+<li>高維度可能可以幫助預測, 但僅預期小數目是相關的.</li>
+<li>如果實際上不是小數目相關, 那這些方法不會比較好.
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/5Wl4yIuONjlWbK8hIBXVEBZ9qVzJB1DomAqTO--Q-yQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
 </ul>
-<ol start="12">
-<li><strong>實例: 配對檔案</strong> 找有1的, 有file數字的</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span>root@educative:~/glob# ls *1
-<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>file1
-<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>root@educative:~/glob# ls file<span class="o">[</span>a-z<span class="o">]</span>
-<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span>ls: cannot access <span class="s1">&#39;file[a-z]&#39;</span>: No such file or directory
-<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span>root@educative:~/glob# ls file<span class="o">[</span>0-9<span class="o">]</span>
-<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6">6</a></span>file1  file2  file3
-<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7">7</a></span>root@educative:~/glob# ls file?
-<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8">8</a></span>file1  file2  file3
-</code></pre></div><ol start="13">
-<li><strong>Dotfiles</strong>: 造了也在<code>ls</code>, <code>ls*</code>看不到的檔案們. 這樣這些檔案不會被簡單改動</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span>root@educative:~/glob# touch .adotfile
-<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span>root@educative:~/glob# mkdir .adotfolder
-<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>root@educative:~/glob# touch .adotfolder/file1 .adotfolder/.adotfile
-<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span>root@educative:~/glob# ls
-<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span>file1  file2  file3
-</code></pre></div><ol start="14">
-<li>
-<p><strong>單點<code>.</code>表示目前檔案夾</strong>: single dot folder <code>.</code> 表達目前在的檔案夾. <code>cd . </code>就會在原地不動</p>
-</li>
-<li>
-<p><strong>雙點<code>..</code>表示雙親檔案夾</strong>: double dot folder <code>..</code> 表達雙親檔案夾. <code>cd ..</code>會到上一層.</p>
-</li>
-</ol>
+<p><strong>兩種選變數技巧:$l_0$與$l_1$ 懲罰項</strong>:</p>
+<ul>
+<li>最小化損失函數, 可以是廣義的loss. (需要到什麼條件?🤔)</li>
+</ul>
+<blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/kzK94M1DL7D1-z4yDkEkmj0TYAcXGrUrgz5fgLI2Ju0.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</blockquote>
+<p><strong>最小平方法</strong>:</p>
+<ul>
+<li>平方損失, 變異固定噪音.</li>
+<li>目標: 讓「自標準化平方損失」愈小愈好.</li>
+<li>OLS的過風險$\sigma^2 d / n$ (最好的結果, 在對真實參數沒有結構假設的狀況).</li>
+<li>結構資訊$|\theta_{*}|_0=k$: 僅有小部分的變數與實際訊號有關.</li>
+</ul>
+<blockquote>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/AH4z0KKwm2hTnZm2Atrzs-8OyA66czffQyrPgjrKZ6A.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+</blockquote>
+<h3 id="heading"><a class="anchor ms-1" href="#heading"><i class="fas fa-link"></i></a></h3>
+<p>****:
+****:
+****:</p>
+<h3 id="heading-1"><a class="anchor ms-1" href="#heading-1"><i class="fas fa-link"></i></a></h3>
+<p>****:
+****:
+****:</p>
+<h2 id="變數選擇由l0懲罰">變數選擇由l0懲罰<a class="anchor ms-1" href="#變數選擇由l0懲罰"><i class="fas fa-link"></i></a></h2>
+<h3 id="heading-2"><a class="anchor ms-1" href="#heading-2"><i class="fas fa-link"></i></a></h3>
+<p>****:
+****:
+****:</p>
+<h3 id="heading-3"><a class="anchor ms-1" href="#heading-3"><i class="fas fa-link"></i></a></h3>
+<p>****:
+****:
+****:</p>
+<h2 id="高維度估計由l1正規">高維度估計由l1正規<a class="anchor ms-1" href="#高維度估計由l1正規"><i class="fas fa-link"></i></a></h2>
+<h3 id="heading-4"><a class="anchor ms-1" href="#heading-4"><i class="fas fa-link"></i></a></h3>
+<p>****:
+****:
+****:</p>
+<h3 id="heading-5"><a class="anchor ms-1" href="#heading-5"><i class="fas fa-link"></i></a></h3>
+<p>****:
+****:
+****:</p>
 <h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
-<ol start="16">
-<li>
-<p>到此學習了<a href="https://www.educative.io/courses/master-the-bash-shell/3j8399P3M6M" target="_blank" rel="noopener noreferrer">educative 課程-Master the Bash Shell-Core Bash</a>
-中前兩節的內容. 首先了解Bash是一種Shell 程序, 主要讓我們能與把不同的program一起合作. 接下來看了globbing, 關於<code>*</code>表達「目前工作目錄的所有檔案」有了基礎認識; 接著quoting則提到單引號雙引號, 會有不同的效果. 可惜還沒精力讀到variable的章節, 之後再來思考quoting的深刻用法.</p>
-</li>
-<li>
-<p>今天看了很不熟的主題-Bash編程, 知道的很少, 所以得慢慢前進. 接下來一年要主力投資工程技能, 增加工程能力去做更寬廣的研究. 實踐數學, 用最新科技, 創造新價值, 推動時代. 天天向上, 共勉之！</p>
-</li>
-</ol>
-<p>2022.01.09.
+<p>大概花了90分鐘, 把合成數據方法章節寫過了一遍. 仔細比較一下, 這個章節寫得蠻好的! 從最「心智」的模型到最「計算」的模型, 展現人與機器的結合程度由淺至深.</p>
+<table>
+<thead>
+<tr>
+<th>方法編號</th>
+<th>研究範式</th>
+<th>實踐技巧</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方法一</td>
+<td>數理機率範式</td>
+<td>多變量高斯, 共變異,耦合</td>
+</tr>
+<tr>
+<td>方法二</td>
+<td>應用機率範式</td>
+<td>多變量高斯, 共變耦合, 決策樹</td>
+</tr>
+<tr>
+<td>方法三</td>
+<td>統計科學範式</td>
+<td>混血合成=真實資訊+假說資訊</td>
+</tr>
+<tr>
+<td>方法四</td>
+<td>機器學習範式</td>
+<td>決策樹, 序貫合成</td>
+</tr>
+<tr>
+<td>方法五</td>
+<td>深度學習範式</td>
+<td>變分自動編碼器, 對抗生成網路</td>
+</tr>
+<tr>
+<td>方法六</td>
+<td>強化學習範式</td>
+<td>服務是事件的序列, 合成轉移矩陣</td>
+</tr>
+</tbody>
+</table>
+<p>過去的經驗都還能支撐這六種做法, 非常棒!  我想所謂的工程師, 就是要能很快速實踐各種研究範式裡面的方法, 來認識複雜的世界. 非常有趣！期待之後經驗累積! 天天向上, 共勉之!</p>
+<p>2022.02.03.
 紫蕊
 於 西拉法葉, 印第安納, 美國.</p>
 </div>
@@ -403,10 +448,10 @@ Murasaki
 </div>
   <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
+    <a href="https://laplus3667.github.io/zh-tw/posts/gfh005-hedge%E9%81%A9%E6%87%89%E6%80%A7%E5%88%9D%E6%8E%A2/">GFH005 Hedge適應性初探
 </a>
   </div><div class="post-nav post-next">
-    <a href="https://laplus3667.github.io/zh-tw/posts/mur012%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E6%96%BCchase%E7%9A%84%E9%87%91%E8%9E%8D%E6%87%89%E7%94%A8/">MUR012 合成數據於Chase銀行的金融應用
+    <a href="https://laplus3667.github.io/zh-tw/about/">About
 </a>
     <i class="fas fa-fw fa-chevron-right"></i>
   </div></div></div>
@@ -416,29 +461,29 @@ Murasaki
     </div>
     <div class="card-body">
       <ul class="post-list"><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur010%E5%85%A8%E6%96%B0%E6%80%9D%E7%B6%AD%E8%A3%A1%E7%9A%84%E4%B8%89%E6%84%9F%E4%B8%89%E5%8A%9B/">MUR010 全新思維裡的三感三力
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh005-hedge%E9%81%A9%E6%87%89%E6%80%A7%E5%88%9D%E6%8E%A2/">GFH005 Hedge適應性初探
 </a>
-          <span class="float-end post-date">2022-01-08
+          <span class="float-end post-date">1990-01-05
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur009%E8%A9%95%E8%AB%96%E8%88%87%E6%96%87%E6%AA%94/">MUR009 思辨註釋與文檔
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh004-%E9%9A%A8%E6%99%82%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E7%9A%84%E8%90%BD%E5%B7%AE%E5%88%86%E6%9E%90/">GFH004 隨時群體公平的落差分析
 </a>
-          <span class="float-end post-date">2022-01-07
+          <span class="float-end post-date">1990-01-04
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur008%E8%AE%80%E8%94%A1%E9%88%BA%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83%E7%99%BC%E5%88%8A%E8%A9%9E-%E7%90%86%E8%A7%A3%E5%95%86%E6%A5%AD-%E8%88%87%E4%B8%96%E7%95%8C%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/">MUR008 讀蔡鈺商業參考發刊詞-理解商業, 與世界保持同步
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh003-%E8%A1%8C%E5%8B%95%E5%B0%B1%E6%98%AF%E5%8F%83%E6%95%B8-%E6%90%8D%E5%A4%B1%E5%B0%B1%E6%98%AF%E8%84%88%E7%B5%A1/">GFH003 行動就是參數; 損失就是脈絡
 </a>
-          <span class="float-end post-date">2022-01-06
+          <span class="float-end post-date">1990-01-03
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur007%E6%B8%85%E5%96%AE%E9%AB%94/">MUR007 清單體的四個角度
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh002-%E5%AF%A6%E8%B8%90%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E4%BB%A5%E6%A9%9F%E6%9C%83%E5%9D%87%E7%AD%89/">GFH002 實踐群體公平性以機會均等
 </a>
-          <span class="float-end post-date">2022-01-05
+          <span class="float-end post-date">1990-01-02
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur006%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81%E5%B0%8B%E6%A0%B9/">MUR006 差分隱私尋根
+          <a href="https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/">GFH001 樹籬公平算法
 </a>
-          <span class="float-end post-date">2022-01-04
+          <span class="float-end post-date">1990-01-01
 </span>
         </li></ul>
     </div>
