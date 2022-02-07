@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MUR031 DataFrames操作基礎 (Ver 0.4) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>MUR031 DataFrames操作基礎 (Ver 0.5) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="MUR031 DataFrames操作基礎 (Ver 0.4)">
+<meta name="description" content="" /><meta itemprop="name" content="MUR031 DataFrames操作基礎 (Ver 0.5)">
 <meta itemprop="description" content="DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram"><meta itemprop="datePublished" content="2022-01-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-01-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="7631">
-<meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR031 DataFrames操作基礎 (Ver 0.4)" />
+<meta itemprop="wordCount" content="8573">
+<meta itemprop="keywords" content="Python," /><meta property="og:title" content="MUR031 DataFrames操作基礎 (Ver 0.5)" />
 <meta property="og:description" content="DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur031-dataframe%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A4%8E/" /><meta property="article:section" content="posts" />
@@ -22,7 +22,7 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MUR031 DataFrames操作基礎 (Ver 0.4)"/>
+<meta name="twitter:title" content="MUR031 DataFrames操作基礎 (Ver 0.5)"/>
 <meta name="twitter:description" content="DataFrame操作基礎 紫式晦澀每日一篇文章第31天 前言 今天是2022年第29天, 全年第5週, 一月的第五個週六. 今天來爬梳DataFram"/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
@@ -45,7 +45,7 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=MUR031%20DataFrames%e6%93%8d%e4%bd%9c%e5%9f%ba%e7%a4%8e%20%28Ver%200.4%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur031-dataframe%25E6%2593%258D%25E4%25BD%259C%25E5%259F%25BA%25E7%25A4%258E%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR031%20DataFrames%e6%93%8d%e4%bd%9c%e5%9f%ba%e7%a4%8e%20%28Ver%200.5%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur031-dataframe%25E6%2593%258D%25E4%25BD%259C%25E5%259F%25BA%25E7%25A4%258E%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
@@ -217,7 +217,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR031 DataFrames操作基礎 (Ver 0.4)</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR031 DataFrames操作基礎 (Ver 0.5)</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -245,7 +245,7 @@ Murasaki
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">MUR031 DataFrames操作基礎 (Ver 0.4)
+    <h1 class="card-title post-title">MUR031 DataFrames操作基礎 (Ver 0.5)
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
@@ -1323,8 +1323,11 @@ data[condition]就把需要的股票列了出來.</p>
 <li>CSV輸入輸出 (CSV files: import data from &amp; export data)</li>
 </ul>
 <h3 id="心法-1">心法<a class="anchor ms-1" href="#心法-1"><i class="fas fa-link"></i></a></h3>
+<p><strong>四種圖表</strong>:</p>
+<ul>
+<li>畫長條圖(bar), 折線圖(line), 散佈圖(scatter),直方圖(hist)</li>
+</ul>
 <p>****:
-****:
 ****:</p>
 <h3 id="技法-1">技法<a class="anchor ms-1" href="#技法-1"><i class="fas fa-link"></i></a></h3>
 <p>****:
@@ -1335,11 +1338,117 @@ data[condition]就把需要的股票列了出來.</p>
 ****:
 ****:</p>
 <h3 id="語法-1">語法<a class="anchor ms-1" href="#語法-1"><i class="fas fa-link"></i></a></h3>
-<p><strong>a.</strong>:
-<strong>b.</strong>:
-<strong>c.</strong>:</p>
-<p><strong>d.</strong>:
-<strong>e.</strong>:
+<p><strong>a. 哪種酪梨大小最受歡迎?(Which avocado size is most popular?)</strong>:</p>
+<ul>
+<li>載入<code>matplotlib.pyplot</code>來畫圖</li>
+<li>畫出不同大小的酪梨<code>nb_sold_by_size = avocados.groupby(&quot;size&quot;)[&quot;nb_sold&quot;].sum()</code>表示以大小分類, 銷售總額</li>
+<li>畫圖<code>nb_sold_by_size.plot(kind=&quot;bar&quot;)</code>這個指令很神奇, <code>nb_sold_by_size</code>是<code>pandas.core.series.Series</code>資料類型, 代表其plot有被寫出來.</li>
+<li><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.plot.html" target="_blank" rel="noopener noreferrer"><code>pandas.Series.plot</code></a>
+:是官方文檔, 一種多態的實踐.</li>
+</ul>
+<blockquote>
+<p><code>kind=&quot;bar&quot;</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="c1"># Import matplotlib.pyplot with alias plt</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="c1"># Look at the first few rows of data</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="nb">print</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="c1"># Get the total number of avocados sold of each size</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="n">nb_sold_by_size</span> <span class="o">=</span> <span class="n">avocados</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&#34;size&#34;</span><span class="p">)[</span><span class="s2">&#34;nb_sold&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="c1"># Create a bar plot of the number of avocados sold by size</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="n">nb_sold_by_size</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&#34;bar&#34;</span><span class="p">)</span>
+<span class="ln" id="12"><a style="outline: none; text-decoration:none; color:inherit" href="#12">12</a></span>
+<span class="ln" id="13"><a style="outline: none; text-decoration:none; color:inherit" href="#13">13</a></span><span class="c1"># Show the plot</span>
+<span class="ln" id="14"><a style="outline: none; text-decoration:none; color:inherit" href="#14">14</a></span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/FIsiLkGavNOoxbnhc8zuNZogJ4Dh2RzeSD88DbeyA3Q.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>b.銷售隨時間的變化(Changes in sales over time)</strong>:</p>
+<ul>
+<li>畫出三年酪梨銷量變化</li>
+<li>畫出不同日期的酪梨:<code>nb_sold_by_date = avocados.groupby(&quot;date&quot;)[&quot;nb_sold&quot;].sum()</code></li>
+<li>畫出直線圖<code>nb_sold_by_date.plot(kind=&quot;line&quot;)</code></li>
+</ul>
+<blockquote>
+<p><code>kind=&quot;line&quot;</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="c1"># Import matplotlib.pyplot with alias plt</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="c1"># Get the total number of avocados sold on each date</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="n">nb_sold_by_date</span> <span class="o">=</span> <span class="n">avocados</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&#34;date&#34;</span><span class="p">)[</span><span class="s2">&#34;nb_sold&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="c1"># Create a line plot of the number of avocados sold by date</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="n">nb_sold_by_date</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&#34;line&#34;</span><span class="p">)</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="c1"># Show the plot</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/gBRzH0LGzG25bQ3LHvbTR2N27JC7jfJX5RQAC8OCqqg.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>c. 酪梨的需求與供給(Avocado supply and demand)</strong>:</p>
+<ul>
+<li><code>avocados</code>是<code>pandas.core.frame.DataFrame</code>資料類型, 直接畫散佈圖.</li>
+<li>畫出散佈圖<code>avocados.plot(x=&quot;nb_sold&quot;, y=&quot;avg_price&quot;, kind=&quot;scatter&quot;, title=&quot;Number of avocados sold vs. average price&quot;)</code>.</li>
+</ul>
+<blockquote>
+<p><code>kind=&quot;scatter&quot;</code>: Scatter plot.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1">1</a></span><span class="c1"># Scatter plot of nb_sold vs avg_price with title</span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2">2</a></span><span class="n">avocados</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&#34;nb_sold&#34;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&#34;avg_price&#34;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&#34;scatter&#34;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Number of avocados sold vs. average price&#34;</span><span class="p">)</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3">3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4">4</a></span><span class="c1"># Show the plot</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5">5</a></span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/b2kj6QgMO9L6fy_JVG8e1IwaeUvQZzmKaIs6jvRPsmM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>d.傳統以及有機酪梨的價錢(Price of conventional vs. organic avocados)</strong>:</p>
+<ul>
+<li>傳統酪梨的平均價錢直方圖<code>avocados[avocados[&quot;type&quot;] == &quot;conventional&quot;][&quot;avg_price&quot;].hist()</code></li>
+<li>有機酪梨的平均價錢直方圖<code>avocados[avocados[&quot;type&quot;] == &quot;organic&quot;][&quot;avg_price&quot;].hist()</code></li>
+<li><code>alpha</code>:可以調整透明度</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln" id="1"><a style="outline: none; text-decoration:none; color:inherit" href="#1"> 1</a></span><span class="c1"># Histogram of conventional avg_price </span>
+<span class="ln" id="2"><a style="outline: none; text-decoration:none; color:inherit" href="#2"> 2</a></span><span class="n">avocados</span><span class="p">[</span><span class="n">avocados</span><span class="p">[</span><span class="s2">&#34;type&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;conventional&#34;</span><span class="p">][</span><span class="s2">&#34;avg_price&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="ln" id="3"><a style="outline: none; text-decoration:none; color:inherit" href="#3"> 3</a></span>
+<span class="ln" id="4"><a style="outline: none; text-decoration:none; color:inherit" href="#4"> 4</a></span><span class="c1"># Histogram of organic avg_price</span>
+<span class="ln" id="5"><a style="outline: none; text-decoration:none; color:inherit" href="#5"> 5</a></span><span class="n">avocados</span><span class="p">[</span><span class="n">avocados</span><span class="p">[</span><span class="s2">&#34;type&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;organic&#34;</span><span class="p">][</span><span class="s2">&#34;avg_price&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="ln" id="6"><a style="outline: none; text-decoration:none; color:inherit" href="#6"> 6</a></span>
+<span class="ln" id="7"><a style="outline: none; text-decoration:none; color:inherit" href="#7"> 7</a></span><span class="c1"># Add a legend</span>
+<span class="ln" id="8"><a style="outline: none; text-decoration:none; color:inherit" href="#8"> 8</a></span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&#34;conventional&#34;</span><span class="p">,</span> <span class="s2">&#34;organic&#34;</span><span class="p">])</span>
+<span class="ln" id="9"><a style="outline: none; text-decoration:none; color:inherit" href="#9"> 9</a></span>
+<span class="ln" id="10"><a style="outline: none; text-decoration:none; color:inherit" href="#10">10</a></span><span class="c1"># Show the plot</span>
+<span class="ln" id="11"><a style="outline: none; text-decoration:none; color:inherit" href="#11">11</a></span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><ul>
+<li>有機的賣比較貴
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Ni-u2FwdUPvPEiQmpp-4s06n7JTFLEFzzuX5fm3MbLw.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li>更好看的圖<code>.hist(alpha=0.5)</code>
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/IOcTtft9REZISmANEgImfQeG3D_ImQPVpDy2eIoOmtk.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+<li>更多直方體<code>.hist(alpha=0.5, bins=20)</code>
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/LwtKtj142tg_h-lZC-ErUtuQKekc-fUTQWgs4T9bFJ8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+<p><strong>e.</strong>:
 <strong>f.</strong>:
 <strong>g.</strong>:
 <strong>h.</strong>:
@@ -1388,6 +1497,11 @@ data[condition]就把需要的股票列了出來.</p>
 <td>0.4</td>
 <td>2022-02-02</td>
 <td>花30分鐘, 將第三模組的程式碼看過一趟, 之後寫總結.</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>2022-02-07</td>
+<td>花30分鐘, 學畫四種圖: 畫長條圖(bar), 折線圖(line), 散佈圖(scatter),直方圖(hist) .</td>
 </tr>
 </tbody>
 </table>
