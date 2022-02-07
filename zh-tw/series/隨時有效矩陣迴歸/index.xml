@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>隨時有效矩陣迴歸 on 紫式晦澀</title>
+    <link>https://laplus3667.github.io/zh-tw/series/%E9%9A%A8%E6%99%82%E6%9C%89%E6%95%88%E7%9F%A9%E9%99%A3%E8%BF%B4%E6%AD%B8/</link>
+    <description>Recent content in 隨時有效矩陣迴歸 on 紫式晦澀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
+    <lastBuildDate>Tue, 01 Jan 1991 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/series/%E9%9A%A8%E6%99%82%E6%9C%89%E6%95%88%E7%9F%A9%E9%99%A3%E8%BF%B4%E6%AD%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AVM001 隨時有效矩陣迴歸分析</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/avm001-%E9%9A%A8%E6%99%82%E6%9C%89%E6%95%88%E7%9F%A9%E9%99%A3%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 01 Jan 1991 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/avm001-%E9%9A%A8%E6%99%82%E6%9C%89%E6%95%88%E7%9F%A9%E9%99%A3%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90/</guid>
+      <description>Question Q. 隨時有效矩陣迴歸所需的相關文獻? Q. 隨時有效矩陣迴歸所需的相關文獻? Literature Reduced rank regression 🤔 2013: Reduced rank regression via adaptive nuclear norm penalization : (a) reduced-rank estimation method for the general high-dimensional multivariate regression problems. (b) low-rank matrix approximation problem. 低ran</description>
+    </item>
+    
+  </channel>
+</rss>
