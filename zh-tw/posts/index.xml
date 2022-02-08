@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 紫式晦澀</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021-{year} Chi-Hua Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Mon, 07 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://laplus3667.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUR041 合成數據如何增強信用預測</title>
+      <link>https://laplus3667.github.io/zh-tw/posts/mur041-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%B7%E4%BF%A1%E7%94%A8%E9%A0%90%E6%B8%AC/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://laplus3667.github.io/zh-tw/posts/mur041-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%B7%E4%BF%A1%E7%94%A8%E9%A0%90%E6%B8%AC/</guid>
+      <description>合成數據如何增強信用預測s 紫式晦澀每日一篇文章第40天 前言 今天是2022年第39天, 全年第6週, 二月的第2個週二. 今天來思考合成數據在「信用</description>
+    </item>
+    
     <item>
       <title>MUR040 工作溝通寫作流程四階段</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur040-%E5%B7%A5%E4%BD%9C%E6%BA%9D%E9%80%9A%E5%AF%AB%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%9B%E9%9A%8E%E6%AE%B5/</link>
@@ -116,7 +125,7 @@
     </item>
     
     <item>
-      <title>MUR028 Bregman鞅集中不等式基礎-(Ver 0.2)</title>
+      <title>MUR028 Bregman鞅集中不等式基礎 (Ver 0.2)</title>
       <link>https://laplus3667.github.io/zh-tw/posts/mur028-bregman%E9%9E%85%E9%9B%86%E4%B8%AD%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%9F%BA%E7%A4%8E/</link>
       <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
       
