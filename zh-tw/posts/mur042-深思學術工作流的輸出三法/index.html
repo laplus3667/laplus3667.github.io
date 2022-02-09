@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GFH005 Hedge適應性初探 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>MUR042 深思學術工作流的輸出三法 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="GFH005 Hedge適應性初探">
-<meta itemprop="description" content="Question Q. 樹籬算法(Hedge algorithm)的證明技巧? Q. 樹籬算法(Hedge algorithm)的證明技巧? Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization 2021:Relaxing the I.I.D."><meta itemprop="datePublished" content="1990-01-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="1990-01-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1143">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="GFH005 Hedge適應性初探" />
-<meta property="og:description" content="Question Q. 樹籬算法(Hedge algorithm)的證明技巧? Q. 樹籬算法(Hedge algorithm)的證明技巧? Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization 2021:Relaxing the I.I.D." />
+<meta name="description" content="" /><meta itemprop="name" content="MUR042 深思學術工作流的輸出三法">
+<meta itemprop="description" content="深思學術工作流的輸出三法 紫式晦澀每日一篇文章第42天 前言 今天是2022年第40天, 全年第6週, 二月的第2個週三. 今天來深思學術工作流輸出面向"><meta itemprop="datePublished" content="2022-02-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3244">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="MUR042 深思學術工作流的輸出三法" />
+<meta property="og:description" content="深思學術工作流的輸出三法 紫式晦澀每日一篇文章第42天 前言 今天是2022年第40天, 全年第6週, 二月的第2個週三. 今天來深思學術工作流輸出面向" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/gfh005-hedge%E9%81%A9%E6%87%89%E6%80%A7%E5%88%9D%E6%8E%A2/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="1990-01-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="1990-01-05T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur042-%E6%B7%B1%E6%80%9D%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E8%BC%B8%E5%87%BA%E4%B8%89%E6%B3%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-09T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GFH005 Hedge適應性初探"/>
-<meta name="twitter:description" content="Question Q. 樹籬算法(Hedge algorithm)的證明技巧? Q. 樹籬算法(Hedge algorithm)的證明技巧? Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization 2021:Relaxing the I.I.D."/>
+<meta name="twitter:title" content="MUR042 深思學術工作流的輸出三法"/>
+<meta name="twitter:description" content="深思學術工作流的輸出三法 紫式晦澀每日一篇文章第42天 前言 今天是2022年第40天, 全年第6週, 二月的第2個週三. 今天來深思學術工作流輸出面向"/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
   <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -45,11 +45,11 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=GFH005%20Hedge%e9%81%a9%e6%87%89%e6%80%a7%e5%88%9d%e6%8e%a2&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fgfh005-hedge%25E9%2581%25A9%25E6%2587%2589%25E6%2580%25A7%25E5%2588%259D%25E6%258E%25A2%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR042%20%e6%b7%b1%e6%80%9d%e5%ad%b8%e8%a1%93%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%9a%84%e8%bc%b8%e5%87%ba%e4%b8%89%e6%b3%95&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur042-%25E6%25B7%25B1%25E6%2580%259D%25E5%25AD%25B8%25E8%25A1%2593%25E5%25B7%25A5%25E4%25BD%259C%25E6%25B5%2581%25E7%259A%2584%25E8%25BC%25B8%25E5%2587%25BA%25E4%25B8%2589%25E6%25B3%2595%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fgfh005-hedge%25E9%2581%25A9%25E6%2587%2589%25E6%2580%25A7%25E5%2588%259D%25E6%258E%25A2%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur042-%25E6%25B7%25B1%25E6%2580%259D%25E5%25AD%25B8%25E8%25A1%2593%25E5%25B7%25A5%25E4%25BD%259C%25E6%25B5%2581%25E7%259A%2584%25E8%25BC%25B8%25E5%2587%25BA%25E4%25B8%2589%25E6%25B3%2595%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -217,7 +217,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">GFH005 Hedge適應性初探</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR042 深思學術工作流的輸出三法</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -245,158 +245,496 @@ Murasaki
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">GFH005 Hedge適應性初探
+    <h1 class="card-title post-title">MUR042 深思學術工作流的輸出三法
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
-  <span class="post-date" title="創建於 1990-01-04 19:00:00 -0500 EST。">
-    1990-01-05
-  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/series/%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E6%80%A7%E7%AE%97%E6%B3%95/" class="badge rounded-pill post-taxonomy">樹籬公平性算法</a></span>
+  <span class="post-date" title="創建於 2022-02-08 19:00:00 -0500 EST。">
+    2022-02-09
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded-pill post-taxonomy">學術工作流</a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded-pill post-taxonomy">寫作</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a></span>
 </div>
 <div class="post-toc mb-4" id="postTOC">
   <h2 class="mb-4">目錄</h2>
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#question">Question</a>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#心法-三種骨架式輸出--文獻備忘-簡報組織-論文編輯">心法: 三種骨架式輸出&ndash;文獻備忘, 簡報組織, 論文編輯</a>
       <ul>
-        <li><a href="#q-樹籬算法hedge-algorithm的證明技巧">Q. 樹籬算法(Hedge algorithm)的證明技巧?</a></li>
+        <li><a href="#輸出一-摘抄式輸出-總結-改寫-引文-評論">輸出一: 摘抄式輸出-總結, 改寫, 引文, 評論</a></li>
+        <li><a href="#輸出二-骨架式輸出--反覆研讀-精煉關鍵詞-歸類分組-結構化連結">輸出二: 骨架式輸出&ndash;反覆研讀, 精煉關鍵詞, 歸類分組, 結構化連結.</a></li>
+        <li><a href="#輸出三-寫作式輸出">輸出三: 寫作式輸出</a></li>
       </ul>
     </li>
-    <li><a href="#evidence-2021relaxing-the-iid-assumption-adaptively-minimax-optimal-regret-via-root-entropic-regularization">Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization</a>
+    <li><a href="#技法-三種思維導圖模型">技法: 三種思維導圖模型</a>
       <ul>
-        <li><a href="#測度集中-凸包-證明dhedge-ftrl-care-meta-care">測度集中: 凸包, 證明D.Hedge, FTRL-CARE, Meta-Care.</a></li>
-        <li><a href="#凸限制五實例">凸限制五實例:</a></li>
-        <li><a href="#測度集中定理">測度集中定理</a></li>
-        <li><a href="#適應性--有效專家個數-有效隨機檻">適應性 = (有效專家個數, 有效隨機檻)</a></li>
+        <li><a href="#導圖一東尼伯贊思維導圖--項目策劃-頭腦風暴-問題分析">導圖一:東尼伯贊思維導圖- 項目策劃, 頭腦風暴, 問題分析</a></li>
+        <li><a href="#導圖二學科思維導圖-解構-建構-重構">導圖二:學科思維導圖-「解構」, 「建構」, 「重構」</a></li>
+        <li><a href="#導圖三小小sha思維導圖-思維發散思維整理思維呈現">導圖三:小小Sha思維導圖-「思維發散」,「思維整理」,「思維呈現」</a></li>
       </ul>
     </li>
-    <li><a href="#answer">Answer</a>
+    <li><a href="#技法進階-無--無序--有序--有系統">技法進階: 無&ndash;&gt;無序&ndash;&gt;有序&ndash;&gt;有系統</a>
       <ul>
-        <li><a href="#a-隨即群體公平的落差分析">A. 隨即群體公平的落差分析</a></li>
+        <li><a href="#思維發散導圖--無到無序">思維發散導圖- 無到無序</a></li>
+        <li><a href="#思維整理導圖--無序到有序">思維整理導圖- 無序到有序</a></li>
+        <li><a href="#思維呈現導圖--有序到有系統">思維呈現導圖- 有序到有系統</a></li>
       </ul>
     </li>
+    <li><a href="#用法-三種學術場景使用">用法: 三種學術場景使用</a></li>
+    <li><a href="#後記">後記</a></li>
   </ul>
 </nav>
-</div><div class="post-content mb-3"><h2 id="question">Question<a class="anchor ms-1" href="#question"><i class="fas fa-link"></i></a></h2>
-<h3 id="q-樹籬算法hedge-algorithm的證明技巧">Q. 樹籬算法(Hedge algorithm)的證明技巧?<a class="anchor ms-1" href="#q-樹籬算法hedge-algorithm的證明技巧"><i class="fas fa-link"></i></a></h3>
-<blockquote>
-<p>Q. 樹籬算法(Hedge algorithm)的證明技巧?</p>
-</blockquote>
-<h2 id="evidence-2021relaxing-the-iid-assumption-adaptively-minimax-optimal-regret-via-root-entropic-regularization">Evidence: 2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization<a class="anchor ms-1" href="#evidence-2021relaxing-the-iid-assumption-adaptively-minimax-optimal-regret-via-root-entropic-regularization"><i class="fas fa-link"></i></a></h2>
-<ul>
-<li><a href="https://arxiv.org/pdf/2007.06552.pdf" target="_blank" rel="noopener noreferrer">2021:Relaxing the I.I.D. Assumption: Adaptively Minimax Optimal Regret via Root-Entropic Regularization</a>
-</li>
-</ul>
-<h3 id="測度集中-凸包-證明dhedge-ftrl-care-meta-care">測度集中: 凸包, 證明D.Hedge, FTRL-CARE, Meta-Care.<a class="anchor ms-1" href="#測度集中-凸包-證明dhedge-ftrl-care-meta-care"><i class="fas fa-link"></i></a></h3>
-<p><strong>測度集中(Concentration of Measure)</strong>:</p>
-<ul>
-<li>非i.i.d.的「測度集中(Concentration of Measure)</li>
-<li>可用來upper bounds本文章的三種算法: D.Hedge, FTRL-CARE, Meta-Care.</li>
-<li>要求「凸限制級(Convex constraint)」; 非凸的就使用到「凸包(Convex hull)」.</li>
-<li>凸集: 原始可用分佈的混合(Mixtures).</li>
-<li>專家與環境都可以任選分佈來產生資料.</li>
-</ul>
-<blockquote>
-<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/iZQVEFlEzA3cUXUyYDGyEPUiAAC7660IYvx1qtfMK_k.original.fullsize.png" loading="lazy"
+</div><div class="post-content mb-3"><h1 id="深思學術工作流的輸出三法">深思學術工作流的輸出三法<a class="anchor ms-1" href="#深思學術工作流的輸出三法"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://images.vocus.cc/0946dc87-9827-42cd-a18a-e0b88fa43516.jpg" loading="lazy"
   
    />
 
 </p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第42天</p>
 </blockquote>
-<h3 id="凸限制五實例">凸限制五實例:<a class="anchor ms-1" href="#凸限制五實例"><i class="fas fa-link"></i></a></h3>
-<p><strong>隨機帶檻(Stochastic-with-a-gap)</strong>:</p>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第40天, 全年第6週, 二月的第2個週三. 今天來深思學術工作流輸出面向的三法.</p>
+</li>
+<li>
+<p>今天的素材主要來自文章:</p>
+</li>
+</ol>
 <ul>
-<li>只有一個真值$\mu_{0}$</li>
-<li>存在一個最好的專家, 其與第二好的專家差$\Delta$.
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/JFQrrVp1h2Pz0kIkIBW8LunExWn7FHuSBecN9AHc744.original.fullsize.png" loading="lazy"
-  
-   />
-
+<li><a href="">2021:高校學習法:用思維導圖和知識卡片快速建立個人知識體系</a>
 </li>
 </ul>
-<p><strong>對抗(Adversarial)</strong>:</p>
+<h2 id="心法-三種骨架式輸出--文獻備忘-簡報組織-論文編輯">心法: 三種骨架式輸出&ndash;文獻備忘, 簡報組織, 論文編輯<a class="anchor ms-1" href="#心法-三種骨架式輸出--文獻備忘-簡報組織-論文編輯"><i class="fas fa-link"></i></a></h2>
+<p><strong>學術工作流三任務</strong></p>
 <ul>
-<li>限制: 所有的機率測度 &mdash;&gt; 對抗設定
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Ofjm6netoTYr3YHsjcX1mAxTfVJ1Bg6u7co1ZehGUu4.original.fullsize.png" loading="lazy"
-  
-   />
-
+<li>
+<ol>
+<li>讀文獻, 內化「他論與他證」</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>組簡報, 輕化「他論與我證」</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>寫論文, 外化「我論與我證」</li>
+</ol>
 </li>
 </ul>
-<p><strong>對抗帶檻(Adversarial-with-a-gap)</strong>:</p>
+<h3 id="輸出一-摘抄式輸出-總結-改寫-引文-評論">輸出一: 摘抄式輸出-總結, 改寫, 引文, 評論<a class="anchor ms-1" href="#輸出一-摘抄式輸出-總結-改寫-引文-評論"><i class="fas fa-link"></i></a></h3>
+<blockquote>
+<p>引用原文(Quoting)</p>
+</blockquote>
+<blockquote>
+<p>以「段落(Paragraph)」為最小模塊的「摘抄式輸出」</p>
+</blockquote>
+<p><strong>筆記格式:總結, 改寫, 引文, 評論</strong>:</p>
 <ul>
-<li>混合最好的專家, 滿足gap條件
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/uFbCsYJynoAADA1hfyV7rkYqN8wyfgi9meeATvqz_Fc.original.fullsize.png" loading="lazy"
-  
-   />
-
+<li>一般開始讀文獻, 對於「可信度高品質高的文獻」, 來把裡面的段落為最小單位, 做學術工作流處理.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>備忘元素</th>
+<th>學術行為</th>
+<th>行為內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>標題</td>
+<td>總結(Summarizing)</td>
+<td>一句話總結段落內容</td>
+</tr>
+<tr>
+<td>板塊一</td>
+<td>改寫(Paraphrasing)</td>
+<td>逐句總結段落內容</td>
+</tr>
+<tr>
+<td>板塊二</td>
+<td>引文(Quoting)</td>
+<td>完整段落的原文</td>
+</tr>
+<tr>
+<td>板塊三</td>
+<td>評論(Commenting)</td>
+<td>紀錄當下想到的問題, 想到的連結, 當下的看法等等</td>
+</tr>
+</tbody>
+</table>
+<h3 id="輸出二-骨架式輸出--反覆研讀-精煉關鍵詞-歸類分組-結構化連結">輸出二: 骨架式輸出&ndash;反覆研讀, 精煉關鍵詞, 歸類分組, 結構化連結.<a class="anchor ms-1" href="#輸出二-骨架式輸出--反覆研讀-精煉關鍵詞-歸類分組-結構化連結"><i class="fas fa-link"></i></a></h3>
+<p><strong>骨架式輸出需求</strong>:</p>
+<ul>
+<li>挖掘「作者沒有表達出來」的「寫作邏輯和結構」</li>
+<li>將找到的結構, 變成「可視化邏輯結構」的筆記.</li>
+<li>需要「反覆研讀」,「精練關鍵詞」, 「歸類分組」,「結構化連結」</li>
+</ul>
+<p><strong>骨架式輸出實踐</strong></p>
+<ul>
+<li>
+<ol>
+<li>實踐上, 以Presentation為deliverable.\</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>選三個大主線, 建立一個「線性結構邏輯」, 是「網狀結構的擷取」\</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>每個大主線, 以「樹狀邏輯結構」展開三個「中事件」\</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>每個中事件, 以「關鍵詞群」來紀錄各種「小敘事」以「線性敘事邏輯」</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>簡報元素</th>
+<th>編輯行為</th>
+<th>行為內容</th>
+<th>過程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三大主線</td>
+<td>網狀結構邏輯</td>
+<td>從「思考的網狀結構」選取「簡報的線性結構」</td>
+<td>思想&ndash;&gt;樹幹</td>
+</tr>
+<tr>
+<td>九中事件</td>
+<td>樹狀論證邏輯</td>
+<td>從「簡報的線性結構」生長「知識的樹狀結構」</td>
+<td>樹幹&ndash;&gt;樹枝</td>
+</tr>
+<tr>
+<td>二十七小敘事</td>
+<td>線性敘事邏輯</td>
+<td>從「知識的樹狀結構」到「細節的樹葉複雜度」</td>
+<td>樹枝&ndash;&gt;樹葉</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>樹葉投影片的內容, 是為了支撐主故事.</p>
+</blockquote>
+<blockquote>
+<p>當有很多內容, 利用「樹幹, 樹枝, 樹葉」的結構串起來, 成為「知識晶體」.</p>
+</blockquote>
+<h3 id="輸出三-寫作式輸出">輸出三: 寫作式輸出<a class="anchor ms-1" href="#輸出三-寫作式輸出"><i class="fas fa-link"></i></a></h3>
+<p><strong>寫作式輸出需求</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>對「論題的了解」＋「自己實踐經驗和學習」的融合創造.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>「呈現多個觀點」或「論證自己觀點」的過程.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>「半原創性」或「純原創性」的「自身實踐」,「身邊案例」, 「他人觀點」</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>將骨架式輸出的結果, 做重新的原創, 以線性結構串起內容細節.</li>
+</ol>
+</li>
+</ul>
+<p><strong>寫作式輸出實踐</strong>:</p>
+<ul>
+<li>
+<ol>
+<li>實踐上, Paper manuscript為最終的deliverable.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>格式上, 基本沿著IMRaD的結構組織資訊.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>寫作中, 應該是以「圖」與「表」為寫作核心; 即便是背景介紹, 相關文獻, 應該也要有「圖解思維」</li>
+</ol>
 </li>
 </ul>
 <blockquote>
-<p>與Lasso bandit很多很像.</p>
+<p>文獻綜述的「圖解」,有哪些呢? 「線性時間圖」, 「邏輯對比圖」, 還有?</p>
 </blockquote>
-<p><strong>對抗帶期望檻(Adversarial-with-an-E-gap)</strong>:</p>
+<h2 id="技法-三種思維導圖模型">技法: 三種思維導圖模型<a class="anchor ms-1" href="#技法-三種思維導圖模型"><i class="fas fa-link"></i></a></h2>
+<h3 id="導圖一東尼伯贊思維導圖--項目策劃-頭腦風暴-問題分析">導圖一:東尼伯贊思維導圖- 項目策劃, 頭腦風暴, 問題分析<a class="anchor ms-1" href="#導圖一東尼伯贊思維導圖--項目策劃-頭腦風暴-問題分析"><i class="fas fa-link"></i></a></h3>
+<p><strong>東尼伯贊思維導圖</strong>:</p>
 <ul>
-<li>期望版本
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/oAnrKT9kHO35EHC2ThWROu-JT2-midgD8fFgz-NlNbg.original.fullsize.png" loading="lazy"
-  
-   />
-
-</li>
+<li>原動機:更好地做筆記</li>
+<li>以大腦的工作原理來做筆記</li>
+<li>發散思維, 一條線一個詞</li>
+<li>場景: 項目策劃, 頭腦風暴, 問題分析</li>
 </ul>
-<p><strong>球環IID(Ball-around-I.I.D.)</strong>:</p>
-<ul>
-<li>靠近的機率測度.
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/LhEhS4qZo3589KXHev-oNg_4WT49bWX8vLIryk2Zzf8.original.fullsize.png" loading="lazy"
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/pBDyGFPJmgdE9FirWGpwIt4VNKQdJOf-kO5rzXt440Q.original.fullsize.png" loading="lazy"
   
    />
 
-</li>
+</p>
+<h3 id="導圖二學科思維導圖-解構-建構-重構">導圖二:學科思維導圖-「解構」, 「建構」, 「重構」<a class="anchor ms-1" href="#導圖二學科思維導圖-解構-建構-重構"><i class="fas fa-link"></i></a></h3>
+<p><strong>學科思維導圖</strong>:</p>
+<ul>
+<li>原動機: 可視化教學</li>
+<li>定義: 以層級結構為主, 以圖示組合方式, 對學科知識體系, 進行「解構」, 「建構」, 「重構」.</li>
+<li>目標: 於製作的過程中，發現學科思維的本質, 實現學科思維內化, 發展學習者新制結構.</li>
 </ul>
-<h3 id="測度集中定理">測度集中定理<a class="anchor ms-1" href="#測度集中定理"><i class="fas fa-link"></i></a></h3>
-<p><strong>定理一</strong>:</p>
+<p><strong>學科思維導圖優勢</strong>:</p>
 <ul>
-<li>每一輪的「最好專家」可能不同, 可以接著用Azuma-Hoeffding inequality.</li>
-<li>就算每一輪最好專家不同, 「最有效專家」與「任何無效專家」的gap至少上漲得如「均勻次高斯隨機變數」, 其均值為$-\Delta_0$.</li>
-<li>證明依賴於von Neumann&rsquo;s minimax theorem.
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/U8pM7s9QTYDYw6Z09Qp1Iyl3lC20n2tlOP4fb2HZad8.original.fullsize.png" loading="lazy"
-  
-   />
-
-</li>
+<li>用「學科內在結構」給出清係明確的「知識點關係」</li>
 </ul>
 <blockquote>
-<p>整個很抽象！需要補很多脈絡！</p>
+<p>尊重任何學科自己嚴格的知識結構與規律!</p>
 </blockquote>
-<h3 id="適應性--有效專家個數-有效隨機檻">適應性 = (有效專家個數, 有效隨機檻)<a class="anchor ms-1" href="#適應性--有效專家個數-有效隨機檻"><i class="fas fa-link"></i></a></h3>
-<p><strong>時間一致凸限制 (Time-homogeneous convex constraints)</strong>:</p>
-<ul>
-<li>N個專家</li>
-<li>損失函數: $l:\hat{Y} \times Y \mapsto [0,1]$.</li>
-<li>機率測度: $M(\hat{Y} \times Y )$</li>
-<li>資料產生機制: $\pi$.</li>
-<li>專家預測的條件分佈, 是time-homogeneously constrined.</li>
-<li><code>有效專家(Effective Experts)</code>: $I_0(D)$收集可能在某些round成為最好專家的那些專家們.</li>
-<li>$N_0(D)$: 有效專家的個數</li>
-<li><code>有效隨機檻(Effective Stochastic Gap)</code>$\Delta_0$: 「無效專家(ineffective expert)」相比較於「有效專家(Effective expert)」的最小的額外損失</li>
-<li>利用「(有效專家個數, 有效隨機檻)」來描述問題的「適應性(Adaptivity)」</li>
-<li>接著收集相對應的資料生成機制.
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/hi-BX6gQ9NFB9zCXcF19CqsF_4H7p6zerFMmEg1r6xQ.original.fullsize.png" loading="lazy"
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Kd6nmpBDyBuxE-CJuK41MCBWnaBZfcoOjq23QeaPWxM.original.fullsize.png" loading="lazy"
   
    />
 
-</li>
+</p>
+<blockquote>
+<p>此方法是為Input所設計的, 但對於Output, 此方法的「學術重用性(Academic reusability)」如何?</p>
+</blockquote>
+<h3 id="導圖三小小sha思維導圖-思維發散思維整理思維呈現">導圖三:小小Sha思維導圖-「思維發散」,「思維整理」,「思維呈現」<a class="anchor ms-1" href="#導圖三小小sha思維導圖-思維發散思維整理思維呈現"><i class="fas fa-link"></i></a></h3>
+<p><strong>新思維導圖</strong>:</p>
+<ul>
+<li>原動機：「呈現思維」, 促進「思維發散」,「思維整理」,「思維呈現」</li>
+</ul>
+<h2 id="技法進階-無--無序--有序--有系統">技法進階: 無&ndash;>無序&ndash;>有序&ndash;>有系統<a class="anchor ms-1" href="#技法進階-無--無序--有序--有系統"><i class="fas fa-link"></i></a></h2>
+<h3 id="思維發散導圖--無到無序">思維發散導圖- 無到無序<a class="anchor ms-1" href="#思維發散導圖--無到無序"><i class="fas fa-link"></i></a></h3>
+<p><strong>思維發散</strong>:</p>
+<ul>
+<li>性質: 思維0到1, 1到N.</li>
+<li>目的: 發散出更多的想法</li>
+<li>實踐: 頭腦風暴, 構思方案, 寫計畫, 列提綱.</li>
+<li>結果: 內容是弱聯繫, 可能僅對自己有意義</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/NGzcbbiZ6OA1baSVVqq1-qg2apO8Okbjw_L37Dnd8VU.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="思維整理導圖--無序到有序">思維整理導圖- 無序到有序<a class="anchor ms-1" href="#思維整理導圖--無序到有序"><i class="fas fa-link"></i></a></h3>
+<p><strong>思維整理</strong>:</p>
+<ul>
+<li>性質: 從無序到有序. 「無序想法」&ndash;「分類邏輯」&ndash;&gt;「有序內容的過程」</li>
+<li>目的: 邏輯思維-有邏輯, 有條理呈現思維.</li>
+<li>實踐: 自己工作崗位的流程圖, 工作清單, 思維導圖類的學習筆記.</li>
+<li>結果: 「不可見的邏輯結構」整理成「自己記憶理解的思維筆記」</li>
 </ul>
 <blockquote>
-<p>怎麼感覺Lasso bandit也與expert很像, 可以分有效專家, 無效專家.</p>
+<p>「無序想法」&ndash;「分類邏輯」&ndash;&gt;「有序內容的過程」</p>
 </blockquote>
-<h2 id="answer">Answer<a class="anchor ms-1" href="#answer"><i class="fas fa-link"></i></a></h2>
-<h3 id="a-隨即群體公平的落差分析">A. 隨即群體公平的落差分析<a class="anchor ms-1" href="#a-隨即群體公平的落差分析"><i class="fas fa-link"></i></a></h3>
-<blockquote>
-<p>🤔 更中間的adaptivity是否能達到group fairness?
-或者, 達到adaptively minimax optimal的預測子, 其group fairness完成的如何?</p>
-</blockquote>
-<p>這次的50分鐘體會了, 這真的是一篇很技術性的paper! 竟然將適應性討論到了有幾個「有效專家」的地步. 感覺這是要先很了解「樹籬算法」的人, 才能appreciate他的工作. 可以下週再來挑戰.</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/UB2vDfU5HvXtVVdXmoDprenEs-dfiFmQnEOfMJf2ZJM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="思維呈現導圖--有序到有系統">思維呈現導圖- 有序到有系統<a class="anchor ms-1" href="#思維呈現導圖--有序到有系統"><i class="fas fa-link"></i></a></h3>
+<p><strong>思維呈現</strong>:</p>
+<ul>
+<li>性質:思維作品化-「邏輯思維」-「充分理解內容, 精準表達」;「設計審美思維」- 「圖的排版配色整齊度」</li>
+<li>目的:把思維以「知識載體」呈現</li>
+<li>實踐:知識設計-可視化作品.</li>
+<li>結果: 知識卡片作品</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/-wM-GXJ-wTFkQlw-Ieg7uYQAVtc8vkhn2agpqENBXOw.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<table>
+<thead>
+<tr>
+<th>新思維導讀體系</th>
+<th>思維發散</th>
+<th>思維整理</th>
+<th>思維呈現</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性質</td>
+<td>思維0到1, 1到N</td>
+<td>從無序到有序. 「無序想法」&ndash;「分類邏輯」&ndash;&gt;「有序內容的過程」</td>
+<td>思維作品化-「邏輯思維」-「充分理解內容, 精準表達」;「設計審美思維」- 「圖的排版配色整齊度」</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>發散出更多的想法</td>
+<td>邏輯思維-有邏輯, 有條理呈現思維.</td>
+<td>把思維以「知識載體」呈現</td>
+</tr>
+<tr>
+<td>實踐</td>
+<td>頭腦風暴, 構思方案, 寫計畫, 列提綱</td>
+<td>自己工作崗位的流程圖, 工作清單, 思維導圖類的學習筆記.</td>
+<td>知識設計-可視化作品.</td>
+</tr>
+<tr>
+<td>結果</td>
+<td>內容是弱聯繫, 可能僅對自己有意義</td>
+<td>「不可見的邏輯結構」整理成「自己記憶理解的思維筆記」</td>
+<td>知識卡片作品</td>
+</tr>
+<tr>
+<td>用法</td>
+<td><strong>分析解決問題</strong></td>
+<td><strong>理清思路, 優化表達, 提升學習效率</strong></td>
+<td><strong>提升吸引力, 提高知識傳播率, 提升知識重用率</strong></td>
+</tr>
+<tr>
+<td>複雜度管理</td>
+<td>「無」&ndash;&gt;「無序」</td>
+<td>「無序」&ndash;&gt;「有序」</td>
+<td>「有序」&ndash;&gt;「有系統」</td>
+</tr>
+</tbody>
+</table>
+<h2 id="用法-三種學術場景使用">用法: 三種學術場景使用<a class="anchor ms-1" href="#用法-三種學術場景使用"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>讀paper的presentation material.</li>
+<li>寫paper的writing material.</li>
+<li>改paper的revising material</li>
+</ol>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<p>今天用小小Sha的書整理自己的學術工作流, 感覺收穫很大！首先「學術工作」的三大文書「讀paper」,「寫paper」,「改paper」,其實都可以套用這個「思維工作流」.</p>
+<p>思維工作流一定會經過「無&ndash;&gt;無序&ndash;&gt;有序&ndash;&gt;有系統」; 而產生的系統成為「樹幹」, 在寫作鏈條中的「思想&ndash;&gt;樹幹&ndash;&gt;樹枝&ndash;&gt;樹葉」</p>
+<table>
+<thead>
+<tr>
+<th>文本活動</th>
+<th>複雜度高</th>
+<th>複雜度低</th>
+<th>結構度低</th>
+<th>結構度高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>輸入思維</td>
+<td>無</td>
+<td>無序</td>
+<td>有序</td>
+<td>有系統</td>
+</tr>
+<tr>
+<td>輸出思維</td>
+<td>內容</td>
+<td>小標題</td>
+<td>章節標題</td>
+<td>文本</td>
+</tr>
+<tr>
+<td>譬喻形象</td>
+<td>樹葉</td>
+<td>樹枝</td>
+<td>樹幹</td>
+<td>樹</td>
+</tr>
+</tbody>
+</table>
+<p>感覺學術工作流又進步了！天天向上，共勉之!</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>簡報元素</th>
+<th>編輯行為</th>
+<th>行為內容</th>
+<th>過程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三大主線</td>
+<td>網狀結構邏輯</td>
+<td>從「思考的網狀結構」選取「簡報的線性結構」</td>
+<td>思想&ndash;&gt;樹幹</td>
+</tr>
+<tr>
+<td>九中事件</td>
+<td>樹狀論證邏輯</td>
+<td>從「簡報的線性結構」生長「知識的樹狀結構」</td>
+<td>樹幹&ndash;&gt;樹枝</td>
+</tr>
+<tr>
+<td>二十七小敘事</td>
+<td>線性敘事邏輯</td>
+<td>從「知識的樹狀結構」到「細節的樹葉複雜度」</td>
+<td>樹枝&ndash;&gt;樹葉</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>新思維導讀體系</th>
+<th>思維發散</th>
+<th>思維整理</th>
+<th>思維呈現</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性質</td>
+<td>思維0到1, 1到N</td>
+<td>從無序到有序. 「無序想法」&ndash;「分類邏輯」&ndash;&gt;「有序內容的過程」</td>
+<td>思維作品化-「邏輯思維」-「充分理解內容, 精準表達」;「設計審美思維」- 「圖的排版配色整齊度」</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>發散出更多的想法</td>
+<td>邏輯思維-有邏輯, 有條理呈現思維.</td>
+<td>把思維以「知識載體」呈現</td>
+</tr>
+<tr>
+<td>實踐</td>
+<td>頭腦風暴, 構思方案, 寫計畫, 列提綱</td>
+<td>自己工作崗位的流程圖, 工作清單, 思維導圖類的學習筆記.</td>
+<td>知識設計-可視化作品.</td>
+</tr>
+<tr>
+<td>結果</td>
+<td>內容是弱聯繫, 可能僅對自己有意義</td>
+<td>「不可見的邏輯結構」整理成「自己記憶理解的思維筆記」</td>
+<td>知識卡片作品</td>
+</tr>
+<tr>
+<td>用法</td>
+<td><strong>分析解決問題</strong></td>
+<td><strong>理清思路, 優化表達, 提升學習效率</strong></td>
+<td><strong>提升吸引力, 提高知識傳播率, 提升知識重用率</strong></td>
+</tr>
+<tr>
+<td>複雜度管理</td>
+<td>「無」&ndash;&gt;「無序」</td>
+<td>「無序」&ndash;&gt;「有序」</td>
+<td>「有序」&ndash;&gt;「有系統」</td>
+</tr>
+</tbody>
+</table>
+<p>2022.02.09.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
 </div>
 <div class="post-copyright mb-3" id="post-copyright">
     <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
@@ -409,12 +747,8 @@ Murasaki
 </div>
   <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://laplus3667.github.io/zh-tw/posts/gfh004-%E9%9A%A8%E6%99%82%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E7%9A%84%E8%90%BD%E5%B7%AE%E5%88%86%E6%9E%90/">GFH004 隨時群體公平的落差分析
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur041-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%B7%E4%BF%A1%E7%94%A8%E9%A0%90%E6%B8%AC/">MUR041 合成數據如何增強信用預測
 </a>
-  </div><div class="post-nav post-next">
-    <a href="https://laplus3667.github.io/zh-tw/posts/avm001-%E9%9A%A8%E6%99%82%E6%9C%89%E6%95%88%E7%9F%A9%E9%99%A3%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90/">AVM001 隨時有效矩陣迴歸分析
-</a>
-    <i class="fas fa-fw fa-chevron-right"></i>
   </div></div></div>
 </article><section class="related-posts row card component">
     <div class="card-header">
@@ -422,29 +756,29 @@ Murasaki
     </div>
     <div class="card-body">
       <ul class="post-list"><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/gfh004-%E9%9A%A8%E6%99%82%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E7%9A%84%E8%90%BD%E5%B7%AE%E5%88%86%E6%9E%90/">GFH004 隨時群體公平的落差分析
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur041-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%B7%E4%BF%A1%E7%94%A8%E9%A0%90%E6%B8%AC/">MUR041 合成數據如何增強信用預測
 </a>
-          <span class="float-end post-date">1990-01-04
+          <span class="float-end post-date">2022-02-08
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/gfh003-%E8%A1%8C%E5%8B%95%E5%B0%B1%E6%98%AF%E5%8F%83%E6%95%B8-%E6%90%8D%E5%A4%B1%E5%B0%B1%E6%98%AF%E8%84%88%E7%B5%A1/">GFH003 行動就是參數; 損失就是脈絡
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur040-%E5%B7%A5%E4%BD%9C%E6%BA%9D%E9%80%9A%E5%AF%AB%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%9B%E9%9A%8E%E6%AE%B5/">MUR040 工作溝通寫作流程四階段
 </a>
-          <span class="float-end post-date">1990-01-03
+          <span class="float-end post-date">2022-02-07
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/gfh002-%E5%AF%A6%E8%B8%90%E7%BE%A4%E9%AB%94%E5%85%AC%E5%B9%B3%E6%80%A7%E4%BB%A5%E6%A9%9F%E6%9C%83%E5%9D%87%E7%AD%89/">GFH002 實踐群體公平性以機會均等
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur039-%E6%80%9D%E8%80%83%E5%8F%A5%E5%AD%90%E7%9A%84%E5%8D%A1%E7%89%87%E7%AD%86%E8%A8%98%E7%B3%BB%E7%B5%B1/">MUR039 思考句子的卡片筆記系統
 </a>
-          <span class="float-end post-date">1990-01-02
+          <span class="float-end post-date">2022-02-06
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/gfh001-%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E7%AE%97%E6%B3%95/">GFH001 樹籬公平算法
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur038-%E7%94%B1%E5%BE%8C%E9%A9%97%E5%8F%96%E6%A8%A3%E5%AD%B8%E7%BF%92%E6%9C%80%E5%84%AA%E5%8C%96/">MUR038 由後驗取樣學習最優化
 </a>
-          <span class="float-end post-date">1990-01-01
+          <span class="float-end post-date">2022-02-05
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur037-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%91%98%E8%A6%81%E5%8A%9B/">MUR037 讀山口拓郎的摘要力
 </a>
-          <span class="float-end post-date">0001-01-01
+          <span class="float-end post-date">2022-02-04
 </span>
         </li></ul>
     </div>
