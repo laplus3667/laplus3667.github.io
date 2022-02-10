@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MUR038 由後驗取樣學習最優化 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+    <title>MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
 <link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="MUR038 由後驗取樣學習最優化">
-<meta itemprop="description" content="由後驗取樣學習最優化 紫式晦澀每日一篇文章第38天 前言 今天是2022年第36天, 全年第5週, 二月的第1個週六. 今天來思考後驗取樣來學習最優化."><meta itemprop="datePublished" content="2022-02-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-02-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1534">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="MUR038 由後驗取樣學習最優化" />
-<meta property="og:description" content="由後驗取樣學習最優化 紫式晦澀每日一篇文章第38天 前言 今天是2022年第36天, 全年第5週, 二月的第1個週六. 今天來思考後驗取樣來學習最優化." />
+<meta name="description" content="" /><meta itemprop="name" content="MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)">
+<meta itemprop="description" content="平衡影響以訓練公平深度神經網路 紫式晦澀每日一篇文章第43天 前言 今天是2022年第41天, 全年第6週, 二月的第2個週四. 今天來深思學術工作流輸"><meta itemprop="datePublished" content="2022-02-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2572">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)" />
+<meta property="og:description" content="平衡影響以訓練公平深度神經網路 紫式晦澀每日一篇文章第43天 前言 今天是2022年第41天, 全年第6週, 二月的第2個週四. 今天來深思學術工作流輸" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur038-%E7%94%B1%E5%BE%8C%E9%A9%97%E5%8F%96%E6%A8%A3%E5%AD%B8%E7%BF%92%E6%9C%80%E5%84%AA%E5%8C%96/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-02-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-02-05T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur043-%E5%B9%B3%E8%A1%A1%E5%BD%B1%E9%9F%BF%E4%BB%A5%E8%A8%93%E7%B7%B4%E5%85%AC%E5%B9%B3%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-10T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MUR038 由後驗取樣學習最優化"/>
-<meta name="twitter:description" content="由後驗取樣學習最優化 紫式晦澀每日一篇文章第38天 前言 今天是2022年第36天, 全年第5週, 二月的第1個週六. 今天來思考後驗取樣來學習最優化."/>
+<meta name="twitter:title" content="MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)"/>
+<meta name="twitter:description" content="平衡影響以訓練公平深度神經網路 紫式晦澀每日一篇文章第43天 前言 今天是2022年第41天, 全年第6週, 二月的第2個週四. 今天來深思學術工作流輸"/>
 <meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
   <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -45,11 +45,11 @@ Murasaki
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=MUR038%20%e7%94%b1%e5%be%8c%e9%a9%97%e5%8f%96%e6%a8%a3%e5%ad%b8%e7%bf%92%e6%9c%80%e5%84%aa%e5%8c%96&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur038-%25E7%2594%25B1%25E5%25BE%258C%25E9%25A9%2597%25E5%258F%2596%25E6%25A8%25A3%25E5%25AD%25B8%25E7%25BF%2592%25E6%259C%2580%25E5%2584%25AA%25E5%258C%2596%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR043%20%e5%b9%b3%e8%a1%a1%e5%bd%b1%e9%9f%bf%e4%bb%a5%e8%a8%93%e7%b7%b4%e5%85%ac%e5%b9%b3%e6%b7%b1%e5%ba%a6%e7%a5%9e%e7%b6%93%e7%b6%b2%e8%b7%af%20%28Ver%200.1%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur043-%25E5%25B9%25B3%25E8%25A1%25A1%25E5%25BD%25B1%25E9%259F%25BF%25E4%25BB%25A5%25E8%25A8%2593%25E7%25B7%25B4%25E5%2585%25AC%25E5%25B9%25B3%25E6%25B7%25B1%25E5%25BA%25A6%25E7%25A5%259E%25E7%25B6%2593%25E7%25B6%25B2%25E8%25B7%25AF%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur038-%25E7%2594%25B1%25E5%25BE%258C%25E9%25A9%2597%25E5%258F%2596%25E6%25A8%25A3%25E5%25AD%25B8%25E7%25BF%2592%25E6%259C%2580%25E5%2584%25AA%25E5%258C%2596%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur043-%25E5%25B9%25B3%25E8%25A1%25A1%25E5%25BD%25B1%25E9%259F%25BF%25E4%25BB%25A5%25E8%25A8%2593%25E7%25B7%25B4%25E5%2585%25AC%25E5%25B9%25B3%25E6%25B7%25B1%25E5%25BA%25A6%25E7%25A5%259E%25E7%25B6%2593%25E7%25B6%25B2%25E8%25B7%25AF%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -217,7 +217,7 @@ Murasaki
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR038 由後驗取樣學習最優化</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)</li></ol>
   </div>
 </nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -245,231 +245,216 @@ Murasaki
   </div>
 </div>
 <div class="card-header ">
-    <h1 class="card-title post-title">MUR038 由後驗取樣學習最優化
+    <h1 class="card-title post-title">MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)
 </h1>
   </div>
   <div class="card-body"><div class="post-meta">
-  <span class="post-date" title="創建於 2022-02-04 19:00:00 -0500 EST。">
-    2022-02-05
-  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E8%B2%9D%E6%B0%8F%E6%80%9D%E7%B6%AD/" class="badge rounded-pill post-taxonomy">貝氏思維</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a></span>
+  <span class="post-date" title="創建於 2022-02-09 19:00:00 -0500 EST。">
+    2022-02-10
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a></span>
 </div>
 <div class="post-toc mb-4" id="postTOC">
   <h2 class="mb-4">目錄</h2>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#摘要後驗取樣的極大優勢">摘要:後驗取樣的極大優勢</a></li>
-    <li><a href="#訣竅一-鞅指數不等式-martingale-exponential-inequality">訣竅一. 鞅指數不等式 (Martingale Exponential Inequality)</a>
+    <li><a href="#摘要">摘要</a>
       <ul>
-        <li><a href="#構造-過濾隨機變數序列-中心化隨機變數-條件累積生成函數-指數鞅">構造: 過濾隨機變數序列, 中心化隨機變數, 條件累積生成函數, 指數鞅</a></li>
-        <li><a href="#引理6指數鞅是鞅-期望是1">引理6:指數鞅是鞅, 期望是1.</a></li>
-        <li><a href="#引理7-累積和的高機率上邊界">引理7: 累積和的高機率上邊界</a></li>
-        <li><a href="#heading"></a></li>
-        <li><a href="#heading-1"></a></li>
-        <li><a href="#heading-2"></a></li>
-        <li><a href="#heading-3"></a></li>
+        <li><a href="#fbi001-fairif是一種二階段訓練法於每個人口統計群中重權重模型表現-以舒緩三種差距相關的公平性偏誤">FBI001 FAIRIF是一種二階段訓練法,於每個人口統計群中重權重模型表現, 以舒緩三種差距相關的公平性偏誤.</a></li>
+      </ul>
+    </li>
+    <li><a href="#簡介-group-fairness-influence-function">簡介: Group Fairness, Influence Function.</a>
+      <ul>
+        <li><a href="#fbi032-計算影響函數在收斂的模型上-因為需要hessian是正定的">FBI032 計算影響函數在收斂的模型上, 因為需要Hessian是正定的</a></li>
+      </ul>
+    </li>
+    <li><a href="#方法">方法</a>
+      <ul>
+        <li><a href="#fbi173-重權重一樣本-最小值變化與相對應損失變化的一階逼近-倚賴對hessian的操作">FBI173 重權重一樣本, <code>最小值變化</code>與<code>相對應損失變化</code>的一階逼近, 倚賴對Hessian的操作</a></li>
+        <li><a href="#fbi379-fairif算法-考慮影響函數與擾動幅度的互文-重新訓練公平的神經網路模型">FBI379 FAIRIF算法: 考慮影響函數與擾動幅度的互文, 重新訓練公平的神經網路模型.</a></li>
+        <li><a href="#fbi347-三種disparity-自變量不均衡group-size-組分佈遷移group-distribution-shift-應變量不均衡class-size">FBI347 三種Disparity: 自變量不均衡(Group size), 組分佈遷移(Group Distribution Shift), 應變量不均衡(Class size)</a></li>
+      </ul>
+    </li>
+    <li><a href="#結果">結果</a>
+      <ul>
+        <li><a href="#fbi">FBI</a></li>
+      </ul>
+    </li>
+    <li><a href="#討論">討論</a>
+      <ul>
+        <li><a href="#fbi-1">FBI</a></li>
       </ul>
     </li>
     <li><a href="#後記">後記</a></li>
   </ul>
 </nav>
-</div><div class="post-content mb-3"><h1 id="由後驗取樣學習最優化">由後驗取樣學習最優化<a class="anchor ms-1" href="#由後驗取樣學習最優化"><i class="fas fa-link"></i></a></h1>
-<p><img class="img-fluid" alt="" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs43586-020-00001-2/MediaObjects/43586_2020_1_Fig1_HTML.png" loading="lazy"
+</div><div class="post-content mb-3"><h1 id="平衡影響以訓練公平深度神經網路">平衡影響以訓練公平深度神經網路<a class="anchor ms-1" href="#平衡影響以訓練公平深度神經網路"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://i0.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2020/01/image003-1024x779.png?resize=720%2C548" loading="lazy"
   
    />
 
 </p>
 <blockquote>
-<p>紫式晦澀每日一篇文章第38天</p>
+<p>紫式晦澀每日一篇文章第43天</p>
 </blockquote>
 <h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
 <ol>
 <li>
-<p>今天是2022年第36天, 全年第5週, 二月的第1個週六. 今天來思考後驗取樣來學習最優化.</p>
+<p>今天是2022年第41天, 全年第6週, 二月的第2個週四. 今天來深思學術工作流輸出面向的三法.</p>
 </li>
 <li>
 <p>今天的素材主要來自文章:</p>
 </li>
 </ol>
 <ul>
-<li><a href="https://pubsonline.informs.org/doi/pdf/10.1287/moor.2014.0650?casa_token=oU4EG2g_xdQAAAAA:jtJO-5uYADq-dyBKrNdqJDRV6LoKh89zqxOpMEnzxgvgFOch_g-DZ_Kx3BK-jq5eUKnd4a5cpQ" target="_blank" rel="noopener noreferrer">2014: Learning to Optimize via Posterior Sampling</a>
+<li><a href="https://arxiv.org/pdf/2201.05759.pdf" target="_blank" rel="noopener noreferrer">2022:Training Fair Deep Neural Networks by Balancing Influence</a>
 </li>
 </ul>
-<h2 id="摘要後驗取樣的極大優勢">摘要:後驗取樣的極大優勢<a class="anchor ms-1" href="#摘要後驗取樣的極大優勢"><i class="fas fa-link"></i></a></h2>
-<p><strong>摘要:後驗取樣的極大優勢</strong>:</p>
-<ul>
-<li>學習行動最優化(Learning to optimize actions): 平衡探索與剝削(Balance between exploration and exploitation)</li>
-<li>Thompson Sampling (機率匹配 Probability Matching): 比UCB更優, 可以申請有限或無限行動.</li>
-<li>理論貢獻一: 轉換UCB後悔界成為後驗取樣的貝氏後悔界.</li>
-<li>理論貢獻二: 後驗取樣的貝氏後悔界, 對許多模型族.</li>
-<li>逃避者維度(Eluder dimension): 測量「行動獎勵(action reward)」相依程度.</li>
-<li>在線性模型下, 此方法的廣義bound 可以match最好的可能, 也比最好廣義線性模型的結果好.</li>
-<li>分析展現出後驗取樣的表現優勢, 實驗展現出比UCB還要好很多的表現</li>
-</ul>
 <blockquote>
-<p>This paper considers the use of a simple posterior sampling algorithm to balance between exploration and exploitation when learning to optimize actions such as in multiarmed bandit problems. The algorithm, also known as Thompson Sampling and as probability matching, offers significant advantages over the popular upper confidence bound (UCB) approach, and can be applied to problems with finite or infinite action spaces and complicated relationships among action rewards. We make two theoretical contributions. The first establishes a connection between posterior sampling and UCB algorithms. This result lets us convert regret bounds developed for UCB algorithms into Bayesian regret bounds for posterior sampling. Our second theoretical contribution is a Bayesian regret bound for posterior sampling that applies broadly and can be specialized to many model classes. This bound depends on a new notion we refer to as the eluder dimension, which measures the degree of dependence among action rewards. Compared to UCB algorithm Bayesian regret bounds for specific model classes, our general bound matches the best available for linear models and is stronger than the best available for generalized linear models. Further, our analysis provides insight into performance advantages of posterior sampling, which are highlighted through simulation results that demonstrate performance surpassing recently proposed UCB algorithms.</p>
+<p>代碼FBI (Fair Balance Influence)</p>
 </blockquote>
-<p><strong>文章組成</strong>:</p>
-<ul>
-<li>
+<h2 id="摘要">摘要<a class="anchor ms-1" href="#摘要"><i class="fas fa-link"></i></a></h2>
+<h3 id="fbi001-fairif是一種二階段訓練法於每個人口統計群中重權重模型表現-以舒緩三種差距相關的公平性偏誤">FBI001 FAIRIF是一種二階段訓練法,於每個人口統計群中重權重模型表現, 以舒緩三種差距相關的公平性偏誤.<a class="anchor ms-1" href="#fbi001-fairif是一種二階段訓練法於每個人口統計群中重權重模型表現-以舒緩三種差距相關的公平性偏誤"><i class="fas fa-link"></i></a></h3>
 <ol>
-<li>Introduction</li>
+<li>「公平機器學習方法」倚賴(1)訓練樣本的敏感資訊 (2) 大幅度修改目標模型; 兩者對應用都不是很友善.</li>
+<li>提供解決策略 FAIRIF&ndash;二階段算法</li>
+<li>工作原理: 階段一-平衡模型表現在各種「人口統計群(demographic group)」; 階段二-「重權重(reweighted)」資料集.</li>
+<li>FAIRIF應用到任何用SGD訓練的模型: 只需額外增加小驗證資料集上的「群標記(group annotations)」</li>
+<li>理論保證: 在分類, 三種「差距(disparity)」可被舒緩.</li>
+<li>實驗上: 「公平-效度權衡(fairness-utility trade-offs)」與各種bias能應對.</li>
+<li>實際資料集:effectess且有scalability.</li>
+<li>使用Pre-trained模型: 可以緩解pre-trained模型的「不公平問題(unfairness issue)」, 也不會影響其表現.</li>
 </ol>
-</li>
-<li>
-<ol start="2">
-<li>Related literature.</li>
-</ol>
-</li>
-<li>2.1. Measures of performance.</li>
-<li>2.2. Related results.</li>
-<li>
-<ol start="3">
-<li>Problem formulation.</li>
-</ol>
-</li>
-<li>3.1. On regret and Bayesian regret.</li>
-<li>3.2. On changing action sets.</li>
-<li>
-<ol start="4">
-<li>Algorithms.</li>
-</ol>
-</li>
-<li>4.1. UCB algorithms.</li>
-<li>4.2. Posterior sampling.</li>
-<li>4.3. Potential advantage of posterior sampling.</li>
-<li>
-<ol start="5">
-<li>Confidence bounds and regret decompositions.</li>
-</ol>
-</li>
-<li>5.1. UCB regret decomposition.</li>
-<li>5.2. Posterior sampling regret decomposition.</li>
-<li>
-<ol start="6">
-<li>From UCB to posterior sampling regret bounds.</li>
-</ol>
-</li>
-<li>6.1. Finitely many actions.</li>
-<li>6.2. Linear and generalized linear models.</li>
-<li>6.2.1. Linear models.</li>
-<li>6.2.2. Generalized linear models.</li>
-<li>6.3. Gaussian processes.</li>
-<li>
-<ol start="7">
-<li>Bounds for general function classes.</li>
-</ol>
-</li>
-<li>7.1. Confidence bounds.</li>
-<li>7.2. Bayesian regret bounds.</li>
-<li>7.3. Relation to the VC dimension.</li>
-<li>
-<ol start="8">
-<li>Simulation results.</li>
-</ol>
-</li>
-<li>
-<ol start="9">
-<li>Conclusion.</li>
-</ol>
-</li>
-<li>Appendix A. Details regarding Lemma 1.</li>
-<li>Appendix B. Proof of confidence bound.</li>
-<li>B.1. Preliminaries: Martingale exponential inequalities.</li>
-<li>B.2. Proof of Lemma 3.</li>
-<li>B.3. Least squares bound—Proof of Proposition 6.</li>
-<li>B.4. Discretization error.</li>
-<li>Appendix C. Bounds on eluder dimension for common function classes.</li>
-<li>C.1. Finite action spaces.</li>
-<li>C.2. Linear case.</li>
-<li>C.3. Generalized linear models.</li>
-</ul>
-<h2 id="訣竅一-鞅指數不等式-martingale-exponential-inequality">訣竅一. 鞅指數不等式 (Martingale Exponential Inequality)<a class="anchor ms-1" href="#訣竅一-鞅指數不等式-martingale-exponential-inequality"><i class="fas fa-link"></i></a></h2>
-<blockquote>
-<p>Lemma 6
-&ndash;&gt; Lemma 7
-&ndash;&gt; Lemma 3
-&ndash;&gt; Section 7.1. Confidence bounds.
-&ndash;&gt; Section 7: Bounds for general function classes.</p>
-</blockquote>
-<h3 id="構造-過濾隨機變數序列-中心化隨機變數-條件累積生成函數-指數鞅">構造: 過濾隨機變數序列, 中心化隨機變數, 條件累積生成函數, 指數鞅<a class="anchor ms-1" href="#構造-過濾隨機變數序列-中心化隨機變數-條件累積生成函數-指數鞅"><i class="fas fa-link"></i></a></h3>
-<p><strong>過濾隨機變數序列, 中心化隨機變數, 條件累積生成函數, 指數鞅</strong>:</p>
+<hr>
+<p>Most fair machine learning methods either highly rely on the sensitive information of the training samples or require a large modification on the target models, which hinders their practical application. To address this issue, we propose a twostage training algorithm named FAIRIF. It minimizes the loss over the reweighted data set (second stage) where the sample weights are computed to balance the model performance across different demographic groups (first stage). FAIRIF can be applied on a wide range of models trained by stochastic gradient descent without changing the model, while only requiring group annotations on a small validation set to compute sample weights. Theoretically, we show that, in the classification setting, three notions of disparity among different groups can be mitigated by training with the weights. Experiments on synthetic data sets demonstrate that FAIRIF yields models with better fairness-utility trade-offs against various types of bias; and on real-world data sets, we show the effectiveness and scalability of FAIRIF. Moreover, as evidenced by the experiments with pretrained models, FAIRIF is able to alleviate the unfairness issue of pretrained models without hurting their performance.</p>
+<hr>
 <ul>
-<li>一組隨機變數序列, 適應一組過濾(filtration)</li>
-<li>假設此組隨機變數序列的「累計生成函數」是有限的</li>
-<li>定義「條件均值(Conditional mean)」</li>
-<li>定義「中心化隨機變數」的「條件累積生成函數」</li>
-<li>定義「指數鞅 (Exponential martingale)」
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/sJqqEXTwbB2VelMq8ZuO-ct8WXk1KxPtuMv9wCmxpa4.original.fullsize.png" loading="lazy"
+<li>如何不影響其表現?</li>
+</ul>
+<h2 id="簡介-group-fairness-influence-function">簡介: Group Fairness, Influence Function.<a class="anchor ms-1" href="#簡介-group-fairness-influence-function"><i class="fas fa-link"></i></a></h2>
+<h3 id="fbi032-計算影響函數在收斂的模型上-因為需要hessian是正定的">FBI032 計算影響函數在收斂的模型上, 因為需要Hessian是正定的<a class="anchor ms-1" href="#fbi032-計算影響函數在收斂的模型上-因為需要hessian是正定的"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>「影響函數(Influence function)」: 度量「模型」與「特定訓練樣本」的關係.</li>
+<li>70年代有influence-based diagnostics in statistics, 最近有在ML.</li>
+<li>解釋黑盒子模型的預測</li>
+<li>機器學習公平性的研究還under-explored在影響函數的做法中.</li>
+<li>計算影響函數: 需假設Hessian是正定.</li>
+<li>之前的工作計算on-the-fly Hessian, 在模型還沒收斂的時候就計算. 但這樣子的Hessian不是很準, 所以影響函數也不是很準</li>
+<li>這個工作只需計算一次影響函數, 而且是在收斂的模型上計算, 所以會準.</li>
+</ol>
+<hr>
+<p>Influence Function. Influence function measures a model&rsquo;s dependency on a particular training example. It originated in influence-based diagnostics in statistics in the $70 \mathrm{~s}$ and is then further developed in the machine learning literature. It has been used to explore explanations for predictions of blackbox models by evaluating the effect of each training sample [Koh and Liang, 2017]. When moving on to groups of training samples, [Koh et al., 2019] studied their effects on the overall accuracy performance of the model. However, the fairness issue in machine learning is still under-explored from this perspective. In the computation of influence functions, one important assumption is that the Hessian matrix of the objective function is positive definite. Previous methods compute it on the fly [Teso et al., 2021], which means that the influence function is computed when the model has not converged. For the non-converged model, the Hessian matrix they get is far from the ideal point. Therefore, the influence function computation is not accurate. In our proposed FAIRIF, we only compute the influence function one time, which is fast. And we compute it when the model is converged, which is more feasible to make the Hessian matrix positive definite.</p>
+<blockquote>
+<p>[Teso et al., 2021] Stefano Teso, Andrea Bontempelli, Fausto Giunchiglia, and Andrea Passerini. Interactive label cleaning with example-based explanations. NeurIPS, 2021.</p>
+</blockquote>
+<hr>
+<ul>
+<li>會on-the-fly計算Hessian , 應該有一些想移除某些參數的考量?</li>
+</ul>
+<h2 id="方法">方法<a class="anchor ms-1" href="#方法"><i class="fas fa-link"></i></a></h2>
+<h3 id="fbi173-重權重一樣本-最小值變化與相對應損失變化的一階逼近-倚賴對hessian的操作">FBI173 重權重一樣本, 最小值變化與相對應損失變化的一階逼近, 倚賴對Hessian的操作<a class="anchor ms-1" href="#fbi173-重權重一樣本-最小值變化與相對應損失變化的一階逼近-倚賴對hessian的操作"><i class="fas fa-link"></i></a></h3>
+<p>影響函數方法:</p>
+<ul>
+<li>核心問題: 如果「重新權重第i個訓練樣本」, 那麼「損失函數最小值」的變化有多大?</li>
+<li>核心心法: 對「變化」做一階逼近(first order approximation)</li>
+<li>核心技法: 利用「reweight」來看weight小小變化後, 其最小值, 也就是「擾動風險最小者(Perturbed risk minimizer)」的變化 $$\theta_{\epsilon_{i}}^{\star} \triangleq \underset{\theta \in \Theta}{\arg \min } \frac{1}{n} \sum_{i=1}^{n} \ell\left(z_{i}, \theta\right)+\epsilon_{i} \ell\left(z_{i}, \theta\right)$$</li>
+<li>結果一: 「最小值變化」被「一階逼近」給刻畫 <img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/7Lm5IawygOY8hoG80McLarO_7Ikefntoyq3l7Dr4Lrg.original.fullsize.png" loading="lazy"
   
    />
 
 </li>
+<li>要求: 需要Hessian是正定的.</li>
+<li>他人做法: 看「損失的一階逼近」
+$$
+\begin{aligned}
+\ell\left(z, \theta_{\epsilon_{i}}^{\star}\right)-\ell\left(z, \theta^{\star}\right) &amp; \approx \frac{d \ell\left(z, \theta_{\epsilon_{i}}^{\star}\right)}{d \epsilon_{i}} \epsilon_{i} \
+&amp;=-\nabla_{\theta} \ell\left(z, \theta^{\star}\right)^{\top} H_{\theta^{\star}}^{-1} \nabla_{\theta} \ell\left(z_{i}, \theta^{\star}\right) \epsilon_{i}
+\end{aligned}
+$$</li>
 </ul>
-<h3 id="引理6指數鞅是鞅-期望是1">引理6:指數鞅是鞅, 期望是1.<a class="anchor ms-1" href="#引理6指數鞅是鞅-期望是1"><i class="fas fa-link"></i></a></h3>
-<p><strong>引理6:指數鞅是鞅, 期望是1.</strong>:</p>
-<ul>
-<li>利用「條件累積生成函數」的定義, 在時間1的時候, 「指數鞅」的期望是1</li>
-<li>利用「過濾」, 可以推導出時間n的指數鞅條件期望,是時間n-1的指數鞅.</li>
-<li>於是, 滿足的「鞅(Martingale)」的定義.</li>
-</ul>
-<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/AVA7cHq0iYOPsy9RbChy7GrXk_evrZTrGeBVULu_Rk8.original.fullsize.png" loading="lazy"
+<hr>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/qEmpqwy6RTNwVA5Myo6wIR8ke5OHoDgwmqFsR8WusFw.original.fullsize.png" loading="lazy"
   
    />
 
 </p>
-<blockquote>
-<p>這其實是在操作某種勢能函數(potential function)?</p>
-</blockquote>
-<h3 id="引理7-累積和的高機率上邊界">引理7: 累積和的高機率上邊界<a class="anchor ms-1" href="#引理7-累積和的高機率上邊界"><i class="fas fa-link"></i></a></h3>
-<p><strong>引理7: 累積和的高機率上邊界</strong>:</p>
+<hr>
 <ul>
-<li>對任何一個「溫度lambda」, 這都是一個鞅</li>
-<li>因此, 對於任何的「停時stopping time」, 指數鞅的期望一直都是1.</li>
-<li>定義特殊的停時: 當「指數鞅」大過「截距(Intercept) $x$」</li>
-<li>利用「馬可夫不等式」, 「指數鞅超過截距」的機率, 不會大過「1/截距」.</li>
-<li>同樣的事件, 表示在時間1,2,&hellip;,n中「過至少一次門檻」的機率, 不會大過「1/截距」.</li>
-<li>使用「單調收斂定理(Monotone convergence theorem)」, 得到「在任何時間中過至少一次門檻」的機率, 不會大過「1/截距」.</li>
-<li>同樣的道理, 大過「exp(截距)」的機率低於「exp(-截距)」</li>
-<li>帶回文脈: 「取樣誤差」* 「溫度」會很靠近條件累積生成函數」(該溫度)</li>
-<li>於是, 這個「取樣誤差偏差累積過程」過「門檻」的機率可以被控制住.</li>
+<li>這種技術分析與Robustness相關的技術是否有關?</li>
+<li>Hessian的正定, 具體要怎麼確定? 目前大家的共識是什麼?</li>
+<li>如果Hessian 算不準, random projection這類的Hessian sketch 技術可以帶來好結果嗎? 尤其是關於scalability的問題.</li>
 </ul>
-<blockquote>
-<p>「取樣誤差」* 「溫度」會很靠近條件累積生成函數」(該溫度)
-<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/fhM9FnSmqq9_8hNvRk8VJTrPP_knYxjqqOY7P-cQxdg.original.fullsize.png" loading="lazy"
+<h3 id="fbi379-fairif算法-考慮影響函數與擾動幅度的互文-重新訓練公平的神經網路模型">FBI379 FAIRIF算法: 考慮影響函數與擾動幅度的互文, 重新訓練公平的神經網路模型.<a class="anchor ms-1" href="#fbi379-fairif算法-考慮影響函數與擾動幅度的互文-重新訓練公平的神經網路模型"><i class="fas fa-link"></i></a></h3>
+<p>IPO思考
+<strong>Input</strong>:</p>
+<ol>
+<li>訓練數據集</li>
+<li>驗證數據集</li>
+<li>模型</li>
+<li>起始參數</li>
+<li>超參數</li>
+</ol>
+<p><strong>Process:Balancing Influence</strong>:</p>
+<ol>
+<li>跑香草ERM來訓練模型直到收斂</li>
+<li>利用訓練數據集, 計算「梯度」與「Hessian inverse」</li>
+<li>計算「表現度量」與「分類表現相關梯度」</li>
+<li>透過「平衡影響流程」來調整「重權重」</li>
+<li>重權重的損失, 來重新訓練神經網路.
+<strong>Output</strong>:</li>
+<li>最終的「公平」深度神經網路.</li>
+</ol>
+<hr>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/FXzaMm0VKWCSX4zX5sXXX6YF4rMvo2Dkz9HN8TuJdQM.original.fullsize.png" loading="lazy"
   
    />
 
 </p>
-</blockquote>
-<p>****:
-****:</p>
-<h3 id="heading"><a class="anchor ms-1" href="#heading"><i class="fas fa-link"></i></a></h3>
-<p>****:
-****:
-****:
-****:
-****:</p>
-<h3 id="heading-1"><a class="anchor ms-1" href="#heading-1"><i class="fas fa-link"></i></a></h3>
-<p>****:
-****:
-****:
-****:
-****:</p>
-<h3 id="heading-2"><a class="anchor ms-1" href="#heading-2"><i class="fas fa-link"></i></a></h3>
-<p>****:
-****:
-****:
-****:
-****:</p>
-<h3 id="heading-3"><a class="anchor ms-1" href="#heading-3"><i class="fas fa-link"></i></a></h3>
-<p>****:
-****:
-****:
-****:
-****:</p>
+<hr>
+<ul>
+<li>這樣的方法可以generalizabl嗎? 或者泛化程度不太重要在這個文脈裡?</li>
+<li>感覺有點硬做? 這個loss好像就是為了讓performance metric可以被first order approximation給逼近, 所以訓練. 無法接近的部分, 就用perturbation的regularization來均衡.</li>
+<li>工程上可行, 但要怎麼解釋出來的結果? 邏輯上好像「perturbed weight」是一個超參數被拿來tune, tune完以後變成reweighted ERM來做事情.</li>
+<li>我猜這類的方法, 會接受各種ERM的critism, 因為mean有很多地方可以被攻擊.</li>
+</ul>
+<h3 id="fbi347-三種disparity-自變量不均衡group-size-組分佈遷移group-distribution-shift-應變量不均衡class-size">FBI347 三種Disparity: 自變量不均衡(Group size), 組分佈遷移(Group Distribution Shift), 應變量不均衡(Class size)<a class="anchor ms-1" href="#fbi347-三種disparity-自變量不均衡group-size-組分佈遷移group-distribution-shift-應變量不均衡class-size"><i class="fas fa-link"></i></a></h3>
+<ul>
+<li>原則: 計算TPR與TNR在各個子群中</li>
+<li>Disparity 1: 組的大小不同</li>
+<li>Disparity 2: 組的分類分佈不同</li>
+<li>Disparity 3: 類的大小不同 (不平衡的資料)</li>
+</ul>
+<hr>
+<p>In this section, we provide an analysis to show that by balancing the TPR and TNR across different groups, disparities under different notions of fairness will be mitigated. We first observe that the bias in the learned models largely attributes to the training data having (1) difference in group size, (2) difference in class distribution within each group (group distribution shift), and (3) difference in class size. The observation is aligned with the previous works [Yu, 2021; Reddy et al., 2021] and we visualize the three different types of bias in Figure $1 .$</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/LUzPEBo427jRo5DhmJJdfjPo-cJ6ORDOq0-XdUYI2rM.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<ul>
+<li>
+<p>Bias 1: Group Size Discrepancy. We set $15 %$ of images in the two classes as red and the remaining as blue. The distributions over classes of each group are the same, and the amount of images in each class are also the same. In this setting, the group of red background is under-representative.</p>
+</li>
+<li>
+<p>Bias 2: Group Distribution Shift. We keep the amount of data within each class and each group to be the same, but set $85 %$ of images in class 0 with blue background and $15 %$ of images in class 1 with blue background. In this case, the
+group distributions over the classes are different.</p>
+</li>
+<li>
+<p>Bias 3: Class Size Discrepancy. We set group distributions and total amount of data within each group to be same. And the amount of data in class 1 is $25 %$ of class 0 .</p>
+</li>
+</ul>
+<hr>
+<h2 id="結果">結果<a class="anchor ms-1" href="#結果"><i class="fas fa-link"></i></a></h2>
+<h3 id="fbi">FBI<a class="anchor ms-1" href="#fbi"><i class="fas fa-link"></i></a></h3>
+<hr>
+<hr>
+<h2 id="討論">討論<a class="anchor ms-1" href="#討論"><i class="fas fa-link"></i></a></h2>
+<h3 id="fbi-1">FBI<a class="anchor ms-1" href="#fbi-1"><i class="fas fa-link"></i></a></h3>
+<hr>
+<hr>
 <h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
-<p>2022.02.05.
+<p>這次閱讀寫了五張知識卡片, 對影響函數了解基本思考. 其依賴一階逼近與二階修正, 給了工作流, 以及三種公平性相關的偏誤.</p>
+<p>2022.02.10.
 紫蕊
 於 西拉法葉, 印第安納, 美國.</p>
 <hr>
@@ -484,8 +469,8 @@ Murasaki
 <tbody>
 <tr>
 <td>0.1</td>
-<td>2022-02-05</td>
-<td>初次閱讀, 摘要, 文章結構</td>
+<td>2022-02-10</td>
+<td>對影響函數了解基本思考. 其依賴一階逼近與二階修正, 給了工作流, 以及三種公平性相關的偏誤.</td>
 </tr>
 </tbody>
 </table>
@@ -501,12 +486,8 @@ Murasaki
 </div>
   <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://laplus3667.github.io/zh-tw/posts/mur037-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%91%98%E8%A6%81%E5%8A%9B/">MUR037 讀山口拓郎的摘要力
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur042-%E6%B7%B1%E6%80%9D%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E8%BC%B8%E5%87%BA%E4%B8%89%E6%B3%95/">MUR042 深思學術工作流的輸出三法
 </a>
-  </div><div class="post-nav post-next">
-    <a href="https://laplus3667.github.io/zh-tw/posts/mur039-%E6%80%9D%E8%80%83%E5%8F%A5%E5%AD%90%E7%9A%84%E5%8D%A1%E7%89%87%E7%AD%86%E8%A8%98%E7%B3%BB%E7%B5%B1/">MUR039 思考句子的卡片筆記系統
-</a>
-    <i class="fas fa-fw fa-chevron-right"></i>
   </div></div></div>
 </article><section class="related-posts row card component">
     <div class="card-header">
@@ -514,29 +495,29 @@ Murasaki
     </div>
     <div class="card-body">
       <ul class="post-list"><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur037-%E8%AE%80%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E%E7%9A%84%E6%91%98%E8%A6%81%E5%8A%9B/">MUR037 讀山口拓郎的摘要力
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur042-%E6%B7%B1%E6%80%9D%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E8%BC%B8%E5%87%BA%E4%B8%89%E6%B3%95/">MUR042 深思學術工作流的輸出三法
 </a>
-          <span class="float-end post-date">2022-02-04
+          <span class="float-end post-date">2022-02-09
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur036-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E7%9A%84%E5%85%AD%E7%A8%AE%E6%96%B9%E6%B3%95/">MUR036 合成數據的六種技法
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur041-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%B7%E4%BF%A1%E7%94%A8%E9%A0%90%E6%B8%AC/">MUR041 合成數據如何增強信用預測
 </a>
-          <span class="float-end post-date">2022-02-03
+          <span class="float-end post-date">2022-02-08
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur035-%E8%AE%80%E5%A4%A7%E5%89%8D%E7%A0%94%E4%B8%80%E6%89%80%E6%95%98%E4%BA%8B%E7%9A%84%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/">MUR035 讀大前研一所敘事的金融科技
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur040-%E5%B7%A5%E4%BD%9C%E6%BA%9D%E9%80%9A%E5%AF%AB%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%9B%E9%9A%8E%E6%AE%B5/">MUR040 工作溝通寫作流程四階段
 </a>
-          <span class="float-end post-date">2022-02-02
+          <span class="float-end post-date">2022-02-07
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur034-%E4%BD%9C%E7%82%BA%E5%8F%AF%E9%87%8D%E7%94%A8%E5%8D%80%E5%A1%8A%E7%9A%84python%E5%87%BD%E6%95%B8/">MUR034 作為可重用區塊的Python函數
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur039-%E6%80%9D%E8%80%83%E5%8F%A5%E5%AD%90%E7%9A%84%E5%8D%A1%E7%89%87%E7%AD%86%E8%A8%98%E7%B3%BB%E7%B5%B1/">MUR039 思考句子的卡片筆記系統
 </a>
-          <span class="float-end post-date">2022-02-01
+          <span class="float-end post-date">2022-02-06
 </span>
         </li><li>
-          <a href="https://laplus3667.github.io/zh-tw/posts/mur033-%E5%A6%82%E4%BD%95%E8%A1%A1%E9%87%8F%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E7%9A%84%E7%9C%9F%E5%AF%A6%E6%80%A7%E8%88%87%E6%BA%96%E7%A2%BA%E6%80%A7/">MUR033 如何衡量合成數據的真實性與準確性? (Ver 0.4)
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur038-%E7%94%B1%E5%BE%8C%E9%A9%97%E5%8F%96%E6%A8%A3%E5%AD%B8%E7%BF%92%E6%9C%80%E5%84%AA%E5%8C%96/">MUR038 由後驗取樣學習最優化
 </a>
-          <span class="float-end post-date">2022-01-31
+          <span class="float-end post-date">2022-02-05
 </span>
         </li></ul>
     </div>
