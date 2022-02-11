@@ -1,0 +1,883 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1) - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)">
+<meta itemprop="description" content="特徵工程的五種類型與四種衡量 紫式晦澀每日一篇文章第44天 前言 今天是2022年第42天, 全年第6週, 二月的第2個週五. 今天來增加關於「特徵工程"><meta itemprop="datePublished" content="2022-02-11T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-11T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3596">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)" />
+<meta property="og:description" content="特徵工程的五種類型與四種衡量 紫式晦澀每日一篇文章第44天 前言 今天是2022年第42天, 全年第6週, 二月的第2個週五. 今天來增加關於「特徵工程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur044-%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BA%94%E7%A8%AE%E9%A1%9E%E5%9E%8B%E8%88%87%E5%9B%9B%E7%A8%AE%E8%A1%A1%E9%87%8F/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-11T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)"/>
+<meta name="twitter:description" content="特徵工程的五種類型與四種衡量 紫式晦澀每日一篇文章第44天 前言 今天是2022年第42天, 全年第6週, 二月的第2個週五. 今天來增加關於「特徵工程"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR044%20%e7%89%b9%e5%be%b5%e5%b7%a5%e7%a8%8b%e7%9a%84%e4%ba%94%e7%a8%ae%e9%a1%9e%e5%9e%8b%e8%88%87%e5%9b%9b%e7%a8%ae%e8%a1%a1%e9%87%8f%20%28Ver%200.1%29&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur044-%25E7%2589%25B9%25E5%25BE%25B5%25E5%25B7%25A5%25E7%25A8%258B%25E7%259A%2584%25E4%25BA%2594%25E7%25A8%25AE%25E9%25A1%259E%25E5%259E%258B%25E8%2588%2587%25E5%259B%259B%25E7%25A8%25AE%25E8%25A1%25A1%25E9%2587%258F%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur044-%25E7%2589%25B9%25E5%25BE%25B5%25E5%25B7%25A5%25E7%25A8%258B%25E7%259A%2584%25E4%25BA%2594%25E7%25A8%25AE%25E9%25A1%259E%25E5%259E%258B%25E8%2588%2587%25E5%259B%259B%25E7%25A8%25AE%25E8%25A1%25A1%25E9%2587%258F%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-02-10 19:00:00 -0500 EST。">
+    2022-02-11
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B/" class="badge rounded-pill post-taxonomy">特徵工程</a><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#五種特徵工程任務">五種特徵工程任務</a></li>
+    <li><a href="#任務一-特徵改良-feature-improvement">任務一: 特徵改良 (Feature Improvement)</a>
+      <ul>
+        <li><a href="#feb645-特徵改良-轉換結構特徵-設算標準化正規化">FEB645 特徵改良-轉換結構特徵-設算標準化正規化</a></li>
+        <li><a href="#feb646-補遺失值最近鄰居法補nominal-ordinal-總結統計量補interval-ratio">FEB646 補遺失值:最近鄰居法補nominal, ordinal; 總結統計量補interval, ratio.</a></li>
+        <li><a href="#feb647-特徵改良使用時機-有遺失值-有離群值-都會讓機器學習模型使用發生問題">FEB647 特徵改良使用時機: 有遺失值, 有離群值, 都會讓機器學習模型使用發生問題.</a></li>
+      </ul>
+    </li>
+    <li><a href="#任務二-特徵構建-feature-construction">任務二: 特徵構建 (Feature Construction)</a>
+      <ul>
+        <li><a href="#feb681-特徵構建轉換存在特徵-加入新資料來源">FEB681 特徵構建:轉換存在特徵, 加入新資料來源</a></li>
+        <li><a href="#feb628-特徵構建以獲得更多訊號-以利執行機器學習任務">FEB628 特徵構建以獲得更多訊號, 以利執行機器學習任務</a></li>
+        <li><a href="#feb629-特徵構建依賴領域知識-得到有意義的特徵-增強資料集的訊號-以利機器學習任務">FEB629 特徵構建依賴領域知識, 得到有意義的特徵, 增強資料集的訊號, 以利機器學習任務.</a></li>
+      </ul>
+    </li>
+    <li><a href="#任務三-特徵選取-feature-selection">任務三: 特徵選取 (Feature Selection)</a>
+      <ul>
+        <li><a href="#feb624-特徵選取挑選最佳特徵-降低機器學習模型維度-減少混淆特徵-以避免表現下降">FEB624 特徵選取挑選最佳特徵, 降低機器學習模型維度, 減少混淆特徵, 以避免表現下降.</a></li>
+        <li><a href="#feb625-特徵選取以避免維度詛咒-相依特徵-並訓練提速">FEB625 特徵選取以避免維度詛咒, 相依特徵, 並訓練提速</a></li>
+      </ul>
+    </li>
+    <li><a href="#任務四-特徵提取-feature-extraction">任務四: 特徵提取 (Feature Extraction)</a>
+      <ul>
+        <li><a href="#feb">FEB</a></li>
+        <li><a href="#feb-1">FEB</a></li>
+        <li><a href="#feb-2">FEB</a></li>
+      </ul>
+    </li>
+    <li><a href="#任務五-特徵學習feature-learning">任務五: 特徵學習(Feature Learning)</a>
+      <ul>
+        <li><a href="#feb-3">FEB</a></li>
+        <li><a href="#feb-4">FEB</a></li>
+      </ul>
+    </li>
+    <li><a href="#四種特徵工程度量">四種特徵工程度量</a></li>
+    <li><a href="#度量一-機器學習度量-machine-learning-metrics">度量一: 機器學習度量 (Machine Learning Metrics)</a>
+      <ul>
+        <li><a href="#feb-5">FEB</a></li>
+        <li><a href="#feb-6">FEB</a></li>
+      </ul>
+    </li>
+    <li><a href="#度量二-可解釋性-interpretability">度量二: 可解釋性 (Interpretability)</a>
+      <ul>
+        <li><a href="#feb-7">FEB</a></li>
+        <li><a href="#feb-8">FEB</a></li>
+      </ul>
+    </li>
+    <li><a href="#度量三-公平與偏誤-fairness-and-bias">度量三: 公平與偏誤 (Fairness and Bias)</a>
+      <ul>
+        <li><a href="#feb-9">FEB</a></li>
+      </ul>
+    </li>
+    <li><a href="#度量四-機器學習複雜度與速度-ml-complexity-and-speed">度量四: 機器學習複雜度與速度 (ML complexity and speed)</a>
+      <ul>
+        <li><a href="#feb-10">FEB</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="特徵工程的五種類型與四種衡量">特徵工程的五種類型與四種衡量<a class="anchor ms-1" href="#特徵工程的五種類型與四種衡量"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://miro.medium.com/max/1200/1*K6ctE0RZme0cqMtknrxq8A.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第44天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第42天, 全年第6週, 二月的第2個週五. 今天來增加關於「特徵工程(Feature engineering)」的知識.</p>
+</li>
+<li>
+<p>今天的素材主要來自文章:</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://www.manning.com/books/feature-engineering-bookcamp" target="_blank" rel="noopener noreferrer">2022:Feature Engineering Bookcamp</a>
+的節2.3與2.4.</li>
+</ul>
+<blockquote>
+<p>代碼: FEB (Feature Engineering Bookcamp)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>特徵工程任務</th>
+<th>核心精神</th>
+<th>實務技巧</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>特徵改良 - Feature Improvement</td>
+<td>利用數學轉換讓存在的特徵更好用 making existing features more usable through mathematical transformations</td>
+<td>設算(Imputation; filling in missing data). 縮放(Scaling). 正規化(Normalization).</td>
+</tr>
+<tr>
+<td>特徵構建 - Feature Construction</td>
+<td>從原存在可解釋的特徵, 創造新可解釋特增, 以擴增資料集.  Augmenting the dataset by creating net new interpretable features from existing interpretable features.</td>
+<td>乘除特徵, 加入新資料集 Multiplying/Dividing features together Joining with a new dataset</td>
+</tr>
+<tr>
+<td>特徵選取 - Feature Selection</td>
+<td>從已有的特徵, 選取最好的子集 Choosing the best subset of features from an existing set of features</td>
+<td>假設檢定, 遞歸特徵刪除 Hypothesis testing Recursive Feature Elimination</td>
+</tr>
+<tr>
+<td>特徵提取 - Feature Extraction</td>
+<td>利用對資料的參數假設與算法自動創造新的, 可能無法解釋的特徵 Relying on algorithms to automatically create new sometimes uninterpretable features usually based on making parametric assumptions about the data</td>
+<td>主成分分析 Principal Component Analysis, 奇異值分解 Singular Value Decomposition</td>
+</tr>
+<tr>
+<td>特徵學習 - Feature Learning</td>
+<td>從無結構資料輸出結構與學習表達式, 自動生成新的特徵集合. Automatically generating a brand new set of features usually by extracting structure and learning representations from raw unstructured data</td>
+<td>生成對抗網路 Generative Adversarial Networks, 自編碼器 Autoencoders, 受限波茲曼機器 Restricted Boltzmann Machines</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>特徵工程度量</th>
+<th>核心精神</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>機器學習度量 - Machine Learning Metrics</td>
+<td></td>
+</tr>
+<tr>
+<td>可解釋性- Interpretability</td>
+<td></td>
+</tr>
+<tr>
+<td>公平與偏誤 - Fairness and Bias</td>
+<td></td>
+</tr>
+<tr>
+<td>機器學習複雜度與速度 - ML complexity and speed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="五種特徵工程任務">五種特徵工程任務<a class="anchor ms-1" href="#五種特徵工程任務"><i class="fas fa-link"></i></a></h2>
+<blockquote>
+<p>資料有結構, 用數學轉換做特徵工程<br>
+資料無結構, 用深度學習做特徵工程.</p>
+</blockquote>
+<h2 id="任務一-特徵改良-feature-improvement">任務一: 特徵改良 (Feature Improvement)<a class="anchor ms-1" href="#任務一-特徵改良-feature-improvement"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb645-特徵改良-轉換結構特徵-設算標準化正規化">FEB645 特徵改良-轉換結構特徵-設算標準化正規化<a class="anchor ms-1" href="#feb645-特徵改良-轉換結構特徵-設算標準化正規化"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>特徵改良: 藉由轉換來擴增存在的「結構特徵(Structured features)」</li>
+<li>心法: 對數值特徵作數學轉換</li>
+<li>改良流程: 設算(Imputation)&ndash;&gt;標準化&ndash;&gt;正規化</li>
+</ol>
+<hr>
+<p>Feature improvement techniques deal with augmenting existing structured features through various transformations (figure 2.8). This generally takes the form of applying transformations to numerical features. Common improvement steps are imputing (filling in) missing data values, standardization, and normalization. We will start to dive into these and other feature improvement techniques in the first case study.</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/t9r0oZtL40COaWwwhYVduVx-VYc3dKp6-f9mCrDtsCo.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<hr>
+<ul>
+<li>貝氏方法, 可以做非常多的「設算」而且有各種解釋性以及統計性質.</li>
+</ul>
+<blockquote>
+<p>貝氏方法, 可以做非常多的「設算」而且有各種解釋性以及統計性質.</p>
+</blockquote>
+<h3 id="feb646-補遺失值最近鄰居法補nominal-ordinal-總結統計量補interval-ratio">FEB646 補遺失值:最近鄰居法補nominal, ordinal; 總結統計量補interval, ratio.<a class="anchor ms-1" href="#feb646-補遺失值最近鄰居法補nominal-ordinal-總結統計量補interval-ratio"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>根據問題的資料等級, 會有不同類型的特徵改良.</li>
+<li>例如:有個特徵有遺失值, 則可以用「設算」法來做.</li>
+<li>nominal與ordinal補值: 用「最近鄰居算法」基於「其他特徵」來「預測遺失值」</li>
+<li>interval與ratio補值: 用「畢氏平均」或「中位數」來「預測遺失值」</li>
+<li>當有很多離群值, 可以用中位數替代算術平均</li>
+</ol>
+<hr>
+<p>Going back to our levels of data, the type of feature improvement we are allowed to perform depends on the level of data that the feature in question lives in. For example, let’s say we are dealing with a feature that has missing values in the dataset. If we are dealing with data at the nominal or ordinal level then we can impute - fill in - missing values by using the most common value (the mode) of that feature or by using the nearest neighbor algorithm to “predict” the missing value based on other features. If the feature lives in the interval or ratio level, then we can impute using one of our Pythagorean means or perhaps using the median. In general, if our data has a lot of outliers, we would rather use the median (or the geometric/harmonic mean if appropriate) and we would use the arithmetic mean if our data didn’t have as many outliers.</p>
+<hr>
+<ul>
+<li>總結統計量: 補各種數值資料</li>
+<li>最近鄰居算法: 補名目與順序資料</li>
+</ul>
+<h3 id="feb647-特徵改良使用時機-有遺失值-有離群值-都會讓機器學習模型使用發生問題">FEB647 特徵改良使用時機: 有遺失值, 有離群值, 都會讓機器學習模型使用發生問題.<a class="anchor ms-1" href="#feb647-特徵改良使用時機-有遺失值-有離群值-都會讓機器學習模型使用發生問題"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>特徵有遺失值導致機器學習模型無法用</li>
+<li>特徵有離群值導致機器學習模型表現下降</li>
+</ol>
+<hr>
+<p>We want to perform feature improvement when:</p>
+<ul>
+<li>Features that we wish to use are unusable by an ML model (has missing values for example)</li>
+<li>Features have outrageous outliers that may affect the performance of our ML model</li>
+</ul>
+<hr>
+<ul>
+<li>Privacy也是一種「特徵缺陷」, 讓機器學習模型表現下降, 這就要看怎麼處理.</li>
+</ul>
+<h2 id="任務二-特徵構建-feature-construction">任務二: 特徵構建 (Feature Construction)<a class="anchor ms-1" href="#任務二-特徵構建-feature-construction"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb681-特徵構建轉換存在特徵-加入新資料來源">FEB681 特徵構建:轉換存在特徵, 加入新資料來源<a class="anchor ms-1" href="#feb681-特徵構建轉換存在特徵-加入新資料來源"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>直接構造新的特徵</li>
+<li>可以轉換存在的特徵</li>
+<li>可以加入新的資料來源</li>
+</ol>
+<hr>
+<p>Feature construction is all about manually creating new features by directly transforming existing features or joining the original data with data from a new source (figure 2.9).</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/frwwg6S3Ybzt8h3-zuHbe5NZVHt4qHn6PUvJZRkDt6E.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/1ei2AhRUpSCyWGDJvNGcJNhB0VonXyw36BZwgMQpkGA.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<hr>
+<ul>
+<li>很工程！</li>
+</ul>
+<h3 id="feb628-特徵構建以獲得更多訊號-以利執行機器學習任務">FEB628 特徵構建以獲得更多訊號, 以利執行機器學習任務<a class="anchor ms-1" href="#feb628-特徵構建以獲得更多訊號-以利執行機器學習任務"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>原數據集的訊號不夠執行機器學習任務</li>
+<li>轉換後的特徵, 提供更多的訊息</li>
+<li>品質變數轉為量化特徵</li>
+</ol>
+<hr>
+<p>We want to perform feature construction when:</p>
+<ul>
+<li>Our original dataset does not have enough signal in it to perform our ML task</li>
+<li>A transformed version of one feature has more signal than its original counterpart (we will see an example of this in our healthcare case study)</li>
+<li>We need to map qualitative variables into quantitative features</li>
+</ul>
+<hr>
+<ul>
+<li>竟然可以靠轉換特徵得到更多「signal」? 不曉得實際是怎麼做到.</li>
+</ul>
+<h3 id="feb629-特徵構建依賴領域知識-得到有意義的特徵-增強資料集的訊號-以利機器學習任務">FEB629 特徵構建依賴領域知識, 得到有意義的特徵, 增強資料集的訊號, 以利機器學習任務.<a class="anchor ms-1" href="#feb629-特徵構建依賴領域知識-得到有意義的特徵-增強資料集的訊號-以利機器學習任務"><i class="fas fa-link"></i></a></h3>
+<ul>
+<li>特徵構建依賴「領域知識(Domain knowledge)」</li>
+<li>需要對具體問題有很深的了解, 就可以造出有意義的特徵, 增加訊號, 完成機器學習任務.</li>
+</ul>
+<hr>
+<p>Feature construction is often laborious and time-consuming as it is the type of feature engineering that demands the most domain knowledge. It is virtually impossible to hand-craft features without a deep understanding of the underlying problem domain.</p>
+<h2 id="任務三-特徵選取-feature-selection">任務三: 特徵選取 (Feature Selection)<a class="anchor ms-1" href="#任務三-特徵選取-feature-selection"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb624-特徵選取挑選最佳特徵-降低機器學習模型維度-減少混淆特徵-以避免表現下降">FEB624 特徵選取挑選最佳特徵, 降低機器學習模型維度, 減少混淆特徵, 以避免表現下降.<a class="anchor ms-1" href="#feb624-特徵選取挑選最佳特徵-降低機器學習模型維度-減少混淆特徵-以避免表現下降"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>不是所有特徵對機器學習任務都有幫助</li>
+<li>特徵選取: 從存在的的特徵集合, 挑選最佳的特徵, 「減低特徵數目」與「減低特徵之間的相關性」.</li>
+<li>如果特徵之間有相關性, 就會出現「混淆特徵(Confounding features)」使得機器學習表現下降.</li>
+</ol>
+<hr>
+<p>Not all features are equally useful in an ML task. Feature selection involves picking and choosing the best features from an existing set of features to reduce both the total number of features that the model needs to learn from as well as the chance that we encounter a case where features are dependent on one another (figure 2.11). If the latter occurs, we are faced with possibly confounding features in our model which often leads to poorer overall performance.</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/cV4vP6NriO3BAnZMIH6h6ZZFC3B-v8VmWIFILU86a1w.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<hr>
+<ul>
+<li>有道理! 大量的特徵變數, 特徵之間有強相關性, 解釋上很困難.</li>
+<li>然而, 利用神經網路創造出來的特徵, 直覺上不是互相有很強的相關性?</li>
+<li>相關性要多強才是不好?</li>
+</ul>
+<h3 id="feb625-特徵選取以避免維度詛咒-相依特徵-並訓練提速">FEB625 特徵選取以避免維度詛咒, 相依特徵, 並訓練提速<a class="anchor ms-1" href="#feb625-特徵選取以避免維度詛咒-相依特徵-並訓練提速"><i class="fas fa-link"></i></a></h3>
+<ol>
+<li>維度詛咒:對比有的rows, 有太多columns了</li>
+<li>相依特徵: 違反機器學習模型假設的特徵獨立</li>
+<li>訓練提速: 維度小可以確保訓練機器學習的時間加速</li>
+</ol>
+<hr>
+<p>We want to perform feature selection when:</p>
+<ul>
+<li>We are face to face with the curse of dimensionality and we have too many columns to properly represent the number of observations in our dataset</li>
+<li>Features exhibit dependence amongst each other. If features are dependent on one another, then we are violating a common assumption in ML that our features are independent</li>
+<li>The speed of our ML model is important. Reducing the number of features our ML model has to look at generally reduces complexity and increases the speed of the overall pipeline</li>
+</ul>
+<hr>
+<ul>
+<li>言之有理！</li>
+</ul>
+<h2 id="任務四-特徵提取-feature-extraction">任務四: 特徵提取 (Feature Extraction)<a class="anchor ms-1" href="#任務四-特徵提取-feature-extraction"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb">FEB<a class="anchor ms-1" href="#feb"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Feature extraction automatically creates new features based on making assumptions about the underlying shape of the data. Examples of this include applying linear algebra techniques to perform Principal Component Analysis (PCA) and Singular Value Decomposition (SVD). We will cover these concepts in our NLP case study. The key here is that any algorithm that fits under feature extraction is making an assumption about the data that, if untrue, may render the resulting dataset less useful than its original form.</p>
+<h3 id="feb-1">FEB<a class="anchor ms-1" href="#feb-1"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>A common feature extraction technique involves learning a vocabulary of words and transforming raw text into a vector of word counts where each feature represents a token (usually a word or phrase) and the values represent how often that token appears in the text. This multi-hot-encoding of text is often referred to as a bag-of-words model and has many advantages including ease of implementation and yielding interpretable features (figure 2.12). We will be comparing this classic NLP technique to its more modern deep-learning-based feature learning model cousins in our NLP case study.</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/2vwYEKIdawQWhK7naHn03AhKDm3tZ8PA_pa3QjTyISI.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="feb-2">FEB<a class="anchor ms-1" href="#feb-2"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>We want to perform feature extraction when:</p>
+<ul>
+<li>We can make certain assumptions about our data and rely on fast mathematical transformations to discover new features (we will dive into these assumptions in future case studies)</li>
+<li>We are working with unstructured data such as text, images, and videos</li>
+<li>Like in feature selection, we are dealing with too many features to be useful, feature extraction can help us reduce our overall dimensionality</li>
+</ul>
+<h2 id="任務五-特徵學習feature-learning">任務五: 特徵學習(Feature Learning)<a class="anchor ms-1" href="#任務五-特徵學習feature-learning"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb-3">FEB<a class="anchor ms-1" href="#feb-3"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Feature learning&ndash;sometimes referred to as representation learning&ndash;is similar to feature extraction in that we are attempting to automatically generate a set of features from raw, unstructured data such as text, images, and videos. Feature learning is different however in that it is performed by applying a non-parametric (making no assumption about the shape of the original underlying data) deep learning model with the intention of automatically discovering a latent representation of the original data. Feature learning is an advanced type of feature engineering and we will see examples of this in the NLP and the Image case studies (figure 2.13).</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Nm4UIg9d42SzWRCybGVdkY6eRcaMRs8WN0blwF-7A-o.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="feb-4">FEB<a class="anchor ms-1" href="#feb-4"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Feature learning is often considered the alternative to manual feature engineering as it promises to discover features for us instead of us having to do so. Of course, there are downsides to this approach.</p>
+<p>We need to set up a preliminary learning task to learn our representations which could require lots more data
+The representation that is automatically learned may not be as good as the human-driven features
+Features that are learned are often uninterpretable as they are created by the machine with no regard for interpretability
+Overall, we want to perform feature learning when:</p>
+<p>We cannot make certain assumptions about our data like in feature extraction and we are working with unstructured data such as text, images, and videos
+Also, like in feature selection, feature learning can help us reduce our overall dimensionality and also expand our dimensionality if necessary</p>
+<h2 id="四種特徵工程度量">四種特徵工程度量<a class="anchor ms-1" href="#四種特徵工程度量"><i class="fas fa-link"></i></a></h2>
+<h2 id="度量一-機器學習度量-machine-learning-metrics">度量一: 機器學習度量 (Machine Learning Metrics)<a class="anchor ms-1" href="#度量一-機器學習度量-machine-learning-metrics"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb-5">FEB<a class="anchor ms-1" href="#feb-5"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Comparison to baseline machine learning metrics is likely the most straightforward method; this entails looking at model performance before and after applying feature engineering methods to the data. The steps are:</p>
+<ol>
+<li>Get a baseline performance of the machine learning model we are planning to use before applying any feature engineering</li>
+<li>Perform feature engineering on the data</li>
+<li>Get a new performance metric from the machine learning model and compare it to the metrics obtained in the first step. If the ROI surpasses some threshold defined by the data scientist. Note that ROI here should take into account both the delta in model performance and ease of feature engineering. For example whether or not paying a 3rd party data platform to augment our data for a gain of $0.5 %$ accuracy on our validation set is worth it is entirely up to the model stakeholders</li>
+</ol>
+<h3 id="feb-6">FEB<a class="anchor ms-1" href="#feb-6"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>METRICS GALORE:
+Supervised metrics such as precision and recall (which we will cover in the first case study) are just a few of many metrics that we can use to gauge how well the model is doing. We can also rely on unsupervised metrics like the Davies-Bouldin Index for clustering but this will not be the focus of any of our case studies in this book.</p>
+<h2 id="度量二-可解釋性-interpretability">度量二: 可解釋性 (Interpretability)<a class="anchor ms-1" href="#度量二-可解釋性-interpretability"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb-7">FEB<a class="anchor ms-1" href="#feb-7"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Data scientists and other model stakeholders should care deeply about pipeline interpretability as it can impact both business and engineering decisions. Interpretability can be defined as how well we can ask our model &ldquo;why&rdquo; it made the decision it did and tie that decision back to individual features or groups of features that were most relevant in making the model&rsquo;s decision.</p>
+<h3 id="feb-8">FEB<a class="anchor ms-1" href="#feb-8"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Imagine we are a data scientist building an ML model that predicts a user&rsquo;s probability of being a spamming bot. We can build a model using features like the speed of clicks, etc. When our model is in production, we run the risk of seeing some false positives and kicking people off of our site when our model thinks they were a bot. In order to be transparent with them, we would want our model to have a level of interpretability so that we could diagnose which features the model thinks are the most important in making this prediction and redesigning the model if necessary. The choice of feature engineering procedure can greatly increase or severely hinder our ability to explain how or why the model is performing the way it is. Feature improvement, construction, and selection will often help us gain insight into model performance while feature learning and feature extraction techniques will often lessen the transparency of the machine learning pipeline.</p>
+<h2 id="度量三-公平與偏誤-fairness-and-bias">度量三: 公平與偏誤 (Fairness and Bias)<a class="anchor ms-1" href="#度量三-公平與偏誤-fairness-and-bias"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb-9">FEB<a class="anchor ms-1" href="#feb-9"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Models must be evaluated against fairness criteria to make sure that they are not generating predictions based on biases inherent in the data. This is especially true in domains of high impact to individuals such as financial loangranting systems, recognition algorithms, fraud detection, and academic performance prediction. In the same 2020 data science survey, over half of respondents said they had or are planning to implement a solution to make models more explainable (interpretable) while only $38 %$ of respondents said the same about fairness and bias mitigation. AI and machine learning models are prone to exploiting biases found in data and scaling them up to a degree that can become harmful to those the data is biased against. Proper feature engineering can expose certain biases and help reduce them at model training time.</p>
+<h2 id="度量四-機器學習複雜度與速度-ml-complexity-and-speed">度量四: 機器學習複雜度與速度 (ML complexity and speed)<a class="anchor ms-1" href="#度量四-機器學習複雜度與速度-ml-complexity-and-speed"><i class="fas fa-link"></i></a></h2>
+<h3 id="feb-10">FEB<a class="anchor ms-1" href="#feb-10"><i class="fas fa-link"></i></a></h3>
+<hr>
+<p>Often an afterthought, machine learning pipeline complexity, size, and speed can sometimes make or break a deployment. As we mentioned before, sometimes data scientists will turn to large learning algorithms like neural networks or ensemble models in lieu of proper feature engineering in the hopes that the model will &ldquo;figure it out&rdquo; for itself. These models have the downside of being large in memory and being slow to train and sometimes slow to predict. Most data scientists have at least one story about how after weeks of data wrangling, model training, and intense evaluation it was revealed that the model wasn&rsquo;t able to generate predictions fast enough or was taking up too much memory to be considered &ldquo;production-ready&rdquo;. Techniques such as dimension reduction (a school of feature engineering under feature extraction and feature learning) can play a big part here. By reducing the size of the data, we can expect a reduction in the size of our models and an improvement in model speed.</p>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<p>2022.02.11.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>2022-02-11</td>
+<td>總結前三個任務! 之後在補充資訊</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur043-%E5%B9%B3%E8%A1%A1%E5%BD%B1%E9%9F%BF%E4%BB%A5%E8%A8%93%E7%B7%B4%E5%85%AC%E5%B9%B3%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF/">MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur043-%E5%B9%B3%E8%A1%A1%E5%BD%B1%E9%9F%BF%E4%BB%A5%E8%A8%93%E7%B7%B4%E5%85%AC%E5%B9%B3%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF/">MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)
+</a>
+          <span class="float-end post-date">2022-02-10
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur042-%E6%B7%B1%E6%80%9D%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E8%BC%B8%E5%87%BA%E4%B8%89%E6%B3%95/">MUR042 深思學術工作流的輸出三法
+</a>
+          <span class="float-end post-date">2022-02-09
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur041-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%B7%E4%BF%A1%E7%94%A8%E9%A0%90%E6%B8%AC/">MUR041 合成數據如何增強信用預測
+</a>
+          <span class="float-end post-date">2022-02-08
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur040-%E5%B7%A5%E4%BD%9C%E6%BA%9D%E9%80%9A%E5%AF%AB%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%9B%E9%9A%8E%E6%AE%B5/">MUR040 工作溝通寫作流程四階段
+</a>
+          <span class="float-end post-date">2022-02-07
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur039-%E6%80%9D%E8%80%83%E5%8F%A5%E5%AD%90%E7%9A%84%E5%8D%A1%E7%89%87%E7%AD%86%E8%A8%98%E7%B3%BB%E7%B5%B1/">MUR039 思考句子的卡片筆記系統
+</a>
+          <span class="float-end post-date">2022-02-06
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur044-%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BA%94%E7%A8%AE%E9%A1%9E%E5%9E%8B%E8%88%87%E5%9B%9B%E7%A8%AE%E8%A1%A1%E9%87%8F/">MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur043-%E5%B9%B3%E8%A1%A1%E5%BD%B1%E9%9F%BF%E4%BB%A5%E8%A8%93%E7%B7%B4%E5%85%AC%E5%B9%B3%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF/">MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur042-%E6%B7%B1%E6%80%9D%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E8%BC%B8%E5%87%BA%E4%B8%89%E6%B3%95/">MUR042 深思學術工作流的輸出三法
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur041-%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%B7%E4%BF%A1%E7%94%A8%E9%A0%90%E6%B8%AC/">MUR041 合成數據如何增強信用預測
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur040-%E5%B7%A5%E4%BD%9C%E6%BA%9D%E9%80%9A%E5%AF%AB%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%9B%E9%9A%8E%E6%AE%B5/">MUR040 工作溝通寫作流程四階段
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E8%AA%9E%E8%A8%80%E5%AD%B8/" class="badge rounded post-taxonomy" title="語言學">
+            語言學
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded post-taxonomy" title="文獻閱讀">
+            文獻閱讀
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/" class="badge rounded post-taxonomy" title="機器學習">
+            機器學習
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/datacamp/" class="badge rounded post-taxonomy" title="DataCamp">
+            DataCamp
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E6%80%A7%E7%AE%97%E6%B3%95/" class="badge rounded post-taxonomy" title="樹籬公平性算法">
+            樹籬公平性算法
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded post-taxonomy" title="動態定價">
+            動態定價
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E9%9A%A8%E6%99%82%E6%9C%89%E6%95%88%E7%9F%A9%E9%99%A3%E8%BF%B4%E6%AD%B8/" class="badge rounded post-taxonomy" title="隨時有效矩陣迴歸">
+            隨時有效矩陣迴歸
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E/" class="badge rounded post-taxonomy" title="山口拓郎">
+            山口拓郎
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%9F%B3%E6%A8%82/" class="badge rounded post-taxonomy" title="音樂">
+            音樂
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E4%BF%84%E8%AA%9E/" class="badge rounded post-taxonomy" title="俄語">
+            俄語
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B9%BC%E5%A5%B3%E6%88%B0%E8%A8%98/" class="badge rounded post-taxonomy" title="幼女戰記">
+            幼女戰記
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
