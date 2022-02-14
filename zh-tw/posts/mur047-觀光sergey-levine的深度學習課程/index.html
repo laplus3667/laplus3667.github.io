@@ -1,0 +1,721 @@
+<!doctype html><html lang="zh-tw"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUR047 觀光Sergey Levine的深度學習課程 - 紫式晦澀</title><link rel="apple-touch-icon" href="https://laplus3667.github.io/images/icons/icon-180x180.png" sizes="180x180">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/icon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="https://laplus3667.github.io/images/icons/favicon.ico">
+<link rel="manifest" href="https://laplus3667.github.io/zh-tw/manifest.json">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="MUR047 觀光Sergey Levine的深度學習課程">
+<meta itemprop="description" content="觀光Sergey Levine的深度學習課程 紫式晦澀每日一篇文章第47天 前言 今天是2022年第45天, 全年第6週, 二月的第2個週一. 今天來逛逛"><meta itemprop="datePublished" content="2022-02-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1188">
+<meta itemprop="keywords" content="深度學習," /><meta property="og:title" content="MUR047 觀光Sergey Levine的深度學習課程" />
+<meta property="og:description" content="觀光Sergey Levine的深度學習課程 紫式晦澀每日一篇文章第47天 前言 今天是2022年第45天, 全年第6週, 二月的第2個週一. 今天來逛逛" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laplus3667.github.io/zh-tw/posts/mur047-%E8%A7%80%E5%85%89sergey-levine%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E8%AA%B2%E7%A8%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-14T00:00:00+00:00" /><meta property="og:site_name" content="紫式晦澀" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MUR047 觀光Sergey Levine的深度學習課程"/>
+<meta name="twitter:description" content="觀光Sergey Levine的深度學習課程 紫式晦澀每日一篇文章第47天 前言 今天是2022年第45天, 全年第6週, 二月的第2個週一. 今天來逛逛"/>
+<meta name="robots" content="index, follow" /><link rel="stylesheet" href="https://laplus3667.github.io/css/main.min.50d3f831a48e40ca2620131b24ab2caed2073d780ee4728b67e104e72c62026e.css" integrity="sha256-UNP4MaSOQMomIBMbJKssrtIHPXgO5HKLZ&#43;EE5yxiAm4=" crossorigin="anonymous"><link rel="stylesheet" href="https://laplus3667.github.io/css/katex.min.d080a89e03e1eb850f547d835c186b4273f69879aa497eb8b0e88c1578bf1f0b.css" integrity="sha256-0ICongPh64UPVH2DXBhrQnP2mHmqSX64sOiMFXi/Hws=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://laplus3667.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css" integrity="sha256-PSKHlLztu/oEEr64&#43;8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin="anonymous"></head>
+  <body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://laplus3667.github.io/zh-tw/"><img class="logo" alt="Logo" src="https://laplus3667.github.io/images/laplus.webp" loading="lazy"
+   width="700" height="700"
+   />
+Murasaki
+    </a>
+    <div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=MUR047%20%e8%a7%80%e5%85%89Sergey%20Levine%e7%9a%84%e6%b7%b1%e5%ba%a6%e5%ad%b8%e7%bf%92%e8%aa%b2%e7%a8%8b&url=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur047-%25E8%25A7%2580%25E5%2585%2589sergey-levine%25E7%259A%2584%25E6%25B7%25B1%25E5%25BA%25A6%25E5%25AD%25B8%25E7%25BF%2592%25E8%25AA%25B2%25E7%25A8%258B%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaplus3667.github.io%2fzh-tw%2fposts%2fmur047-%25E8%25A7%2580%25E5%2585%2589sergey-levine%25E7%259A%2584%25E6%25B7%25B1%25E5%25BA%25A6%25E5%25AD%25B8%25E7%25BF%2592%25E8%25AA%25B2%25E7%25A8%258B%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">設置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-language"></i> 語言</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          繁體中文
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="https://laplus3667.github.io/en/">English</a></li></ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字體大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="藍色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="藍灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="綠色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="紅色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="藍綠色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黃色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+  <a role="button" class="action action-reload-page">
+    <span class="action-icon"><i class="fas fa-2x fa-redo-alt"></i></span> 刷新
+  </a>
+  <a role="button" class="action action-copy-url">
+    <span class="action-icon"><i class="fas fa-2x fa-link"></i></span> 複製連結
+  </a><a class="action action-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+    aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+    <span class="action-icon"><i class="fas fa-2x fa-share-alt"></i></span> 分享
+  </a></section>
+
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://laplus3667.github.io/zh-tw/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/series/">
+            <i class="fas fa-fw fa-columns"></i>Series
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>Archives
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/categories/">
+            <i class="fas fa-fw fa-folder"></i>Categories
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://laplus3667.github.io/zh-tw/tags/">
+            <i class="fas fa-fw fa-tags"></i>Tags
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdownSupport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>Support
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSupport"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer">
+                Discussions
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">
+                Features Request
+              </a>
+            </li><li><hr class="dropdown-divider"></li><li>
+              <a class="dropdown-item"
+                href="https://laplus3667.github.io/zh-tw/faq/">
+                FAQs
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/">主頁</a></li><li class="breadcrumb-item"><a href="https://laplus3667.github.io/zh-tw/posts/">Posts</a></li><li class="breadcrumb-item active">MUR047 觀光Sergey Levine的深度學習課程</li></ol>
+  </div>
+</nav><article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a class="action action-panel-toggler" role="button" title="Panel toggler">
+      <i class="fas fa-fw fa-chevron-circle-down"></i>
+    </a>
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button" title="Sidebar toggler">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+
+    
+
+    
+    <a class="action" href="#post-copyright" role="button" aria-label="Copyright" title="Copyright">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" href="#post-comments" role="button" aria-label="Comments" title="Comments">
+  <i class="fas fa-fw fa-comments"></i>
+</a>
+    <a class="action" href="#postTOC" aria-controls="Table of contents" role="button" title="Table of contents">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-header ">
+    <h1 class="card-title post-title">MUR047 觀光Sergey Levine的深度學習課程
+</h1>
+  </div>
+  <div class="card-body"><div class="post-meta">
+  <span class="post-date" title="創建於 2022-02-13 19:00:00 -0500 EST。">
+    2022-02-14
+  </span><span class="post-taxonomies"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded-pill post-taxonomy">每日文章</a><a href="https://laplus3667.github.io/zh-tw/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/" class="badge rounded-pill post-taxonomy">深度學習</a></span>
+</div>
+<div class="post-toc mb-4" id="postTOC">
+  <h2 class="mb-4">目錄</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a>
+      <ul>
+        <li><a href="#共20個lectures">共20個Lectures</a></li>
+      </ul>
+    </li>
+    <li><a href="#lecture-1-introduction">Lecture 1: Introduction.</a>
+      <ul>
+        <li><a href="#多語翻譯模型-複雜無結構輸入輸入-需要學習表現模型">多語翻譯模型-複雜無結構輸入輸入, 需要學習表現模型</a></li>
+        <li><a href="#放棄參數意義-參數化複雜規則">放棄參數意義-參數化複雜規則</a></li>
+        <li><a href="#從淺層學習到深度學習">從淺層學習到深度學習</a></li>
+        <li><a href="#深度學習多層大模型-示例大數據-電腦大計算">深度學習:多層大模型; 示例大數據; 電腦大計算</a></li>
+        <li><a href="#學術思考-模型能力-歸納偏誤可擴展性">學術思考: 模型能力, 歸納偏誤,可擴展性</a></li>
+      </ul>
+    </li>
+    <li><a href="#後記">後記</a></li>
+  </ul>
+</nav>
+</div><div class="post-content mb-3"><h1 id="觀光sergey-levine的深度學習課程">觀光Sergey Levine的深度學習課程<a class="anchor ms-1" href="#觀光sergey-levine的深度學習課程"><i class="fas fa-link"></i></a></h1>
+<p><img class="img-fluid" alt="" src="https://www.pnas.org/content/pnas/116/4/1074/F2.large.jpg" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>紫式晦澀每日一篇文章第47天</p>
+</blockquote>
+<h2 id="前言">前言<a class="anchor ms-1" href="#前言"><i class="fas fa-link"></i></a></h2>
+<ol>
+<li>
+<p>今天是2022年第45天, 全年第6週, 二月的第2個週一. 今天來逛逛Sergey Levine的深度學習課程, 紀錄所見所思所想.</p>
+</li>
+<li>
+<p>今天的素材主要來自文章:</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://cs182sp21.github.io" target="_blank" rel="noopener noreferrer">Designing, Visualizing and Understanding Deep Neural Networks</a>
+</li>
+</ul>
+<h3 id="共20個lectures">共20個Lectures<a class="anchor ms-1" href="#共20個lectures"><i class="fas fa-link"></i></a></h3>
+<ul>
+<li>Lecture 1: Introduction.</li>
+<li>Lecture 2: ML Basics 1.</li>
+<li>Lecture 3: ML Basics 2.</li>
+<li>Lecture 4: Optimization.</li>
+<li>Lecture 5: Backpropagation.</li>
+<li>Lecture 6: Convolutional Nets.</li>
+<li>Lecture 7: Getting Neural Nets to Train.</li>
+<li>Lecture 8: Computer Vision.</li>
+<li>Lecture 9: Generating Images from CNNs.</li>
+<li>Lecture 10: Recurrent Neural Networks.</li>
+<li>Lecture 11: Sequence To Sequence Models.</li>
+<li>Lecture 12: Transformers.</li>
+<li>Lecture 13: Applications: NLP.</li>
+<li>Lecture 14: Learning-Based Control &amp; Imitation.</li>
+<li>Lecture 15: Reinforcement Learning.</li>
+<li>Lecture 16: Q-Learning.</li>
+<li>Lecture 17: Autoencoders &amp; Latent Variable Models.</li>
+<li>Lecture 18: Variational Autoencoders &amp; Invertible Models.</li>
+<li>Lecture 19: Generative Adversarial Networks.</li>
+<li>Lecture 20: Adversarial Examples.</li>
+</ul>
+<h2 id="lecture-1-introduction">Lecture 1: Introduction.<a class="anchor ms-1" href="#lecture-1-introduction"><i class="fas fa-link"></i></a></h2>
+<h3 id="多語翻譯模型-複雜無結構輸入輸入-需要學習表現模型">多語翻譯模型-複雜無結構輸入輸入, 需要學習表現模型<a class="anchor ms-1" href="#多語翻譯模型-複雜無結構輸入輸入-需要學習表現模型"><i class="fas fa-link"></i></a></h3>
+<p><strong>一對一翻譯&amp;多語翻譯模型</strong>:</p>
+<ul>
+<li>有了多語翻譯模型, 甚至可以把input設為混合的語言.</li>
+<li>這個「多語翻譯模型」, 涉及的問題是「表現學習(Representation learning)」</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/0AibrOljY3QPI4tvqLK3CilJshdT1kRG8ZhrVieF61Q.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>表現學習(Representation learning)觀點是表現(The thoyght is a representation)</strong>:</p>
+<ul>
+<li>怎麼樣的input才有夠大的information達成任務?</li>
+<li>複雜無結構的數據, 是當代常見的input</li>
+<li>要如何讓算法跑起來, 則是要將複雜的input以「表現(Representation)」的方式進入機器學習環節.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/KkJwWXQ7316jl86Lkk_2Xj4q8bweRgoyF-9QXEv_uz8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/C0Z4zoFaRMxW7knK4STdNBgNj3MkgMmwVv3NaP_eohI.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="放棄參數意義-參數化複雜規則">放棄參數意義-參數化複雜規則<a class="anchor ms-1" href="#放棄參數意義-參數化複雜規則"><i class="fas fa-link"></i></a></h3>
+<p><strong>機器學習的IPO思維: 當規則太複雜且沒用, 轉而依賴數據與示例</strong>:</p>
+<ul>
+<li>輸入狗狗圖片; 處理電腦程式; 輸出物件標記</li>
+<li>函數: 一組「規則(Rule)」將輸入轉為輸出</li>
+<li>挑戰: 不知道規則, 規則太複雜, 規則下太多例外與特例</li>
+<li>核心想法: 規則太複雜, 題海戰術提供「數據(Data)」與「示例(Examples)」</li>
+<li>哲學問題: 這真的是人與動物學習的方式嗎?</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/FtMn6wbLEObnSNOx32H2rlHb9HgVYh6h0gwMZeElDUg.original.fullsize.png" loading="lazy"
+  
+   />
+
+
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/CpHo92sTLK8eW8HNIuGkD2-Z0mQWKBdfs___eqQnvjw.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>參數化程序規則(Parameterized program as set of rules)</strong>:</p>
+<ul>
+<li>參數化規則</li>
+<li>Domain: 輸入數據, 學習的參數</li>
+<li>Function: 參數化程序規則</li>
+<li>Range: 輸出標記</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/2feAISdElYoPDfSlKaR2cxkbpZ6b9c2cx42_8Gp7k-k.original.fullsize.png" loading="lazy"
+  
+   />
+
+
+<img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/xBPB2kZsuylraqdZYjdWzrgxXmaIKr_9JGr3vVtXCG8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<blockquote>
+<p>但你說這種「程序參數」有「科學意義」嗎? 十分困難.</p>
+</blockquote>
+<h3 id="從淺層學習到深度學習">從淺層學習到深度學習<a class="anchor ms-1" href="#從淺層學習到深度學習"><i class="fas fa-link"></i></a></h3>
+<p><strong>淺層學習: 特徵工程是自己搞的, 要找到好特徵不容易</strong>:</p>
+<ul>
+<li>Domain knowledge還有用嗎?或者是對語言, 圖片, 聲音沒用, 但其他基礎科學領域還是有點用呢?</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/scB50yyqTSmG1FYuHTgKfNxQA8fslfZHmo3k4gPn4io.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>深度學習: 特徵也是機器學, 參數也是機器學, 規則的結構人來架一架</strong>:</p>
+<ul>
+<li>都自己學的話, 分析上就很困難了, 但實務的效果就會好很多, 很融通.</li>
+<li>說到底, 分析的價值在哪邊? 只是更瞭解問題? 提供一些可能到道路?</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/RU6RzAUajLnOWy9cuy54ukSB7uJ7ZA6-Z4c8FEThRGI.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>深度學習:多層表現</strong>:</p>
+<ul>
+<li>學習表現:由多層表現組成</li>
+<li>處理:從「輸入」到「內部表現」到「輸出深度神經網路」</li>
+<li>目的導向訓練: 從最後的目標(Example)來不斷調整中間的複雜規則, 直到表現好.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/Eb89Dvn4SaA52MZE97X7-RzN3RpB4lhvuRGbeCkJqH8.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/jZtAyUE7EUXwIgbuDqxHXdrIgb_Rqbl7xK5qj_aqyvg.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="深度學習多層大模型-示例大數據-電腦大計算">深度學習:多層大模型; 示例大數據; 電腦大計算<a class="anchor ms-1" href="#深度學習多層大模型-示例大數據-電腦大計算"><i class="fas fa-link"></i></a></h3>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/m62uhwItWdFIKAHHMox8i1dMlTXSfposHJTOzXs33mQ.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="學術思考-模型能力-歸納偏誤可擴展性">學術思考: 模型能力, 歸納偏誤,可擴展性<a class="anchor ms-1" href="#學術思考-模型能力-歸納偏誤可擴展性"><i class="fas fa-link"></i></a></h3>
+<p><strong>學術思考</strong>:</p>
+<ul>
+<li>模型能力: 任務導向去造各種特徵.</li>
+<li>歸納偏誤: 如果建立「知識」會幫助機器更好學習嗎?</li>
+<li>可擴展性: 能否到更大的數據上做事?</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/4xJDUpob03jNTRh91NisPMaStq0XnieO7SdFrUd6T0A.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<p><strong>神經網路</strong>:</p>
+<ul>
+<li>就是說說.</li>
+</ul>
+<p><img class="img-fluid" alt="" src="https://cdn.mathpix.com/snip/images/_27RIXGGFMFWAFK47hJmkqJ4C7xD0GVxaqomIGl8FSA.original.fullsize.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="後記">後記<a class="anchor ms-1" href="#後記"><i class="fas fa-link"></i></a></h2>
+<p>可以多學習如何給lecture的方式, 感覺抓重點可以看到其主線邏輯.</p>
+<p>2022.02.14.
+紫蕊
+於 西拉法葉, 印第安納, 美國.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>2022-02-13</td>
+<td>分析看見更深的世界</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="post-copyright mb-3" id="post-copyright">
+    <h2 class="mb-4">版權</h2><a class="d-flex align-items-center flex-column" target="_blank" rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW">
+  <span><i class="fab fa-fw fa-2x fa-creative-commons"></i><i class="fab fa-fw fa-2x fa-creative-commons-by"></i><i class="fab fa-fw fa-2x fa-creative-commons-nc"></i><i class="fab fa-fw fa-2x fa-creative-commons-nd"></i></span>
+  CC BY-NC-ND 4.0 
+</a>
+
+
+</div>
+</div>
+  <div class="card-footer"><div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://laplus3667.github.io/zh-tw/posts/mur046-%E7%A5%9E%E3%81%A3%E3%81%BD%E3%81%84%E3%81%AA/">MUR046 神っぽいな
+</a>
+  </div></div></div>
+</article><section class="related-posts row card component">
+    <div class="card-header">
+      <h2 class="card-title">相關文章</h2>
+    </div>
+    <div class="card-body">
+      <ul class="post-list"><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur046-%E7%A5%9E%E3%81%A3%E3%81%BD%E3%81%84%E3%81%AA/">MUR046 神っぽいな
+</a>
+          <span class="float-end post-date">2022-02-13
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur045-%E9%87%8D%E6%96%B0%E8%A8%AD%E8%A8%88obsidian%E5%82%99%E5%BF%98%E7%B3%BB%E7%B5%B1/">MUR045 重新設計Obsidian備忘系統
+</a>
+          <span class="float-end post-date">2022-02-12
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur044-%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BA%94%E7%A8%AE%E9%A1%9E%E5%9E%8B%E8%88%87%E5%9B%9B%E7%A8%AE%E8%A1%A1%E9%87%8F/">MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)
+</a>
+          <span class="float-end post-date">2022-02-11
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur043-%E5%B9%B3%E8%A1%A1%E5%BD%B1%E9%9F%BF%E4%BB%A5%E8%A8%93%E7%B7%B4%E5%85%AC%E5%B9%B3%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF/">MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)
+</a>
+          <span class="float-end post-date">2022-02-10
+</span>
+        </li><li>
+          <a href="https://laplus3667.github.io/zh-tw/posts/mur042-%E6%B7%B1%E6%80%9D%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E8%BC%B8%E5%87%BA%E4%B8%89%E6%B3%95/">MUR042 深思學術工作流的輸出三法
+</a>
+          <span class="float-end post-date">2022-02-09
+</span>
+        </li></ul>
+    </div>
+  </section><div class="card component row post-comments" id="post-comments">
+  <div class="card-header">
+    <h2 class="card-title">評論</h2>
+  </div>
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="紫蕊" src="https://laplus3667.github.io/images/lanlan.jpg" loading="lazy"
+   width="900" height="900"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">紫蕊</div><div class="profile-bio">Synthetic Data Generation. Bandit Algorithms.</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>Department of Statistics, UCLA</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>US</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="https://laplus3667.github.io/zh-tw/about/">About</a></div><div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="https://laplus3667.github.io/zh-tw/contact/">Contact Us</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href="mailto:chwang3667@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a></nav>
+</div>
+  </div>
+</section>
+  <section class="recent-posts row card component">
+  <div class="card-header">
+    <h2 class="card-title">最近文章</h2>
+  </div>
+  <div class="card-body">
+    <ul class="post-list"><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur047-%E8%A7%80%E5%85%89sergey-levine%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E8%AA%B2%E7%A8%8B/">MUR047 觀光Sergey Levine的深度學習課程
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur046-%E7%A5%9E%E3%81%A3%E3%81%BD%E3%81%84%E3%81%AA/">MUR046 神っぽいな
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur045-%E9%87%8D%E6%96%B0%E8%A8%AD%E8%A8%88obsidian%E5%82%99%E5%BF%98%E7%B3%BB%E7%B5%B1/">MUR045 重新設計Obsidian備忘系統
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur044-%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BA%94%E7%A8%AE%E9%A1%9E%E5%9E%8B%E8%88%87%E5%9B%9B%E7%A8%AE%E8%A1%A1%E9%87%8F/">MUR044 特徵工程的五種類型與四種衡量 (Ver 0.1)
+</a>
+      </li><li>
+        <a href="https://laplus3667.github.io/zh-tw/posts/mur043-%E5%B9%B3%E8%A1%A1%E5%BD%B1%E9%9F%BF%E4%BB%A5%E8%A8%93%E7%B7%B4%E5%85%AC%E5%B9%B3%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF/">MUR043 平衡影響以訓練公平深度神經網路 (Ver 0.1)
+</a>
+      </li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/categories">分類</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AF%AB%E4%BD%9C/" class="badge rounded post-taxonomy" title="寫作">
+            寫作
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ai/" class="badge rounded post-taxonomy" title="可信任的AI">
+            可信任的AI
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%90%88%E6%88%90%E6%95%B8%E6%93%9A/" class="badge rounded post-taxonomy" title="合成數據">
+            合成數據
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B7%A8%E7%A8%8B/" class="badge rounded post-taxonomy" title="物件導向編程">
+            物件導向編程
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E8%AA%9E%E8%A8%80%E5%AD%B8/" class="badge rounded post-taxonomy" title="語言學">
+            語言學
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%96%87%E7%8D%BB%E9%96%B1%E8%AE%80/" class="badge rounded post-taxonomy" title="文獻閱讀">
+            文獻閱讀
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/" class="badge rounded post-taxonomy" title="機器學習">
+            機器學習
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/datacamp/" class="badge rounded post-taxonomy" title="DataCamp">
+            DataCamp
+          </a><a href="https://laplus3667.github.io/zh-tw/categories/educative-%E8%AA%B2%E7%A8%8B/" class="badge rounded post-taxonomy" title="educative 課程">
+            educative 課程
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/series">專欄</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/series/%E6%AF%8F%E6%97%A5%E6%96%87%E7%AB%A0/" class="badge rounded post-taxonomy" title="每日文章">
+            每日文章
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%B7%A8%E7%A8%8B%E6%80%9D%E7%B6%AD/" class="badge rounded post-taxonomy" title="編程思維">
+            編程思維
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%AD%B8%E8%A1%93%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="badge rounded post-taxonomy" title="學術工作流">
+            學術工作流
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E6%A8%B9%E7%B1%AC%E5%85%AC%E5%B9%B3%E6%80%A7%E7%AE%97%E6%B3%95/" class="badge rounded post-taxonomy" title="樹籬公平性算法">
+            樹籬公平性算法
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E5%8B%95%E6%85%8B%E5%AE%9A%E5%83%B9/" class="badge rounded post-taxonomy" title="動態定價">
+            動態定價
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E7%A0%94%E7%A9%B6%E8%A8%AD%E8%A8%88/" class="badge rounded post-taxonomy" title="研究設計">
+            研究設計
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E8%B1%86%E8%85%90%E5%A1%8A/" class="badge rounded post-taxonomy" title="豆腐塊">
+            豆腐塊
+          </a><a href="https://laplus3667.github.io/zh-tw/series/%E9%9A%A8%E6%99%82%E6%9C%89%E6%95%88%E7%9F%A9%E9%99%A3%E8%BF%B4%E6%AD%B8/" class="badge rounded post-taxonomy" title="隨時有效矩陣迴歸">
+            隨時有效矩陣迴歸
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="https://laplus3667.github.io/zh-tw/tags">標籤</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2"><a href="https://laplus3667.github.io/zh-tw/tags/python/" class="badge rounded post-taxonomy" title="Python">
+            Python
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" class="badge rounded post-taxonomy" title="金融科技">
+            金融科技
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/obsidian/" class="badge rounded post-taxonomy" title="Obsidian">
+            Obsidian
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B1%B1%E5%8F%A3%E6%8B%93%E9%83%8E/" class="badge rounded post-taxonomy" title="山口拓郎">
+            山口拓郎
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%B7%AE%E5%88%86%E9%9A%B1%E7%A7%81/" class="badge rounded post-taxonomy" title="差分隱私">
+            差分隱私
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E9%9F%B3%E6%A8%82/" class="badge rounded post-taxonomy" title="音樂">
+            音樂
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/bash/" class="badge rounded post-taxonomy" title="Bash">
+            Bash
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/vocaloid/" class="badge rounded post-taxonomy" title="Vocaloid">
+            Vocaloid
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E4%BF%84%E8%AA%9E/" class="badge rounded post-taxonomy" title="俄語">
+            俄語
+          </a><a href="https://laplus3667.github.io/zh-tw/tags/%E5%95%86%E6%A5%AD%E5%8F%83%E8%80%83/" class="badge rounded post-taxonomy" title="商業參考">
+            商業參考
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><ul class="nav justify-content-between footer-memu mb-3"><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Support
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github"></i>Repository
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/discussions/new" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-comments"></i>Discussions
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer">Features Request
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://github.com/razonyang/hugo-theme-bootstrap/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer">Bug Report
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/contact/"><i class="fas fa-fw fa-info-circle"></i>Contact Us
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="/zh-tw/faq/"><i class="fas fa-fw fa-question-circle"></i>FAQs
+</a>
+        </li></ul></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Docs
+</a>
+    </li></li><li class="nav-item"><li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer">Features
+</a>
+    </li></li><li class="nav-item"><ul class="nav flex-column align-items-start">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" target="_blank" rel="noopener noreferrer">Demo
+</a>
+      </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs.razonyang.com" target="_blank" rel="noopener noreferrer">Netlify
+</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="https://hbs-cn.razonyang.com" target="_blank" rel="noopener noreferrer">China
+</a>
+        </li></ul></li></ul><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+  Copyright © 2021-2022 Chi-Hua Wang. All Rights Reserved.
+</div>
+
+<a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+</a>
+</footer>
+<script src="https://laplus3667.github.io/js/main.min.bcf31478de97889b506ca8e011fca0740431cb3226ab4e91c494e7120ce4abc3.js" integrity="sha256-vPMUeN6XiJtQbKjgEfygdAQxyzImq06RxJTnEgzkq8M=" crossorigin="anonymous" defer></script><script src="https://laplus3667.github.io/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js" integrity="sha256-o1Zw8vkMOY5e5cjlCbQo&#43;udaonRoVM7hC2B5RjMHaFk=" crossorigin="anonymous" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('https:\/\/laplus3667.github.io\/service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+    }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+    });
+  });
+}
+</script><script src="https://laplus3667.github.io/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js" integrity="sha256-TbpSoKeQ&#43;QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin="anonymous" defer></script><script defer src="https://laplus3667.github.io/js/katex.min.a575e93a07f02f7e58ee9002aea3b4e75163d4fa8ea3a627e90e7fafd5c718fa.js" integrity="sha256-pXXpOgfwL35Y7pACrqO051Fj1PqOo6Yn6Q5/r9XHGPo=" crossorigin="anonymous"></script>
+<script defer src="https://laplus3667.github.io/js/mermaid.min.7bc8971c9c15169a580793ca5026779a574bd351017368163e8b06d115791faa.js" integrity="sha256-e8iXHJwVFppYB5PKUCZ3mldL01EBc2gWPosG0RV5H6o=" crossorigin="anonymous"></script>
+
+</body>
+</html>
